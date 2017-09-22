@@ -216,13 +216,11 @@ struc-ture-pre-serv-ing
 
 \tableofcontents
 
-\input{chapters/Intro.tex}
-%\input{chapters/BuildingBlocks.tex}
-%\input{chapters/CryptDB.tex}
-%\input{chapters/NewPHE.tex}
-%\input{chapters/Modifications.tex}
-%\input{chapters/Results.tex}
-%\input{chapters/Conclusion.tex}
+\input{chapters/Introducao.tex}
+\input{chapters/Aspectos.tex}
+\input{chapters/ForenseNuvem.tex}
+\input{chapters/Proposta.tex}
+\input{chapters/Resultados.tex}
 
 \bibliographystyle{abntex2-alf}
 \bibliography{bibliography}

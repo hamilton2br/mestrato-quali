@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  21 AUG 2017 18:41
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  22 SEP 2017 16:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1440,7 +1440,14 @@ been already used, duplicate ignored
 l.217 \tableofcontents
                        [7
 
-] (./msc-thesis.toc)
+] (./msc-thesis.tocpdfTeX warning (ext4): destination with the same identifier 
+(name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.20 ...a\IeC {\c c}\IeC {\~o}es}{14}{section.5.2}
+                                                   [8
+
+])
 \tf@toc=\write7
 \openout7 = `msc-thesis.toc'.
 
@@ -1449,36 +1456,26 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.217 \tableofcontents
-                       [8
-
-] (./chapters/Introducao.tex
+                       [9] (./chapters/Introducao.tex
 Chapter 1.
-) (./chapters/Justificativa.tex [9
+) (./chapters/Aspectos.tex [10
 
 
 ]
 Chapter 2.
-) (./chapters/Objetivo.tex [10
+) (./chapters/ForenseNuvem.tex [11
 
 ]
 Chapter 3.
-) (./chapters/Metodos.tex [11
-
-]
-Chapter 4.
 ) (./chapters/Revisao.tex [12
 
 ]
+Chapter 4.
+) (./chapters/Proposta.tex [13
+
+]
 Chapter 5.
-) (./chapters/Resultados.tex [13
-
-]
-Chapter 6.
-) (./chapters/Conclusao.tex [14
-
-]
-Chapter 7.
-) (./msc-thesis.bbl [15
+) (./msc-thesis.bbl [14
 
 ]
 
@@ -1486,39 +1483,39 @@ LaTeX Warning: Empty `thebibliography' environment on input line 8.
 
 ) 
 AED: lastpage setting LastPage
-[16
+[15
 
 ]
 +-------------------------------------------------------------------+
 | Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
 |                  http://abntex.codigolivre.org.br                 |
 +-------------------------------------------------------------------+
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 234.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 234.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 232.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 232.
 (./msc-thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 234.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 234.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 232.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 232.
 Package rerunfilecheck Info: File `msc-thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 234.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 232.
  ) 
 Here is how much of TeX's memory you used:
- 21845 strings out of 493304
- 386754 string characters out of 6139871
- 521394 words of memory out of 5000000
+ 21850 strings out of 493304
+ 386775 string characters out of 6139871
+ 523394 words of memory out of 5000000
  24717 multiletter control sequences out of 15000+600000
  34898 words of font info for 68 fonts, out of 8000000 for 9000
  962 hyphenation exceptions out of 8191
- 56i,6n,56p,992b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,7n,56p,992b,449s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
 r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on msc-thesis.pdf (17 pages, 47933 bytes).
+Output written on msc-thesis.pdf (16 pages, 51247 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
- 23 named destinations out of 1000 (max. 500000)
+ 145 PDF objects out of 1000 (max. 8388607)
+ 120 compressed objects within 2 object streams
+ 34 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
