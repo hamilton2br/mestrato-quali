@@ -13,6 +13,8 @@
 \usepackage{underscore}
 \usepackage{txfonts}
 \usepackage[ddmmyyyy]{datetime}
+\usepackage{enumitem}
+\usepackage{comment}
 
 \usepackage{tikz}
 \usepackage{adjustbox}
@@ -28,6 +30,8 @@
 \usepackage{pdfpages}
 \usepackage{mathrsfs}
 
+\newcommand{\urls}[1]{{\footnotesize{\url{#1}}}}
+
 \graphicspath{ {images/} }
 
 \usetikzlibrary{matrix,shapes,arrows,positioning}
@@ -41,6 +45,7 @@
 \newcommand{\TODO}[1]{~~\textcolor{red} {\textbf{TODO: #1}}}
 
 \hyphenation{
+e-le-va-da
 U-ni-ver-si-da-de
 wit-ness-in-dis-tin-guish-a-bil-i-ty
 ze-ro-knowl-edge
@@ -185,11 +190,25 @@ struc-ture-pre-serv-ing
 
 
 \begin{resumo}
-
+Arquiteturas em nuvem são cada vez mais comuns, e também o número de problemas de segurança envolvendo essa tecnologia. 
+%
+Infelizmente, devido à natureza volátil de recursos na nuvem, a coleta de evidências para análise forense nesse ambiente tem esbarrado em desafios práticos e legais.
+%
+Este trabalho analisa propostas voltadas a resolver os desafios existentes na coleta evidências na nuvem, discute suas limitações, e então apresenta uma solução visando suplantá-las.
+%
+Especificamente, a proposta tem como foco a reprodutibilidade do processo de coleta, sem com isso violar jurisdições ou a privacidade dos não envolvidos na investigação.
 \end{resumo}
 
 \begin{abstract}
-
+Cloud architectures are becoming more common, and so are the number of security issues surrounding this technology.
+%
+Unfortunately, due to the volatile nature of cloud resources, the task of gathering evidence for forensic analysis in this environment runs into practical and legal challenges.
+%
+This paper analyzes proposals aimed at addressing existing challenges when collecting evidence in the cloud, discuss their limitations, and then presents a solution to overcome them.
+%
+Specifically, the proposal focuses on the reproducibility of the collection process, without violating jurisdictions or the privacy of those not involved in the investigation.
+%
+Na minha terra tem palmeiras onde canta o sabiá, seno(a)*cosseno(b) = seno(b)*cosseno(a)
 \end{abstract}
 
 \listoffigures

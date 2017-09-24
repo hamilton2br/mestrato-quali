@@ -13,11 +13,6 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Database file #1: abntex2-options.bib
 Database file #2: bibliography.bib
-I was expecting a `,' or a `}'---line 357 of file bibliography.bib
- :   
- :   organization={Stanford},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
@@ -27,45 +22,44 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 2 entries,
+You've used 17 entries,
             6669 wiz_defined-function locations,
-            1186 strings with 9290 characters,
-and the built_in function-call counts, 1103 in all, are:
-= -- 202
-> -- 0
-< -- 0
-+ -- 47
-- -- 0
-* -- 45
-:= -- 195
-add.period$ -- 0
-call.type$ -- 2
-change.case$ -- 6
-chr.to.int$ -- 1
-cite$ -- 0
-duplicate$ -- 6
-empty$ -- 79
-format.name$ -- 0
-if$ -- 269
+            1306 strings with 12783 characters,
+and the built_in function-call counts, 19943 in all, are:
+= -- 2166
+> -- 510
+< -- 320
++ -- 537
+- -- 154
+* -- 1314
+:= -- 2546
+add.period$ -- 71
+call.type$ -- 17
+change.case$ -- 178
+chr.to.int$ -- 34
+cite$ -- 15
+duplicate$ -- 1558
+empty$ -- 1036
+format.name$ -- 730
+if$ -- 4314
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 20
-newline$ -- 8
-num.names$ -- 0
-pop$ -- 31
+missing$ -- 295
+newline$ -- 90
+num.names$ -- 75
+pop$ -- 387
 preamble$ -- 1
-purify$ -- 6
+purify$ -- 68
 quote$ -- 0
-skip$ -- 119
+skip$ -- 1637
 stack$ -- 1
-substring$ -- 54
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 877
+swap$ -- 608
+text.length$ -- 22
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
+type$ -- 3
 warning$ -- 0
-while$ -- 2
+while$ -- 122
 width$ -- 0
-write$ -- 8
-(There was 1 error message)
+write$ -- 256

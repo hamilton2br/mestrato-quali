@@ -5,4 +5,108 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.6 }
 
+\bibitem[Case et al. 2014]{CaseMemoryForensics:2014}
+\abntrefinfo{Case et al.}{CASE et al.}{2014}
+{CASE, A. et al. \emph{{The Art of Memory Forensics: Detecting malware and
+  threats in Windows, Linux and Mac memory}}. [S.l.]: Wiley, 2014.}
+
+\bibitem[Dykstra and Sherman 2012]{DykstraAcquiringForIAAS:2012}
+\abntrefinfo{Dykstra and Sherman}{DYKSTRA; SHERMAN}{2012}
+{DYKSTRA, J.; SHERMAN, A. {Acquiring forensic evidence from
+  infrastructure-as-a-service cloud computing: Exploring and evaluating tools,
+  trust, and techniques}.
+\emph{Digital Investigation}, Elsevier Ltd, vol.~9, p. S90--S98, 2012.
+ISSN 17422876.
+(Proc. of the 12th Annual DFRWS Conference).
+Available from Internet: \url{dx.doi.org/10.1016/j.diin.2012.05.001}.}
+
+\bibitem[Dykstra and Sherman 2013]{DykstraFROST:2013}
+\abntrefinfo{Dykstra and Sherman}{DYKSTRA; SHERMAN}{2013}
+{DYKSTRA, J.; SHERMAN, A.~T. Design and implementation of {FROST}: Digital
+  forensic tools for the {OpenStack} cloud computing platform.
+\emph{Digital Investigation}, Elsevier Ltd, vol.~10, p. S87--S95, 2013.
+ISSN 17422876.
+(Proc. of 13th Annual DFRWS Conference).
+Available from Internet: \url{dx.doi.org/10.1016/j.diin.2013.06.010}.}
+
+\bibitem[Fewer 2008]{FewerReflectiveLibraryInject:2008}
+\abntrefinfo{Fewer}{FEWER}{2008}
+{FEWER, B.~S. {Reflective DLL Injection}.
+no. October, 2008.}
+
+\bibitem[George, Venter and Thomas 2012]{GeorgeDF2CE:2012}
+\abntrefinfo{George, Venter and Thomas}{GEORGE; VENTER; THOMAS}{2012}
+{GEORGE, S.; VENTER, H.; THOMAS, F. {Digital Forensic Framework for a Cloud
+  Environment}. In \emph{IST Africa}. Tanzania: IIMC, 2012. p.~1--8.
+ISBN 9781905824342.}
+
+\bibitem[Gilbert and Sujeet 2008]{BashAdvInForensics:2015}
+\abntrefinfo{Gilbert and Sujeet}{GILBERT; SUJEET}{2008}
+{GILBERT, P.; SUJEET, S. \emph{{Advances in Digital Forensics IV}}. 1. ed.
+  Orlando: Springer-US, 2008. vol.~1.
+ISSN 1098-6596.
+ISBN 9788578110796.}
+
+\bibitem[Linuxcontainers.org 2015]{Linuxcontainers.org2015}
+\abntrefinfo{Linuxcontainers.org}{LINUXCONTAINERS.ORG}{2015}
+{LINUXCONTAINERS.ORG. \emph{{Linux Containers (LXC)}}. 2015.
+Available from Internet: \url{https://linuxcontainers.org/lxc/introduction/}.}
+
+\bibitem[Mell and Grance 2011]{NIST2011}
+\abntrefinfo{Mell and Grance}{MELL; GRANCE}{2011}
+{MELL, P.; GRANCE, T. \emph{The {NIST} definition of cloud computing}. 2011.
+  7~p. NIST SP 800-145.
+  \urls{csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf}.
+Available from Internet:
+  \url{www.mendeley.com/research/the-nist-definition-about-cloud-computing/}.}
+
+\bibitem[Miller and Turkulainen 2004]{MillerRemoteLibraryInjection:2004}
+\abntrefinfo{Miller and Turkulainen}{MILLER; TURKULAINEN}{2004}
+{MILLER, M.; TURKULAINEN, J. \emph{{Remote Library Injection}}. 2004. Tech.
+  Report:
+  \urls{www.nologin.org/Downloads/Papers/remote-library-injection.pdf}.}
+
+\bibitem[Morsy, Grundy and Muller 2010]{MorsyCloudSecurity:2010}
+\abntrefinfo{Morsy, Grundy and Muller}{MORSY; GRUNDY; MULLER}{2010}
+{MORSY, A.~M.; GRUNDY, J.; MULLER, I. {An Analysis of the Cloud Computing
+  Security Problem}. In \emph{APSEC Cloud Workshop}. Sydney, Australia: [s.n.],
+  2010. Available from Internet: \url{https://arxiv.org/abs/1609.01107}.}
+
+\bibitem[Piraghaj et al. 2015]{PiraghajContainerCloudComputing:2016}
+\abntrefinfo{Piraghaj et al.}{PIRAGHAJ et al.}{2015}
+{PIRAGHAJ, S. et al. A framework and algorithm for energy efficient container
+  consolidation in cloud data centers. In \emph{IEEE Int. Conf. on Data Science
+  and Data Intensive Systems (DSDIS)}. [S.l.: s.n.], 2015. p. 368--375.}
+
+\bibitem[Rahman and Khan 2015]{RahmanLiveForensicsTechniques:2015}
+\abntrefinfo{Rahman and Khan}{RAHMAN; KHAN}{2015}
+{RAHMAN, S.; KHAN, M. N.~A. {Review of live forensic analysis techniques}.
+\emph{International Journal of Hybrid Information Technology}, vol.~8, no.~2,
+  p. 379--388, 2015.
+Available from Internet: \url{www.sersc.org/journals/IJHIT/}.}
+
+\bibitem[Reichert, Richards and Yoshigoe 2015]{ReichertAutoAcquisition:2015}
+\abntrefinfo{Reichert, Richards and Yoshigoe}{REICHERT; RICHARDS;
+  YOSHIGOE}{2015}
+{REICHERT, Z.; RICHARDS, K.; YOSHIGOE, K. {Automated forensic data acquisition
+  in the cloud}.
+\emph{IEEE Int. Conf. on Mobile Ad Hoc and Sensor Systems}, p. 725--730, 2015.}
+
+\bibitem[Sang 2013]{SangLogApproach:2013}
+\abntrefinfo{Sang}{SANG}{2013}
+{SANG, T. {A log-based approach to make digital forensics easier on cloud
+  computing}.
+\emph{Intelligent System Design and Engineering Applications (ISDEA)}, p.
+  91--94, 2013.}
+
+\bibitem[V\"{o}mel and St\"{u}ttgen 2013]{VomelMemoryAcquisition:2013}
+\abntrefinfo{V\"{o}mel and St\"{u}ttgen}{V\"{o}MEL; ST\"{u}TTGEN}{2013}
+{V\"{o}MEL, S.; ST\"{u}TTGEN, J. An evaluation platform for forensic memory
+  acquisition software.
+\emph{Digit. Investig.}, Elsevier Science Publishers B. V., Amsterdam, The
+  Netherlands, The Netherlands, vol.~10, p. S30--S40, 2013.
+ISSN 1742-2876.
+Elsevier Science Publishers.
+Available from Internet: \url{http://dx.doi.org/10.1016/j.diin.2013.06.004}.}
+
 \end{thebibliography}
