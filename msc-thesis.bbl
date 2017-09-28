@@ -5,10 +5,44 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.6 }
 
+\bibitem[Aljaedi et al. 2011]{AljaediComparative:2011}
+\abntrefinfo{Aljaedi et al.}{ALJAEDI et al.}{2011}
+{ALJAEDI, A. et al. Comparative analysis of volatile memory forensics: Live
+  response vs. memory imaging. In \emph{IEEE 3rd Int. Conf. on Privacy,
+  Security, Risk and Trust}. [S.l.: s.n.], 2011. p. 1253--1258.}
+
+\bibitem[Baar, Beek and Eijk 2014]{VanBaarFAAS:2014}
+\abntrefinfo{Baar, Beek and Eijk}{BAAR; BEEK; EIJK}{2014}
+{BAAR, R.~B. van; BEEK, H. M.~A. van; EIJK, E.~J. van. {Digital Forensics as a
+  Service: A game changer}.
+\emph{Digital Investigation}, Elsevier Ltd, vol.~11, p. S54--S62, 2014.
+ISSN 17422876.
+Available from Internet: \url{dx.doi.org/10.1016/j.diin.2014.03.007}.}
+
+\bibitem[Barbara 2014]{DoDesafio:2014}
+\abntrefinfo{Barbara}{BARBARA}{2014}
+{BARBARA, D. \emph{{Desafios da per{\'{i}}cia forense em um ambiente de
+  computa{\c{c}}{\~{a}}o nas nuvens}}.
+[S.l.], 2014.
+  \urls{revista.uniplac.net/ojs/index.php/tc_si/article/view/1911}.}
+
 \bibitem[Case et al. 2014]{CaseMemoryForensics:2014}
 \abntrefinfo{Case et al.}{CASE et al.}{2014}
 {CASE, A. et al. \emph{{The Art of Memory Forensics: Detecting malware and
   threats in Windows, Linux and Mac memory}}. [S.l.]: Wiley, 2014.}
+
+\bibitem[Dezfouli et al. 2012]{DezfouliBackupApproach:2012}
+\abntrefinfo{Dezfouli et al.}{DEZFOULI et al.}{2012}
+{DEZFOULI, F. et al. Volatile memory acquisition using backup for forensic
+  investigation. In \emph{Int. Conf. on Cyber Security, Cyber Warfare and
+  Digital Forensic (CyberSec)}. [S.l.: s.n.], 2012. p. 186--189.}
+
+\bibitem[Dolan-Gavitt et al. 2011]{Dolan-GavittSemanticGap:2011}
+\abntrefinfo{Dolan-Gavitt et al.}{DOLAN-GAVITT et al.}{2011}
+{DOLAN-GAVITT, B. et al. Virtuoso: Narrowing the semantic gap in virtual
+  machine introspection. In \emph{IEEE Symposium on Security and Privacy}.
+  [S.l.: s.n.], 2011. p. 297--312.
+ISSN 1081-6011.}
 
 \bibitem[Dykstra and Sherman 2012]{DykstraAcquiringForIAAS:2012}
 \abntrefinfo{Dykstra and Sherman}{DYKSTRA; SHERMAN}{2012}
@@ -77,6 +111,16 @@ Available from Internet:
 {PIRAGHAJ, S. et al. A framework and algorithm for energy efficient container
   consolidation in cloud data centers. In \emph{IEEE Int. Conf. on Data Science
   and Data Intensive Systems (DSDIS)}. [S.l.: s.n.], 2015. p. 368--375.}
+
+\bibitem[Poisel, Malzer and Tjoa 2013]{PoiselVMI:2013}
+\abntrefinfo{Poisel, Malzer and Tjoa}{POISEL; MALZER; TJOA}{2013}
+{POISEL, R.; MALZER, E.; TJOA, S. {Evidence and cloud computing: The virtual
+  machine introspection approach}.
+\emph{Journal of Wireless Mobile Networks, Ubiquitous Computing, and Dependable
+  Applications}, vol.~4, no.~1, p. 135--152, 2013.
+ISSN 20935374 (ISSN).
+Available from Internet:
+  \url{citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.469.937}.}
 
 \bibitem[Rahman and Khan 2015]{RahmanLiveForensicsTechniques:2015}
 \abntrefinfo{Rahman and Khan}{RAHMAN; KHAN}{2015}

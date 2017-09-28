@@ -1,6 +1,11 @@
 This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: msc-thesis.aux
+Case mismatch error between cite keys ReichertAutoacquisition:2015 and ReichertAutoAcquisition:2015
+---line 60 of file msc-thesis.aux
+ : \citation{ReichertAutoacquisition:2015
+ :                                       }
+I'm skipping whatever remains of this command
 The style file: abntex2-alf.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -13,6 +18,8 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Database file #1: abntex2-options.bib
 Database file #2: bibliography.bib
+Warning--I didn't find a database entry for "ClarkeReviewOfChallenges:2015"
+Warning--I didn't find a database entry for "SangLogSpproach:2013"
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
@@ -22,44 +29,45 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 17 entries,
+You've used 23 entries,
             6669 wiz_defined-function locations,
-            1306 strings with 12783 characters,
-and the built_in function-call counts, 19943 in all, are:
-= -- 2166
-> -- 510
-< -- 320
-+ -- 537
-- -- 154
-* -- 1314
-:= -- 2546
-add.period$ -- 71
-call.type$ -- 17
-change.case$ -- 178
-chr.to.int$ -- 34
-cite$ -- 15
-duplicate$ -- 1558
-empty$ -- 1036
-format.name$ -- 730
-if$ -- 4314
+            1351 strings with 14382 characters,
+and the built_in function-call counts, 27719 in all, are:
+= -- 2936
+> -- 752
+< -- 425
++ -- 723
+- -- 225
+* -- 1862
+:= -- 3519
+add.period$ -- 101
+call.type$ -- 23
+change.case$ -- 257
+chr.to.int$ -- 46
+cite$ -- 21
+duplicate$ -- 2126
+empty$ -- 1458
+format.name$ -- 1076
+if$ -- 6049
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 295
-newline$ -- 90
-num.names$ -- 75
-pop$ -- 387
+missing$ -- 402
+newline$ -- 122
+num.names$ -- 105
+pop$ -- 516
 preamble$ -- 1
-purify$ -- 68
+purify$ -- 96
 quote$ -- 0
-skip$ -- 1637
+skip$ -- 2212
 stack$ -- 1
-substring$ -- 877
-swap$ -- 608
-text.length$ -- 22
+substring$ -- 1244
+swap$ -- 852
+text.length$ -- 32
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 3
+type$ -- 6
 warning$ -- 0
-while$ -- 122
+while$ -- 172
 width$ -- 0
-write$ -- 256
+write$ -- 358
+(There was 1 error message)

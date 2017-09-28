@@ -3,5 +3,83 @@
 % ----------------------------------------------------------
 \chapter{Revisão bibliográfica}
 
-Aquela lenga lenga com a tabelinha du balacobaco
+Existem vários aspectos relativos à análise forense na nuvem, indo desde a coleta de informações até a garantia da cadeia de custódia de evidências.
+%
+Para uma discussão mais estruturada dos trabalhos disponíveis na literatura sobre o tema, a seguir eles são apresentados com base nos diferentes aspectos que abordam.
 
+\section{Acessar e coletar as informações de memória das máquinas virtuais em nuvem}
+
+Diversos trabalhos de análise forense na nuvem se concentram na coleta de dados ``após o fato'', ou seja, após a intrusão ser detectada \cite{ReichertAutoacquisition:2015,PoiselVMI:2013,DykstraFROST:2013,GeorgeDF2CE:2012,SangLogApproach:2013}. 
+%
+Os processos de coleta descritos nesses trabalhos podem ser iniciados de forma manual ou automaticamente, via integração com um mecanismo de detecção de intrusão. 
+%
+No caso específico de memória volátil, tal forma de coleta não consegue descrever como era a memória antes da intrusão, pois o processo só é acionado depois da detecção do ataque. 
+%
+%A capacidade de saber como era a memória antes do fato é descrita por \cite{Case_Memory_Forensics:2014} como necessária para viabilizar a abordagem de coletar o suficiente para realizar a investigação pois permite comparar dois instantâneos de memória e minimizar o volume coletado antes do fato. 
+Tal limitação pode trazer prejuízos à investigação, dado que algumas análises dependem exatamente da capacidade de se comparar dois momentos da memória \cite{CaseMemoryForensics:2014}. 
+%
+Entre os trabalhos estudados, a única proposta encontrada que leva tal necessidade em consideração é \cite{DezfouliBackupApproach:2012}, que propõe que o dado seja armazenado no próprio equipamento sob análise.
+%
+%Infelizmente, entretanto, essa abordagem não é aplicável ao cenário em nuvem, pois leva a perda de informações importantes caso a máquina virtual seja despejada e seus recursos liberados.
+Infelizmente, entretanto, a aplicação de tal abordagem no cenário em nuvem é pouco viável, pois pode levar à perda de informações importantes caso a máquina virtual ou contêiner seja desativada, tendo seus recursos liberados.
+%
+
+%Ainda na coleta de informações, os autores \cite{Reichert_Auto_acquisition:2015} e \cite{George_DF2CE:2012} sugerem a abordagem de forense ao vivo onde os dados são constantemente coletados sem distinção do antes ou depois do fato. 
+Existem ainda trabalhos voltados à coleta de informações durante a execução do sistema, nos quais os dados são constantemente coletados sem distinção do que aconteceu antes ou depois do fato de interesse.
+%
+Esse é o caso de trabalhos como \cite{PoiselVMI:2013,DykstraFROST:2013,SangLogApproach:2013}, que adotam a estratégia de isolar e parar a máquina virtual para em seguida realizar o processo de coleta. 
+%
+%Nas duas estratégias citadas anteriormente, o problema do grande volume de informações coletadas não é abordado pelo autores nem o cenário onde é necessário coletar evidências de uma máquina virtual que já foi despejada do pool e os recursos liberados. 
+Embora interessantes, as abordagens descritas nesses trabalhos podem levar a um elevado volume de dados coletados, além de também não tratarem o cenário em que é necessário coletar evidências quando os recursos virtuais contendo tais informações são liberados.
+
+
+\section{Capacidade de reproduzir o processo e obter os mesmos resultados}
+
+Se, durante uma análise forense, analistas diferentes obtêm resultados distintos ao executar o mesmo procedimento de coleta, a evidência gerada não tem credibilidade, inviabilizando seu uso em um processo legal. 
+%
+Por essa razão, a reprodutibilidade do processo de coleta é uma parte importante da geração de evidências para análise forense.
+%
+Infelizmente, entretanto, nenhuma das propostas encontradas na literatura atualmente permite tal reprodutibilidade em cenários de nuvem em que máquinas virtuais ou contêineres são desativados e seus recursos físicos liberados: todas elas dependem da existência do recurso virtual para a repetição do processo de coleta.
+
+\section{Não violar privacidade ou jurisdição das partes não envolvidas na investigação}
+
+Em um ambiente de nuvem pública, remover o \textit{hardware} para análise posterior pode levar à violação de privacidade de usuários, uma vez que o multi-inquilinato desse cenário faz com que uma mesma máquina física guarde informações de diversos clientes, alguns dos quais podem não estar envolvidos na investigação em curso.
+%
+Diversos trabalhos na literatura tratam esse problema adequadamente, por meio das duas estratégias principais: a primeira, adotada em \cite{ReichertAutoAcquisition:2015,GeorgeDF2CE:2012,PoiselVMI:2013,DykstraFROST:2013}, consiste em coletar dados pertinentes à investigação e armazená-los fora da nuvem; a segunda, empregada em \cite{SangLogApproach:2013} e que constitui um caso específico de \cite{GeorgeDF2CE:2012}, depende da cooperação do provedor de serviços de nuvem para conseguir as informações necessárias à investigação. 
+%
+Depender do provedor de serviços de nuvem é uma estratégia pouco recomendada, entretanto, pois (1) o volume de dados de usuários pode forçar os provedores a limitar o tamanho dos \textit{logs} armazenados, e (2) caso ocorra uma indisponibilidade causada por um ataque, o objetivo do provedor será o de restabelecer o serviço, não necessariamente o de preservar evidências\cite{ClarkeReviewOfChallenges:2015}. 
+
+
+\section{Garantir a cadeia de custódia da evidência}
+
+Dentre os trabalhos analisados, apenas \cite{SangLogApproach:2013} aborda a questão da garantia da cadeia de custódia. 
+%
+Especificamente, o trabalho emprega \textit{hashes} para verificar a integridade da evidência, permitindo a detecção de alterações na mesma, embora não explique os mecanismos que poderiam ser utilizados para impedir acesso não autorizado (e, assim, potencial alteração) aos próprios hashes. 
+%
+As propostas dos outros autores concentram-se apenas no aspecto técnico da coleta, sem discutir claramente garantia de custódia mas apenas mencionando que as evidências devem ser coletadas de forma ``forensicamente aceitável''.
+
+\section{Resumo}
+
+A Tabela \ref{tab:related-work} mostra um comparativo das soluções estudadas, considerando os aspectos discutidos nesta seção, posicionando as contribuições da proposta apresentada neste trabalho.
+
+\begin{table}[htb!]
+\footnotesize
+\renewcommand{\arraystretch}{1.4}
+\renewcommand{\tabcolsep}{0.5mm}
+\centering
+\caption{Comparativo de soluções de coleta de informações de memória de máquinas em nuvem para análise forense}
+\label{tab:related-work}
+\begin{tabular}{p{5.3cm}|L|L|L|L|L|L|L|L|L|L|L|}
+\textbf{}																		& \rot{\fancyname~(esta proposta)} 			& \rot{\cite{GeorgeDF2CE:2012}} 
+																						& \rot{\cite{PoiselVMI:2013}} 					& \rot{\cite{DykstraFROST:2013}}
+																						& \rot{\cite{DoDesafio:2014}} 					& \rot{\cite{ReichertAutoAcquisition:2015}}	
+																						&	\rot{\cite{SangLogSpproach:2013}} 	& \rot{\cite{Dolan-GavittSemanticGap:2011}} 
+																						& \rot{\cite{AljaediComparative:2011}} & \rot{\cite{DezfouliBackupApproach:2012}} 
+																						& \rot{\cite{VanBaarFAAS:2014}}
+\\ \hline
+\textbf{Coleta é contínua?}								& \cfig	& \xfig & \xfig & \xfig & \xfig & \xfig & \cfig & \xfig & \xfig & \cfig & \cfig \\
+\textbf{Reproduz o processo sem a VM?} 			& \cfig	& \xfig & \xfig & \xfig & \xfig & \xfig & \xfig & \xfig & \xfig & \xfig & \xfig \\
+\textbf{Garante cadeia de custódia?}				& \cfig	& \xfig & \xfig & \xfig & \xfig & \cfig & \cfig & \xfig & \xfig & \xfig & \cfig \\
+\textbf{Preserva jurisdição e privacidade?} & \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	\\
+\end{tabular}
+\end{table}

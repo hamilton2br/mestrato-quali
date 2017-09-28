@@ -30,19 +30,28 @@
 \usepackage{pdfpages}
 \usepackage{mathrsfs}
 
+\newcommand{\xfig}{\includegraphics[scale=0.007]{x.png}}
+\newcommand{\cfig}{\includegraphics[scale=0.015]{check.png}}
+\newcommand{\rot}[1]{\rotatebox{90}{#1}}
 \newcommand{\urls}[1]{{\footnotesize{\url{#1}}}}
 
 \graphicspath{ {images/} }
 
 \usetikzlibrary{matrix,shapes,arrows,positioning}
 
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-
 %comments
 \newcommand{\marcos}[1]{~~\textcolor{blue} {\textbf{MARCOS: #1}}}
 \newcommand{\edu}[1]{~~\textcolor{green!60!black} {\textbf{EDU: #1}}}
 \newcommand{\comments}[1]{~~\textcolor{cyan} {\textbf{#1}}}
 \newcommand{\TODO}[1]{~~\textcolor{red} {\textbf{TODO: #1}}}
+
+\newcommand{\fancyname}{Dizang}
+\newcommand{\fancynameX}{\fancyname}
+
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}{>{\centering\arraybackslash}m{0,75cm}}
+\newcolumntype{M}{>{\RaggedLeft\arraybackslash}m{3cm}}
+
 
 \hyphenation{
 e-le-va-da
