@@ -9,7 +9,7 @@ Para uma discussão mais estruturada dos trabalhos disponíveis na literatura so
 
 \section{Acessar e coletar as informações de memória das máquinas virtuais em nuvem}
 
-Diversos trabalhos de análise forense na nuvem se concentram na coleta de dados ``após o fato'', ou seja, após a intrusão ser detectada \cite{ReichertAutoacquisition:2015,PoiselVMI:2013,DykstraFROST:2013,GeorgeDF2CE:2012,SangLogApproach:2013}. 
+Diversos trabalhos de análise forense na nuvem se concentram na coleta de dados ``após o fato'', ou seja, após a intrusão ser detectada \cite{ReichertAutoAcquisition:2015,PoiselVMI:2013,DykstraFROST:2013,GeorgeDF2CE:2012,SangLogApproach:2013}. 
 %
 Os processos de coleta descritos nesses trabalhos podem ser iniciados de forma manual ou automaticamente, via integração com um mecanismo de detecção de intrusão. 
 %
@@ -47,7 +47,7 @@ Em um ambiente de nuvem pública, remover o \textit{hardware} para análise post
 %
 Diversos trabalhos na literatura tratam esse problema adequadamente, por meio das duas estratégias principais: a primeira, adotada em \cite{ReichertAutoAcquisition:2015,GeorgeDF2CE:2012,PoiselVMI:2013,DykstraFROST:2013}, consiste em coletar dados pertinentes à investigação e armazená-los fora da nuvem; a segunda, empregada em \cite{SangLogApproach:2013} e que constitui um caso específico de \cite{GeorgeDF2CE:2012}, depende da cooperação do provedor de serviços de nuvem para conseguir as informações necessárias à investigação. 
 %
-Depender do provedor de serviços de nuvem é uma estratégia pouco recomendada, entretanto, pois (1) o volume de dados de usuários pode forçar os provedores a limitar o tamanho dos \textit{logs} armazenados, e (2) caso ocorra uma indisponibilidade causada por um ataque, o objetivo do provedor será o de restabelecer o serviço, não necessariamente o de preservar evidências\cite{ClarkeReviewOfChallenges:2015}. 
+Depender do provedor de serviços de nuvem é uma estratégia pouco recomendada, entretanto, pois (1) o volume de dados de usuários pode forçar os provedores a limitar o tamanho dos \textit{logs} armazenados, e (2) caso ocorra uma indisponibilidade causada por um ataque, o objetivo do provedor será o de restabelecer o serviço, não necessariamente o de preservar evidências\cite{ClarkeReviewOfChallenges2015}. 
 
 
 \section{Garantir a cadeia de custódia da evidência}
@@ -73,7 +73,7 @@ A Tabela \ref{tab:related-work} mostra um comparativo das soluções estudadas, 
 \textbf{}																		& \rot{\fancyname~(esta proposta)} 			& \rot{\cite{GeorgeDF2CE:2012}} 
 																						& \rot{\cite{PoiselVMI:2013}} 					& \rot{\cite{DykstraFROST:2013}}
 																						& \rot{\cite{DoDesafio:2014}} 					& \rot{\cite{ReichertAutoAcquisition:2015}}	
-																						&	\rot{\cite{SangLogSpproach:2013}} 	& \rot{\cite{Dolan-GavittSemanticGap:2011}} 
+																						&	\rot{\cite{SangLogApproach:2013}} 	& \rot{\cite{Dolan-GavittSemanticGap:2011}} 
 																						& \rot{\cite{AljaediComparative:2011}} & \rot{\cite{DezfouliBackupApproach:2012}} 
 																						& \rot{\cite{VanBaarFAAS:2014}}
 \\ \hline

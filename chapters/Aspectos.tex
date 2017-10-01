@@ -3,15 +3,48 @@
 % ----------------------------------------------------------
 \chapter{Aspectos conceituais e econômicos}
 
-\section{Forense digital}
-
-descrever o que é análise forense
-
 \section{Computação em núvem}
 
-mostrar o aumento da adoção de arquiteturas em nuvem
+Uma nuvem computacional é um modelo de infraestrutura no qual recursos compartilhados em quantidade configurável, acessíveis via rede, são alocados e desalocados com esforço mínimo de gerenciamento por parte de um provedor de serviços. \cite{NIST2011}
+%
+Há três modelos principais de comercialização de uso da nuvem \cite{NIST2011}: \textit{software} como serviço (\textit{Software as a Service} -- SaaS), na qual se provê o \textit{software} que será usado pelo cliente; plataforma como serviço (\textit{Platform as a Service} -- PaaS), na qual se provê o ambiente para que o cliente desenvolva, teste e execute seu \textit{software}; e, o tipo mais pertinente para este trabalho, Infraestrutura como serviço (\textit{Infrastructure as a Service} -- IaaS), na qual são fornecidos recursos computacionais básicos, como processamento e memória, em geral de forma virtualizada.
+%
+Uma arquitetura usada hoje nas soluções em núvem são as auto-escaláveis onde recursos são altamente voláteis com recursos sendo alocados e desalocados a qualquer momento. Estas implementações tem a vantagem de usar os recursos de nuvem de uma forma mais eficiênte e menos necessidade de intervenção humana.
+
+\section{Forense digital e seus desafios atuais}
+
+Forense digital (tambem conhecida por forense computacional) é um conjunto de técnicas de coleta e análise de interação entre humanos e computadores de forma que esta seja aceita em um processo legal.
+%
+Tal como a forense tradicional, a forense digital se baseia no princípio de Locard. Definido pelo médico francês Edmond Locard, o princípio de Locard estabelece que ``Quando um indivíduo entra em contato com outro objeto ou indivíduo, este sempre deixa vestígio deste contato''. \cite{Ramos:2011}
+%
+Assim a Forense digital tem por objetivo a investigação de evidências digitais de interações entre homes e máquinas de modo a reconstruir a cadeia de evêntos no passado de forma que suas conclusões cujas conclusões sejam validadas por terceiros.
+%
+A forense digital quando aplicada a investigação de incidentes em soluções na nuvem enfrenta desafios adicionais relacionados a coleta, transporte e análise da evidência.
+%
+A primeira delas diz respeito a aceitabilidade de uma evidência em um processo legal. Para que uma evidência seja aceito em um processo legal é necessária que sua cadeia de custódia seja garantida.
+%
+Cadeia de custódia é o processo de documentação da história cronológica da evidência de modo a saber onde a evidência esteve e quem teve acesso a ela (referencia). O SENASP 2013 diz que: ``CADEIA DE CUSTÓDIA: sistemática de procedimentos que visa à preservação do valor probatório da prova pericial caracterizada.''
+%
+Neste ponto as soluções em nuvem com arquiteturas auto-escaláveis possuem uma dificuldade adicional, a volatilidade de seus recursos. Caso uma evidência esteja presente em uma máquina que é desalocada e tem seus recursos liberados esta será pra sempre perdida.
+%
+A solução seria armazenar a evidência em outro local e seu transporte seguir procedimentos para garantir a cadeia de custódia.
+%
+Outro desafio é o da reprodutibilidade do processo de coleta. Novamente nas arquiteturas auto-escaláveis em nuvem onde uma VM é desalocada e recursos liberados, reproduzir o processo de coleta não é uma atividade trivial.
+%
+Um terceido desafio é da preservação da privacidade e respeito a jurisdição. Como nas arquiteturas em nuvem os recursos são complartilhados entre outros usuários, a prática da forense tradicional de remover o recurso físito para posterior análise não pode mais ser usado pois além dos dados relativos a investigação em curso, estes recursos terão também dados de usuários que não estão relacionados a investigação. 
+%
+Por último temos o desafio do volume de informações coletadas que hoje sobrecarregam os investigadores forenses, o back-log de investigação hoje é de cerca de 6 meses de dados.
 
 \section{Conteinerização}
 
-mostrar a adoção de contêiner
+A virtualização de recursos na nuvem, embora tradicionalmente feita por meio de máquinas virtuais, vêm sendo crescentemente feita também na forma de contêineres.
+%
+De fato, segundo o ``Container Market Adoption Survey 2016'', realizado pelas empresas DevOps.com (https://devops.com/) e ClusterHQ (https://clusterhq.com) com 235 empresas que têm desenvolvimento de software como sua atividade fim ou como suporte à atividade fim, 76\% dos respondentes utilizam contêineres para melhorar a eficiência do processo de desenvolvimento e em suas arquiteturas de micro-serviços em nuvem.
+%
+Diferentemente de máquinas virtuais, que envolvem a criação de um \textit{hardware} virtual e de um sistema operacional (SO) acima do sistema nativo e que opera independente deste, a virtualização com contêineres é feita no nível do SO nativo, tem uma implementação mais simples eliminado camadas entre o aplicativo executado e o \textit{hardware} físico.
+%
+Uma tecnologia bastante utilizada para esse propósito são Contêineres Linux (LXC) \cite{Linuxcontainers.org2015}, que aproveitam-se de funcionalidades como cgroups e namespacing do kernel do Linux para auxiliar no gerenciamento e isolamento de recursos virtuais.
+
+
+
 

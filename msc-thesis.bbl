@@ -11,6 +11,12 @@
   response vs. memory imaging. In \emph{IEEE 3rd Int. Conf. on Privacy,
   Security, Risk and Trust}. [S.l.: s.n.], 2011. p. 1253--1258.}
 
+\bibitem[Alqahtany et al. 2015]{ClarkeReviewOfChallenges2015}
+\abntrefinfo{Alqahtany et al.}{ALQAHTANY et al.}{2015}
+{ALQAHTANY, S. et al. Cloud forensics: A review of challenges, solutions and
+  open problems. In \emph{Int. Conference on Cloud Computing (ICCC)}. [S.l.]:
+  IEEE, 2015. p.~1--9.}
+
 \bibitem[Baar, Beek and Eijk 2014]{VanBaarFAAS:2014}
 \abntrefinfo{Baar, Beek and Eijk}{BAAR; BEEK; EIJK}{2014}
 {BAAR, R.~B. van; BEEK, H. M.~A. van; EIJK, E.~J. van. {Digital Forensics as a
@@ -128,6 +134,12 @@ Available from Internet:
 \emph{International Journal of Hybrid Information Technology}, vol.~8, no.~2,
   p. 379--388, 2015.
 Available from Internet: \url{www.sersc.org/journals/IJHIT/}.}
+
+\bibitem[Ramos 2011]{Ramos:2011}
+\abntrefinfo{Ramos}{RAMOS}{2011}
+{RAMOS, M.~G.
+\emph{{Do Valor Probat{\'{o}}rio do Arquivo Digital}}.
+PhD Thesis (PhD) --- Universidade de Brasilia, 2011.}
 
 \bibitem[Reichert, Richards and Yoshigoe 2015]{ReichertAutoAcquisition:2015}
 \abntrefinfo{Reichert, Richards and Yoshigoe}{REICHERT; RICHARDS;
