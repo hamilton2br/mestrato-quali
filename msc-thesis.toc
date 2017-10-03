@@ -10,18 +10,17 @@
 \contentsline {section}{\numberline {2.2}Forense digital e seus desafios atuais}{15}{section.2.2}
 \contentsline {section}{\numberline {2.3}Conteineriza\IeC {\c c}\IeC {\~a}o}{17}{section.2.3}
 \contentsline {chapter}{\numberline {3}Forense de mem\IeC {\'o}ria de m\IeC {\'a}quinas em nuvem}{18}{chapter.3}
-\contentsline {section}{\numberline {3.1}Reproduzir o processo de coleta}{18}{section.3.1}
-\contentsline {section}{\numberline {3.2}Volume de dados a ser coletado}{18}{section.3.2}
-\contentsline {section}{\numberline {3.3}Viola\IeC {\c c}\IeC {\~a}o de privacidade e jurisdi\IeC {\c c}\IeC {\~a}o}{18}{section.3.3}
-\contentsline {section}{\numberline {3.4}Cadeia de cust\IeC {\'o}dia da evid\IeC {\^e}ncia}{18}{section.3.4}
-\contentsline {chapter}{\numberline {4}Revis\IeC {\~a}o bibliogr\IeC {\'a}fica}{19}{chapter.4}
-\contentsline {section}{\numberline {4.1}Acessar e coletar as informa\IeC {\c c}\IeC {\~o}es de mem\IeC {\'o}ria das m\IeC {\'a}quinas virtuais em nuvem}{19}{section.4.1}
-\contentsline {section}{\numberline {4.2}Capacidade de reproduzir o processo e obter os mesmos resultados}{20}{section.4.2}
-\contentsline {section}{\numberline {4.3}N\IeC {\~a}o violar privacidade ou jurisdi\IeC {\c c}\IeC {\~a}o das partes n\IeC {\~a}o envolvidas na investiga\IeC {\c c}\IeC {\~a}o}{21}{section.4.3}
-\contentsline {section}{\numberline {4.4}Garantir a cadeia de cust\IeC {\'o}dia da evid\IeC {\^e}ncia}{21}{section.4.4}
-\contentsline {section}{\numberline {4.5}Resumo}{22}{section.4.5}
-\contentsline {chapter}{\numberline {5}Proposta de projeto}{23}{chapter.5}
-\contentsline {section}{\numberline {5.1}M\IeC {\'e}todos de pesquisa}{23}{section.5.1}
-\contentsline {section}{\numberline {5.2}Limita\IeC {\c c}\IeC {\~o}es}{23}{section.5.2}
-\contentsline {section}{\numberline {5.3}Contribui\IeC {\c c}\IeC {\~o}es}{23}{section.5.3}
-\contentsline {chapter}{References}{24}{chapter.5}
+\contentsline {section}{\numberline {3.1}Credibilidade e aceitabilidade da evid\IeC {\^e}ncia em processo legal.}{18}{section.3.1}
+\contentsline {section}{\numberline {3.2}Volume de dados a ser coletado}{19}{section.3.2}
+\contentsline {section}{\numberline {3.3}Viola\IeC {\c c}\IeC {\~a}o de privacidade e jurisdi\IeC {\c c}\IeC {\~a}o}{19}{section.3.3}
+\contentsline {chapter}{\numberline {4}Revis\IeC {\~a}o bibliogr\IeC {\'a}fica}{20}{chapter.4}
+\contentsline {section}{\numberline {4.1}Acessar e coletar as informa\IeC {\c c}\IeC {\~o}es de mem\IeC {\'o}ria das m\IeC {\'a}quinas virtuais em nuvem}{20}{section.4.1}
+\contentsline {section}{\numberline {4.2}Capacidade de reproduzir o processo e obter os mesmos resultados}{21}{section.4.2}
+\contentsline {section}{\numberline {4.3}N\IeC {\~a}o violar privacidade ou jurisdi\IeC {\c c}\IeC {\~a}o das partes n\IeC {\~a}o envolvidas na investiga\IeC {\c c}\IeC {\~a}o}{22}{section.4.3}
+\contentsline {section}{\numberline {4.4}Garantir a cadeia de cust\IeC {\'o}dia da evid\IeC {\^e}ncia}{22}{section.4.4}
+\contentsline {section}{\numberline {4.5}Resumo}{23}{section.4.5}
+\contentsline {chapter}{\numberline {5}Proposta de projeto}{24}{chapter.5}
+\contentsline {section}{\numberline {5.1}M\IeC {\'e}todos de pesquisa}{24}{section.5.1}
+\contentsline {section}{\numberline {5.2}Limita\IeC {\c c}\IeC {\~o}es}{24}{section.5.2}
+\contentsline {section}{\numberline {5.3}Contribui\IeC {\c c}\IeC {\~o}es}{24}{section.5.3}
+\contentsline {chapter}{References}{25}{chapter.5}
