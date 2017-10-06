@@ -8,6 +8,7 @@ Existem vários aspectos relativos à análise forense na nuvem, indo desde a co
 Para uma discussão mais estruturada dos trabalhos disponíveis na literatura sobre o tema, a seguir eles são apresentados com base nos diferentes aspectos que abordam.
 
 \section{Acessar e coletar as informações de memória das máquinas virtuais em nuvem}
+\label{sec:coletadeevidencia}
 
 Diversos trabalhos de análise forense na nuvem se concentram na coleta de dados ``após o fato'', ou seja, após a intrusão ser detectada \cite{ReichertAutoAcquisition:2015,PoiselVMI:2013,DykstraFROST:2013,GeorgeDF2CE:2012,SangLogApproach:2013}. 
 %
@@ -34,6 +35,7 @@ Embora interessantes, as abordagens descritas nesses trabalhos podem levar a um 
 
 
 \section{Capacidade de reproduzir o processo e obter os mesmos resultados}
+\label{sec:reprodutibilidade}
 
 Se, durante uma análise forense, analistas diferentes obtêm resultados distintos ao executar o mesmo procedimento de coleta, a evidência gerada não tem credibilidade, inviabilizando seu uso em um processo legal. 
 %
@@ -42,6 +44,7 @@ Por essa razão, a reprodutibilidade do processo de coleta é uma parte importan
 Infelizmente, entretanto, nenhuma das propostas encontradas na literatura atualmente permite tal reprodutibilidade em cenários de nuvem em que máquinas virtuais ou contêineres são desativados e seus recursos físicos liberados: todas elas dependem da existência do recurso virtual para a repetição do processo de coleta.
 
 \section{Não violar privacidade ou jurisdição das partes não envolvidas na investigação}
+\label{sec:legais}
 
 Em um ambiente de nuvem pública, remover o \textit{hardware} para análise posterior pode levar à violação de privacidade de usuários, uma vez que o multi-inquilinato desse cenário faz com que uma mesma máquina física guarde informações de diversos clientes, alguns dos quais podem não estar envolvidos na investigação em curso.
 %
@@ -51,6 +54,7 @@ Depender do provedor de serviços de nuvem é uma estratégia pouco recomendada,
 
 
 \section{Garantir a cadeia de custódia da evidência}
+\label{sec:cadeiadecustodia}
 
 Dentre os trabalhos analisados, apenas \cite{SangLogApproach:2013} aborda a questão da garantia da cadeia de custódia. 
 %

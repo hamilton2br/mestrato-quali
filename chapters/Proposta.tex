@@ -5,13 +5,25 @@
 
 \section{Métodos de pesquisa}
 
-aqui vão os métodos
+A primeira parte da pesquisa será realizada implementando a solução de coleta e executando-a em uma máquina virtual em um notebook (descrever notebook) de modo a poder provar que é possível relacionar a evidência coletada a sua origem mesmo se esta não existir mais
+%
+A segunda parte da pesquisa envolve o transporte via conexão segura para uma máquina física fora da virtual via conexão segura.
+%
+A terceira parte é a de se realizar uma análise nas evidências coletadas.
+
+\section{O que foi feito até então}
+
+Até então foi realizado a relação entre a evidência coletada e sua origem via hash de identificação do contêiner. Destruimos o contêiner, recriamos o contêiner e a evidência coletada tem o mesmo hash.
 
 \section{Limitações}
 
-aqui vão as limitações
+Como a solução descrita tem como foco coletar informações de memória no espaço do usuário (\textit{user space}), ela não consegue acessar o espaço de kernel (\textit{kernel space}). 
+%
+Assim, \fancyname em princípio não provê suporte a técnicas de investigação de malware que se baseiam em informações do \textit{kernel space}, como, por exemplo, a comparação de informações do bloco do ambiente do processo (\textit{Process Environment Block -- PEB}), que ficam no \textit{user space}, com informações do descritor de endereços de memória virtual (\textit{Virtual Address Descriptor -- VAD}), que fica no \textit{kernel space}. 
+%
+Análise de ameaças que realizam manipulação direta dos objetos do kernel (D.K.O.M.-- \textit{Direct Kernel Object Manipulation}) também não se beneficiam com a solução aqui proposta. 
 
 \section{Contribuições}
 
-aqui vão as contribuições
+A contribuição é o de contribuir para realização de análises e consequentemente utilizar as descobertas em processos legais.
 

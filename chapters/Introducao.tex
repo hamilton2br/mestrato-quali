@@ -4,6 +4,7 @@
 \chapter{Introdução}
 
 \section{Problema de pesquisa}
+\label{sec:problema}
 
 %==== CONTEXTO GERAL: Nuvem e volatilidade de VMs ====
 %
@@ -45,6 +46,7 @@ Já estudos como \cite{GeorgeDF2CE:2012} se concentram na análise forense para 
 Por outro lado, não foram identificadas na literatura propostas que (1) descrevam como o dado é coletado e armazenado observando a cadeia de custódia, e (2) visem garantir que, mesmo que um recurso virtualizado (e.g., uma VM) seja desalocada, haja condições de se reproduzir o processo de coleta de evidências.
 
 \section{Objetivos}
+\label{sec:objetivos}
 
 %==== O QUE FAZEMOS: Ataques de injeção ====
 %
@@ -79,7 +81,8 @@ Em particular, têm especial interesse quatro tipos específicos dessa família 
  \item \textbf{Injeção de processo vazio}: Um processo malicioso dispara uma instância de um processo legítimo no estado ``suspenso''; a área do executável é então liberada e realocada com código malicioso.
 \end{itemize}
 
-\section{Justificatica}
+\section{Justificativa}
+\label{sec:justificativa}
 
 Uma nuvem computacional é um modelo de infraestrutura no qual recursos compartilhados em quantidade configurável, acessíveis via rede, são alocados e desalocados com esforço mínimo de gerenciamento por parte de um provedor de serviços. \cite{NIST2011}
 %A infraestrutura é composta de máquinas físicas contendo cada uma um número variável de máquinas virtuais que implementam este serviço \cite{Sousa_Computacao_Nuvem:2009}. 
@@ -95,11 +98,3 @@ Diferentemente de máquinas virtuais, que envolvem a criação de um \textit{har
 %
 Uma tecnologia bastante utilizada para esse propósito são Contêineres Linux (LXC) \cite{Linuxcontainers.org2015}, que aproveitam-se de funcionalidades como cgroups e namespacing do kernel do Linux para auxiliar no gerenciamento e isolamento de recursos virtuais.
 
-
-\section{Método de pesquisa}
-
-Como eu vou chegar a este resultado.
-
-\section{Organização de documento}
-
-O bla bla bla de sempre

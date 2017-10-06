@@ -4,6 +4,7 @@
 \chapter{Forense de memória de máquinas em nuvem}
 
 \section{Credibilidade e aceitabilidade da evidência em processo legal.}
+\label{sec:credibilidadeaceitabilidadeevidencia}
 
 O processo de análise forense no evento de um crime digital é descrito no EDIPM - \textit{Enhanced Digital Investigation Process Model} por 4 fases: Identificar, preservar, examinar, apresentar. (calm before the storm)
 %
@@ -27,11 +28,29 @@ A integridade da evidência também tornou-se mais complexa pois ela precisa ser
 %
 Violação de qualquer uma das caracteristicas citadas anteriormente põe em dúvida a credibilidade da evidência.
 
-\section{Volume de dados a ser coletado}
+\section{Volume de dados para coleta}
+\label{sec:volumedados}
 
-Falar da janela de coleta
+O processo de coleta da evidência na forense digital herdou suas práticas da forense tradicional onde isola-se cena do crime e coletam-se as evidências presentes. 
+%
+Transportando para a forense digital criou-se o hábito de se realizar cópia bit a bit da informação que se deseja investigar. 
+%
+No passado, com as soluções tendo bem menos capacidade de memória, disco e tráfego, tal prática não trazia problemas. Nas atuais soluções, aplicações e arquiteturas em núvem o volume de dados aumentou  muito.
+%
+Em (encontrar a data) investigadores forenses tinham em média 6 meses de backlog para analisar. Em conversas informais com analistas forenses é comum a métrica de em média apenas 2\% do material coletado ser útil a análise.
+%
+Encontrar uma forma de armazenar menos informações de modo a tornar a fase de análise mais rápida e eficiênte ajudará nas investigações.
 
-\section{Violação de privacidade e jurisdição}
+\section{Privacidade e jurisdição}
+\label{sec:violacaoprivacidadejuriscdicao}
 
-Falar da volatilidade de dados
+Na metodologia tradicional de coleta de evidências para análise isola-se o ambiente e as evidencias são removidas. Transportado para a forense digital temos a prática de remover o equipamento para realização de cópia bit a bit da evidência.
+%
+Nas soluções de infra estrutura física esta prática não trás problemas, os objeto ou indivíduos sob investigação estão diretamente relacionados ao equipamento removido. 
+%
+Nas soluções em nuvem esta prática não pode mais ser utilizada pois como o recurso físico é compartilhado por vários usuários não envolvidos na investigação, remove-los configura violação de privacidade.
+%
+Um complicador a mais é o fato de os dados não estarem armazenados no mesmo território em que a investigação é realizada demandando acordos de cooperação jurídica entre as partes o que nem sempre é possível.
+%
+Neste cenário encontrar uma forma de coletar a evidência sem violar jurisdição e privacidade são de grande importância num futuro próximo.
 
