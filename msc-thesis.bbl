@@ -17,6 +17,11 @@
   open problems. In \emph{Int. Conference on Cloud Computing (ICCC)}. [S.l.]:
   IEEE, 2015. p.~1--9.}
 
+\bibitem[Amazon 2016]{AmazonContainer}
+\abntrefinfo{Amazon}{AMAZON}{2016}
+{AMAZON. \emph{{What are Containers}}. 2016.
+Available from Internet: \url{https://aws.amazon.com/containers}.}
+
 \bibitem[Baar, Beek and Eijk 2014]{VanBaarFAAS:2014}
 \abntrefinfo{Baar, Beek and Eijk}{BAAR; BEEK; EIJK}{2014}
 {BAAR, R.~B. van; BEEK, H. M.~A. van; EIJK, E.~J. van. {Digital Forensics as a
@@ -69,11 +74,6 @@ ISSN 17422876.
 (Proc. of 13th Annual DFRWS Conference).
 Available from Internet: \url{dx.doi.org/10.1016/j.diin.2013.06.010}.}
 
-\bibitem[Fewer 2008]{FewerReflectiveLibraryInject:2008}
-\abntrefinfo{Fewer}{FEWER}{2008}
-{FEWER, B.~S. {Reflective DLL Injection}.
-no. October, 2008.}
-
 \bibitem[George, Venter and Thomas 2012]{GeorgeDF2CE:2012}
 \abntrefinfo{George, Venter and Thomas}{GEORGE; VENTER; THOMAS}{2012}
 {GEORGE, S.; VENTER, H.; THOMAS, F. {Digital Forensic Framework for a Cloud
@@ -86,6 +86,17 @@ ISBN 9781905824342.}
   Orlando: Springer-US, 2008. vol.~1.
 ISSN 1098-6596.
 ISBN 9788578110796.}
+
+\bibitem[Grispos, Storer and Glisson
+  2012]{GrisposChallengesCloudComputing:2012}
+\abntrefinfo{Grispos, Storer and Glisson}{GRISPOS; STORER; GLISSON}{2012}
+{GRISPOS, G.; STORER, T.; GLISSON, W. {Calm before the storm: the challenges of
+  cloud computing in digital forensics}.
+\emph{International Journal of Digital Crime and Forensics}, vol.~4, no.~2, p.
+  28--48, 2012.
+ISSN 1466640073.
+Available from Internet:
+  \url{www.igi-global.com/article/calm-before-storm/68408}.}
 
 \bibitem[Linuxcontainers.org 2015]{Linuxcontainers.org2015}
 \abntrefinfo{Linuxcontainers.org}{LINUXCONTAINERS.ORG}{2015}
@@ -100,23 +111,11 @@ Available from Internet: \url{https://linuxcontainers.org/lxc/introduction/}.}
 Available from Internet:
   \url{www.mendeley.com/research/the-nist-definition-about-cloud-computing/}.}
 
-\bibitem[Miller and Turkulainen 2004]{MillerRemoteLibraryInjection:2004}
-\abntrefinfo{Miller and Turkulainen}{MILLER; TURKULAINEN}{2004}
-{MILLER, M.; TURKULAINEN, J. \emph{{Remote Library Injection}}. 2004. Tech.
-  Report:
-  \urls{www.nologin.org/Downloads/Papers/remote-library-injection.pdf}.}
-
 \bibitem[Morsy, Grundy and Muller 2010]{MorsyCloudSecurity:2010}
 \abntrefinfo{Morsy, Grundy and Muller}{MORSY; GRUNDY; MULLER}{2010}
 {MORSY, A.~M.; GRUNDY, J.; MULLER, I. {An Analysis of the Cloud Computing
   Security Problem}. In \emph{APSEC Cloud Workshop}. Sydney, Australia: [s.n.],
   2010. Available from Internet: \url{https://arxiv.org/abs/1609.01107}.}
-
-\bibitem[Piraghaj et al. 2015]{PiraghajContainerCloudComputing:2016}
-\abntrefinfo{Piraghaj et al.}{PIRAGHAJ et al.}{2015}
-{PIRAGHAJ, S. et al. A framework and algorithm for energy efficient container
-  consolidation in cloud data centers. In \emph{IEEE Int. Conf. on Data Science
-  and Data Intensive Systems (DSDIS)}. [S.l.: s.n.], 2015. p. 368--375.}
 
 \bibitem[Poisel, Malzer and Tjoa 2013]{PoiselVMI:2013}
 \abntrefinfo{Poisel, Malzer and Tjoa}{POISEL; MALZER; TJOA}{2013}
@@ -127,6 +126,14 @@ Available from Internet:
 ISSN 20935374 (ISSN).
 Available from Internet:
   \url{citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.469.937}.}
+
+\bibitem[Quick and Choo 2014]{QuickIncreaseVolumeImpact:2014}
+\abntrefinfo{Quick and Choo}{QUICK; CHOO}{2014}
+{QUICK, D.; CHOO, K. K.~R. {Impacts of increasing volume of digital forensic
+  data: A survey and future research challenges}.
+\emph{Digital Investigation}, Elsevier Ltd, vol.~11, no.~4, p. 273--294, 2014.
+ISSN 17422876.
+Available from Internet: \url{dx.doi.org/10.1016/j.diin.2014.09.002}.}
 
 \bibitem[Rahman and Khan 2015]{RahmanLiveForensicsTechniques:2015}
 \abntrefinfo{Rahman and Khan}{RAHMAN; KHAN}{2015}
@@ -148,21 +155,16 @@ PhD Thesis (PhD) --- Universidade de Brasilia, 2011.}
   in the cloud}.
 \emph{IEEE Int. Conf. on Mobile Ad Hoc and Sensor Systems}, p. 725--730, 2015.}
 
+\bibitem[{Right Scale} 2017]{RightScale2017}
+\abntrefinfo{{Right Scale}}{{Right Scale}}{2017}
+{{Right Scale}. \emph{{State of the Cloud Report}}. 2017.
+  \urls{www.rightscale.com/lp/state-of-the-cloud}.}
+
 \bibitem[Sang 2013]{SangLogApproach:2013}
 \abntrefinfo{Sang}{SANG}{2013}
 {SANG, T. {A log-based approach to make digital forensics easier on cloud
   computing}.
 \emph{Intelligent System Design and Engineering Applications (ISDEA)}, p.
   91--94, 2013.}
-
-\bibitem[V\"{o}mel and St\"{u}ttgen 2013]{VomelMemoryAcquisition:2013}
-\abntrefinfo{V\"{o}mel and St\"{u}ttgen}{V\"{o}MEL; ST\"{u}TTGEN}{2013}
-{V\"{o}MEL, S.; ST\"{u}TTGEN, J. An evaluation platform for forensic memory
-  acquisition software.
-\emph{Digit. Investig.}, Elsevier Science Publishers B. V., Amsterdam, The
-  Netherlands, The Netherlands, vol.~10, p. S30--S40, 2013.
-ISSN 1742-2876.
-Elsevier Science Publishers.
-Available from Internet: \url{http://dx.doi.org/10.1016/j.diin.2013.06.004}.}
 
 \end{thebibliography}
