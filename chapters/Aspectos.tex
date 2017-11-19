@@ -1,14 +1,14 @@
 % ----------------------------------------------------------
 % Capitulo de Aspectos conceituais e economigos 
 % ----------------------------------------------------------
-\chapter{Aspectos conceituais e humanos}
+\chapter{Fundamentação Teórica}
 
 \section{Nuvem computacional}
 \label{sec:computacaonuvem}
 
-Uma nuvem computacional é um modelo de infraestrutura no qual recursos compartilhados em quantidade configurável, acessíveis via rede, são alocados e desalocados com esforço mínimo de gerenciamento por parte de um provedor de serviços. \cite{NIST2011}
+Uma nuvem computacional é um modelo de infraestrutura no qual recursos compartilhados em quantidade configurável, acessíveis via rede, são alocados e desalocados com esforço mínimo de gerenciamento por parte de um provedor de serviços.
 %
-Há três modelos principais de comercialização de uso da nuvem \cite{NIST2011}: \textit{software} como serviço (\textit{Software as a Service} -- SaaS), na qual se provê o \textit{software} que será usado pelo cliente; plataforma como serviço (\textit{Platform as a Service} -- PaaS), na qual se provê o ambiente para que o cliente desenvolva, teste e execute seu \textit{software}; e, o tipo mais pertinente para este trabalho, Infraestrutura como serviço (\textit{Infrastructure as a Service} -- IaaS), na qual são fornecidos recursos computacionais básicos, como processamento e memória, em geral de forma virtualizada.
+Há três modelos principais de comercialização de uso da nuvem: \textit{software} como serviço (\textit{Software as a Service} -- SaaS), na qual se provê o \textit{software} que será usado pelo cliente; plataforma como serviço (\textit{Platform as a Service} -- PaaS), na qual se provê o ambiente para que o cliente desenvolva, teste e execute seu \textit{software}; e, o tipo mais pertinente para este trabalho, Infraestrutura como serviço (\textit{Infrastructure as a Service} -- IaaS), na qual são fornecidos recursos computacionais básicos, como processamento e memória, em geral de forma virtualizada \cite{NIST2011}.
 %
 Uma arquitetura usada hoje nas soluções em núvem são as auto-escaláveis onde recursos são altamente voláteis com recursos sendo alocados e desalocados a qualquer momento. Estas implementações tem a vantagem de usar os recursos de nuvem de uma forma mais eficiênte e menos necessidade de intervenção humana.
 
@@ -21,8 +21,20 @@ Segundo \cite{AmazonContainer}, conteiner é um método de virtualização do si
 Diferentemente de máquinas virtuais a virtualização com contêineres é feita no nível do SO nativo, tem uma implementação mais simples eliminado camadas entre o aplicativo executado e o \textit{hardware} físico permitindo maior granularidade no controle sobre esses recursos melhorando a eficiência da infrestrutura.
 %
 Uma tecnologia bastante utilizada para esse propósito são Contêineres Linux (LXC) \cite{Linuxcontainers.org2015}, que aproveitam-se de funcionalidades como \textit{cgroups}, \textit{kernel namespacing} e \textit{chroot} do kernel do Linux para auxiliar no gerenciamento e isolamento de recursos virtuais.
-%
 
+Control Groups (\textit{cgroups}) é uma funcionalidade do Kernel do Linux que limita e isola o uso de recursos como CPU, memória e disco de um conjunto de processos e os organiza de forma hierárquica. 
+%
+O trabalho nesta funcionalidade começou em 2006 na Google sob a denominação de \textit{contêiner de processos}. No fim de 2007 seu nome mudou para \textit{control groups} e foi adicionado a versão 2.6.24 do kernel lançado em 2008. (referencia man pages)
+
+\textit{Namespacing} é uma funcionalidade do Kernel do Linux usado para isolar e virtualizar recursos do sistema operacional como Ids de processos, acessos a rede, comunicação inter-processos e sistema de arquivos entre outros.
+%
+\textit{Namespacing} envolve os recursos do sistema operacional em uma abstração que faz parecer aos processos de um mesmo namespace que eles tem sua própria instância isolada de um recurso global, é a principal funcionalidade por trás da implementação de contêiners.
+
+Change Root (\textit{chroot}) é uma funcionalidade do Kernel do Linux usado para mudar o diretório root do processo que está chamando a função e de todos os seus processos filhos. 
+%
+A chamada a \textit{chroot} altera o processo de resolução de caminhos do sistema operacional para o processo que o chamou.
+%
+Desta forma pode-se instalar uma distribuição Linux secundária em uma pasta, ao invés de uma partição, e executar programas desta pasta sem perda significativa de desempenho.
 
 \section{Forense digital e seus desafios atuais}
 \label{sec:forensedigital}
