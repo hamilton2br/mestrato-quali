@@ -5,15 +5,31 @@
 
 \section{Métodos de pesquisa}
 
-A primeira parte da pesquisa será realizada implementando a solução de coleta e executando-a em uma máquina virtual em um notebook (descrever notebook) de modo a poder provar que é possível relacionar a evidência coletada a sua origem mesmo se esta não existir mais
+A presente proposta é realizada em 3 fases.
 %
-A segunda parte da pesquisa envolve o transporte via conexão segura para uma máquina física fora da virtual via conexão segura.
+A primeira parte tem por objetivo encontrar uma forma de relacionar a evidência coletada de uma máquina virtual a sua origem de forma que o processo seja reprodutível. 
 %
-A terceira parte é a de se realizar uma análise nas evidências coletadas.
+Para atingir este objetivo será implementado um protótipo de coleta de memória de uma máquina virtual executando contêiners em um notebook.
+%
+A segunda parte tem por objetivo encontrar uma forma de transportar a evidência coletada a um local de armazenamento garantindo a cadeia de custódia.
+%
+Para atingir este objetivo, será definida uma cadeia de custódia e para A segunda parte da pesquisa será realizada em uma nuvem computacional e envolverá o transporte da evidência para uma máquina física fora da nuvem.
+%
+A terceira parte tem por objetivo a tentativa de realizar a análise de alguma vulnerabilidade utilizando-se do material coletado na primeira fase do projeto.
+%
+As ações para se atingir este objetivo serão realizadas em um notebook com ferramental voltado a análise forense em memória.
 
-\section{O que foi feito até então}
+\section{O que foi feito e cronograma esperado para os próximos passos}
 
-Até então foi realizado a relação entre a evidência coletada e sua origem via hash de identificação do contêiner. Destruimos o contêiner, recriamos o contêiner e a evidência coletada tem o mesmo hash.
+Até então foram realizados com sucesso a duas primeiras partes do projeto.
+
+%
+A associação da evidência de memória coletada do contêiner de uma máquina virtual foi associada a sua origem através do \textit{hash} de identificação da imagem do contêiner. O processo de coleta foi reproduzido com sucesso diversas vezes.
+%
+O transporte da evidência para uma máquina física fora da nuvem utilizando camada de transporte seguro a assinatura da mensagem.
+%
+
+Para o restante do projeto espera-se seguir o cronograma descrito na figura 12
 
 \section{Limitações}
 
@@ -25,5 +41,7 @@ Análise de ameaças que realizam manipulação direta dos objetos do kernel (D.
 
 \section{Contribuições}
 
-A contribuição é o de contribuir para realização de análises e consequentemente utilizar as descobertas em processos legais.
+A contribuição esperada da presente proposta é o de demonstrar que é possível coletar evidências de uma infra-estrutura em núvem de modo a atender os pré-requisitos de não violação de privacidade, não violação da jurisdição, reprodutibilidade do processo de coleta da evidência e garantia da cadeia de custódia.
+%
+Demonstrar que é possível realizar a análise de evidência de memória com apenas a parte \textit{user space} da memória coletada
 
