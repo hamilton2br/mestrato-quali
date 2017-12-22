@@ -167,4 +167,27 @@ PhD Thesis (PhD) --- Universidade de Brasilia, 2011.}
 \emph{Intelligent System Design and Engineering Applications (ISDEA)}, p.
   91--94, 2013.}
 
+\bibitem[Simou et al. 2014]{SimouCloudChlng:2014}
+\abntrefinfo{Simou et al.}{SIMOU et al.}{2014}
+{SIMOU, S. et al. {Cloud forensics: Identifying the major issues and
+  challenges}. In \emph{Advanced Information Systems Engineering (CAiSE 2014)}.
+  [S.l.: s.n.], 2014. vol.~8484, p. 271--284.
+ISBN 9783319078809.
+ISSN 16113349.}
+
+\bibitem[{Unix Man Pages}]{UnixManPagesControlGroups}
+\abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{a}
+{{Unix Man Pages}. \emph{{cgroups - Control Groups}}.
+  \urls{http://man7.org/linux/man-pages/man7/cgroups.7.html}.}
+
+\bibitem[{Unix Man Pages}]{UnixManPagesChRoot}
+\abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{b}
+{\underline{\ \ \ \ \ \ \ \ }. \emph{{chroot - Change Root coomand}}.
+  \urls{http://man7.org/linux/man-pages/man1/chroot.1.html}.}
+
+\bibitem[{Unix Man Pages}]{UnixManPagesNamespacing}
+\abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{c}
+{\underline{\ \ \ \ \ \ \ \ }. \emph{{Namespacing}}.
+  \urls{http://man7.org/linux/man-pages/man7/namespaces.7.html}.}
+
 \end{thebibliography}
