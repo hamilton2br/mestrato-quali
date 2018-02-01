@@ -199,22 +199,37 @@ struc-ture-pre-serv-ing
 
 
 \begin{resumo}
-Arquiteturas em nuvem são cada vez mais comuns e também o número de problemas de segurança envolvendo essa tecnologia. 
+A adoção de arquiteturas em nuvem aumenta a cada dia, e com ela também o número de casos em que esse tipo de tecnologia é usada para fins ilícitos.
 %
-Infelizmente, devido à natureza volátil de recursos na nuvem, a coleta de evidências para análise forense nesse ambiente tem esbarrado em desafios práticos e legais.
+No ano de 2015 o número de registros de atas notariais comprovando abusos e crimes virtuais cresceu 87%.
 %
-Este trabalho analisa propostas voltadas a resolver os desafios existentes na coleta de evidências na nuvem, discute suas limitações, e então apresenta uma solução visando suplantá-las.
-\marcos{Discuta como é feito e quais os benefícios da solução. Não seja tão sintético: não há limitação de espaço aqui! Até no artigo tem mais texto...}
+Infelizmente, devido à natureza volátil da nuvem, a tarefa de coletar evidências para análise forense nesse ambiente tem esbarrado em desafios práticos e legais.
+%
+A prática herdada da forense tradicional para coleta de evidências, onde se isola e cena do crime e coleta-se todas as evidências, foi traduzida para a forense digital como a cópia bit a bit da midia que se deseja investigar.
+%
+Tal prática levou a coleta de grandes volumes de informação para análise impactando o tempo de investigação.
+%
+Duas caracteristicas das soluções em nuvem têm dificultado a obtenção de evidências válidas. 
+%
+O compartilhamento de recursos físicos entre vários usuários impede a remoção dos mesmos para análise uma vez que isso viola a privacidade de elementos não envolvidos na investigação.
+%
+A localização do recurso físico em uma região geográfica diferente de onde o crime foi cometido pode impedir a coleta de evidências caso não haja acordos de cooperação estabelecidos.
+%
+Estes aspectos, se não forem levados em consideração, podem por em xeque a credibilidade da evidência.
+%
+Este trabalho analisa propostas na literatura voltadas a resolver os principais desafios existentes na coleta evidências na nuvem, discutindo suas limitações, e então propõe uma solução que cobre coleta, transporte e armazenamento da evidência visando suplantá-las. 
+%
+A solução aqui proposta provê uma forma de correlacionar evidências e sua origem virtual, permitindo transportar e armazenar tais dados sem afetar sua credibilidade.
+%
+Para tal faremos uso de contêiners e seu identificador para relacionar a evidência a sua origem, tal técnica tem a vantagem que conseguir preservar a relação evidência - origem mesmo que esta última não exista mais na solução sob investigação.
+%
+Especificamente, ela tem como focos (1) a reprodutibilidade do processo de coleta, (2) não violar jurisdição e (3) não violar a privacidade dos não envolvidos na investigação.
+\marcos{Discuta como é feito e quais os benefícios da solução. Não seja tão sintético: não há limitação de espaço aqui! Até no artigo tem mais texto... Hamilton - Acho que foi}
 %
 \end{resumo}
 
 \begin{abstract}
-Cloud architectures are becoming more common and so are the number of security issues surrounding this technology.
-%
-Unfortunately, due to the volatile nature of cloud resources, the task of gathering evidence for forensic analysis in this environment runs into practical and legal challenges.
-%
-This paper analyzes proposals aimed at addressing existing challenges when collecting evidence in the cloud, discuss their limitations, and then presents a solution to overcome them.
-%
+Traduzir
 \end{abstract}
 
 \listoffigures

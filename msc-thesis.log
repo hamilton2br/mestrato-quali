@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  29 JAN 2018 19:51
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  31 JAN 2018 23:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1403,7 +1403,7 @@ l.194 \folhaderosto
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.209 \end{resumo}
+l.229 \end{resumo}
                    [2
 
 
@@ -1412,7 +1412,7 @@ l.209 \end{resumo}
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.218 \end{abstract}
+l.233 \end{abstract}
                      [3
 
 
@@ -1424,7 +1424,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.221 \listoftables
+l.236 \listoftables
                     [4
 
 ] (./msc-thesis.lot)
@@ -1435,14 +1435,14 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.223 \begin{listofabbrv}{FlexDHE}
+l.238 \begin{listofabbrv}{FlexDHE}
                                    [5
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.243 \tableofcontents
+l.258 \tableofcontents
                        [6
 
 ] (./msc-thesis.tocpdfTeX warning (ext4): destination with the same identifier 
@@ -1460,7 +1460,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.243 \tableofcontents
+l.258 \tableofcontents
                        [8] (./chapters/Introducao.tex
 Chapter 1.
 [9
@@ -1712,11 +1712,11 @@ AED: lastpage setting LastPage
 | Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
 |                  http://abntex.codigolivre.org.br                 |
 +-------------------------------------------------------------------+
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 257.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 257.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 272.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 272.
 (./msc-thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 257.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 257.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 272.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 272.
 Package rerunfilecheck Info: File `msc-thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1726,7 +1726,7 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 257.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 272.
  ) 
 Here is how much of TeX's memory you used:
  22450 strings out of 493304
@@ -1742,7 +1742,7 @@ e/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/share/texlive/texmf-dist
 /public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on msc-thesis.pdf (29 pages, 152851 bytes).
+Output written on msc-thesis.pdf (29 pages, 153721 bytes).
 PDF statistics:
  397 PDF objects out of 1000 (max. 8388607)
  351 compressed objects within 4 object streams
