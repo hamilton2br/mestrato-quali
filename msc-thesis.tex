@@ -199,9 +199,9 @@ struc-ture-pre-serv-ing
 
 
 \begin{resumo}
-A adoção de arquiteturas em nuvem aumenta a cada dia, e com ela também o número de casos em que esse tipo de tecnologia é usada para fins ilícitos.
+A adoção de arquiteturas em nuvem aumenta a cada dia, e com ela tambem o número de casos em que esse tipo de tecnologia é usada para fins ilícitos.
 %
-No ano de 2015 o número de registros de atas notariais comprovando abusos e crimes virtuais cresceu 87%.
+No ano de 2015 o número de registros de atas notariais comprovando abusos e crimes virtuais cresceu 87\%.
 %
 Infelizmente, devido à natureza volátil da nuvem, a tarefa de coletar evidências para análise forense nesse ambiente tem esbarrado em desafios práticos e legais.
 %
@@ -229,7 +229,33 @@ Especificamente, ela tem como focos (1) a reprodutibilidade do processo de colet
 \end{resumo}
 
 \begin{abstract}
-Traduzir
+The adoption of cloud architectures increases every day and with it, also the number of cases where such technology is used for illicit purposes.
+%
+In 2015, the number of notarial records acts related digital abuses and virtual crimes grew by 87\%.
+%
+Unfortunately, due to the volatile nature of the cloud, the task of collecting evidences for forensic analysis frequently run into practical and legal issues.
+%
+The practice, inherited from the traditional forensics, to isolate the crime scene and collect all evidences, has been translated to digital forensic as the bitwise copy of the media to be investigated. 
+%
+Although efficient, this practice led to the collection of large volumes of information for analysis which in its turn impacted investigation time.
+%
+On top of that, two other features of cloud solutions have made it difficult to obtain valid evidence.
+%
+The sharing of physical resources among multiple users which prevents the removal of hardware for analysis as this violates the privacy of parties not involved in the investigation.
+%
+The physical resource geographic location which, if located in a country different from where the crime was committed, may prevent the collection of evidence if established cooperation agreements are not in place.
+%
+These aspects, if not taken into account, may call into question the credibility of the evidence in a court of law.
+%
+This work analyzes other proposals aimed at solving the main challenges of collecting forensic evidence in the cloud, discusses their limitations and then proposes a solution that covers collection, transport and storage of evidence in order to overcome them.
+%
+This proposal provides a way of correlating evidence and its virtual origin, transport and store such data without affecting its credibility. 
+%
+For this we make use of Linux Container and its identifier to relate the evidence to its origin.
+%
+Such a technique has the advantage that it can preserve the relation evidence - origin even though the origin doesn't exists anymore. 
+%
+It focus on (1) the reproductibility of the collection process, (2) the non violation of juristiction, and (3) the non violation of privacy of those not involved in the investigation.
 \end{abstract}
 
 \listoffigures
