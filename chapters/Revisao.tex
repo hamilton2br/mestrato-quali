@@ -7,8 +7,56 @@
 \marcos{Explique melhor as soluções: você tem espaço, então pode deixar este capítulo muito mais auto-contido}
 
 Existem vários aspectos relativos à análise forense na nuvem, indo desde a coleta de informações até a garantia da cadeia de custódia de evidências.
+
 %
-Para uma discussão mais estruturada dos trabalhos disponíveis na literatura sobre o tema, a seguir eles são apresentados com base nos diferentes aspectos que abordam.
+O modelo proposto por \cite{ReichertAutoAcquisition:2015} é um processo de coleta de evidências integrado ao \textit{hypervisor} e disparado por algum sistema de detecção de intrusão. 
+%
+A partir deste momento o modelo tira instantâneos das máquinas virtuais comprometidas, exclui informações de clientes não relacionados a investigação e armazena o restante em local seguro, tudo de forma automatizada. 
+%
+Este modelo tem como principal vantagem a automação do processo de coleta, sem interevenção humana é mais fácil garantir a cadeia de custódia. 
+%
+No caso específico de memória volátil, a proposta de coletar evidências apenas após a detecção da intrusão, não consegue descrever como era a memória antes do fato, pois o processo só é acionado depois da detecção do ataque.
+%
+Tal limitação pode trazer prejuízos à investigação, dado que algumas análises dependem exatamente da capacidade de se comparar dois momentos da memória \cite{CaseMemoryForensics:2014}. 
+% 
+
+A proposta de \cite{PoiselVMI:2013} é baseada na técnica de VMI para coleta de memória volátil. 
+%
+Esta técnica se apoia na capacidade do VMM de conseguir mapear recursos físicos da máquina hospedeira a recursos alocados à máquina virtual cliente de modo a realizar coletas de memória volátil.
+%
+Este mapeamento também permite que a memória volátil seja copiada da máquina virtual e reconstruida na máquina hospedeira de forma a viabilizar a análise.
+%
+A proposta dá a entender que utiliza a abordagem de coletar continuamente os instantâneos de memória durante o funcionamento do sistema sem distinção do que aconteceu antes ou depois do fato de interesse. 
+%
+Tal abordagem tem a desvantágem de ter como resultado um elevado volume de dados coletados, dificultando o trabalho de análise das evidências.
+%
+Outra desvantagem da VMI mencionado pelo próprio autor é a necessidade de tradução de endereços de memória da máquina virtual em endereços de memória da máquina hospedeira.
+%
+Esta tradução depende de conhecimento do que está sendo executado na máquina virtual, logo uma solução baseada em VMI não é completamente portável sendo necessário adequações para diferentes clientes além de ser computacionalmente custoso.
+%
+
+O framework proposto por \cite{SangLogApproach:2013} é um sistema que funciona em parceria com o provedor de nuvem onde este última envie as informações ao framework e este os armazena em um local centralizado.
+%
+O conjunto de informações armazenadas é acordado antecipadamente com o provedor de nuvem e vão desde instantâneos de memória volátil até pacotes trafegados nas interfaces de rede da máquina virtual.
+%
+O framework coleta informações continuamente e usa cálculo de hash das evidências enviadas pelo provedor de nuvem para garantir que as mesmas não foram alteradas durante o transporte.
+%
+Assim como as propostas anteriores, esta tambem não faz distinção do que aconteceu antes ou depois do fato de interesse coletando constantemente informações da máquina virtual.
+%
+O próprio autor menciona que o framework tem a desvantagem de depender da cooperação do provedor de nuvem, uma estratégia considerada fraca pela comunicade pois a prioridade do CSP é o de garantir a disponibilidade do serviço não o de coletar evidências \cite{ClarkeReviewOfChallenges2015}.
+%
+
+O trabalho descrito em \cite{DezfouliBackupApproach:2012}. Esta proposta é voltada a dispositivos móveis e mostra preocupação com a quantidade de informação coletada. 
+%
+O processo de coleta se inicia apenas após a detecção de alguma ameaça por causa das limitações de armazenamento do dispositivo mas armazena as evidências no próprio dispositivo para posterior análise.
+%
+Infelizmente, entretanto, a aplicação de tal abordagem no cenário em nuvem é pouco viável, pois pode levar à perda de informações importantes caso a máquina virtual ou contêiner seja desativada, tendo seus recursos liberados.
+%
+
+A seguir os trabalhos mencionados acima são agrupados e avaliados com base nos diferentes aspectos que abordam.
+
+\cite{DykstraFROST:2013}
+\cite{GeorgeDF2CE:2012}
 
 \section{Acessar e coletar as informações de memória das máquinas virtuais em nuvem}
 \label{sec:coletadeevidencia}
