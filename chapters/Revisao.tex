@@ -7,35 +7,51 @@
 \marcos{Explique melhor as soluções: você tem espaço, então pode deixar este capítulo muito mais auto-contido}
 
 Existem vários aspectos relativos à análise forense na nuvem, indo desde a coleta de informações até a garantia da cadeia de custódia de evidências.
+%
+Das propostas encontradas em literatura 6 foram selecionadas como melhor representação do estado da arte, a seguir uma breve descrição de cada uma delas.
 
 %
 O modelo proposto por \cite{ReichertAutoAcquisition:2015} é um processo de coleta de evidências integrado ao \textit{hypervisor} e disparado por algum sistema de detecção de intrusão. 
 %
-A partir deste momento o modelo tira instantâneos das máquinas virtuais comprometidas, exclui informações de clientes não relacionados a investigação e armazena o restante em local seguro, tudo de forma automatizada. 
+A partir do momento em que uma ameaça é detectada, o modelo tira instantâneos das máquinas virtuais comprometidas. O modelo toma cuidado para exclui informações de clientes não relacionados a investigação e armazena o restante em local seguro, tudo de forma automatizada. 
+%
+O modelo faz uso de GRR para agregar e analisar as evidências coletadas e caso alguma delas case com ameaças armazenadas conhecidas ele alerta um usuário humano para uma avaliação mais detalhada.
+%
+O intevalo de tempo em que os instantâneos de memória são gerados é configurável e são todos armazenados em persistência.
 %
 Este modelo tem como principal vantagem a automação do processo de coleta, sem interevenção humana é mais fácil garantir a cadeia de custódia. 
 %
-No caso específico de memória volátil, a proposta de coletar evidências apenas após a detecção da intrusão, não consegue descrever como era a memória antes do fato, pois o processo só é acionado depois da detecção do ataque.
-%
-Tal limitação pode trazer prejuízos à investigação, dado que algumas análises dependem exatamente da capacidade de se comparar dois momentos da memória \cite{CaseMemoryForensics:2014}. 
-% 
+A figura \ref{fig:ReichertAutoAcquisitionModel} mostra o desenho da arquitetura proposta pelo autor.
 
-A proposta de \cite{PoiselVMI:2013} é baseada na técnica de VMI para coleta de memória volátil. 
+\begin{figure}[htb!]
+\footnotesize
+\caption{Automated Forensics Data Acquisition Model}
+\includegraphics[scale=0.30]{ReichertAutoAcquisitionModel.png}
+\centering
+\label{fig:ReichertAutoAcquisitionModel}
+\begin{center}
+Fonte: \cite{ReichertAutoAcquisition:2015} 
+\end{center}
+\end{figure}
+
+A proposta de \cite{PoiselVMI:2013} é baseada na técnica de introspecção em máquina virtual (VMI) para coleta de memória volátil. 
 %
-Esta técnica se apoia na capacidade do VMM de conseguir mapear recursos físicos da máquina hospedeira a recursos alocados à máquina virtual cliente de modo a realizar coletas de memória volátil.
+Esta técnica se apoia na necessidade do gerenciador de máquinas virtuais (VMM) em conseguir mapear recursos físicos da máquina hospedeira a recursos alocados à máquina virtual cliente.
 %
-Este mapeamento também permite que a memória volátil seja copiada da máquina virtual e reconstruida na máquina hospedeira de forma a viabilizar a análise.
+Este mapeamento também permite que a memória volátil copiada da máquina virtual seja reconstruida em uma máquina física para realização da análise.
 %
-A proposta dá a entender que utiliza a abordagem de coletar continuamente os instantâneos de memória durante o funcionamento do sistema sem distinção do que aconteceu antes ou depois do fato de interesse. 
+A proposta utiliza de coleta continua dos instantâneos de memória durante o funcionamento do sistema sem distinção do que aconteceu antes ou depois do fato de interesse.
 %
-Tal abordagem tem a desvantágem de ter como resultado um elevado volume de dados coletados, dificultando o trabalho de análise das evidências.
+Todos os instantâneos de memória são armazenados para posterior análise.
 %
-Outra desvantagem da VMI mencionado pelo próprio autor é a necessidade de tradução de endereços de memória da máquina virtual em endereços de memória da máquina hospedeira.
+Para eliminar a chance de inconsistências no instantâneo de memória volátil, a máquina virtual tem sua execução suspensa durante o processo de extração.
+%
+Uma desvantagem da técnica de VMI mencionado pelo próprio autor é a necessidade de tradução de endereços de memória da máquina virtual em endereços de memória da máquina física hospedeira.
 %
 Esta tradução depende de conhecimento do que está sendo executado na máquina virtual, logo uma solução baseada em VMI não é completamente portável sendo necessário adequações para diferentes clientes além de ser computacionalmente custoso.
 %
 
-O framework proposto por \cite{SangLogApproach:2013} é um sistema que funciona em parceria com o provedor de nuvem onde este última envie as informações ao framework e este os armazena em um local centralizado.
+O framework proposto por \cite{SangLogApproach:2013} é um sistema que funciona em parceria com o provedor de nuvem onde este último envie informações ao framework que os armazena em um local centralizado.
 %
 O conjunto de informações armazenadas é acordado antecipadamente com o provedor de nuvem e vão desde instantâneos de memória volátil até pacotes trafegados nas interfaces de rede da máquina virtual.
 %
@@ -45,18 +61,84 @@ Assim como as propostas anteriores, esta tambem não faz distinção do que acon
 %
 O próprio autor menciona que o framework tem a desvantagem de depender da cooperação do provedor de nuvem, uma estratégia considerada fraca pela comunicade pois a prioridade do CSP é o de garantir a disponibilidade do serviço não o de coletar evidências \cite{ClarkeReviewOfChallenges2015}.
 %
+A figura \ref{fig:SangLogApproach} mostra um esquema do funcionamento da solução focada em um caso específico de log de rede como proposta pelo autor.
 
-O trabalho descrito em \cite{DezfouliBackupApproach:2012}. Esta proposta é voltada a dispositivos móveis e mostra preocupação com a quantidade de informação coletada. 
+\begin{figure}[htb!]
+\footnotesize
+\caption{A Log Based Approach Model}
+\includegraphics[scale=0.50]{SangLogApproach.png}
+\centering
+\label{fig:SangLogApproach}
+\begin{center}
+Fonte: \cite{SangLogApproach:2013} 
+\end{center}
+\end{figure}
+
+O trabalho descrito em \cite{DezfouliBackupApproach:2012} é voltada a dispositivos móveis e demonstra preocupação com as limitações de armazenamento do dispositivo.
 %
-O processo de coleta se inicia apenas após a detecção de alguma ameaça por causa das limitações de armazenamento do dispositivo mas armazena as evidências no próprio dispositivo para posterior análise.
+O processo de coleta de informações de memória volátil é feita continuamente independente de eventos de interesse como detecção de ameaças.
 %
-Infelizmente, entretanto, a aplicação de tal abordagem no cenário em nuvem é pouco viável, pois pode levar à perda de informações importantes caso a máquina virtual ou contêiner seja desativada, tendo seus recursos liberados.
+O processo de coleta do instantâneo de memória volátil do dispositivo separa as informações e as armazena por processo ativo, o autor usa esta técnica para melhor gerenciar o espaço que as informações estão ocupando em disco. 
 %
+Possui inteligência para descartar informações de processos que foram terminados e removidos da memória assim como inteligência para fazer uso ótimo do espaço de armazenamento do device.
+%
+A figura \ref{fig:DezfouliBackupApproach} o autor mostra um esquema macro de como o armazenamento da evidência é gerenciado.
+
+\begin{figure}[htb!]
+\footnotesize
+\caption{Backup Approach Model}
+\includegraphics[scale=0.50]{DezfouliBackupApproach.png}
+\centering
+\label{fig:DezfouliBackupApproach}
+\begin{center}
+Fonte: \cite{DezfouliBackupApproach:2012} 
+\end{center}
+\end{figure}
+
+A ferramenta FROST proposto por \cite{DykstraFROST:2013} descreve um conjunto de bibliotecas integradas aono arcabouço \textit{Open Stack Framework} de gerenciamento de infra estruturas virtualizadas.
+%
+Através desta integração, FROST expõe um conjunto de API para serem usadas por aplicações de coleta de evidências forenses que dão acesso a recursos da máquina virtual sendo administrada como disco, logs de trafego de rede, e memória volátil.
+%
+A proposta descreve apenas o arcabouço, deixa a critério do usuário detalhes como periodicidade e tamanho da coleta assim como onde a evidência será armazenada.
+%
+De todas as propostas descritas neste capítulo esta é a única que demonstra preocupação com adequação a questões legais e padrões já estabelecidos na industria forense.
+%
+O autor declara que FROST segue as práticas definidas no Grupo de Trabalho Sobre Evidência Digital (SWGDE) e do Manual de Busca em Apreensão do Departamento de Justiça Norte-Americano.
+%
+A figura \ref{fig:DykstraFROST} o autor mostra um esquema macro da integração entre FROST e o arcabouço \textit{Open Stack Framework}
+
+\begin{figure}[htb!]
+\footnotesize
+\caption{FROST}
+\includegraphics[scale=0.50]{DykstraFROST.png}
+\centering
+\label{fig:DykstraFROST}
+\begin{center}
+Fonte: \cite{DykstraFROST:2013} 
+\end{center}
+\end{figure}
+%
+
+O trabalho descrito em \cite{GeorgeDF2CE:2012} está focado em monitoração de rede e opera em uma arquitetura de forense como serviço (FaaS). 
+%
+O autor propõe um conjunto de ferramentas que tem capacidade de realizar auto descoberta das interfaces que devem ser monitoradas, coletar evidências de tais máquinas e armazena-las.
+%
+O processo de auto descoberta e associação das evidências com usuários de rede é realizado por um motor baseado em ontologias armazenadas em um banco de dados próprio.
+%
+Na figura \ref{fig:GeorgeDF2CE} mostra o desenho da aquitetura proposta pelo autor.
+
+\begin{figure}[htb!]
+\footnotesize
+\caption{Digital Forensic Framework for Cloud Environment}
+\includegraphics[scale=0.50]{GeorgeDF2CE.png}
+\centering
+\label{fig:GeorgeDF2CE}
+\begin{center}
+Fonte: \cite{GeorgeDF2CE:2012} 
+\end{center}
+\end{figure}
 
 A seguir os trabalhos mencionados acima são agrupados e avaliados com base nos diferentes aspectos que abordam.
-
-\cite{DykstraFROST:2013}
-\cite{GeorgeDF2CE:2012}
 
 \section{Acessar e coletar as informações de memória das máquinas virtuais em nuvem}
 \label{sec:coletadeevidencia}
