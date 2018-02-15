@@ -6,16 +6,20 @@
 
 \marcos{Explique melhor as soluções: você tem espaço, então pode deixar este capítulo muito mais auto-contido}
 
-Existem vários aspectos relativos à análise forense na nuvem, indo desde a coleta de informações até a garantia da cadeia de custódia de evidências.
+Os principais aspectos relacionados a coleta de evidências para análise forense em nuvem são, coleta, transporte, armazenamento, garantia da cadeia de custódia e reprodutibilidade do processo de coleta. 
 %
 Das propostas encontradas em literatura 6 foram selecionadas como melhor representação do estado da arte, a seguir uma breve descrição de cada uma delas.
 
 %
 O modelo proposto por \cite{ReichertAutoAcquisition:2015} é um processo de coleta de evidências integrado ao \textit{hypervisor} e disparado por algum sistema de detecção de intrusão. 
 %
-A partir do momento em que uma ameaça é detectada, o modelo tira instantâneos das máquinas virtuais comprometidas. O modelo toma cuidado para exclui informações de clientes não relacionados a investigação e armazena o restante em local seguro, tudo de forma automatizada. 
+A partir do momento em que uma ameaça é detectada, o modelo tira instantâneos das máquinas virtuais comprometidas. O modelo toma cuidado para excluir informações de clientes não relacionados a investigação e armazena o restante em local seguro, tudo de forma automatizada.
 %
-O modelo faz uso de GRR para agregar e analisar as evidências coletadas e caso alguma delas case com ameaças armazenadas conhecidas ele alerta um usuário humano para uma avaliação mais detalhada.
+O autor não descreve os detalhes do armazenamento mas diz que é ``forensicamente aceitável''.
+%
+O modelo faz uso de GRR para agregar e analisar as evidências coletadas. 
+%
+O modelo possui um motor de regras que se baseia em um conjunto de descrições de ameaças conhecidas armazenadas em banco para, caso alguma evidência coletada coincida com ameaças armazenadas, ele alerta um usuário humano para uma avaliação mais detalhada.
 %
 O intevalo de tempo em que os instantâneos de memória são gerados é configurável e são todos armazenados em persistência.
 %
@@ -36,13 +40,11 @@ Fonte: \cite{ReichertAutoAcquisition:2015}
 
 A proposta de \cite{PoiselVMI:2013} é baseada na técnica de introspecção em máquina virtual (VMI) para coleta de memória volátil. 
 %
-Esta técnica se apoia na necessidade do gerenciador de máquinas virtuais (VMM) em conseguir mapear recursos físicos da máquina hospedeira a recursos alocados à máquina virtual cliente.
+Esta técnica se apoia na necessidade do gerenciador de máquinas virtuais (VMM) em mapear recursos físicos da máquina hospedeira a recursos alocados à máquina virtual cliente.
 %
-Este mapeamento também permite que a memória volátil copiada da máquina virtual seja reconstruida em uma máquina física para realização da análise.
+Este mapeamento é usado para permitir que a memória volátil copiada da máquina virtual seja reconstruida em uma máquina física para realização da análise.
 %
-A proposta utiliza de coleta continua dos instantâneos de memória durante o funcionamento do sistema sem distinção do que aconteceu antes ou depois do fato de interesse.
-%
-Todos os instantâneos de memória são armazenados para posterior análise.
+A proposta utiliza de coleta continua dos instantâneos de memória durante o funcionamento do sistema sem distinção do que aconteceu antes ou depois do fato de interesse e todos os instantâneos de memória são armazenados para posterior análise.
 %
 Para eliminar a chance de inconsistências no instantâneo de memória volátil, a máquina virtual tem sua execução suspensa durante o processo de extração.
 %
@@ -51,15 +53,15 @@ Uma desvantagem da técnica de VMI mencionado pelo próprio autor é a necessida
 Esta tradução depende de conhecimento do que está sendo executado na máquina virtual, logo uma solução baseada em VMI não é completamente portável sendo necessário adequações para diferentes clientes além de ser computacionalmente custoso.
 %
 
-O framework proposto por \cite{SangLogApproach:2013} é um sistema que funciona em parceria com o provedor de nuvem onde este último envie informações ao framework que os armazena em um local centralizado.
+O arcabouço proposto por \cite{SangLogApproach:2013} é um sistema que funciona em parceria com o provedor de nuvem onde este último envia informações ao arcabouço que os armazena em um local centralizado.
 %
 O conjunto de informações armazenadas é acordado antecipadamente com o provedor de nuvem e vão desde instantâneos de memória volátil até pacotes trafegados nas interfaces de rede da máquina virtual.
 %
-O framework coleta informações continuamente e usa cálculo de hash das evidências enviadas pelo provedor de nuvem para garantir que as mesmas não foram alteradas durante o transporte.
+O arcabouço coleta informações continuamente e usa cálculo de hash das evidências enviadas pelo provedor de nuvem para garantir que as mesmas não foram alteradas durante o transporte.
 %
 Assim como as propostas anteriores, esta tambem não faz distinção do que aconteceu antes ou depois do fato de interesse coletando constantemente informações da máquina virtual.
 %
-O próprio autor menciona que o framework tem a desvantagem de depender da cooperação do provedor de nuvem, uma estratégia considerada fraca pela comunicade pois a prioridade do CSP é o de garantir a disponibilidade do serviço não o de coletar evidências \cite{ClarkeReviewOfChallenges2015}.
+O próprio autor menciona que o arcabouço tem a desvantagem de depender da cooperação do provedor de nuvem. Esta dependência é uma estratégia considerada fraca pela comunicade forense pois a prioridade do CSP é o de garantir a disponibilidade do serviço não o de coletar evidências \cite{ClarkeReviewOfChallenges2015}.
 %
 A figura \ref{fig:SangLogApproach} mostra um esquema do funcionamento da solução focada em um caso específico de log de rede como proposta pelo autor.
 
@@ -74,13 +76,13 @@ Fonte: \cite{SangLogApproach:2013}
 \end{center}
 \end{figure}
 
-O trabalho descrito em \cite{DezfouliBackupApproach:2012} é voltada a dispositivos móveis e demonstra preocupação com as limitações de armazenamento do dispositivo.
-%
-O processo de coleta de informações de memória volátil é feita continuamente independente de eventos de interesse como detecção de ameaças.
+O trabalho descrito em \cite{DezfouliBackupApproach:2012} é voltada a dispositivos móveis e tem como principal vantagem a preocupação com as limitações de armazenamento do dispositivo.
 %
 O processo de coleta do instantâneo de memória volátil do dispositivo separa as informações e as armazena por processo ativo, o autor usa esta técnica para melhor gerenciar o espaço que as informações estão ocupando em disco. 
 %
 Possui inteligência para descartar informações de processos que foram terminados e removidos da memória assim como inteligência para fazer uso ótimo do espaço de armazenamento do device.
+%
+O processo de coleta de informações de memória volátil é feita continuamente independente de eventos de interesse como detecção de ameaças.
 %
 A figura \ref{fig:DezfouliBackupApproach} o autor mostra um esquema macro de como o armazenamento da evidência é gerenciado.
 
@@ -95,11 +97,11 @@ Fonte: \cite{DezfouliBackupApproach:2012}
 \end{center}
 \end{figure}
 
-A ferramenta FROST proposto por \cite{DykstraFROST:2013} descreve um conjunto de bibliotecas integradas aono arcabouço \textit{Open Stack Framework} de gerenciamento de infra estruturas virtualizadas.
+A ferramenta FROST proposto por \cite{DykstraFROST:2013} descreve um conjunto de bibliotecas integradas ao arcabouço \textit{Open Stack Framework} de gerenciamento de infra estruturas virtualizadas.
 %
-Através desta integração, FROST expõe um conjunto de API para serem usadas por aplicações de coleta de evidências forenses que dão acesso a recursos da máquina virtual sendo administrada como disco, logs de trafego de rede, e memória volátil.
+Através desta integração, FROST expõe um conjunto de API para serem usadas por aplicações de coleta de evidências forenses que dão acesso a recursos da máquina virtual sendo administrada como disco, logs de trafego de rede e memória volátil.
 %
-A proposta descreve apenas o arcabouço, deixa a critério do usuário detalhes como periodicidade e tamanho da coleta assim como onde a evidência será armazenada.
+A proposta descreve apenas o arcabouço, deixa a critério do usuário detalhes como periodicidade e tamanho da coleta assim como a forma de transporte da evidência e onde ela será armazenada.
 %
 De todas as propostas descritas neste capítulo esta é a única que demonstra preocupação com adequação a questões legais e padrões já estabelecidos na industria forense.
 %
@@ -121,9 +123,11 @@ Fonte: \cite{DykstraFROST:2013}
 
 O trabalho descrito em \cite{GeorgeDF2CE:2012} está focado em monitoração de rede e opera em uma arquitetura de forense como serviço (FaaS). 
 %
-O autor propõe um conjunto de ferramentas que tem capacidade de realizar auto descoberta das interfaces que devem ser monitoradas, coletar evidências de tais máquinas e armazena-las.
+O autor propõe um conjunto de ferramentas que tem capacidade de realizar auto descoberta das interfaces sob monitoração, coletar evidências de tais máquinas e armazena-las.
 %
 O processo de auto descoberta e associação das evidências com usuários de rede é realizado por um motor baseado em ontologias armazenadas em um banco de dados próprio.
+%
+Esta proposta foca apenas no processo de coleta. A descrição do armazenamento e transporte é superficial.
 %
 Na figura \ref{fig:GeorgeDF2CE} mostra o desenho da aquitetura proposta pelo autor.
 
