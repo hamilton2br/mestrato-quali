@@ -19,6 +19,7 @@ Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Warning--campo year vazio ou faltando em UnixManPagesControlGroups
 Warning--campo year vazio ou faltando em UnixManPagesChRoot
+Warning--campo year vazio ou faltando em UnixManPagesDD
 Warning--campo year vazio ou faltando em UnixManPagesNamespacing
 +---------------------------------------------------------+
 | Estilo bibliográfico abntex2-alf.bst versão v-1.9.6           |
@@ -27,43 +28,43 @@ Warning--campo year vazio ou faltando em UnixManPagesNamespacing
 +---------------------------------------------------------+
 You've used 29 entries,
             6669 wiz_defined-function locations,
-            1382 strings with 15126 characters,
-and the built_in function-call counts, 33360 in all, are:
-= -- 3483
-> -- 889
-< -- 510
-+ -- 849
-- -- 267
-* -- 2219
-:= -- 4257
-add.period$ -- 125
+            1380 strings with 14836 characters,
+and the built_in function-call counts, 32648 in all, are:
+= -- 3416
+> -- 843
+< -- 509
++ -- 834
+- -- 255
+* -- 2140
+:= -- 4174
+add.period$ -- 121
 call.type$ -- 29
-change.case$ -- 307
-chr.to.int$ -- 56
-cite$ -- 30
-duplicate$ -- 2565
-empty$ -- 1806
-format.name$ -- 1275
-if$ -- 7291
-int.to.chr$ -- 3
+change.case$ -- 295
+chr.to.int$ -- 52
+cite$ -- 31
+duplicate$ -- 2542
+empty$ -- 1778
+format.name$ -- 1214
+if$ -- 7112
+int.to.chr$ -- 4
 int.to.str$ -- 0
-missing$ -- 502
-newline$ -- 152
+missing$ -- 500
+newline$ -- 150
 num.names$ -- 135
-pop$ -- 635
+pop$ -- 644
 preamble$ -- 1
-purify$ -- 117
+purify$ -- 114
 quote$ -- 0
-skip$ -- 2675
+skip$ -- 2663
 stack$ -- 1
-substring$ -- 1443
-swap$ -- 1025
-text.length$ -- 39
+substring$ -- 1392
+swap$ -- 1000
+text.length$ -- 37
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 9
-warning$ -- 3
-while$ -- 213
+type$ -- 8
+warning$ -- 4
+while$ -- 210
 width$ -- 0
-write$ -- 449
-(There were 3 warnings)
+write$ -- 440
+(There were 4 warnings)

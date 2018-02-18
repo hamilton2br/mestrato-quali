@@ -5,12 +5,6 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.6 }
 
-\bibitem[Aljaedi et al. 2011]{AljaediComparative:2011}
-\abntrefinfo{Aljaedi et al.}{ALJAEDI et al.}{2011}
-{ALJAEDI, A. et al. Comparative analysis of volatile memory forensics: Live
-  response vs. memory imaging. In \emph{IEEE 3rd Int. Conf. on Privacy,
-  Security, Risk and Trust}. [S.l.: s.n.], 2011. p. 1253--1258.}
-
 \bibitem[Alqahtany et al. 2015]{ClarkeReviewOfChallenges2015}
 \abntrefinfo{Alqahtany et al.}{ALQAHTANY et al.}{2015}
 {ALQAHTANY, S. et al. Cloud forensics: A review of challenges, solutions and
@@ -21,21 +15,6 @@
 \abntrefinfo{Amazon}{AMAZON}{2016}
 {AMAZON. \emph{{What are Containers}}. 2016.
 Available from Internet: \url{https://aws.amazon.com/containers}.}
-
-\bibitem[Baar, Beek and Eijk 2014]{VanBaarFAAS:2014}
-\abntrefinfo{Baar, Beek and Eijk}{BAAR; BEEK; EIJK}{2014}
-{BAAR, R.~B. van; BEEK, H. M.~A. van; EIJK, E.~J. van. {Digital Forensics as a
-  Service: A game changer}.
-\emph{Digital Investigation}, Elsevier Ltd, vol.~11, p. S54--S62, 2014.
-ISSN 17422876.
-Available from Internet: \url{dx.doi.org/10.1016/j.diin.2014.03.007}.}
-
-\bibitem[Barbara 2014]{DoDesafio:2014}
-\abntrefinfo{Barbara}{BARBARA}{2014}
-{BARBARA, D. \emph{{Desafios da per{\'{i}}cia forense em um ambiente de
-  computa{\c{c}}{\~{a}}o nas nuvens}}.
-[S.l.], 2014.
-  \urls{revista.uniplac.net/ojs/index.php/tc_si/article/view/1911}.}
 
 \bibitem[Case et al. 2014]{CaseMemoryForensics:2014}
 \abntrefinfo{Case et al.}{CASE et al.}{2014}
@@ -97,6 +76,12 @@ ISBN 9788578110796.}
 ISSN 1466640073.
 Available from Internet:
   \url{www.igi-global.com/article/calm-before-storm/68408}.}
+
+\bibitem[Lee and Un 2012]{FaaSIndexedSearch:2012}
+\abntrefinfo{Lee and Un}{LEE; UN}{2012}
+{LEE, J.; UN, S. {Digital Forensics as a Service: A case study of forensic
+  indexed search}.
+p. 499--503, 2012.}
 
 \bibitem[Linuxcontainers.org 2015]{Linuxcontainers.org2015}
 \abntrefinfo{Linuxcontainers.org}{LINUXCONTAINERS.ORG}{2015}
@@ -185,9 +170,19 @@ ISSN 16113349.}
 {\underline{\ \ \ \ \ \ \ \ }. \emph{{chroot - Change Root coomand}}.
   \urls{http://man7.org/linux/man-pages/man1/chroot.1.html}.}
 
-\bibitem[{Unix Man Pages}]{UnixManPagesNamespacing}
+\bibitem[{Unix Man Pages}]{UnixManPagesDD}
 \abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{c}
+{\underline{\ \ \ \ \ \ \ \ }. \emph{{dd - convert and copy a file}}.
+  \urls{http://man7.org/linux/man-pages/man1/dd.1.html}.}
+
+\bibitem[{Unix Man Pages}]{UnixManPagesNamespacing}
+\abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{d}
 {\underline{\ \ \ \ \ \ \ \ }. \emph{{Namespacing}}.
   \urls{http://man7.org/linux/man-pages/man7/namespaces.7.html}.}
+
+\bibitem[Wikipedia 2018]{WikipediaMapReduce}
+\abntrefinfo{Wikipedia}{WIKIPEDIA}{2018}
+{WIKIPEDIA. \emph{{MapReduce}}. 2018.
+Available from Internet: \url{https://en.wikipedia.org/wiki/MapReduce}.}
 
 \end{thebibliography}

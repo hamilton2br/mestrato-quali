@@ -53,6 +53,30 @@ Uma desvantagem da técnica de VMI mencionado pelo próprio autor é a necessida
 Esta tradução depende de conhecimento do que está sendo executado na máquina virtual, logo uma solução baseada em VMI não é completamente portável sendo necessário adequações para diferentes clientes além de ser computacionalmente custoso.
 %
 
+Tambem na vertente de introspecção de máquina virtual, \cite{Dolan-GavittSemanticGap:2011} propõe o \textit{Virtuoso}, um arcabouço de coleta de informações de processos específicos em uma máquina virtual.
+%
+O arcabouço tem 3 fases, a primeira realiza um estudo em uma máquina virtual teste do processo que se deseja coletar dados de memória mapeando o conjunto de instruções executado. 
+%
+A fase 2 traduz o conjunto de instruções mapeados na fase 1 e cria um executável para que o processo seja executado fora da máquina virtual.
+%
+A terceira fase usa um ambiente de execução na máquina hospedeira para rodar as instruções da fase 2. Este ambiente consegue acessar os endereços de memória do máquina virtual tornando possível coletar instantâneos de memória do processo em execução.
+%
+A principal vantagem deste arcabouço é a capacidade de coletar instantâneos de memória de um processo específico.
+%
+A figura \ref{fig:Dolan-GavittSemanticGap} mostra um esquema do funcionamento do arcabouço
+
+\begin{figure}[htb!]
+\footnotesize
+\caption{Virtuoso}
+\includegraphics[scale=0.40]{Dolan-GavittSemanticGap.png}
+\centering
+\label{fig:Dolan-GavittSemanticGap}
+\begin{center}
+Fonte: \cite{Dolan-GavittSemanticGap:2011} 
+\end{center}
+\end{figure}
+
+
 O arcabouço proposto por \cite{SangLogApproach:2013} é um sistema que funciona em parceria com o provedor de nuvem onde este último envia informações ao arcabouço que os armazena em um local centralizado.
 %
 O conjunto de informações armazenadas é acordado antecipadamente com o provedor de nuvem e vão desde instantâneos de memória volátil até pacotes trafegados nas interfaces de rede da máquina virtual.
@@ -142,6 +166,29 @@ Fonte: \cite{GeorgeDF2CE:2012}
 \end{center}
 \end{figure}
 
+Na mesma vertente de forense como serviço, \cite{FaaSIndexedSearch:2012} ataca o problema de grande volume de dados coletados propondo serviço de coleta e indexação de evidências.
+%
+O serviço espera receber dados da execução do comando unix DD \cite{UnixManPagesDD} nas máquinas alvo onde, apoiado em processos ETL e MapReduce \cite{WikipediaMapReduce}, esses dados serão disponibilizados para consulta pelos investigadores.
+%
+A coleta ocorre continuamente a intervalos de tempo configuráveis.
+%
+O autor não descreve onde os dados serão armazenados e quem será responsável pela infra-estrutura de armazenamento.
+%
+O autor tambem não fala como os dados serão transportados até o armazenamento e como ele garante que estes não foram alteramos no processo.
+%
+A figura \ref{fig:FaaSIndexedSearch} mostra o desenho da arquitetura do serviço proposta pelo autor
+
+\begin{figure}[htb!]
+\footnotesize
+\caption{Digital FaaS - Indexed Data}
+\includegraphics[scale=0.60]{FaaSIndexedSearch.png}
+\centering
+\label{fig:FaaSIndexedSearch}
+\begin{center}
+Fonte: \cite{FaaSIndexedSearch:2012} 
+\end{center}
+\end{figure}
+
 A seguir os trabalhos mencionados acima são agrupados e avaliados com base nos diferentes aspectos que abordam.
 
 \section{Acessar e coletar as informações de memória das máquinas virtuais em nuvem}
@@ -165,7 +212,7 @@ Infelizmente, entretanto, a aplicação de tal abordagem no cenário em nuvem é
 %Ainda na coleta de informações, os autores \cite{Reichert_Auto_acquisition:2015} e \cite{George_DF2CE:2012} sugerem a abordagem de forense ao vivo onde os dados são constantemente coletados sem distinção do antes ou depois do fato. 
 Existem ainda trabalhos voltados à coleta de informações durante a execução do sistema, nos quais os dados são constantemente coletados sem distinção do que aconteceu antes ou depois do fato de interesse.
 %
-Esse é o caso de trabalhos como \cite{PoiselVMI:2013,DykstraFROST:2013,SangLogApproach:2013}, que adotam a estratégia de isolar e parar a máquina virtual para em seguida realizar o processo de coleta. 
+Esse é o caso de trabalhos como \cite{PoiselVMI:2013,DykstraFROST:2013,SangLogApproach:2013,Dolan-GavittSemanticGap:2011}, que adotam a estratégia de isolar e parar a máquina virtual para em seguida realizar o processo de coleta. 
 %
 %Nas duas estratégias citadas anteriormente, o problema do grande volume de informações coletadas não é abordado pelo autores nem o cenário onde é necessário coletar evidências de uma máquina virtual que já foi despejada do pool e os recursos liberados. 
 Embora interessantes, as abordagens descritas nesses trabalhos podem levar a um elevado volume de dados coletados, além de também não tratarem o cenário em que é necessário coletar evidências quando os recursos virtuais contendo tais informações são liberados.
@@ -185,7 +232,7 @@ Infelizmente, entretanto, nenhuma das propostas encontradas na literatura atualm
 
 Em um ambiente de nuvem pública, remover o \textit{hardware} para análise posterior pode levar à violação de privacidade de usuários, uma vez que o multi-inquilinato desse cenário faz com que uma mesma máquina física guarde informações de diversos clientes, alguns dos quais podem não estar envolvidos na investigação em curso.
 %
-Diversos trabalhos na literatura tratam esse problema adequadamente, por meio das duas estratégias principais: a primeira, adotada em \cite{ReichertAutoAcquisition:2015,GeorgeDF2CE:2012,PoiselVMI:2013,DykstraFROST:2013}, consiste em coletar dados pertinentes à investigação e armazená-los fora da nuvem; a segunda, empregada em \cite{SangLogApproach:2013} e que constitui um caso específico de \cite{GeorgeDF2CE:2012}, depende da cooperação do provedor de serviços de nuvem para conseguir as informações necessárias à investigação. 
+Diversos trabalhos na literatura tratam esse problema adequadamente, por meio das duas estratégias principais: a primeira, adotada em \cite{ReichertAutoAcquisition:2015,GeorgeDF2CE:2012,PoiselVMI:2013,DykstraFROST:2013,FaaSIndexedSearch:2012}, consiste em coletar dados pertinentes à investigação e armazená-los fora da nuvem; a segunda, empregada em \cite{SangLogApproach:2013} e que constitui um caso específico de \cite{GeorgeDF2CE:2012}, depende da cooperação do provedor de serviços de nuvem para conseguir as informações necessárias à investigação. 
 %
 Depender do provedor de serviços de nuvem é uma estratégia pouco recomendada, entretanto, pois (1) o volume de dados de usuários pode forçar os provedores a limitar o tamanho dos \textit{logs} armazenados, e (2) caso ocorra uma indisponibilidade causada por um ataque, o objetivo do provedor será o de restabelecer o serviço, não necessariamente o de preservar evidências\cite{ClarkeReviewOfChallenges2015}. 
 
@@ -210,17 +257,16 @@ A Tabela \ref{tab:related-work} mostra um comparativo das soluções estudadas, 
 \centering
 \caption{Comparativo de soluções de coleta de informações de memória de máquinas em nuvem para análise forense}
 \label{tab:related-work}
-\begin{tabular}{p{5.3cm}|L|L|L|L|L|L|L|L|L|L|L|}
-\textbf{}																		& \rot{\fancyname~(esta proposta)} 			& \rot{\cite{GeorgeDF2CE:2012}} 
-																						& \rot{\cite{PoiselVMI:2013}} 					& \rot{\cite{DykstraFROST:2013}}
-																						& \rot{\cite{DoDesafio:2014}} 					& \rot{\cite{ReichertAutoAcquisition:2015}}	
-																						&	\rot{\cite{SangLogApproach:2013}} 	& \rot{\cite{Dolan-GavittSemanticGap:2011}} 
-																						& \rot{\cite{AljaediComparative:2011}} & \rot{\cite{DezfouliBackupApproach:2012}} 
-																						& \rot{\cite{VanBaarFAAS:2014}}
+\begin{tabular}{p{5.3cm}|L|L|L|L|L|L|L|L|L|}
+\textbf{}						& \rot{\fancyname~(esta proposta)} 			& \rot{\cite{GeorgeDF2CE:2012}} 
+							& \rot{\cite{PoiselVMI:2013}} 				& \rot{\cite{DykstraFROST:2013}}
+							& \rot{\cite{FaaSIndexedSearch:2012}} 			& \rot{\cite{ReichertAutoAcquisition:2015}}	
+							& \rot{\cite{SangLogApproach:2013}} 			& \rot{\cite{Dolan-GavittSemanticGap:2011}} 
+							& \rot{\cite{DezfouliBackupApproach:2012}} 				
 \\ \hline
-\textbf{Coleta é contínua?}								& \cfig	& \xfig & \xfig & \xfig & \xfig & \xfig & \cfig & \xfig & \xfig & \cfig & \cfig \\
-\textbf{Reproduz o processo sem a VM?} 			& \cfig	& \xfig & \xfig & \xfig & \xfig & \xfig & \xfig & \xfig & \xfig & \xfig & \xfig \\
-\textbf{Garante cadeia de custódia?}				& \cfig	& \xfig & \xfig & \xfig & \xfig & \cfig & \cfig & \xfig & \xfig & \xfig & \cfig \\
-\textbf{Preserva jurisdição e privacidade?} & \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	\\
+\textbf{Coleta é contínua?}				& \cfig	& \xfig & \xfig & \xfig & \cfig & \xfig & \cfig & \xfig & \cfig  \\
+\textbf{Reproduz o processo sem a VM?} 			& \cfig	& \xfig & \xfig & \xfig & \xfig & \xfig & \xfig & \xfig & \xfig  \\
+\textbf{Garante cadeia de custódia?}			& \cfig	& \xfig & \xfig & \xfig & \xfig & \cfig & \cfig & \xfig & \xfig  \\
+\textbf{Preserva jurisdição e privacidade?} 		& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	 \\
 \end{tabular}
 \end{table}
