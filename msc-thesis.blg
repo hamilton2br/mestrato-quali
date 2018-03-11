@@ -21,50 +21,51 @@ Warning--campo year vazio ou faltando em UnixManPagesControlGroups
 Warning--campo year vazio ou faltando em UnixManPagesChRoot
 Warning--campo year vazio ou faltando em UnixManPagesDD
 Warning--campo year vazio ou faltando em UnixManPagesNamespacing
+Warning--campo year vazio ou faltando em UnixManPagesNumaMaps
 +---------------------------------------------------------+
 | Estilo bibliográfico abntex2-alf.bst versão v-1.9.6           |
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 29 entries,
+You've used 34 entries,
             6669 wiz_defined-function locations,
-            1380 strings with 14836 characters,
-and the built_in function-call counts, 32648 in all, are:
-= -- 3416
-> -- 843
-< -- 509
-+ -- 834
-- -- 255
-* -- 2140
-:= -- 4174
-add.period$ -- 121
-call.type$ -- 29
-change.case$ -- 295
-chr.to.int$ -- 52
-cite$ -- 31
-duplicate$ -- 2542
-empty$ -- 1778
-format.name$ -- 1214
-if$ -- 7112
-int.to.chr$ -- 4
+            1408 strings with 15752 characters,
+and the built_in function-call counts, 38347 in all, are:
+= -- 4010
+> -- 963
+< -- 622
++ -- 983
+- -- 292
+* -- 2500
+:= -- 4887
+add.period$ -- 139
+call.type$ -- 34
+change.case$ -- 341
+chr.to.int$ -- 62
+cite$ -- 37
+duplicate$ -- 3051
+empty$ -- 2074
+format.name$ -- 1391
+if$ -- 8310
+int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 500
-newline$ -- 150
-num.names$ -- 135
-pop$ -- 644
+missing$ -- 587
+newline$ -- 173
+num.names$ -- 160
+pop$ -- 754
 preamble$ -- 1
-purify$ -- 114
+purify$ -- 132
 quote$ -- 0
-skip$ -- 2663
+skip$ -- 3177
 stack$ -- 1
-substring$ -- 1392
-swap$ -- 1000
-text.length$ -- 37
+substring$ -- 1647
+swap$ -- 1194
+text.length$ -- 44
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 8
-warning$ -- 4
-while$ -- 210
+warning$ -- 5
+while$ -- 246
 width$ -- 0
-write$ -- 440
-(There were 4 warnings)
+write$ -- 517
+(There were 5 warnings)

@@ -1,0 +1,126 @@
+% ----------------------------------------------------------
+% Proposta
+% ----------------------------------------------------------
+\chapter{Proposta de projeto: \fancyname}
+\label{chp:proposta}
+
+A presente proposta tem como objetivo principal coletar memória de recursos computacionais virtuais de modo a conseguir: 
+(1) identificar a fonte da evidência, mesmo se o recurso virtual não existir mais; 
+(2) descrever o sistema antes e depois do incidente;
+(3) transportar e armazenar a memória coletada de uma forma que garanta sua integridade e confidencialidade; e
+(4) não violar a jurisdição e a privacidade de outros usuários que porventura tenham recursos alocados no mesmo servidor físico.
+%
+A solução aqui apresentada, denominada \fancyname, é descrita em detalhes a seguir.
+
+\subsection{Descrição}
+\label{sec:proposal-desc}
+
+Em sistemas computacionais executados sobre uma infraestrutura física (i.e., não virtualizada), pode-se fazer uma associação direta entre um recurso qualquer, como uma informação da memória, imagem de disco ou pacotes trafegando na rede, e sua origem correspondente.
+%
+Já em sistemas construídos sobre uma infraestrutura virtual, em especial quando esta é auto-escalável, os recursos computacionais são altamente voláteis e, portanto, podem ser desalocados a qualquer momento.
+%
+Para conseguir correlacionar uma evidência a sua origem volátil, é necessário utilizar outro elemento em que persista a relação fonte-evidência, o que na presente proposta é feito por meio de contêineres linux (LXC).
+%
+Embora um contêiner seja um \textit{software} e, portanto, também volátil, cada imagem compilada e sua execução na forma de contêiner são normalmente atrelados a um \textit{hash} que identifica univocamente essa relação.
+%
+O contêiner também permite identificar com mais precisão a fonte de uma evidência, uma vez que é possível dividir as partes de um sistema em contêineres: por exemplo, um contêiner para o motor de páginas dinâmicas (e.g., Apache%\cite{Tomcat}
+), outro com a lógica de negócios (e.g., \textit{golang}%\cite{Google}
+) e um terceiro para um banco de dados (e.g., \textit{Cassandra}%\cite{Cassandra}
+).
+
+%\marcosT{O parágrafo estava muito grande, então quebrei aqui. O problema é que falta uma frase para ligar a frase a seguir ao contexto da discussão... Coloque uma frase aqui, deixando claro qual requisito você quer satisfazer com essa ideia de ``interromper temporariamente a execução do contêiner''. Aplique isso para TUDO que for proposta: o leitor tem que saber de antemão pra que você está fazendo alguma coisa, ou vai ficar se perguntando ``Espera, mas pra que fazer isso?!'' - Hamilton: Feito}
+A cópia de memória não é uma atividade atômica, pois ela é executada em conjunto com outros processos. 
+%
+Portanto, caso um desses processos seja um código malicioso apagando traços de sua existência da memória do contêiner, informações possivelmente importantes para a investigação podem acabar sendo perdidas. 
+%
+Com o objetivo de deixar o processo de cópia da memória mais atômico, \fancyname interrompe temporariamente a execução do contêiner, realiza a cópia de sua memória, e em seguida retoma sua execução. 
+%
+Essa técnica, que é semelhante àquela adotada em \cite{RafiqueStaticLiveDigitalForensics:2013} para VMs, produz um instantâneo da memória volátil do contêiner; isso permite sua análise em um estado de repouso, ou seja, sem a necessidade de ter o contêiner em execução.
+%
+Ao realizar a coleta em intervalos de tempo adequados, é possível construir um histórico do estado da memória durante a execução no contêiner.
+%
+%\marcosT{A ligação entre as frases anterior e a seguir está bem ruim... você parece estar mudando completamente de assunto... Acredito que faltou uma frase dizendo que ``''salvar toda a memória'' pode se tornar um problema, reforçar isso com as duas frases que já estão a seguir, e depois dizer que você vai resolver.}
+
+A maioria das técnicas forenses mais usadas atualmente são voltadas à obtenção da informação em sua totalidade, seja via cópia bit a bit, seja por meio da obtenção do \textit{hardware} físico \cite{SimouCloudChlng:2014} \cite{BemPastPresentFuture:2008}. 
+%
+Embora tais técnicas possam parecer interessantes à primeira vista, elas muitas vezes acabam sendo responsáveis por um problema: o crescente volume de informações que os investigadores precisam analisar \cite{QuickIncreaseVolumeImpact:2014}.
+%
+Para mitigar essa dificuldade, em \fancyname são adotadas duas estratégias: a primeira é a definição de um volume de dados que possa ser considerado \textit{suficiente} para a realização de uma investigação; a segunda é a definição de uma \textit{idade máxima} para a evidência enquanto o sistema trabalha em condições normais, isto é, quando não está sob ataque.
+%
+Para detectar e analisar intrusões na memória de processos, é necessário ter uma cópia da memória antes e depois da intrusão \cite{CaseMemoryForensics:2014}. 
+%
+Assim, a solução proposta implementa uma janela de instantâneos de memória cobrindo um intervalo de tempo pré-definido, como ilustrado na Fig. \ref{fig:janela}. 
+%
+Em condições normais de operação, as evidências são coletadas com certa periodicidade e coletas que atingem uma determinada idade são descartadas.
+%
+Em contraste, após a detecção de um evento de ataque (e.g., por um sistema de detecção de intrusões), \fancyname deixa de descartar as coletas mais antigas do \textit{log} de monitoramento, sendo possível conhecer o sistema antes e depois do ataque e, assim, avaliar sua evolução.
+%
+%\marcosR{Não sei por que você está utilizando $\backslash\backslash$ no final das suas frases, mas pare de fazer isso... deixe o LaTeX se virar com a formatação. No final, quando você tiver tudo escrito, aí pode fazer algum sentido se preocupar com formatação, mas não antes disso... - Hamilton: é pra formatação mesmo :-) OK vou deixar o latex se virar}
+%
+
+\begin{figure}[htb!]
+\footnotesize
+\caption{Janela deslizante de coleta de evidência}
+\includegraphics[scale=0.40]{janela.jpg}
+\centering
+\label{fig:janela}
+\end{figure}
+
+
+\section{O que foi feito e cronograma esperado para os próximos passos}
+\label{sec:até_agora}
+
+A presente proposta está planejada para ser executada em 3 fases.
+%
+A primeira fase tem por objetivo encontrar uma forma de relacionar a evidência coletada de um contêiner a sua origem de forma que o processo seja reprodutível. 
+%
+Para atingir este objetivo será implementado um protótipo de coleta de memória de uma máquina virtual executando contêiners em um notebook.
+%
+A segunda fase tem por objetivo encontrar uma forma de transportar a evidência coletada a um local de armazenamento garantindo a cadeia de custódia.
+%
+Para atingir este objetivo, será definida uma cadeia de custódia. De posse desta será realizada em uma nuvem computacional e envolverá o transporte da evidência para uma máquina física fora da nuvem.
+%
+A terceira parte tem por objetivo a realização da análise de alguma vulnerabilidade utilizando-se do material coletado na primeira fase do projeto.
+%
+As ações para se atingir este objetivo serão realizadas em um notebook com ferramental voltado a análise forense em memória.
+%
+Até então foram realizados com sucesso a duas primeiras partes do projeto.
+
+%
+Parte 1: A associação da evidência de memória coletada do contêiner de uma máquina virtual foi associada a sua origem através do \textit{hash} de identificação da imagem do contêiner. O processo de coleta foi reproduzido com sucesso diversas vezes.
+%
+Parte 2: O transporte da evidência para uma máquina física fora da nuvem utilizando camada de transporte seguro a assinatura da mensagem.
+%
+
+Para o restante do projeto, que consiste da parte 3, espera-se seguir o cronograma descrito na figura \ref{fig:cronograma} onde serão executadas as seguintes atividades.
+
+\begin{itemize}
+ \item \textbf{Estudo das ferramentas de análise de memória}: Onde serão avaliadas ferramentas de análise de memória na busca por alguma que consiga decodificar as informações coletadas 
+ \item \textbf{Implemenação / seleção de uma ferramenta de análise}: Nesta atividade será selecionada uma das ferramentas estudadas na atividade anterior. Caso nenhuma se mostre adequada, será implementada uma ferramente para o propósito da fase 3
+ \item \textbf{Realização de análises com a ferramenta escolhida / criada}: Nesta fase ocorrerá a tentativa de analisar um malware encontrado em alguma coleta realizada na fase 1
+\end{itemize}
+
+\begin{figure}[htb!]
+\footnotesize
+\caption{Cronograma de projeto}
+\includegraphics[scale=0.50]{crono-image.png}
+\centering
+\label{fig:cronograma}
+\end{figure}
+
+\section{Limitações}
+\label{sec:limitacoes}
+
+Como a solução descrita tem como foco coletar informações de memória no espaço do usuário (\textit{user space}), ela não consegue acessar o espaço de kernel (\textit{kernel space}). 
+%
+Assim, \fancyname em princípio não provê suporte a técnicas de investigação de malware que se baseiam em informações do \textit{kernel space}, como, por exemplo, a comparação de informações do bloco do ambiente do processo (\textit{Process Environment Block -- PEB}), que ficam no \textit{user space}, com informações do descritor de endereços de memória virtual (\textit{Virtual Address Descriptor -- VAD}), que fica no \textit{kernel space}. 
+%
+Análise de ameaças que realizam manipulação direta dos objetos do kernel (D.K.O.M.-- \textit{Direct Kernel Object Manipulation}) também não se beneficiam com a solução aqui proposta. 
+
+\section{Contribuições}
+\label{sec:contribuições}
+
+A contribuição esperada da presente proposta é o de demonstrar que é possível coletar evidências de uma infra-estrutura em núvem de modo a atender os pré-requisitos de não violação de privacidade, não violação da jurisdição, reprodutibilidade do processo de coleta da evidência e garantia da cadeia de custódia.
+%
+Demonstrar que é possível realizar a análise de evidência de memória com apenas a parte \textit{user space} da memória coletada
+

@@ -16,6 +16,12 @@
 {AMAZON. \emph{{What are Containers}}. 2016.
 Available from Internet: \url{https://aws.amazon.com/containers}.}
 
+\bibitem[Bem et al. 2008]{BemPastPresentFuture:2008}
+\abntrefinfo{Bem et al.}{BEM et al.}{2008}
+{BEM, D. et al. Computer forensics - past , present and future.
+\emph{Journal of Information Science and Technology}, vol.~5, no.~3, p. 43--59,
+  2008.}
+
 \bibitem[Case et al. 2014]{CaseMemoryForensics:2014}
 \abntrefinfo{Case et al.}{CASE et al.}{2014}
 {CASE, A. et al. \emph{{The Art of Memory Forensics: Detecting malware and
@@ -26,6 +32,11 @@ Available from Internet: \url{https://aws.amazon.com/containers}.}
 {DEZFOULI, F. et al. Volatile memory acquisition using backup for forensic
   investigation. In \emph{Int. Conf. on Cyber Security, Cyber Warfare and
   Digital Forensic (CyberSec)}. [S.l.: s.n.], 2012. p. 186--189.}
+
+\bibitem[{Dierks T} 2008]{DierksT2008}
+\abntrefinfo{{Dierks T}}{{Dierks T}}{2008}
+{{Dierks T}, R.~E. \emph{{The Transport Layer Security (TLS) Protocol}}.
+  [S.l.]: IETF, 2008. IETF: \urls{https://tools.ietf.org/html/rfc5246}.}
 
 \bibitem[Dolan-Gavitt et al. 2011]{Dolan-GavittSemanticGap:2011}
 \abntrefinfo{Dolan-Gavitt et al.}{DOLAN-GAVITT et al.}{2011}
@@ -120,6 +131,14 @@ Available from Internet:
 ISSN 17422876.
 Available from Internet: \url{dx.doi.org/10.1016/j.diin.2014.09.002}.}
 
+\bibitem[Rafique and Khan 2013]{RafiqueStaticLiveDigitalForensics:2013}
+\abntrefinfo{Rafique and Khan}{RAFIQUE; KHAN}{2013}
+{RAFIQUE, M.; KHAN, M. N.~A. {Exploring Static and Live Digital Forensics:
+  Methods, Practices and Tools}.
+\emph{IJSER}, vol.~4, no.~10, p. 1048--1056, 2013.
+Available from Internet:
+  \url{www.ijser.org/researchpaper{\\%}5CExploring-Static-and-Live-Digital-Forensic-Methods-Practices-and-Tools.}}
+
 \bibitem[Rahman and Khan 2015]{RahmanLiveForensicsTechniques:2015}
 \abntrefinfo{Rahman and Khan}{RAHMAN; KHAN}{2015}
 {RAHMAN, S.; KHAN, M. N.~A. {Review of live forensic analysis techniques}.
@@ -179,6 +198,16 @@ ISSN 16113349.}
 \abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{d}
 {\underline{\ \ \ \ \ \ \ \ }. \emph{{Namespacing}}.
   \urls{http://man7.org/linux/man-pages/man7/namespaces.7.html}.}
+
+\bibitem[{Unix Man Pages}]{UnixManPagesNumaMaps}
+\abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{e}
+{\underline{\ \ \ \ \ \ \ \ }. \emph{{Numa Maps - Non Uniform Memory
+  Architecture}}. \urls{man7.org/linux/man-pages/man7/numa.7.html}.}
+
+\bibitem[{Volatility Foundation} 2014]{VolatilityFoundation2014}
+\abntrefinfo{{Volatility Foundation}}{{Volatility Foundation}}{2014}
+{{Volatility Foundation}. \emph{{Volatility Framework}}. 2014.
+  \urls{www.volatilityfoundation.org/}.}
 
 \bibitem[Wikipedia 2018]{WikipediaMapReduce}
 \abntrefinfo{Wikipedia}{WIKIPEDIA}{2018}
