@@ -8,7 +8,7 @@
 
 Os principais aspectos relacionados a coleta de evidências para análise forense em nuvem são, coleta, transporte, armazenamento, garantia da cadeia de custódia e reprodutibilidade do processo de coleta. 
 %
-Das propostas encontradas em literatura 6 foram selecionadas como melhor representação do estado da arte, a seguir uma breve descrição de cada uma delas.
+Das propostas encontradas em literatura oito foram selecionadas como melhor representação do estado da arte, a seguir uma breve descrição de cada uma delas.
 
 %
 O modelo proposto por \cite{ReichertAutoAcquisition:2015} é um processo de coleta de evidências integrado ao \textit{hypervisor} e disparado por algum sistema de detecção de intrusão. 
@@ -23,7 +23,7 @@ O modelo possui um motor de regras que se baseia em um conjunto de descrições 
 %
 O intevalo de tempo em que os instantâneos de memória são gerados é configurável e são todos armazenados em persistência.
 %
-Este modelo tem como principal vantagem a automação do processo de coleta, sem interevenção humana é mais fácil garantir a cadeia de custódia. 
+Este modelo tem como principal vantagem a automação do processo de coleta que dispensa intervenção humana tornando mais fácil garantir a cadeia de custódia. 
 %
 A figura \ref{fig:ReichertAutoAcquisitionModel} mostra o desenho da arquitetura proposta pelo autor.
 
@@ -55,11 +55,11 @@ Esta tradução depende de conhecimento do que está sendo executado na máquina
 
 Tambem na vertente de introspecção de máquina virtual, \cite{Dolan-GavittSemanticGap:2011} propõe o \textit{Virtuoso}, um arcabouço de coleta de informações de processos específicos em uma máquina virtual.
 %
-O arcabouço tem 3 fases, a primeira realiza um estudo em uma máquina virtual teste do processo que se deseja coletar dados de memória mapeando o conjunto de instruções executado. 
+O arcabouço funciona em três fases, a primeira realiza um estudo em uma máquina virtual teste do processo que se deseja coletar dados de memória mapeando o conjunto de instruções executado. 
 %
-A fase 2 traduz o conjunto de instruções mapeados na fase 1 e cria um executável para que o processo seja executado fora da máquina virtual.
+A fase dois traduz o conjunto de instruções mapeados na fase um e cria um executável para que o processo seja executado fora da máquina virtual.
 %
-A terceira fase usa um ambiente de execução na máquina hospedeira para rodar as instruções da fase 2. Este ambiente consegue acessar os endereços de memória do máquina virtual tornando possível coletar instantâneos de memória do processo em execução.
+A terceira fase usa um ambiente de execução na máquina hospedeira para executar as intruções extraídas na fase dois. Este ambiente consegue acessar os endereços de memória do máquina virtual tornando possível coletar instantâneos de memória do processo em execução.
 %
 A principal vantagem deste arcabouço é a capacidade de coletar instantâneos de memória de um processo específico.
 %
