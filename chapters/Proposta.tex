@@ -12,7 +12,7 @@ A presente proposta tem como objetivo principal coletar memória de recursos com
 %
 A solução aqui apresentada, denominada \fancyname, é descrita em detalhes a seguir.
 
-\subsection{Descrição}
+\section{Descrição}
 \label{sec:proposta-desc}
 
 Em sistemas computacionais executados sobre uma infraestrutura física (i.e., não virtualizada), pode-se fazer uma associação direta entre um recurso qualquer, como uma informação da memória, imagem de disco ou pacotes trafegando na rede, e sua origem correspondente.
@@ -75,7 +75,7 @@ Para persistir a relação evidência-origem e garantir a integridade da mesma, 
 Para evitar eventuais problemas com o armazenamento desses dados em países com jurisdições diferentes daquelas que devem ser aplicadas na investigação em questão, as evidências coletadas são armazenadas em um local físico fora da nuvem, após serem transportadas por meio de um canal seguro (e.g., via \textit{Transport Layer Security} -- TLS \cite{DierksT2008}).
 %
 
-\subsection{Implementação}
+\section{Implementação}
 \label{sec:proposta-impl}
 
 %\marcosT{CLAREZA: quais ataques? Onde estão esses objetivos (diga a seção!!!)? Perceba que não tem qualquer seção com esse nome: você espera realmente que o leitor procure no seu texto onde eles estão...? - Hamilton: Feito}
@@ -114,7 +114,7 @@ Após a conclusão do processo de cópia, a mesma aplicação verifica se existe
 %\marcosT{IMPORTANTE: Discuta também a relação entre o que foi feito e os ataques de injeção mencionados na introdução. O seu texto inicialmente menciona tais ataques como parte do seu foco, mas nunca mais retoma a existência deles depois que você descreve a solução... Não precisa ser uma discussão longa, mas ao menos algumas considerações sobre o porquê de você conseguir analisar tais ataques usando a técnica proposta - Hamilton: Feito.}
 %
 
-\subsection{Resultados experimentais}
+\section{Resultados experimentais}
 \label{sec:proposta-exp}
 
 Para avaliar a efetividade de \fancyname na coleta de evidências, alguns experimentos foram realizados usando o ambiente implementado (descrito na Seção \ref{sec:proposta-impl}).
@@ -290,7 +290,7 @@ Fonte: Próprio autor
 \end{center}
 \end{figure}
 
-\subsection{Limitações}
+\section{Limitações}
 \label{sec:proposta-limit}
 
 Como a solução descrita tem como foco coletar informações de memória no espaço do usuário (\textit{user space}), ela não consegue acessar o espaço de kernel (\textit{kernel space}). 

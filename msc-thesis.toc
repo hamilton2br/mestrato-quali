@@ -1,4 +1,4 @@
-\select@language {english}
+\select@language {brazil}
 \contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{9}{chapter.1}
 \contentsline {section}{\numberline {1.1}Objetivos}{10}{section.1.1}
 \contentsline {section}{\numberline {1.2}Motiva\IeC {\c c}\IeC {\~a}o}{11}{section.1.2}
@@ -18,11 +18,11 @@
 \contentsline {section}{\numberline {3.4}Garantir a cadeia de cust\IeC {\'o}dia da evid\IeC {\^e}ncia}{29}{section.3.4}
 \contentsline {section}{\numberline {3.5}Resumo}{29}{section.3.5}
 \contentsline {chapter}{\numberline {4}Proposta de projeto: Dizang }{31}{chapter.4}
-\contentsline {subsection}{\numberline {4.0.1}Descri\IeC {\c c}\IeC {\~a}o}{31}{subsection.4.0.1}
-\contentsline {subsection}{\numberline {4.0.2}Implementa\IeC {\c c}\IeC {\~a}o}{33}{subsection.4.0.2}
-\contentsline {subsection}{\numberline {4.0.3}Resultados experimentais}{35}{subsection.4.0.3}
-\contentsline {subsection}{\numberline {4.0.4}Limita\IeC {\c c}\IeC {\~o}es}{36}{subsection.4.0.4}
-\contentsline {section}{\numberline {4.1}Conclus\IeC {\~o}es e trabalhos futuros}{37}{section.4.1}
-\contentsline {section}{\numberline {4.2}O que foi feito e cronograma esperado para os pr\IeC {\'o}ximos passos}{38}{section.4.2}
-\contentsline {section}{\numberline {4.3}Contribui\IeC {\c c}\IeC {\~o}es}{40}{section.4.3}
-\contentsline {chapter}{References}{41}{chapter.4}
+\contentsline {section}{\numberline {4.1}Descri\IeC {\c c}\IeC {\~a}o}{31}{section.4.1}
+\contentsline {section}{\numberline {4.2}Implementa\IeC {\c c}\IeC {\~a}o}{34}{section.4.2}
+\contentsline {section}{\numberline {4.3}Resultados experimentais}{35}{section.4.3}
+\contentsline {section}{\numberline {4.4}Limita\IeC {\c c}\IeC {\~o}es}{36}{section.4.4}
+\contentsline {section}{\numberline {4.5}Conclus\IeC {\~o}es e trabalhos futuros}{37}{section.4.5}
+\contentsline {section}{\numberline {4.6}O que foi feito e cronograma esperado para os pr\IeC {\'o}ximos passos}{38}{section.4.6}
+\contentsline {section}{\numberline {4.7}Contribui\IeC {\c c}\IeC {\~o}es}{39}{section.4.7}
+\contentsline {chapter}{Refer\^encias}{41}{chapter.4}
