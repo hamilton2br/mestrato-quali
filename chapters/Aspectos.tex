@@ -19,15 +19,15 @@ Uma nuvem computacional é um modelo de infraestrutura no qual recursos comparti
 %
 Há três modelos principais de comercialização de uso da nuvem: \textit{software} como serviço (\textit{Software as a Service} -- SaaS), na qual se provê o \textit{software} que será usado pelo cliente; plataforma como serviço (\textit{Platform as a Service} -- PaaS), na qual se provê o ambiente para que o cliente desenvolva, teste e execute seu \textit{software}; e, o tipo mais pertinente para este trabalho, Infraestrutura como serviço (\textit{Infrastructure as a Service} -- IaaS), na qual são fornecidos recursos computacionais básicos, como processamento e memória, em geral de forma virtualizada \cite{NIST2011}.
 %
-Uma arquitetura usada hoje nas soluções em núvem são as auto-escaláveis onde recursos são altamente voláteis, sendo alocados e desalocados a qualquer momento. Estas implementações tem a vantagem de usar os recursos de nuvem de uma forma mais eficiênte e menos necessidade de intervenção humana.
+Uma arquitetura usada hoje nas soluções em nuvem são as auto-escaláveis onde recursos são altamente voláteis, sendo alocados e desalocados a qualquer momento. Estas implementações tem a vantagem de usar os recursos de nuvem de uma forma mais eficiente e menos necessidade de intervenção humana.
 
 
-\section{Uso de contêiners}
+\section{Uso de contêineres}
 \label{sec:conteiner}
 
-Segundo \cite{AmazonContainer}, conteiner é um método de virtualização do sistema operacional que permite executar uma aplicação e suas dependências em um processo com os recursos como disco, memória e rede isolados.
+Segundo \cite{AmazonContainer}, contêiner é um método de virtualização do sistema operacional que permite executar uma aplicação e suas dependências em um processo com os recursos como disco, memória e rede isolados.
 %
-Diferente das máquinas virtuais, a virtualização com contêineres é feita no nível do SO nativo, tem uma implementação mais simples eliminado camadas entre o aplicativo executado e o \textit{hardware} físico permitindo maior granularidade no controle sobre esses recursos melhorando a eficiência da infrestrutura.
+Diferente das máquinas virtuais, a virtualização com contêineres é feita no nível do SO nativo, tem uma implementação mais simples eliminado camadas entre o aplicativo executado e o \textit{hardware} físico permitindo maior granularidade no controle sobre esses recursos melhorando a eficiência da infraestrutura.
 %
 Uma tecnologia bastante utilizada para esse propósito são Contêineres Linux (LXC) \cite{Linuxcontainers.org2015}, que aproveitam-se de funcionalidades como \textit{cgroups}, \textit{kernel namespacing} e \textit{chroot} do kernel do Linux para auxiliar no gerenciamento e isolamento de recursos virtuais.
 
@@ -37,7 +37,7 @@ O trabalho nesta funcionalidade começou em 2006 na Google sob a denominação d
 
 \textit{Namespacing} é uma funcionalidade do Kernel do Linux usado para isolar e virtualizar recursos do sistema operacional como Ids de processos, acessos a rede, comunicação inter-processos e sistema de arquivos.
 %
-\textit{Namespacing} envolve os recursos do sistema operacional em uma abstração que faz parecer aos processos de um mesmo namespace que eles tem sua própria instância isolada de um recurso global, é a principal funcionalidade por trás da implementação de contêiners \cite{UnixManPagesNamespacing}.
+\textit{Namespacing} envolve os recursos do sistema operacional em uma abstração que faz parecer aos processos de um mesmo \textit{namespace} que eles tem sua própria instância isolada de um recurso global, é a principal funcionalidade por trás da implementação de contêineres \cite{UnixManPagesNamespacing}.
 
 Change Root (\textit{chroot}) é uma funcionalidade do Kernel do Linux usado para mudar o diretório root do processo que está chamando a função e de todos os seus processos filhos. 
 %
@@ -48,7 +48,7 @@ Desta forma pode-se instalar uma distribuição Linux secundária em uma pasta, 
 \section{Forense digital e seus desafios}
 \label{sec:forensedigital}
 
-Forense digital (tambem conhecida por forense computacional) é um conjunto de técnicas de coleta e análise da interação entre humanos e computadores de forma que esta seja aceita em um processo legal.
+Forense digital (também conhecida por forense computacional) é um conjunto de técnicas de coleta e análise da interação entre humanos e computadores de forma que esta seja aceita em um processo legal.
 %
 Tal como a forense tradicional, a forense digital se baseia no princípio de Locard. Definido pelo médico francês Edmond Locard, estabelece que ``Quando um indivíduo entra em contato com outro objeto ou indivíduo, este sempre deixa vestígio deste contato'' \cite{Ramos:2011}.
 
@@ -58,7 +58,7 @@ A primeira delas diz respeito a aceitabilidade de uma evidência. Para que uma e
 %
 Cadeia de custódia é o processo de documentação da história cronológica da evidência de modo a saber onde a evidência esteve e quem teve acesso a ela \cite{Ramos:2011}. O SENASP 2013 define cadeia de custódia como ``a sistemática de procedimentos que visa à preservação do valor probatório da prova pericial caracterizada.''
 %
-Assim a Forense digital tem por objetivo a investigação de evidências digitais da interação entre homem e máquina de modo a reconstruir a cadeia de evêntos no passado de forma que suas conclusões sejam validadas por terceiros.
+Assim a Forense digital tem por objetivo a investigação de evidências digitais da interação entre homem e máquina de modo a reconstruir a cadeia de eventos no passado de forma que suas conclusões sejam validadas por terceiros.
 
 
 \subsection{Aceitabilidade da evidência em processo legal.}
@@ -72,20 +72,20 @@ Segundo \cite{Ramos:2011} a aceitabilidade de uma evidência digital em um proce
 %
 Autenticidade, descrito como ``o processo pelo qual se pode garantir a autoria do documento eletrônico'', ou seja, não permite dúvida quanto à identificação do autor e integridade, descrita como ``atestado da inteireza do documento eletrônico após sua transmissão, bem como apontar eventual alteração irregular de seu conteúdo''.
 %
-Caso haja dúvida a cerca de um destes requisitos, uma perícia técnica pode ser convocada, nesta será análisada o autor da evidência ou seja sua fonte e se a mesma não foi alterada no processo.
+Caso haja dúvida a cerca de um destes requisitos, uma perícia técnica pode ser convocada, nesta será analisada o autor da evidência ou seja sua fonte e se a mesma não foi alterada no processo.
 
 
-Em infra-estrutura física esta coleta era relativamente simples, bastava-se remover o recurso físico, transporta-lo para um laboratório e lá análisar a evidência. A Evidência era mantida em uma sala-cofre onde o acesso era controlado.
+Em infraestrutura física esta coleta era relativamente simples, bastava-se remover o recurso físico, transportar este para um laboratório e lá analisar a evidência. A Evidência era mantida em uma sala-cofre onde o acesso era controlado.
 %
 A reprodutibilidade do processo de coleta e a manutenção da integridade da evidência eram tarefas bem diretas.
 %
-A computação em núvem, especialmente as de infraestrutura auto-escalável trouxeram um conjunto de desafios novos. O recurso não pode mais ser removido pois o mesmo é utilizado por outros usuários não relacionados a investigação, fazê-lo constituiria violação de privacidade.
+A computação em nuvem, especialmente as de infraestrutura auto-escalável trouxeram um conjunto de desafios novos. O recurso não pode mais ser removido pois o mesmo é utilizado por outros usuários não relacionados a investigação, fazê-lo constituiria violação de privacidade.
 %
 A volatilidade dos recursos tornou a verificação do seu autor um processo mais complexo pois o recurso que a gerou pode não existir mais \cite{SimouCloudChlng:2014}.
 %
-A integridade da evidência também tornou-se mais complexa pois ela precisa ser coletada, transportada e armazenada. O processo de cadeia de custôdia ganhou grande visibilidade neste quesito.
+A integridade da evidência também tornou-se mais complexa pois ela precisa ser coletada, transportada e armazenada. O processo de cadeia de custódia ganhou grande visibilidade neste quesito.
 %
-Violação de qualquer uma das caracteristicas citadas anteriormente põe em dúvida a credibilidade da evidência.
+Violação de qualquer uma das características citadas anteriormente põe em dúvida a credibilidade da evidência.
 
 \subsection{Volume de dados para coleta}
 \label{sec:volumedados}
@@ -94,11 +94,11 @@ O processo de coleta da evidência na forense digital herdou suas práticas da f
 %
 Transportando para a forense digital introduziu-se a realização da cópia bit a bit da informação que se deseja analisar.
 %
-No passado, com as soluções manipulando quantidades bem menores de memória, disco e tráfego, tal prática não trazia problemas. Nas atuais soluções, aplicações e arquiteturas em núvem, o volume de dados aumentou consideravelmente.
+No passado, com as soluções manipulando quantidades bem menores de memória, disco e tráfego, tal prática não trazia problemas. Nas atuais soluções, aplicações e arquiteturas em nuvem, o volume de dados aumentou consideravelmente.
 %
 Em 2014 investigadores forenses tinham em média 6 meses de backlog para analisar \cite{QuickIncreaseVolumeImpact:2014}. 
 %
-Encontrar uma forma de armazenar menos informações de modo a tornar a fase de análise mais rápida e eficiênte ajudará nas investigações.
+Encontrar uma forma de armazenar menos informações de modo a tornar a fase de análise mais rápida e eficiente ajudará nas investigações.
 
 \subsection{Privacidade e jurisdição}
 \label{sec:violacaoprivacidadejuriscdicao}
@@ -107,7 +107,7 @@ Na metodologia tradicional de coleta de evidências para análise, isola-se o am
 %
 Nas soluções de infra estrutura física esta prática não trás problemas, os objetos ou indivíduos sob investigação estão diretamente relacionados ao equipamento removido.
 %
-Nas soluções em nuvem esta prática não pode mais ser utilizada, pois como o recurso físico é compartilhado por vários usuários não envolvidos na investigação, remove-los configura violação de privacidade.
+Nas soluções em nuvem esta prática não pode mais ser utilizada, pois como o recurso físico é compartilhado por vários usuários não envolvidos na investigação, removê-los configura violação de privacidade.
 %
 Um complicador a mais é o fato de os dados não estarem armazenados no mesmo território em que a investigação é realizada demandando acordos de cooperação jurídica entre as partes o que nem sempre é possível \cite{SimouCloudChlng:2014}.
 %
@@ -121,7 +121,7 @@ Na metodologia tradicional de coleta de evidências para análise isola-se o amb
 %
 Nas soluções de infra estrutura física esta prática não trás problemas, os objeto ou indivíduos sob investigação estão diretamente relacionados ao equipamento removido. 
 %
-Nas soluções em nuvem esta prática não pode mais ser utilizada pois como o recurso físico é compartilhado por vários usuários não envolvidos na investigação, remove-los configura violação de privacidade.
+Nas soluções em nuvem esta prática não pode mais ser utilizada pois como o recurso físico é compartilhado por vários usuários não envolvidos na investigação, removê-los configura violação de privacidade.
 %
 Um complicador a mais é o fato de os dados não estarem armazenados no mesmo território em que a investigação é realizada demandando acordos de cooperação jurídica entre as partes o que nem sempre é possível.
 %

@@ -4,7 +4,7 @@
 \chapter{Revisão da literatura}
 \label{chp:revisão}
 
-\marcos{Explique melhor as soluções: você tem espaço, então pode deixar este capítulo muito mais auto-contido}
+\marcos{Explique melhor as soluções: você tem espaço, então pode deixar este capítulo muito mais autocontido - Hamilton: Feito}
 
 Os principais aspectos relacionados a coleta de evidências para análise forense em nuvem são, coleta, transporte, armazenamento, garantia da cadeia de custódia e reprodutibilidade do processo de coleta. 
 %
@@ -21,7 +21,7 @@ O modelo faz uso de GRR para agregar e analisar as evidências coletadas.
 %
 O modelo possui um motor de regras que se baseia em um conjunto de descrições de ameaças conhecidas armazenadas em banco para, caso alguma evidência coletada coincida com ameaças armazenadas, ele alerta um usuário humano para uma avaliação mais detalhada.
 %
-O intevalo de tempo em que os instantâneos de memória são gerados é configurável e são todos armazenados em persistência.
+O intervalo de tempo em que os instantâneos de memória são gerados é configurável e são todos armazenados em persistência.
 %
 Este modelo tem como principal vantagem a automação do processo de coleta que dispensa intervenção humana tornando mais fácil garantir a cadeia de custódia. 
 %
@@ -42,7 +42,7 @@ A proposta de \cite{PoiselVMI:2013} é baseada na técnica de introspecção em 
 %
 Esta técnica se apoia na necessidade do gerenciador de máquinas virtuais (VMM) em mapear recursos físicos da máquina hospedeira a recursos alocados à máquina virtual cliente.
 %
-Este mapeamento é usado para permitir que a memória volátil copiada da máquina virtual seja reconstruida em uma máquina física para realização da análise.
+Este mapeamento é usado para permitir que a memória volátil copiada da máquina virtual seja reconstruída em uma máquina física para realização da análise.
 %
 A proposta utiliza de coleta continua dos instantâneos de memória durante o funcionamento do sistema sem distinção do que aconteceu antes ou depois do fato de interesse e todos os instantâneos de memória são armazenados para posterior análise.
 %
@@ -53,13 +53,13 @@ Uma desvantagem da técnica de VMI mencionado pelo próprio autor é a necessida
 Esta tradução depende de conhecimento do que está sendo executado na máquina virtual, logo uma solução baseada em VMI não é completamente portável sendo necessário adequações para diferentes clientes além de ser computacionalmente custoso.
 %
 
-Tambem na vertente de introspecção de máquina virtual, \cite{Dolan-GavittSemanticGap:2011} propõe o \textit{Virtuoso}, um arcabouço de coleta de informações de processos específicos em uma máquina virtual.
+Também na vertente de introspecção de máquina virtual, \cite{Dolan-GavittSemanticGap:2011} propõe o \textit{Virtuoso}, um arcabouço de coleta de informações de processos específicos em uma máquina virtual.
 %
 O arcabouço funciona em três fases, a primeira realiza um estudo em uma máquina virtual teste do processo que se deseja coletar dados de memória mapeando o conjunto de instruções executado. 
 %
 A fase dois traduz o conjunto de instruções mapeados na fase um e cria um executável para que o processo seja executado fora da máquina virtual.
 %
-A terceira fase usa um ambiente de execução na máquina hospedeira para executar as intruções extraídas na fase dois. Este ambiente consegue acessar os endereços de memória do máquina virtual tornando possível coletar instantâneos de memória do processo em execução.
+A terceira fase usa um ambiente de execução na máquina hospedeira para executar as instruções extraídas na fase dois. Este ambiente consegue acessar os endereços de memória do máquina virtual tornando possível coletar instantâneos de memória do processo em execução.
 %
 A principal vantagem deste arcabouço é a capacidade de coletar instantâneos de memória de um processo específico.
 %
@@ -83,9 +83,9 @@ O conjunto de informações armazenadas é acordado antecipadamente com o proved
 %
 O arcabouço coleta informações continuamente e usa cálculo de hash das evidências enviadas pelo provedor de nuvem para garantir que as mesmas não foram alteradas durante o transporte.
 %
-Assim como as propostas anteriores, esta tambem não faz distinção do que aconteceu antes ou depois do fato de interesse coletando constantemente informações da máquina virtual.
+Assim como as propostas anteriores, esta também não faz distinção do que aconteceu antes ou depois do fato de interesse coletando constantemente informações da máquina virtual.
 %
-O próprio autor menciona que o arcabouço tem a desvantagem de depender da cooperação do provedor de nuvem. Esta dependência é uma estratégia considerada fraca pela comunicade forense pois a prioridade do CSP é o de garantir a disponibilidade do serviço não o de coletar evidências \cite{ClarkeReviewOfChallenges2015}.
+O próprio autor menciona que o arcabouço tem a desvantagem de depender da cooperação do provedor de nuvem. Esta dependência é uma estratégia considerada fraca pela comunidade forense pois a prioridade do CSP é o de garantir a disponibilidade do serviço não o de coletar evidências \cite{ClarkeReviewOfChallenges2015}.
 %
 A figura \ref{fig:SangLogApproach} mostra um esquema do funcionamento da solução focada em um caso específico de log de rede como proposta pelo autor.
 
@@ -104,7 +104,7 @@ O trabalho descrito em \cite{DezfouliBackupApproach:2012} é voltada a dispositi
 %
 O processo de coleta do instantâneo de memória volátil do dispositivo separa as informações e as armazena por processo ativo, o autor usa esta técnica para melhor gerenciar o espaço que as informações estão ocupando em disco. 
 %
-Possui inteligência para descartar informações de processos que foram terminados e removidos da memória assim como inteligência para fazer uso ótimo do espaço de armazenamento do device.
+Possui inteligência para descartar informações de processos que foram terminados e removidos da memória assim como inteligência para fazer uso ótimo do espaço de armazenamento do dispositivo.
 %
 O processo de coleta de informações de memória volátil é feita continuamente independente de eventos de interesse como detecção de ameaças.
 %
@@ -147,13 +147,13 @@ Fonte: \cite{DykstraFROST:2013}
 
 O trabalho descrito em \cite{GeorgeDF2CE:2012} está focado em monitoração de rede e opera em uma arquitetura de forense como serviço (FaaS). 
 %
-O autor propõe um conjunto de ferramentas que tem capacidade de realizar auto descoberta das interfaces sob monitoração, coletar evidências de tais máquinas e armazena-las.
+O autor propõe um conjunto de ferramentas que tem capacidade de realizar auto descoberta das interfaces sob monitoração, coletar evidências de tais máquinas e armazená-las.
 %
 O processo de auto descoberta e associação das evidências com usuários de rede é realizado por um motor baseado em ontologias armazenadas em um banco de dados próprio.
 %
 Esta proposta foca apenas no processo de coleta. A descrição do armazenamento e transporte é superficial.
 %
-Na figura \ref{fig:GeorgeDF2CE} mostra o desenho da aquitetura proposta pelo autor.
+Na figura \ref{fig:GeorgeDF2CE} mostra o desenho da arquitetura proposta pelo autor.
 
 \begin{figure}[htb!]
 \footnotesize
@@ -172,16 +172,16 @@ O serviço espera receber dados da execução do comando unix DD \cite{UnixManPa
 %
 A coleta ocorre continuamente a intervalos de tempo configuráveis.
 %
-O autor não descreve onde os dados serão armazenados e quem será responsável pela infra-estrutura de armazenamento.
+O autor não descreve onde os dados serão armazenados e quem será responsável pela infraestrutura de armazenamento.
 %
-O autor tambem não fala como os dados serão transportados até o armazenamento e como ele garante que estes não foram alteramos no processo.
+O autor também não fala como os dados serão transportados até o armazenamento e como ele garante que estes não foram alteramos no processo.
 %
 A figura \ref{fig:FaaSIndexedSearch} mostra o desenho da arquitetura do serviço proposta pelo autor
 
 \begin{figure}[htb!]
 \footnotesize
 \caption{Digital FaaS - Indexed Data}
-\includegraphics[scale=0.60]{FaaSIndexedSearch.png}
+\includegraphics[scale=0.50]{FaaSIndexedSearch.png}
 \centering
 \label{fig:FaaSIndexedSearch}
 \begin{center}
