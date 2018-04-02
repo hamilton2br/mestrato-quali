@@ -17,8 +17,8 @@ Esta defasagem esta no centro dos desafios da forense digital.
 
 Uma nuvem computacional é um modelo de infraestrutura no qual recursos compartilhados em quantidade configurável, acessíveis via rede, são alocados e desalocados com esforço mínimo de gerenciamento por parte de um provedor de serviços.
 %
-Há três modelos principais de comercialização de uso da nuvem: \textit{software} como serviço (\textit{Software as a Service} -- SaaS), na qual se provê o \textit{software} que será usado pelo cliente; plataforma como serviço (\textit{Platform as a Service} -- PaaS), na qual se provê o ambiente para que o cliente desenvolva, teste e execute seu \textit{software}; e, o tipo mais pertinente para este trabalho, Infraestrutura como serviço (\textit{Infrastructure as a Service} -- IaaS), na qual são fornecidos recursos computacionais básicos, como processamento e memória, em geral de forma virtualizada \cite{NIST2011}.
-%
+Há três modelos principais de comercialização de uso da nuvem: \textit{software} como serviço (\textit{Software as a Service} -- SaaS), na qual se provê o \textit{software} que será usado pelo cliente; plataforma como serviço (\textit{Platform as a Service} -- PaaS), na qual se provê o ambiente para que o cliente desenvolva, teste e execute seu \textit{software}; e, o tipo mais pertinente para este trabalho, infraestrutura como serviço (\textit{Infrastructure as a Service} -- IaaS), na qual são fornecidos recursos computacionais básicos, como processamento e memória, em geral de forma virtualizada \cite{NIST2011}.
+
 Uma arquitetura usada hoje nas soluções em nuvem são as auto-escaláveis onde recursos são altamente voláteis, sendo alocados e desalocados a qualquer momento. Estas implementações tem a vantagem de usar os recursos de nuvem de uma forma mais eficiente e menos necessidade de intervenção humana.
 
 
@@ -33,7 +33,7 @@ Uma tecnologia bastante utilizada para esse propósito são Contêineres Linux (
 
 Control Groups (\textit{cgroups}) é uma funcionalidade do Kernel do Linux que limita e isola o uso de recursos como CPU, memória e disco de um conjunto de processos e os organiza de forma hierárquica. 
 %
-O trabalho nesta funcionalidade começou em 2006 na Google sob a denominação de \textit{contêiner de processos}. No fim de 2007 seu nome mudou para \textit{control groups} e foi adicionado a versão 2.6.24 do kernel lançado em 2008 \cite{UnixManPagesControlGroups}.
+O trabalho nesta funcionalidade começou em 2006 na Google sob a denominação de \textit{process container}. No fim de 2007 seu nome mudou para \textit{control groups} e foi adicionado a versão 2.6.24 do kernel lançado em 2008 \cite{UnixManPagesControlGroups}.
 
 \textit{Namespacing} é uma funcionalidade do Kernel do Linux usado para isolar e virtualizar recursos do sistema operacional como Ids de processos, acessos a rede, comunicação inter-processos e sistema de arquivos.
 %
@@ -79,7 +79,7 @@ Em infraestrutura física esta coleta era relativamente simples, bastava-se remo
 %
 A reprodutibilidade do processo de coleta e a manutenção da integridade da evidência eram tarefas bem diretas.
 %
-A computação em nuvem, especialmente as de infraestrutura auto-escalável trouxeram um conjunto de desafios novos. O recurso não pode mais ser removido pois o mesmo é utilizado por outros usuários não relacionados a investigação, fazê-lo constituiria violação de privacidade.
+A computação em nuvem, especialmente as de infraestrutura auto-escalável trouxeram um conjunto de desafios novos. O recurso físico não pode mais ser removido pois o mesmo é utilizado por outros usuários não relacionados a investigação, fazê-lo constituiria violação de privacidade.
 %
 A volatilidade dos recursos tornou a verificação do seu autor um processo mais complexo pois o recurso que a gerou pode não existir mais \cite{SimouCloudChlng:2014}.
 %

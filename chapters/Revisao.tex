@@ -44,7 +44,7 @@ Esta técnica se apoia na necessidade do gerenciador de máquinas virtuais (VMM)
 %
 Este mapeamento é usado para permitir que a memória volátil copiada da máquina virtual seja reconstruída em uma máquina física para realização da análise.
 %
-A proposta utiliza de coleta continua dos instantâneos de memória durante o funcionamento do sistema sem distinção do que aconteceu antes ou depois do fato de interesse e todos os instantâneos de memória são armazenados para posterior análise.
+A proposta utiliza de coleta continua dos instantâneos de memória durante o funcionamento do sistema sem distinção do que aconteceu antes ou depois do fato de interesse, e todos os instantâneos de memória são armazenados para posterior análise.
 %
 Para eliminar a chance de inconsistências no instantâneo de memória volátil, a máquina virtual tem sua execução suspensa durante o processo de extração.
 %
@@ -57,11 +57,13 @@ Também na vertente de introspecção de máquina virtual, \cite{Dolan-GavittSem
 %
 O arcabouço funciona em três fases, a primeira realiza um estudo em uma máquina virtual teste do processo que se deseja coletar dados de memória mapeando o conjunto de instruções executado. 
 %
-A fase dois traduz o conjunto de instruções mapeados na fase um e cria um executável para que o processo seja executado fora da máquina virtual.
+A fase dois traduz o conjunto de instruções mapeados na fase um e cria um executável para que o processo seja rodado fora da máquina virtual.
 %
-A terceira fase usa um ambiente de execução na máquina hospedeira para executar as instruções extraídas na fase dois. Este ambiente consegue acessar os endereços de memória do máquina virtual tornando possível coletar instantâneos de memória do processo em execução.
+A terceira fase usa um ambiente na máquina hospedeira para executar as instruções extraídas na fase dois. Este ambiente consegue acessar os endereços de memória do máquina virtual tornando possível coletar instantâneos de memória do processo em execução.
 %
 A principal vantagem deste arcabouço é a capacidade de coletar instantâneos de memória de um processo específico.
+%
+A desvantagem deste método é que sua atuação é após o fato.
 %
 A figura \ref{fig:Dolan-GavittSemanticGap} mostra um esquema do funcionamento do arcabouço
 
@@ -135,7 +137,7 @@ A figura \ref{fig:DykstraFROST} o autor mostra um esquema macro da integração 
 
 \begin{figure}[htb!]
 \footnotesize
-\caption{FROST}
+\caption{FoRensic Open Stack Tools}
 \includegraphics[scale=0.50]{DykstraFROST.png}
 \centering
 \label{fig:DykstraFROST}
@@ -180,7 +182,7 @@ A figura \ref{fig:FaaSIndexedSearch} mostra o desenho da arquitetura do serviço
 
 \begin{figure}[htb!]
 \footnotesize
-\caption{Digital FaaS - Indexed Data}
+\caption{Digital Forensic as a Service - Indexed Data}
 \includegraphics[scale=0.50]{FaaSIndexedSearch.png}
 \centering
 \label{fig:FaaSIndexedSearch}
