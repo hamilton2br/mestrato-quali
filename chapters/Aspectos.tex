@@ -19,7 +19,13 @@ Uma nuvem computacional é um modelo de infraestrutura no qual recursos comparti
 %
 Há três modelos principais de comercialização de uso da nuvem: \textit{software} como serviço (\textit{Software as a Service} -- SaaS), na qual se provê o \textit{software} que será usado pelo cliente; plataforma como serviço (\textit{Platform as a Service} -- PaaS), na qual se provê o ambiente para que o cliente desenvolva, teste e execute seu \textit{software}; e, o tipo mais pertinente para este trabalho, infraestrutura como serviço (\textit{Infrastructure as a Service} -- IaaS), na qual são fornecidos recursos computacionais básicos, como processamento e memória, em geral de forma virtualizada \cite{NIST2011}.
 
-Uma arquitetura usada hoje nas soluções em nuvem são as auto-escaláveis onde recursos são altamente voláteis, sendo alocados e desalocados a qualquer momento. Estas implementações tem a vantagem de usar os recursos de nuvem de uma forma mais eficiente e menos necessidade de intervenção humana.
+Uma arquitetura muito usada hoje nas soluções em nuvem são as auto-escaláveis onde recursos são altamente voláteis, sendo alocados e desalocados a qualquer momento. 
+%
+Tais arquiteturas possuem receitas para criação de máquinas adequadas a atividade fim do sistema que o orquestrador da nuvem segue no momento em que precisa criar máquinas para suprir um eventual aumento de demanda.
+%
+As receitas, escritas em linguagem específica, podem conter instruções de como distribuir o tráfego de rede entre as novas máquinas ou como redistribuir os dados na nova máquina de um banco de dados distribuídos
+%
+Estas implementações tem a vantagem de usar os recursos de nuvem de uma forma mais eficiente, menos necessidade de intervenção humana e são mais resilientes a variação na demanda do sistema.
 
 
 \section{Uso de contêineres}
@@ -51,14 +57,8 @@ Desta forma pode-se instalar uma distribuição Linux secundária em uma pasta, 
 Forense digital (também conhecida por forense computacional) é um conjunto de técnicas de coleta e análise da interação entre humanos e computadores de forma que esta seja aceita em um processo legal.
 %
 Tal como a forense tradicional, a forense digital se baseia no princípio de Locard. Definido pelo médico francês Edmond Locard, estabelece que ``Quando um indivíduo entra em contato com outro objeto ou indivíduo, este sempre deixa vestígio deste contato'' \cite{Ramos:2011}.
-
-A forense digital quando aplicada a investigação de incidentes em soluções na nuvem enfrenta desafios adicionais relacionados a coleta, transporte e análise da evidência.
 %
-A primeira delas diz respeito a aceitabilidade de uma evidência. Para que uma evidência seja aceita em um processo legal é necessária que a cadeia de custódia relacionada a evidência tenha sido garantida.
-%
-Cadeia de custódia é o processo de documentação da história cronológica da evidência de modo a saber onde a evidência esteve e quem teve acesso a ela \cite{Ramos:2011}. O SENASP 2013 define cadeia de custódia como ``a sistemática de procedimentos que visa à preservação do valor probatório da prova pericial caracterizada.''
-%
-Assim a Forense digital tem por objetivo a investigação de evidências digitais da interação entre homem e máquina de modo a reconstruir a cadeia de eventos no passado de forma que suas conclusões sejam validadas por terceiros.
+A forense digital tem por objetivo a investigação de evidências digitais da interação entre homem e máquina de modo a reconstruir a cadeia de eventos no passado de forma que suas conclusões sejam validadas por terceiros e sejam aceitas em um processo legal.
 
 
 \subsection{Aceitabilidade da evidência em processo legal.}
@@ -66,11 +66,19 @@ Assim a Forense digital tem por objetivo a investigação de evidências digitai
 
 O processo de análise forense no evento de um crime digital é descrito no EDIPM por 4 fases: Identificar, preservar, examinar e apresentar \cite{GrisposChallengesCloudComputing:2012}.
 %
-Segundo os autores, a fase de preservação da evidência deve ser conduzida de forma ``forensicamente aceitável'' isto é, coletar as evidências de forma que as mesmas sejam aceitas em um processo legal e não sejam invalidadas no curso do mesmo.
+Pertinente a este trabalho, a fase de preservação da evidência deve ser conduzida de forma ``forensicamente aceitável'' isto é, coletar as evidências de forma que as mesmas sejam aceitas em um processo legal e não sejam invalidadas no curso do mesmo.
 %
-Segundo \cite{Ramos:2011} a aceitabilidade de uma evidência digital em um processo legal deve atender a dois requisitos principais. 
+
+Para atingir tal objetivo o primeiro passo é a garantia da cadeia de custódia relacionada a evidência.
 %
-Autenticidade, descrito como ``o processo pelo qual se pode garantir a autoria do documento eletrônico'', ou seja, não permite dúvida quanto à identificação do autor e integridade, descrita como ``atestado da inteireza do documento eletrônico após sua transmissão, bem como apontar eventual alteração irregular de seu conteúdo''.
+Cadeia de custódia é o processo de documentação da história cronológica da evidência de modo a saber onde a evidência esteve e quem teve acesso a ela \cite{Ramos:2011}. O SENASP 2013 define cadeia de custódia como ``a sistemática de procedimentos que visa à preservação do valor probatório da prova pericial caracterizada.''
+%
+
+O passo seguinte é a garantia da autenticidade e integridade da evidência.
+%
+Autenticidade, é descrito como ``o processo pelo qual se pode garantir a autoria do documento eletrônico'', ou seja, não permite dúvida quanto à identificação do autor.
+%
+Integridade, é descrita como ``o atestado da inteireza do documento eletrônico após sua transmissão, bem como apontar eventual alteração irregular de seu conteúdo''. \cite{Ramos:2011}
 %
 Caso haja dúvida a cerca de um destes requisitos, uma perícia técnica pode ser convocada, nesta será analisada o autor da evidência ou seja sua fonte e se a mesma não foi alterada no processo.
 
@@ -79,7 +87,9 @@ Em infraestrutura física esta coleta era relativamente simples, bastava-se remo
 %
 A reprodutibilidade do processo de coleta e a manutenção da integridade da evidência eram tarefas bem diretas.
 %
-A computação em nuvem, especialmente as de infraestrutura auto-escalável trouxeram um conjunto de desafios novos. O recurso físico não pode mais ser removido pois o mesmo é utilizado por outros usuários não relacionados a investigação, fazê-lo constituiria violação de privacidade.
+A computação em nuvem, especialmente as de infraestrutura auto-escalável trouxeram um conjunto de desafios novos. 
+%
+O recurso físico não pode mais ser removido pois o mesmo é utilizado por outros usuários não relacionados a investigação, fazê-lo constituiria violação de privacidade.
 %
 A volatilidade dos recursos tornou a verificação do seu autor um processo mais complexo pois o recurso que a gerou pode não existir mais \cite{SimouCloudChlng:2014}.
 %
@@ -117,16 +127,32 @@ Neste cenário encontrar uma forma de coletar a evidência sem violar jurisdiç�
 \subsection{Coleta de evidências de memória volátil de máquinas em nuvem}
 \label{sec:forensenuvem}
 
-Na metodologia tradicional de coleta de evidências para análise isola-se o ambiente e as evidencias são removidas. Transportado para a forense digital temos a prática de remover o equipamento para realização de cópia bit a bit da evidência.
+A prática de armazenar histórico de tráfego de rede e alterações de dados armazenados em disco já é bem difundida na comunidade.
 %
-Nas soluções de infra estrutura física esta prática não trás problemas, os objeto ou indivíduos sob investigação estão diretamente relacionados ao equipamento removido. 
+Memória volátil porém não tem o mesmo tratamento sendo suas alterações quase nunca são armazenadas, seja por questões de performance ou por praticidade dado a alta volatilidade.
 %
-Nas soluções em nuvem esta prática não pode mais ser utilizada pois como o recurso físico é compartilhado por vários usuários não envolvidos na investigação, removê-los configura violação de privacidade.
+Existe uma classe específica de ataques conhecidos como injeção de código em memória \cite{CaseMemoryForensics:2014}. Tais ataques quando usados contra uma arquitetura em nuvem, não deixam rastros quando recursos de processamento virtuais são desativados e sua memória é liberada \cite{VomelMemoryAcquisition:2013}, \cite{CaseMemoryForensics:2014}.
 %
-Um complicador a mais é o fato de os dados não estarem armazenados no mesmo território em que a investigação é realizada demandando acordos de cooperação jurídica entre as partes o que nem sempre é possível.
-%
-Neste cenário encontrar uma forma de coletar a evidência sem violar jurisdição e privacidade são de grande importância num futuro próximo.
+Em particular, têm especial interesse quatro tipos específicos dessa família de ameaças \cite{CaseMemoryForensics:2014}:
 
+
+\begin{itemize}
+ \item \textbf{Injeção remota de bibliotecas}: Um processo malicioso força o processo alvo a carregar uma biblioteca em seu espaço de memória.
+ %
+ Como resultado, o código da biblioteca carregada executa com os mesmos privilégios do executável em que ela foi injetada. 
+ %
+ Esta estratégia, comumente usada para instalar malwares, pode fazer com que uma biblioteca maliciosa armazenada no sistema seja distribuída por vários processos de uma mesma máquina, dificultando sua remoção \cite{MillerRemoteLibraryInjection:2004}.
+ %
+ \item \textbf{Inline Hooking}: Um processo malicioso escreve código como uma sequência de bytes diretamente no espaço de memória de um processo alvo, e então força este último a executar o código injetado. 
+ %
+ O código pode ser, por exemplo, um \textit{script} de \textit{shell}.
+ %
+ \item \textbf{Injeção reflexiva de biblioteca}: Um processo malicioso acessa diretamente a memória do processo alvo, inserindo nela o código de uma biblioteca na forma de uma sequência de bytes, e então força o processo a executar essa biblioteca. 
+ %
+ Nessa forma de ataque, a biblioteca maliciosa não existe fisicamente; isso torna tal estratégia de injeção de código potencialmente mais atrativa, pois o carregamento da biblioteca não é registrado no sistema operacional (SO), dificultando a detecção do ataque \cite{FewerReflectiveLibraryInject:2008}.
+ %
+ \item \textbf{Injeção de processo vazio}: Um processo malicioso dispara uma instância de um processo legítimo no estado ``suspenso''; a área do executável é então liberada e realocada com código malicioso.
+\end{itemize}
 
 
 

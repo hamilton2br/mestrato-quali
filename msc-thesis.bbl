@@ -64,6 +64,11 @@ ISSN 17422876.
 (Proc. of 13th Annual DFRWS Conference).
 Available from Internet: \url{dx.doi.org/10.1016/j.diin.2013.06.010}.}
 
+\bibitem[Fewer 2008]{FewerReflectiveLibraryInject:2008}
+\abntrefinfo{Fewer}{FEWER}{2008}
+{FEWER, B.~S. {Reflective DLL Injection}.
+no. October, 2008.}
+
 \bibitem[George, Venter and Thomas 2012]{GeorgeDF2CE:2012}
 \abntrefinfo{George, Venter and Thomas}{GEORGE; VENTER; THOMAS}{2012}
 {GEORGE, S.; VENTER, H.; THOMAS, F. {Digital Forensic Framework for a Cloud
@@ -106,6 +111,12 @@ Available from Internet: \url{https://linuxcontainers.org/lxc/introduction/}.}
   \urls{csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf}.
 Available from Internet:
   \url{www.mendeley.com/research/the-nist-definition-about-cloud-computing/}.}
+
+\bibitem[Miller and Turkulainen 2004]{MillerRemoteLibraryInjection:2004}
+\abntrefinfo{Miller and Turkulainen}{MILLER; TURKULAINEN}{2004}
+{MILLER, M.; TURKULAINEN, J. \emph{{Remote Library Injection}}. 2004. Tech.
+  Report:
+  \urls{www.nologin.org/Downloads/Papers/remote-library-injection.pdf}.}
 
 \bibitem[Morsy, Grundy and Muller 2010]{MorsyCloudSecurity:2010}
 \abntrefinfo{Morsy, Grundy and Muller}{MORSY; GRUNDY; MULLER}{2010}
@@ -208,6 +219,16 @@ ISSN 16113349.}
 \abntrefinfo{{Volatility Foundation}}{{Volatility Foundation}}{2014}
 {{Volatility Foundation}. \emph{{Volatility Framework}}. 2014.
   \urls{www.volatilityfoundation.org/}.}
+
+\bibitem[V\"{o}mel and St\"{u}ttgen 2013]{VomelMemoryAcquisition:2013}
+\abntrefinfo{V\"{o}mel and St\"{u}ttgen}{V\"{o}MEL; ST\"{u}TTGEN}{2013}
+{V\"{o}MEL, S.; ST\"{u}TTGEN, J. An evaluation platform for forensic memory
+  acquisition software.
+\emph{Digit. Investig.}, Elsevier Science Publishers B. V., Amsterdam, The
+  Netherlands, The Netherlands, vol.~10, p. S30--S40, 2013.
+ISSN 1742-2876.
+Elsevier Science Publishers.
+Available from Internet: \url{http://dx.doi.org/10.1016/j.diin.2013.06.004}.}
 
 \bibitem[Wikipedia 2018]{WikipediaMapReduce}
 \abntrefinfo{Wikipedia}{WIKIPEDIA}{2018}
