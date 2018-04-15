@@ -72,7 +72,7 @@ Fonte: Próprio autor
 %\marcosT{Essa frase não faz sentido: não se ``assina'' nada com um ``hash''. Você pode ``calcular o hash'' ou ``assinar um dado'' (e.g., um dado juntamente com o hash de alguma coisa). Revise essa frase... - Hamilton: Feito}
 Para persistir a relação evidência-origem e garantir a integridade da mesma, a presente proposta calcula o hash do par [evidência, identificador da imagem do contêiner] e armazena a tripla [hash, identificador da imagem do contêiner, evidência].
 %
-Para evitar eventuais problemas com o armazenamento desses dados em países com jurisdições diferentes daquelas que devem ser aplicadas na investigação em questão, as evidências coletadas são armazenadas em um local físico fora da nuvem, após serem transportadas por meio de um canal seguro (e.g., via \textit{Transport Layer Security} -- TLS \cite{DierksT2008}).
+Para evitar eventuais problemas com o armazenamento desses dados em países com jurisdições diferentes daquelas que devem ser aplicadas na investigação em questão, as evidências coletadas são armazenadas em um local físico fora da nuvem, após serem transportadas por meio de um canal seguro (e.g., via TLS ( \textit{Transport Layer Security} -- Camada de Transporte Seguro ) \cite{DierksT2008}).
 %
 
 \section{Implementação}
@@ -94,7 +94,7 @@ Fonte: Próprio autor
 
 Os métodos propostos foram implementados em uma plataforma de testes visando avaliar a eficácia de \fancyname em coletar as informações de memória dos contêineres de forma reprodutível, sem violar jurisdições ou a privacidade de usuários.
 %
-A solução, ilustrada na Fig. \ref{fig:Solucao}, consistiu na criação de 1 VM usando o Oracle Virtual Box 5.0%\cite{VirtualBox} 
+A solução, ilustrada na Fig. \ref{fig:Solucao}, consistiu na criação de 1 VM  ( \textit{Virtual Machine} -- Máquina Virtual ) usando o Oracle Virtual Box 5.0 \cite{VirtualBox} 
 em um notebook Intel i5 de 2.30Mhz e 4Gb de RAM com sistema operacional de 64 bits.
 %
 Essas VMs possuem 2 Gb de memória RAM e emulam apenas 1 processador, e em cada uma delas foi instalado o Docker Engine 1.10%\cite{DockerInc} 
@@ -295,9 +295,9 @@ Fonte: Próprio autor
 
 Como a solução descrita tem como foco coletar informações de memória no espaço do usuário (\textit{user space}), ela não consegue acessar o espaço de kernel (\textit{kernel space}). 
 %
-Assim, \fancyname em princípio não provê suporte a técnicas de investigação de malware que se baseiam em informações do \textit{kernel space}, como, por exemplo, a comparação de informações do bloco do ambiente do processo (\textit{Process Environment Block -- PEB}), que ficam no \textit{user space}, com informações do descritor de endereços de memória virtual (\textit{Virtual Address Descriptor -- VAD}), que fica no \textit{kernel space}. 
+Assim, \fancyname em princípio não provê suporte a técnicas de investigação de malware que se baseiam em informações do \textit{kernel space}, como, por exemplo, a comparação de informações do PEB ( \textit{Process Environment Block} -- Bloco para o Ambiente dos Processos ), que ficam no \textit{user space}, com informações do VAD ( \textit{Virtual Address Descriptor} -- Descritor de Endereços de Memória Virtual ), que fica no \textit{kernel space}. 
 %
-Análise de ameaças que realizam manipulação direta dos objetos do kernel (D.K.O.M.-- \textit{Direct Kernel Object Manipulation}) também não se beneficiam com a solução aqui proposta. 
+Análise de ameaças do tipo DKOM ( \textit{Direct Kernel Object Manipulation} -- Manipulação Direta dos Objetos do Kernel ) também não se beneficiam com a solução aqui proposta. 
 %\marcosT{Não entendi a ``associação com o contêiner'' aqui. Você quer dizer que ``não se beneficiam com a solução aqui proposta'' ou outra coisa? Você não definiu o que seria a tal ``associação com o contêiner'' fora do contexto da sua solução, então ficou confuso - Hamilton: Feito}.
 
 

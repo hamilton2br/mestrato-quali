@@ -8,13 +8,8 @@
 \bibitem[Alqahtany et al. 2015]{ClarkeReviewOfChallenges2015}
 \abntrefinfo{Alqahtany et al.}{ALQAHTANY et al.}{2015}
 {ALQAHTANY, S. et al. Cloud forensics: A review of challenges, solutions and
-  open problems. In \emph{Int. Conference on Cloud Computing (ICCC)}. [S.l.]:
-  IEEE, 2015. p.~1--9.}
-
-\bibitem[Amazon 2016]{AmazonContainer}
-\abntrefinfo{Amazon}{AMAZON}{2016}
-{AMAZON. \emph{{What are Containers}}. 2016.
-Available from Internet: \url{https://aws.amazon.com/containers}.}
+  open problems. In \emph{Int. Conference on Cloud Computing (ICCC)}. Plymouth,
+  UK: IEEE, 2015. p.~1--9.}
 
 \bibitem[Bem et al. 2008]{BemPastPresentFuture:2008}
 \abntrefinfo{Bem et al.}{BEM et al.}{2008}
@@ -22,27 +17,33 @@ Available from Internet: \url{https://aws.amazon.com/containers}.}
 \emph{Journal of Information Science and Technology}, vol.~5, no.~3, p. 43--59,
   2008.}
 
+\bibitem[Bernstein 2014]{containers-tech:2014}
+\abntrefinfo{Bernstein}{BERNSTEIN}{2014}
+{BERNSTEIN, D. Containers and cloud: From {LXC} to {Docker} to {Kubernetes}.
+\emph{IEEE Cloud Computing}, vol.~1, no.~3, p. 81--84, Sept 2014.
+ISSN 2325-6095.}
+
 \bibitem[Case et al. 2014]{CaseMemoryForensics:2014}
 \abntrefinfo{Case et al.}{CASE et al.}{2014}
 {CASE, A. et al. \emph{{The Art of Memory Forensics: Detecting malware and
-  threats in Windows, Linux and Mac memory}}. [S.l.]: Wiley, 2014.}
+  threats in Windows, Linux and Mac memory}}. Hoboken, NJ: Wiley, 2014.}
 
 \bibitem[Dezfouli et al. 2012]{DezfouliBackupApproach:2012}
 \abntrefinfo{Dezfouli et al.}{DEZFOULI et al.}{2012}
 {DEZFOULI, F. et al. Volatile memory acquisition using backup for forensic
   investigation. In \emph{Int. Conf. on Cyber Security, Cyber Warfare and
-  Digital Forensic (CyberSec)}. [S.l.: s.n.], 2012. p. 186--189.}
+  Digital Forensic (CyberSec)}. Plymouth, UK: IEEE, 2012. p. 186--189.}
 
 \bibitem[{Dierks T} 2008]{DierksT2008}
 \abntrefinfo{{Dierks T}}{{Dierks T}}{2008}
 {{Dierks T}, R.~E. \emph{{The Transport Layer Security (TLS) Protocol}}.
-  [S.l.]: IETF, 2008. IETF: \urls{https://tools.ietf.org/html/rfc5246}.}
+  Fremont, CA: IETF, 2008. IETF: \urls{https://tools.ietf.org/html/rfc5246}.}
 
 \bibitem[Dolan-Gavitt et al. 2011]{Dolan-GavittSemanticGap:2011}
 \abntrefinfo{Dolan-Gavitt et al.}{DOLAN-GAVITT et al.}{2011}
 {DOLAN-GAVITT, B. et al. Virtuoso: Narrowing the semantic gap in virtual
   machine introspection. In \emph{IEEE Symposium on Security and Privacy}.
-  [S.l.: s.n.], 2011. p. 297--312.
+  Plymouth, UK: IEEE, 2011. p. 297--312.
 ISSN 1081-6011.}
 
 \bibitem[Dykstra and Sherman 2012]{DykstraAcquiringForIAAS:2012}
@@ -108,9 +109,8 @@ Available from Internet: \url{https://linuxcontainers.org/lxc/introduction/}.}
 \abntrefinfo{Mell and Grance}{MELL; GRANCE}{2011}
 {MELL, P.; GRANCE, T. \emph{The {NIST} definition of cloud computing}. 2011.
   7~p. NIST SP 800-145.
-  \urls{csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf}.
 Available from Internet:
-  \url{www.mendeley.com/research/the-nist-definition-about-cloud-computing/}.}
+  \url{csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf}.}
 
 \bibitem[Miller and Turkulainen 2004]{MillerRemoteLibraryInjection:2004}
 \abntrefinfo{Miller and Turkulainen}{MILLER; TURKULAINEN}{2004}
@@ -121,8 +121,14 @@ Available from Internet:
 \bibitem[Morsy, Grundy and Muller 2010]{MorsyCloudSecurity:2010}
 \abntrefinfo{Morsy, Grundy and Muller}{MORSY; GRUNDY; MULLER}{2010}
 {MORSY, A.~M.; GRUNDY, J.; MULLER, I. {An Analysis of the Cloud Computing
-  Security Problem}. In \emph{APSEC Cloud Workshop}. Sydney, Australia: [s.n.],
-  2010. Available from Internet: \url{https://arxiv.org/abs/1609.01107}.}
+  Security Problem}. In \emph{APSEC Cloud Workshop}. Sydney, Australia: Cornell
+  University, 2010. Available from Internet:
+  \url{https://arxiv.org/abs/1609.01107}.}
+
+\bibitem[Oracle]{VirtualBox}
+\abntrefinfo{Oracle}{ORACLE}{}
+{ORACLE. \emph{{Virtual Box 5.1}}.
+Available from Internet: \url{https://www.virtualbox.org/}.}
 
 \bibitem[Poisel, Malzer and Tjoa 2013]{PoiselVMI:2013}
 \abntrefinfo{Poisel, Malzer and Tjoa}{POISEL; MALZER; TJOA}{2013}
@@ -193,22 +199,26 @@ ISSN 16113349.}
 \bibitem[{Unix Man Pages}]{UnixManPagesControlGroups}
 \abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{a}
 {{Unix Man Pages}. \emph{{cgroups - Control Groups}}.
-  \urls{http://man7.org/linux/man-pages/man7/cgroups.7.html}.}
+  \urls{http://man7.org/linux/man-pages/man7/cgroups.7.html}.
+Acessado em: 15-09-2017.}
 
 \bibitem[{Unix Man Pages}]{UnixManPagesChRoot}
 \abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{b}
 {\underline{\ \ \ \ \ \ \ \ }. \emph{{chroot - Change Root coomand}}.
-  \urls{http://man7.org/linux/man-pages/man1/chroot.1.html}.}
+  \urls{http://man7.org/linux/man-pages/man1/chroot.1.html}.
+Acessado em: 24-09-2017.}
 
 \bibitem[{Unix Man Pages}]{UnixManPagesDD}
 \abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{c}
 {\underline{\ \ \ \ \ \ \ \ }. \emph{{dd - convert and copy a file}}.
-  \urls{http://man7.org/linux/man-pages/man1/dd.1.html}.}
+  \urls{http://man7.org/linux/man-pages/man1/dd.1.html}.
+Acessado em: 01-12-2017.}
 
 \bibitem[{Unix Man Pages}]{UnixManPagesNamespacing}
 \abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{d}
 {\underline{\ \ \ \ \ \ \ \ }. \emph{{Namespacing}}.
-  \urls{http://man7.org/linux/man-pages/man7/namespaces.7.html}.}
+  \urls{http://man7.org/linux/man-pages/man7/namespaces.7.html}.
+Acessado em: 15-09-2017.}
 
 \bibitem[{Unix Man Pages}]{UnixManPagesNumaMaps}
 \abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{e}

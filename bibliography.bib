@@ -3,28 +3,29 @@ abstract = {Copy a file, converting and formatting according to the operands.},
 author = {{Unix Man Pages}},
 title = {{dd - convert and copy a file}},
 howpublished = {\urls{http://man7.org/linux/man-pages/man1/dd.1.html}},
-urldate = {01-12-2017}
+note = {Acessado em: 01-12-2017},
 }
+
 @misc{UnixManPagesControlGroups,
 abstract = {Control cgroups, usually referred to as cgroups, are a Linux kernel feature which allow processes to be organized into hierarchical groups whose usage of various types of resources can then be limited and monitored.  The kernel's cgroup interface is provided through a pseudo-filesystem called cgroupfs.  Grouping is implemented in the core cgroup kernel code, while resource tracking and limits are implemented in a set of per-resource-type subsystems (memory, CPU, and so on.},
 author = {{Unix Man Pages}},
 title = {{cgroups - Control Groups}},
 howpublished = {\urls{http://man7.org/linux/man-pages/man7/cgroups.7.html}},
-urldate = {15-09-2017}
+note = {Acessado em: 15-09-2017}
 }
 @misc{UnixManPagesNamespacing,
 abstract = {A namespace wraps a global system resource in an abstraction that makes it appear to the processes within the namespace that they have their own isolated instance of the global resource.  Changes to the global resource are visible to other processes that are members of the namespace, but are invisible to other processes.  One use of namespaces is to implement containers.},
 author = {{Unix Man Pages}},
 title = {{Namespacing}},
 howpublished = {\urls{http://man7.org/linux/man-pages/man7/namespaces.7.html}},
-urldate = {15-09-2017}
+note = {Acessado em: 15-09-2017}
 }
 @misc{UnixManPagesChRoot,
 abstract = {chroot - run command or interactive shell with special root directory.},
 author = {{Unix Man Pages}},
 title = {{chroot - Change Root coomand}},
 howpublished = {\urls{http://man7.org/linux/man-pages/man1/chroot.1.html}},
-urldate = {24-09-2017}
+note = {Acessado em: 24-09-2017}
 }
 @misc{RightScale2017,
 abstract = {In january 2017, Right Scale surveyed 1002 technical professionals across a broad cross-section of organizations about their adoption of cloud computing.},
@@ -33,14 +34,33 @@ title = {{State of the Cloud Report}},
 howpublished = {\urls{www.rightscale.com/lp/state-of-the-cloud}},
 year = {2017}
 }
+
+
+
+
 @misc{AmazonContainer,
 abstract = {Descri{\c{c}}{\~{a}}o do Contêiner},
 author = {Amazon},
 booktitle = {Amazon},
 title = {{What are Containers}},
 url = {https://aws.amazon.com/containers},
-year = {2016}
+year = {2016},
 }
+
+@ARTICLE{containers-tech:2014,
+author={D. Bernstein},
+journal={IEEE Cloud Computing},
+title={Containers and Cloud: From {LXC} to {Docker} to {Kubernetes}},
+year={2014},
+volume={1},
+number={3},
+pages={81-84},
+keywords={Cloud computing;Containers;Google;Home appliances;Linux;Runtime;Virtual machine monitors;cloud;containers;dockers;virtual machines},
+doi={10.1109/MCC.2014.51},
+ISSN={2325-6095},
+month={Sept},}
+
+
 @article{Fraser2006,
 abstract = {We present the Forensic Analysis ToolKit (FATKit) – a modular, extensible framework that increases the practical applicability of volatile memory forensic analysis by freeing human analysts from the prohibitively-tedious aspects of low-level data extraction. FATKit allows analysts to focus on higher-level tasks by providing novel methods for automatically deriv- ing digital object definitions from C source code, extracting those objects from memory images, and visualizing the underlying data in various ways. FATKit presently includes modules for general virtual address space reconstruction and visualization, as well as Linux- and Windows-specific kernel analysis. {\textordfeminine}},
 author = {Fraser, Timothy and Arbaugh, William A and {Petroni Jr}, Nick L and Aaron, Walters},
@@ -89,7 +109,8 @@ url = {https://nginx.org/}
 abstract = {Comercial implementation of linux conteiners},
 author = {{Docker Inc}},
 title = {{Docker}},
-url = {https://www.docker.com/}
+howpublished = {https://www.docker.com/},
+note = {Acessado em: 15-04-2018} 
 }
 @misc{VirtualBox,
 abstract = {VirtualBox is a powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use. Not only is VirtualBox an extremely feature rich, high performance product for enterprise customers, it is also the only professional solution that is freely available as Open Source Software under the terms of the GNU General Public License (GPL) version 2.},
@@ -102,6 +123,7 @@ abstract = {This document specifies Version 1.2 of the Transport Layer Security 
 author = {{Dierks T}, Rescorla E},
 howpublished = {IETF: \urls{https://tools.ietf.org/html/rfc5246}},
 publisher = {IETF},
+address = {Fremont, CA},
 title = {{The Transport Layer Security (TLS) Protocol}},
 year = {2008}
 }
@@ -134,13 +156,14 @@ year = {2016}
 }
 
 
-@INPROCEEDINGS{ClarkeReviewOfChallenges2015,
+@inproceedings{ClarkeReviewOfChallenges2015,
 author={S. Alqahtany and N. Clarke and S. Furnell and C. Reich},
 booktitle={Int. Conference on Cloud Computing (ICCC)},
 title={Cloud Forensics: A Review of Challenges, Solutions and Open Problems},
 year={2015},
 pages={1-9},
 publisher = {IEEE},
+address = {Plymouth, UK},
 keywords={cloud computing;digital forensics;resource allocation;broad network access;cloud computing;cloud forensics;digital investigation;on-demand self-service;rapid elasticity;resource pooling;Cloud computing;Digital forensics;Security;Servers;Standards;Synchronization},
 doi={10.1109/CLOUDCOMP.2015.7149635},
 month={April},}
@@ -229,6 +252,7 @@ year = {2008}
 @book{CaseMemoryForensics:2014,
 author = {Case, Andrew and Ligh, Michael and Jamie, Levy and Walters, Aaron},
 publisher = {Wiley},
+address = {Hoboken, NJ},
 title = {{The Art of Memory Forensics: Detecting malware and threats in Windows, Linux and Mac memory}},
 year = {2014}
 }
@@ -310,6 +334,8 @@ booktitle={Int. Conf. on Cyber Security, Cyber Warfare and Digital Forensic (Cyb
 title={Volatile memory acquisition using backup for forensic investigation},
 year={2012},
 pages={186-189},
+publisher={IEEE},
+address = {Plymouth, UK},
 keywords={computer crime;computer forensics;data acquisition;mobile handsets;backup;criminal activities;cybercrime;forensic investigation;mobile devices;mobile phones;volatile memory acquisition;Computers;Data mining;Forensics;Mobile communication;Mobile computing;Mobile handsets;Random access memory;backup;digital forensics;mobile phone forensics;mobile phone investigation;volatile data},
 doi={10.1109/CyberSec.2012.6246108},
 month={June},}
@@ -541,6 +567,8 @@ booktitle={IEEE Symposium on Security and Privacy},
 title={Virtuoso: Narrowing the Semantic Gap in Virtual Machine Introspection},
 year={2011},
 pages={297-312},
+publisher={IEEE},
+address = {Plymouth, UK},
 keywords={security of data;virtual machines;forensic memory analysis;malware analysis;operating system;virtual machine introspection;virtual machine-based intrusion detection;virtuoso;Data mining;Kernel;Malware;Training;Virtual machining;dynamic analysis;security;virtual machine introspection;virtualization},
 doi={10.1109/SP.2011.11},
 ISSN={1081-6011},
@@ -607,6 +635,7 @@ year = {2008}
 @inproceedings{MorsyCloudSecurity:2010,
 abstract = {Cloud computing is a new computational paradigm that offers an innovative business model for organizations to adopt IT without upfront investment. Despite the potential gains achieved from the cloud computing, the model security is still questionable which impacts the cloud model adoption. The security problem becomes more complicated under the cloud model as new dimensions have entered into the problem scope related to the model architecture, multi-tenancy, elasticity, and layers dependency stack. In this paper we introduce a detailed analysis of the cloud security problem. We investigated the problem from the cloud architecture perspective, the cloud offered characteristics perspective, the cloud stakeholders' perspective, and the cloud service delivery models perspective. Based on this analysis we derive a detailed specification of the cloud security problem and key features that should be covered by any proposed security solution.},
 address = {Sydney, Australia},
+publisher = {Cornell University},
 author = {Morsy, Al. M and Grundy, J. and Muller, I.},
 booktitle = {APSEC Cloud Workshop},
 file = {:home/hamilton/host/An analisys of the cloud computing security problem.pdf:pdf},
@@ -673,7 +702,7 @@ year = {2012}
 author = {Mell, Peter and Grance, Timothy},
 title = {The {NIST} definition of cloud computing},
 year = {2011},
-howpublished = {NIST SP 800-145. \urls{csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf}},
+howpublished = {NIST SP 800-145},
 abstract = {The National Institute of Standards and Technology (NIST) developed this document in furtherance of its statutory responsibilities under the Federal Information Security Management Act (FISMA) of 2002, Public Law 107-347. NIST is responsible for developing standards and guidelines, including minimum requirements, for providing adequate information security for all agency operations and assets; but such standards and guidelines shall not apply to national security systems. This guideline is consistent with the requirements of the Office of Management and Budget (OMB) Circular A-130, Section 8b(3), Securing Agency Information Systems, as analyzed in A-130, Appendix IV: Analysis of Key Sections. Supplemental information is provided in A-130, Appendix III. This guideline has been prepared for use by Federal agencies. It may be used by nongovernmental organizations on a voluntary basis and is not subject to copyright, though attribution is desired. Nothing in this document should be taken to contradict standards and guidelines made mandatory and binding on Federal agencies by the Secretary of Commerce under statutory authority, nor should these guidelines be interpreted as altering or superseding the existing authorities of the Secretary of Commerce, Director of the OMB, or any other Federal official.},
 archivePrefix = {arXiv},
 arxivId = {2305-0543},
@@ -686,7 +715,7 @@ journal = {NIST Special Publication},
 keywords = {NIST SP 800-145,The NIST Definition of Cloud Comp},
 pages = {7},
 pmid = {21450758},
-url = {www.mendeley.com/research/the-nist-definition-about-cloud-computing/},
+url = {csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf},
 volume = {145},
 }
 

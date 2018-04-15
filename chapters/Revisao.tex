@@ -17,7 +17,7 @@ A partir do momento em que uma ameaça é detectada, o modelo tira instantâneos
 %
 O autor não descreve os detalhes do armazenamento mas diz que é ``forensicamente aceitável''.
 %
-O modelo faz uso de GRR para agregar e analisar as evidências coletadas. 
+O modelo faz uso de GRR ( \textit{Google Rapid Response} -- Resposta Rápida Google ) para agregar e analisar as evidências coletadas. 
 %
 O modelo possui um motor de regras que se baseia em um conjunto de descrições de ameaças conhecidas armazenadas em banco para, caso alguma evidência coletada coincida com ameaças armazenadas, ele alerta um usuário humano para uma avaliação mais detalhada.
 %
@@ -29,7 +29,7 @@ A figura \ref{fig:ReichertAutoAcquisitionModel} mostra o desenho da arquitetura 
 
 \begin{figure}[htb!]
 \footnotesize
-\caption{Automated Forensics Data Acquisition Model}
+\caption{\textit{Automated Forensics Data Acquisition Model}}
 \includegraphics[scale=0.50]{ReichertAutoAcquisitionModel.png}
 \centering
 \label{fig:ReichertAutoAcquisitionModel}
@@ -38,9 +38,9 @@ Fonte: \cite{ReichertAutoAcquisition:2015}
 \end{center}
 \end{figure}
 
-A proposta de \cite{PoiselVMI:2013} é baseada na técnica de introspecção em máquina virtual (VMI) para coleta de memória volátil. 
+A proposta de \cite{PoiselVMI:2013} é baseada na técnica de VMI ( \textit{Virtual Machine Introspection} -- Introspecção em Máquina Virtual ) para coleta de memória volátil. 
 %
-Esta técnica se apoia na necessidade do gerenciador de máquinas virtuais (VMM) em mapear recursos físicos da máquina hospedeira a recursos alocados à máquina virtual cliente.
+Esta técnica se apoia na necessidade do VMM ( \textit{Virtual Machine Manager} -- Gerenciador de Máquinas Virtuais ) em mapear recursos físicos da máquina hospedeira a recursos alocados à máquina virtual cliente.
 %
 Este mapeamento é usado para permitir que a memória volátil copiada da máquina virtual seja reconstruída em uma máquina física para realização da análise.
 %
@@ -87,13 +87,13 @@ O arcabouço coleta informações continuamente e usa cálculo de hash das evid�
 %
 Assim como as propostas anteriores, esta também não faz distinção do que aconteceu antes ou depois do fato de interesse coletando constantemente informações da máquina virtual.
 %
-O próprio autor menciona que o arcabouço tem a desvantagem de depender da cooperação do provedor de nuvem. Esta dependência é uma estratégia considerada fraca pela comunidade forense pois a prioridade do CSP é o de garantir a disponibilidade do serviço não o de coletar evidências \cite{ClarkeReviewOfChallenges2015}.
+O próprio autor menciona que o arcabouço tem a desvantagem de depender da cooperação do provedor de nuvem. Esta dependência é uma estratégia considerada fraca pela comunidade forense pois a prioridade do CSP ( \textit{Cloud Service Provider} -- Provedor de Serviços de Nuvem ) é o de garantir a disponibilidade do serviço não o de coletar evidências \cite{ClarkeReviewOfChallenges2015}.
 %
 A figura \ref{fig:SangLogApproach} mostra um esquema do funcionamento da solução focada em um caso específico de log de rede como proposta pelo autor.
 
 \begin{figure}[htb!]
 \footnotesize
-\caption{A Log Based Approach Model}
+\caption{\textit{A Log Based Approach Model}}
 \includegraphics[scale=0.50]{SangLogApproach.png}
 \centering
 \label{fig:SangLogApproach}
@@ -114,7 +114,7 @@ A figura \ref{fig:DezfouliBackupApproach} o autor mostra um esquema macro de com
 
 \begin{figure}[htb!]
 \footnotesize
-\caption{Backup Approach Model}
+\caption{\textit{Backup Approach Model}}
 \includegraphics[scale=0.50]{DezfouliBackupApproach.png}
 \centering
 \label{fig:DezfouliBackupApproach}
@@ -123,7 +123,7 @@ Fonte: \cite{DezfouliBackupApproach:2012}
 \end{center}
 \end{figure}
 
-A ferramenta FROST proposto por \cite{DykstraFROST:2013} descreve um conjunto de bibliotecas integradas ao arcabouço \textit{Open Stack Framework} de gerenciamento de infra estruturas virtualizadas.
+A ferramenta FROST ( \textit{FoRensic Open Stack Tools} -- Ferramentas Forenses para Arcabouço Open Stack ) proposto por \cite{DykstraFROST:2013} descreve um conjunto de bibliotecas integradas ao arcabouço \textit{Open Stack Framework} de gerenciamento de infra estruturas virtualizadas.
 %
 Através desta integração, FROST expõe um conjunto de API para serem usadas por aplicações de coleta de evidências forenses que dão acesso a recursos da máquina virtual sendo administrada como disco, logs de trafego de rede e memória volátil.
 %
@@ -131,13 +131,13 @@ A proposta descreve apenas o arcabouço, deixa a critério do usuário detalhes 
 %
 De todas as propostas descritas neste capítulo esta é a única que demonstra preocupação com adequação a questões legais e padrões já estabelecidos na industria forense.
 %
-O autor declara que FROST segue as práticas definidas no Grupo de Trabalho Sobre Evidência Digital (SWGDE) e do Manual de Busca em Apreensão do Departamento de Justiça Norte-Americano.
+O autor declara que FROST segue as práticas definidas no SWGDE ( \textit{Scientific Working Group on Digital Evidence} -- Grupo de Pesquisa Scientífica Em Evidência Digital ) e do Manual de Busca em Apreensão do Departamento de Justiça Norte-Americano.
 %
-A figura \ref{fig:DykstraFROST} o autor mostra um esquema macro da integração entre FROST e o arcabouço \textit{Open Stack Framework}
+A figura \ref{fig:DykstraFROST} o autor mostra um esquema macro da integração entre FROST e o arcabouço \textit{Open Stack}
 
 \begin{figure}[htb!]
 \footnotesize
-\caption{FoRensic Open Stack Tools}
+\caption{\textit{FoRensic Open Stack Tools}}
 \includegraphics[scale=0.50]{DykstraFROST.png}
 \centering
 \label{fig:DykstraFROST}
@@ -147,7 +147,7 @@ Fonte: \cite{DykstraFROST:2013}
 \end{figure}
 %
 
-O trabalho descrito em \cite{GeorgeDF2CE:2012} está focado em monitoração de rede e opera em uma arquitetura de forense como serviço (FaaS). 
+O trabalho descrito em \cite{GeorgeDF2CE:2012} está focado em monitoração de rede e opera em uma arquitetura FaaS ( \textit{Forense as a Service} -- Forense Como Serviço ). 
 %
 O autor propõe um conjunto de ferramentas que tem capacidade de realizar auto descoberta das interfaces sob monitoração, coletar evidências de tais máquinas e armazená-las.
 %
@@ -159,7 +159,7 @@ Na figura \ref{fig:GeorgeDF2CE} mostra o desenho da arquitetura proposta pelo au
 
 \begin{figure}[htb!]
 \footnotesize
-\caption{Digital Forensic Framework for Cloud Environment}
+\caption{\textit{Digital Forensic Framework for Cloud Environment}}
 \includegraphics[scale=0.50]{GeorgeDF2CE.png}
 \centering
 \label{fig:GeorgeDF2CE}
@@ -170,7 +170,7 @@ Fonte: \cite{GeorgeDF2CE:2012}
 
 Na mesma vertente de forense como serviço, \cite{FaaSIndexedSearch:2012} ataca o problema de grande volume de dados coletados propondo serviço de coleta e indexação de evidências.
 %
-O serviço espera receber dados da execução do comando unix DD \cite{UnixManPagesDD} nas máquinas alvo onde, apoiado em processos ETL e MapReduce \cite{WikipediaMapReduce}, esses dados serão disponibilizados para consulta pelos investigadores.
+O serviço espera receber dados da execução do comando unix DD \cite{UnixManPagesDD} nas máquinas alvo onde, apoiado em processos ETL ( \textit{Extract, Transform and Load} -- Extrair, Transformar e Carregar ) e MapReduce \cite{WikipediaMapReduce}, esses dados serão disponibilizados para consulta pelos investigadores.
 %
 A coleta ocorre continuamente a intervalos de tempo configuráveis.
 %
@@ -182,7 +182,7 @@ A figura \ref{fig:FaaSIndexedSearch} mostra o desenho da arquitetura do serviço
 
 \begin{figure}[htb!]
 \footnotesize
-\caption{Digital Forensic as a Service - Indexed Data}
+\caption{\textit{Digital Forensic as a Service - Indexed Data}}
 \includegraphics[scale=0.50]{FaaSIndexedSearch.png}
 \centering
 \label{fig:FaaSIndexedSearch}

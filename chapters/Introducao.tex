@@ -4,9 +4,9 @@
 \chapter{Introdução}
 \label{chp:intro}
 
-\marcos{Erro comum 31: não coloque seção ou sub-seção sem texto no capítulo seção - Hamilton: Feito, falta de atenção minha}
-%\section{Problema de pesquisa}
-%\label{sec:problema}
+\marcos{Nas suas referências aparece com frequência ``s.l.'' e ``s.n''. Precisa acertar seu bibtex, colocando os campos ``publisher'' (a editora, como EEE, ACM, Elsevier, etc.) e address (cidade da editora) - Hamilton: Feito}
+
+\marcos{Toda referência tem que ter ``year''. Se for uma página web, coloque algo como ``Acessado em DD-MM-AAAA'' nesse campo. - Hamilton: Feito}
 
 %==== CONTEXTO GERAL: Nuvem e volatilidade de VMs ====
 %
@@ -14,24 +14,33 @@ Técnicas de virtualização, replicação de serviços e compartilhamento de re
 %
 Ao mesmo tempo, tais mecanismos também criam grande volatilidade dos recursos virtuais que executam aplicações em nuvem.
 %
-Afinal, quando submetida a uma carga elevada, uma aplicação hospedada na nuvem pode criar clones das máquinas virtuais (\textit{virtual machines} -- VM) que a hospedam e balancear a carga entre elas, de modo a atender à demanda sem prejuízos na qualidade do serviço oferecido. 
+Afinal, quando submetida a uma carga elevada, uma aplicação hospedada na nuvem pode criar clones das máquinas virtuais que a hospedam e balancear a carga entre elas.
 %
-Após esse pico, as máquinas que foram clonadas são normalmente desativadas, seus recursos liberados e o sistema retorna à capacidade anterior, evitando-se custos desnecessários.
+Isso permite ao sistema em nuvem atender à demanda dos usuários da aplicação sem prejuízos na qualidade do serviço oferecido. 
+%
+Após esse pico, as máquinas que foram clonadas são normalmente desativadas, seus recursos liberados e o sistema retorna à capacidade anterior, evitando-se desperdício de recursos.
 
 
 %==== CONTEXTO ESPECÍFICO + PROBLEMA GERAL: Forense na nuvem vs. volatilidade + multitenancy + multidomains ====
 %
 Embora interessante do ponto de vista de eficiência e custos, do ponto de vista forense a volatilidade da nuvem traz problemas em caso de ataques.
 %
-Por exemplo, caso uma das instâncias de processamento virtuais criadas temporariamente seja alvo de ameaças que atuam diretamente na sua memória, sem deixar rastros em discos (e.g., arquivos de \textit{log}), as evidências desse evento podem ser completamente perdidas após elas serem desativadas e terem seus recursos liberados.
+Por exemplo, pode-se supor um cenário em que uma das instâncias de processamento virtuais criadas temporariamente seja alvo de ameaças que atuam diretamente na sua memória, sem deixar rastros em discos (e.g., em arquivos de \textit{log}).
 %
-Essa dificuldade é ainda agravada por aspectos como multi-inquilinato e multi-jurisdição típicas de soluções em nuvem pública ou híbrida \cite{BashAdvInForensics:2015}.
+Nesse caso, as evidências desse evento podem ser completamente perdidas após as instâncias em questão serem desativadas e terem seus recursos liberados.
 %
-Especificamente, o aspecto multi-inquilino dificulta a obtenção do \textit{hardware} que executa as aplicações de interesse, pois, como ele é compartilhado por vários usuários, removê-los para análise poderia levar a uma violação de privacidade dos usuários não relacionados à investigação. 
+Essa dificuldade é ainda agravada por aspectos como multi-inquilinato e multi-jurisdição, típicas de soluções em nuvem pública ou híbrida \cite{BashAdvInForensics:2015}.
 %
-Já a natureza distribuída da nuvem pode levar à alocação de informações relevantes à investigação em vários países, dificultando a obtenção das mesmas em especial quando não existem acordos de cooperação entre as entidades envolvidas \cite{DykstraAcquiringForIAAS:2012}.
+Especificamente, o multi-inquilinato dificulta a obtenção do \textit{hardware} que executa as aplicações de interesse.
 %
-Combinadas, tais características dificultam a coleta de evidências com a credibilidade necessária para que elas possam ser usadas em processos legais,  o que exige o respeito à privacidade, à jurisdição e à cadeia de custódia, bem como a reprodutibilidade do processo de coleta \cite{RahmanLiveForensicsTechniques:2015}.
+Afinal, como ele é compartilhado por vários usuários, removê-los para análise poderia levar a uma violação de privacidade dos usuários não relacionados à investigação. 
+%
+Já a natureza distribuída da nuvem pode levar à alocação de informações relevantes em vários países, dificultando a sua obtenção, em especial quando não existem acordos de cooperação entre as entidades envolvidas \cite{DykstraAcquiringForIAAS:2012}.
+%
+Combinadas, tais características limitam a coleta de evidências com a credibilidade necessária para que elas possam ser usadas em processos legais,  que exigem o respeito à privacidade, à jurisdição e à cadeia de custódia, bem como a reprodutibilidade do processo de coleta \cite{RahmanLiveForensicsTechniques:2015}.
+
+\section{Motivação}
+\label{sec:intro-motiv}
 
 
 %==== O QUE EXISTE E PORQUE NÃO É SUFICIENTE: ??? ====
@@ -40,45 +49,55 @@ Embora existam soluções na literatura que abordam a coleta de informações de
 %
 Por exemplo, trabalhos como \cite{DykstraFROST:2013} e \cite{ReichertAutoAcquisition:2015} tratam de fatores como multi-inquilinato e multi-jurisdição, discutindo formas de coleta e preservação da evidência fora da nuvem.
 %
-Já estudos como \cite{GeorgeDF2CE:2012} se concentram na análise forense para a coleta de evidência de máquinas virtuais enquanto elas estão em execução, enquanto trabalhos como \cite{SangLogApproach:2013} abordam a questão de processos de garantia de cadeia de custódia em ambientes de nuvem para transporte da evidência.
+Já estudos como \cite{GeorgeDF2CE:2012} se concentram na análise forense para a coleta de evidência de máquinas virtuais em tempo de execução, enquanto trabalhos como \cite{SangLogApproach:2013} abordam processos de garantia da cadeia de custódia em ambientes de nuvem para transporte da evidência.
 %
 %abordam os problemas descritos anteriormente \marcosT{QUAIS, CARA PÁLIDA? VOCÊ LISTOU 4 TIPOS DE ATAQUE E DEIXOU UM PROBLEMA GERAL: COMO O LEITOR VAI SABER QUAIS EXATAMENTE SÃO ABORDADOS? Seja mais preciso: clareza acima de tudo!!!} de forma isolada.
 %
 %Alguns propõem soluções para o os fatores multi-inquilino e multi-jurisdição, outros abordam apenas a coleta de evidência de máquinas virtuais e por fim temos as que descrevem apenas os processos de garantia de cadeia de custodia. \marcosT{Er... você não me deu sequer um exemplo, então eu sou obrigado a acreditar em você sem que você apresente argumentos... lembre-se que revisores são seres amargos e cruéis, que não acreditam em nada, então melhor não arriscar e dar exemplos claros.}
 %
-Por outro lado, não foram identificadas na literatura propostas que (1) descrevam como o dado é coletado e armazenado observando a cadeia de custódia, e (2) visem garantir que, mesmo que um recurso virtualizado (e.g., uma VM) seja desalocada, haja condições de se reproduzir o processo de coleta de evidências.
+Por outro lado, não foram identificadas na literatura propostas que (1) descrevam como o dado é coletado e armazenado observando a cadeia de custódia, e (2) visem garantir que, mesmo que um recurso virtualizado (e.g., uma máquina virtual) seja desalocado, haja condições de se reproduzir o processo de coleta de evidências.
 
 \section{Objetivos}
 \label{sec:intro-objetivos}
 
 %==== O QUE FAZEMOS: Ataques de injeção ====
 %
-O presente trabalho visa suplantar as limitações supracitadas, melhorando a capacidade de coleta de evidências de aplicações em nuvem.
+O presente trabalho visa suplantar as limitações identificadas na literatura com relação à capacidade de coleta de evidências de aplicações em nuvem.
 %
-Mais precisamente, por meio de uma proposta que tem como focos (1) a reprodutibilidade do processo de coleta, (2) o estabelecimento de vínculo entre a evidência coletada e sua origem, (3) a preservação da jurisdição e da privacidade dos não envolvidos na investigação e (4) a garantia de custódia da evidência.
+Mais precisamente, por meio de uma proposta que tem como focos (1) a reprodutibilidade do processo de coleta, (2) o estabelecimento de um vínculo entre a evidência coletada e sua origem, (3) a preservação da jurisdição e da privacidade dos não envolvidos na investigação e (4) a garantia de custódia da evidência.
 %
-Em suma, a solução descrita provê uma forma de correlacionar evidências e sua origem virtual, permitindo transportar e armazenar tais dados de modo a preservar sua credibilidade.
+Desta forma, a solução buscada deve prover uma forma de obter dados relevantes para investigações ao mesmo tempo que permita transportar e armazenar tais dados preservando sua credibilidade.
 %
-Para isso, a proposta supõe que o sistema sendo monitorado é executado dentro de um contêiner em nuvem. 
-%
+Para isso, a proposta supõe que o sistema sendo monitorado é executado dentro de um ambiente virtualizado em nuvem, tendo como foco a tecnologia de contêineres. 
 
-\section{Motivação}
+
+
+\section{Justificativa}
 \label{sec:intro-justificativa}
 
-Virtualização tem sido amplamente adotada por empresas das mais diversas áreas. Segundo o ''State of the Cloud Report'' realizado pela empresa Right Scale, 95\% das organizações entrevistadas estão utilizando ou experimentando soluções em nuvem no modelo IaaS \cite{RightScale2017}.
+O crescente volume de informações que as soluções em nuvem armazenam e trafegam atualmente, bem como os aspectos de multi-inquilinato e a multi-jurisdição dos provedores de nuvem, estão entre os principais obstáculos enfrentados pelos investigadores forenses. \cite{QuickIncreaseVolumeImpact:2014} \cite{BashAdvInForensics:2015}.
 %
-A virtualização de recursos na nuvem, embora tradicionalmente feita por meio de máquinas virtuais, vêm sendo crescentemente feita também na forma de contêineres.
-%
-De fato, segundo o ``Container Market Adoption Survey 2016'', realizado pelas empresas DevOps.com (https://devops.com/) e ClusterHQ (https://clusterhq.com) com 235 empresas que têm desenvolvimento de software como sua atividade fim ou como suporte à atividade fim, 76\% dos respondentes utilizam contêineres para melhorar a eficiência do processo de desenvolvimento e em suas arquiteturas de microsserviços em nuvem.
-%
+Desta forma, a criação de soluções que permitam melhorar o processo de investigação forense nesse cenário tem relevância não apenas teórica, mas também prática.
 
-O crescente volume de informações que as soluções em nuvem armazenam e trafegam hoje e os aspectos o multi-inquilino e a multi-jurisdição dos provedores de infraestrutura em nuvem estão entre os principais obstáculos enfrentados pelos investigadores forenses. \cite{QuickIncreaseVolumeImpact:2014} \cite{BashAdvInForensics:2015}
+
+Ao mesmo tempo, virtualização tem sido amplamente adotada por empresas das mais diversas áreas. 
+%
+Segundo o ''State of the Cloud Report'', relatório produzido pela empresa Right Scale \cite{RightScale2017}, 95\% das organizações entrevistadas estão utilizando ou experimentando soluções em nuvem no modelo IaaS ( \textit{Infrastructure as a Service} -- Infraestrutura como um Serviço ).
+%
+Embora a virtualização de recursos na nuvem seja tradicionalmente feita por meio de máquinas virtuais, tem ganhado importância também a tecnologia de contêineres \cite{containers-tech:2014}, uma forma de virtualização bastante leve e flexível.
+%
+De fato, conforme o ``Container Market Adoption Survey 2016'', realizado com 235 empresas que têm desenvolvimento de software como sua atividade fim ou como suporte à atividade fim, 76\% dos respondentes utilizam contêineres para melhorar a eficiência do processo de desenvolvimento e em suas arquiteturas de microsserviços em nuvem.
+%
+Essa tendência motiva a construção de soluções que levem em consideração as particularidades inerentes a contêineres computacionais, e que sejam capazes de tirar vantagem de suas características.
+
 
 \section{Organização do documento}
 \label{sec:intro-organizacao}
 
-O restante deste documento está organizado nos seguintes capítulos.
+O restante deste documento está organizado conforme os seguintes capítulos.
 
-O Capítulo \ref{chp:fundamentação} apresenta o ambiente em que este trabalho está inserido, as tecnologias envolvidas e os desafios a serem superados. O Capítulo \ref{chp:revisão} analisa os trabalhos relacionados a forense de memória em nuvem. O Capítulo \ref{chp:proposta} apresenta o que foi feito até então e uma proposta para conclusão deste trabalho.
+O Capítulo \ref{chp:fundamentação} apresenta o ambiente em que este trabalho está inserido, as tecnologias envolvidas e os desafios a serem superados. 
 
-\marcos{liste todos os capítulos e diga o que eles discutem. O cap. 1 nào precisa (o leitor já leu...) - Hamilton: Feito lista de capítulos e criação de lables para os mesmos}
+O Capítulo \ref{chp:revisão} analisa os trabalhos relacionados a forense de memória em nuvem. 
+
+O Capítulo \ref{chp:proposta} apresenta as atividades realizadas até o presente momento como parte do trabalho de pesquisa aqui apresentado, bem como os próximos passos esperados para a sua conclusão.

@@ -199,36 +199,38 @@ struc-ture-pre-serv-ing
 
 
 \begin{resumo}
-A adoção de arquiteturas em nuvem aumenta a cada dia, e com ela também o número de casos em que esse tipo de tecnologia é usada para fins ilícitos.
+A adoção de arquiteturas em nuvem aumenta a cada dia, e proporcionalmente aumenta também o número de casos em que esse tipo de tecnologia é usada para fins ilícitos.
 %
-No ano de 2015 o número de registros de atas notariais comprovando abusos e crimes virtuais cresceu 87\%.
+%No ano de 2015 o número de registros de atas notariais comprovando abusos e crimes virtuais cresceu 87\%. Muito específico para um resumo
 %
 Infelizmente, devido à natureza volátil da nuvem, a tarefa de coletar evidências para análise forense nesse ambiente tem esbarrado em desafios práticos e legais.
 %
-A prática herdada da forense tradicional para coleta de evidências, onde se isola e cena do crime e coleta-se todas as evidências, foi traduzida para a forense digital como a cópia bit a bit da mídia que se deseja investigar.
+Mais precisamente, a prática herdada da forense tradicional para coleta de evidências, por meio da qual se isola a cena do crime e coletam-se todas as evidências, foi traduzida para a forense digital como a cópia bit a bit da mídia que se deseja investigar.
 %
-Tal prática levou a coleta de grandes volumes de informação para análise impactando o tempo de investigação.
+Tal prática leva à coleta de grandes volumes de informação para análise, impactando negativamente o tempo de investigação.
 %
-Duas características das soluções em nuvem têm dificultado a obtenção de evidências válidas. 
+Além disso, duas características das soluções em nuvem dificultam a obtenção de evidências válidas. 
 %
-O compartilhamento de recursos físicos entre vários usuários impede a remoção dos mesmos para análise uma vez que isso viola a privacidade de elementos não envolvidos na investigação.
+A primeira é que o compartilhamento de recursos físicos entre vários usuários impede a sua remoção para análise, uma vez que isso violaria a privacidade de indivíduos não envolvidos na investigação.
 %
-A localização do recurso físico em uma região geográfica diferente de onde o crime foi cometido pode impedir a coleta de evidências caso não haja acordos de cooperação estabelecidos.
+A segunda é que a localização do recurso físico em uma região geográfica diferente daquela onde o crime foi cometido pode impedir a coleta de evidências caso não haja acordos de cooperação estabelecidos.
 %
-Estes aspectos, se não forem levados em consideração, podem por em xeque a credibilidade da evidência.
+Estes aspectos, se não forem levados em consideração, podem colocar em xeque a credibilidade das evidências.
 %
-Este trabalho analisa propostas na literatura voltadas a resolver os principais desafios existentes na coleta evidências na nuvem, discutindo suas limitações, e então propõe uma solução que cobre coleta, transporte e armazenamento da evidência visando suplantá-las. 
+Este trabalho analisa propostas na literatura voltadas a resolver tais desafios na coleta evidências na nuvem, discutindo suas limitações.
 %
-A solução aqui proposta provê uma forma de correlacionar evidências e sua origem virtual, permitindo transportar e armazenar tais dados sem afetar sua credibilidade.
+Propõe-se então uma solução que cobre coleta, transporte e armazenamento da evidência, visando suplantar as limitações existentes no estado da arte. 
 %
-Para tal faremos uso de contêineres e seu identificador para relacionar a evidência a sua origem, tal técnica tem a vantagem que conseguir preservar a relação evidência - origem mesmo que esta última não exista mais na solução sob investigação.
+A solução proposta, denominada Danzig, provê uma forma de correlacionar evidências e sua origem virtual, permitindo transportar e armazenar tais dados sem afetar sua credibilidade.
 %
-Especificamente, ela tem como focos (1) a reprodutibilidade do processo de coleta, (2) não violar jurisdição e (3) não violar a privacidade dos não envolvidos na investigação.
-\marcos{Discuta como é feito e quais os benefícios da solução. Não seja tão sintético: não há limitação de espaço aqui! Até no artigo tem mais texto... Hamilton - Acho que foi}
+Para tal, é feito o uso de contêineres e seus respectivos identificadores, técnica esta que tem a vantagem que conseguir preservar a relação evidência-origem mesmo que esta última não exista mais na solução sob investigação.
+%
+Em resumo, Danzig tem como focos (1) a reprodutibilidade do processo de coleta, (2) o estabelecimento de um vínculo entre a evidência coletada e sua origem, (3) a preservação da jurisdição e da privacidade de usuários não envolvidos na investigação e (4) a garantia de custódia da evidência.
 %
 \end{resumo}
 
 \begin{abstract}
+\marcos{Reescreva considerando as revisões na parte em português.}
 The adoption of cloud architectures increases every day and with it, also the number of cases where such technology is used for illicit purposes.
 %
 In 2015, the number of notarial records acts related to digital abuses and virtual crimes grew by 87\%.
@@ -279,6 +281,7 @@ It focus on (1) the reproductibility of the collection process, (2) the non viol
     \item [ETL] \textit{Extract, Transform and Load}
     \item [EDIPM] \textit{Enhanced Digital Investigation Process Model}
     \item [SENASP] Secretaria Nacional de Segurança Pública
+    \item [ETL] \textit{Extract, Transform and Load}
 \end{listofabbrv}
 
 %\begin{listofsymbols}{1000000}
@@ -298,6 +301,7 @@ It focus on (1) the reproductibility of the collection process, (2) the non viol
 \input{chapters/Aspectos.tex}
 \input{chapters/Revisao.tex}
 \input{chapters/Proposta.tex}
+
 
 \bibliographystyle{abntex2-alf}
 \bibliography{bibliography}
