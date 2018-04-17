@@ -23,7 +23,7 @@ O modelo possui um motor de regras que se baseia em um conjunto de descrições 
 %
 O intervalo de tempo em que os instantâneos de memória são gerados é configurável e são todos armazenados em persistência.
 %
-Este modelo tem como principal vantagem a automação do processo de coleta que dispensa intervenção humana tornando mais fácil garantir a cadeia de custódia. 
+Este modelo tem como principal vantagem a automação do processo de coleta que dispensa intervenção humana. 
 %
 A figura \ref{fig:ReichertAutoAcquisitionModel} mostra o desenho da arquitetura proposta pelo autor.
 
@@ -44,7 +44,7 @@ Esta técnica se apoia na necessidade do VMM ( \textit{Virtual Machine Manager} 
 %
 Este mapeamento é usado para permitir que a memória volátil copiada da máquina virtual seja reconstruída em uma máquina física para realização da análise.
 %
-A proposta utiliza de coleta continua dos instantâneos de memória durante o funcionamento do sistema sem distinção do que aconteceu antes ou depois do fato de interesse, e todos os instantâneos de memória são armazenados para posterior análise.
+A proposta utiliza de coleta contínua dos instantâneos de memória durante o funcionamento do sistema sem distinção do que aconteceu antes ou depois do fato de interesse, e todos os instantâneos de memória são armazenados para posterior análise.
 %
 Para eliminar a chance de inconsistências no instantâneo de memória volátil, a máquina virtual tem sua execução suspensa durante o processo de extração.
 %
@@ -83,7 +83,7 @@ O arcabouço proposto por \cite{SangLogApproach:2013} é um sistema que funciona
 %
 O conjunto de informações armazenadas é acordado antecipadamente com o provedor de nuvem e vão desde instantâneos de memória volátil até pacotes trafegados nas interfaces de rede da máquina virtual.
 %
-O arcabouço coleta informações continuamente e usa cálculo de hash das evidências enviadas pelo provedor de nuvem para garantir que as mesmas não foram alteradas durante o transporte.
+O arcabouço coleta informações continuamente e usa cálculo de hash das evidências enviadas pelo provedor de nuvem para garantir que elas não foram alteradas durante o transporte.
 %
 Assim como as propostas anteriores, esta também não faz distinção do que aconteceu antes ou depois do fato de interesse coletando constantemente informações da máquina virtual.
 %
@@ -170,7 +170,7 @@ Fonte: \cite{GeorgeDF2CE:2012}
 
 Na mesma vertente de forense como serviço, \cite{FaaSIndexedSearch:2012} ataca o problema de grande volume de dados coletados propondo serviço de coleta e indexação de evidências.
 %
-O serviço espera receber dados da execução do comando unix DD \cite{UnixManPagesDD} nas máquinas alvo onde, apoiado em processos ETL ( \textit{Extract, Transform and Load} -- Extrair, Transformar e Carregar ) e MapReduce \cite{WikipediaMapReduce}, esses dados serão disponibilizados para consulta pelos investigadores.
+O serviço espera receber dados da execução do comando unix DD \cite{UnixManPagesDD} nas máquinas alvo onde, apoiado em processos ETL ( \textit{Extract, Transform and Load} -- Extrair, Transformar e Carregar ) e MapReduce \cite{WikipediaMapReduce}, os dados serão disponibilizados para consulta pelos investigadores.
 %
 A coleta ocorre continuamente a intervalos de tempo configuráveis.
 %
@@ -246,7 +246,7 @@ Dentre os trabalhos analisados, apenas \cite{SangLogApproach:2013} aborda a ques
 %
 Especificamente, o trabalho emprega \textit{hashes} para verificar a integridade da evidência, permitindo a detecção de alterações na mesma, embora não explique os mecanismos que poderiam ser utilizados para impedir acesso não autorizado (e, assim, potencial alteração) aos próprios hashes. 
 %
-As propostas dos outros autores concentram-se apenas no aspecto técnico da coleta, sem discutir claramente garantia de custódia mas apenas mencionando que as evidências devem ser coletadas de forma ``forensicamente aceitável''.
+As propostas dos outros autores concentram-se apenas no aspecto técnico da coleta, sem discutir claramente garantia de custódia mas apenas mencionando que as evidências devem ser coletadas de forma forensicamente aceitável.
 
 \section{Resumo}
 

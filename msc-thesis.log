@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  15 APR 2018 17:10
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  16 APR 2018 22:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1440,13 +1440,22 @@ LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
 (Font)              Font shape `OMS/txsy/m/n' tried instead on input line 30.
  [13
 
-] [14] [15]
-[16] [17] [18] [19] [20]) (./chapters/Revisao.tex [21]
+]
+
+Package hyperref Warning: Suppressing empty link on input line 43.
+
+
+Package hyperref Warning: Suppressing empty link on input line 43.
+
+
+Package hyperref Warning: Suppressing empty link on input line 43.
+
+[14] [15] [16] [17] [18] [19] [20]) (./chapters/Revisao.tex [21]
 Cap\'{\i }tulo 3.
 [22
 
 ]
-<images/ReichertAutoAcquisitionModel.png, id=293, 713.66624pt x 653.44125pt>
+<images/ReichertAutoAcquisitionModel.png, id=300, 713.66624pt x 653.44125pt>
 File: images/ReichertAutoAcquisitionModel.png Graphic file (type png)
 
 <use images/ReichertAutoAcquisitionModel.png>
@@ -1454,7 +1463,7 @@ Package pdftex.def Info: images/ReichertAutoAcquisitionModel.png used on input
 line 33.
 (pdftex.def)             Requested size: 356.83224pt x 326.71982pt.
  [23 <./images/ReichertAutoAcquisitionModel.png>]
-<images/Dolan-GavittSemanticGap.png, id=308, 1013.7875pt x 358.33875pt>
+<images/Dolan-GavittSemanticGap.png, id=315, 1013.7875pt x 358.33875pt>
 File: images/Dolan-GavittSemanticGap.png Graphic file (type png)
 
 <use images/Dolan-GavittSemanticGap.png>
@@ -1462,13 +1471,13 @@ Package pdftex.def Info: images/Dolan-GavittSemanticGap.png used on input line
 73.
 (pdftex.def)             Requested size: 405.50783pt x 143.33296pt.
  [24]
-<images/SangLogApproach.png, id=322, 362.35374pt x 805.0075pt>
+<images/SangLogApproach.png, id=329, 362.35374pt x 805.0075pt>
 File: images/SangLogApproach.png Graphic file (type png)
 
 <use images/SangLogApproach.png>
 Package pdftex.def Info: images/SangLogApproach.png used on input line 97.
 (pdftex.def)             Requested size: 181.17642pt x 402.50278pt.
- [25 <./images/Dolan-GavittSemanticGap.png>]
+
 <images/DezfouliBackupApproach.png, id=335, 494.84875pt x 485.815pt>
 File: images/DezfouliBackupApproach.png Graphic file (type png)
 
@@ -1476,36 +1485,37 @@ File: images/DezfouliBackupApproach.png Graphic file (type png)
 Package pdftex.def Info: images/DezfouliBackupApproach.png used on input line 1
 18.
 (pdftex.def)             Requested size: 247.42377pt x 242.9069pt.
- [26 <./images/SangLogApproach.png>]
-<images/DykstraFROST.png, id=346, 746.79pt x 605.26125pt>
+ [25 <./images/Dolan-GavittSemanticGap.png>] [26 <./images/SangLogApproach.png>
+]
+<images/DykstraFROST.png, id=353, 746.79pt x 605.26125pt>
 File: images/DykstraFROST.png Graphic file (type png)
 
 <use images/DykstraFROST.png>
 Package pdftex.def Info: images/DykstraFROST.png used on input line 141.
 (pdftex.def)             Requested size: 373.39407pt x 302.62987pt.
  [27 <./images/DezfouliBackupApproach.png>]
-<images/GeorgeDF2CE.png, id=357, 804.00375pt x 793.96625pt>
+<images/GeorgeDF2CE.png, id=364, 804.00375pt x 793.96625pt>
 File: images/GeorgeDF2CE.png Graphic file (type png)
 
 <use images/GeorgeDF2CE.png>
 Package pdftex.def Info: images/GeorgeDF2CE.png used on input line 163.
 (pdftex.def)             Requested size: 402.0009pt x 396.98215pt.
- [28 <./images/DykstraFROST.png>]
-<images/FaaSIndexedSearch.png, id=376, 819.06pt x 588.1975pt>
+
+<images/FaaSIndexedSearch.png, id=374, 819.06pt x 588.1975pt>
 File: images/FaaSIndexedSearch.png Graphic file (type png)
 
 <use images/FaaSIndexedSearch.png>
 Package pdftex.def Info: images/FaaSIndexedSearch.png used on input line 186.
 (pdftex.def)             Requested size: 409.52899pt x 294.09802pt.
- [29 <./images/GeorgeDF2CE.png>] [30 <./images/FaaSIndexedSearch.png>] [31] [32
-]
-<images/check.png, id=459, 602.25pt x 602.25pt>
+ [28 <./images/DykstraFROST.png>] [29 <./images/GeorgeDF2CE.png>] [30 <./images
+/FaaSIndexedSearch.png>] [31] [32]
+<images/check.png, id=469, 602.25pt x 602.25pt>
 File: images/check.png Graphic file (type png)
  <use images/check.png>
 Package pdftex.def Info: images/check.png used on input line 269.
 (pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
 
-<images/x.png, id=460, 1027.84pt x 1027.84pt>
+<images/x.png, id=470, 1027.84pt x 1027.84pt>
 File: images/x.png Graphic file (type png)
  <use images/x.png>
 Package pdftex.def Info: images/x.png used on input line 269.
@@ -1662,14 +1672,14 @@ Package pdftex.def Info: images/check.png used on input line 272.
 Cap\'{\i }tulo 4.
 [34
 
-] [35] <images/janela.jpg, id=488, 614.295pt x 447.92343pt>
+] [35] <images/janela.jpg, id=498, 614.295pt x 447.92343pt>
 File: images/janela.jpg Graphic file (type jpg)
 
 <use images/janela.jpg>
 Package pdftex.def Info: images/janela.jpg used on input line 64.
 (pdftex.def)             Requested size: 245.71364pt x 179.1662pt.
 
-<images/solucao.jpg, id=491, 864.98157pt x 507.39563pt>
+<images/solucao.jpg, id=501, 864.98157pt x 507.39563pt>
 File: images/solucao.jpg Graphic file (type jpg)
 
 <use images/solucao.jpg>
@@ -1686,21 +1696,21 @@ LaTeX Font Info:    Try loading font information for T1+txtt on input line 126.
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 ) [38]
-<images/evolucao-coleta.jpg, id=517, 1172.38pt x 558.085pt>
+<images/evolucao-coleta.jpg, id=527, 1172.38pt x 558.085pt>
 File: images/evolucao-coleta.jpg Graphic file (type jpg)
 
 <use images/evolucao-coleta.jpg>
 Package pdftex.def Info: images/evolucao-coleta.jpg used on input line 188.
 (pdftex.def)             Requested size: 375.16927pt x 178.59085pt.
  Excluding 'comment' comment.
-<images/memoria-copia.jpg, id=519, 1264.725pt x 614.295pt>
+<images/memoria-copia.jpg, id=529, 1264.725pt x 614.295pt>
 File: images/memoria-copia.jpg Graphic file (type jpg)
 
 <use images/memoria-copia.jpg>
 Package pdftex.def Info: images/memoria-copia.jpg used on input line 285.
 (pdftex.def)             Requested size: 379.42043pt x 184.28992pt.
  [39 <./images/evolucao-coleta.jpg>] [40 <./images/memoria-copia.jpg>] [41]
-<images/crono-image.png, id=539, 953.5625pt x 120.45pt>
+<images/crono-image.png, id=549, 953.5625pt x 120.45pt>
 File: images/crono-image.png Graphic file (type png)
 
 <use images/crono-image.png>
@@ -1735,13 +1745,13 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 313.
  ) 
 Here is how much of TeX's memory you used:
- 22199 strings out of 493304
- 397539 string characters out of 6139871
- 538957 words of memory out of 5000000
- 24938 multiletter control sequences out of 15000+600000
+ 22217 strings out of 493304
+ 397839 string characters out of 6139871
+ 539376 words of memory out of 5000000
+ 24953 multiletter control sequences out of 15000+600000
  63404 words of font info for 139 fonts, out of 8000000 for 9000
  963 hyphenation exceptions out of 8191
- 56i,17n,56p,1013b,584s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,17n,56p,1047b,583s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1
@@ -1749,10 +1759,10 @@ e/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/share/texlive/texmf-dist
 onts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on msc-thesis.pdf (47 pages, 1176801 bytes).
+Output written on msc-thesis.pdf (47 pages, 1177734 bytes).
 PDF statistics:
- 645 PDF objects out of 1000 (max. 8388607)
- 560 compressed objects within 6 object streams
- 120 named destinations out of 1000 (max. 500000)
+ 656 PDF objects out of 1000 (max. 8388607)
+ 571 compressed objects within 6 object streams
+ 123 named destinations out of 1000 (max. 500000)
  83 words of extra memory for PDF output out of 10000 (max. 10000000)
 

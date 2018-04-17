@@ -17,56 +17,59 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Warning--campo year vazio ou faltando em Chef2018
 Warning--campo year vazio ou faltando em VirtualBox
+Warning--campo year vazio ou faltando em Puppet2018
 Warning--campo year vazio ou faltando em UnixManPagesControlGroups
 Warning--campo year vazio ou faltando em UnixManPagesChRoot
 Warning--campo year vazio ou faltando em UnixManPagesDD
 Warning--campo year vazio ou faltando em UnixManPagesNamespacing
 Warning--campo year vazio ou faltando em UnixManPagesNumaMaps
+Warning--campo year vazio ou faltando em Vagrant2018
 +---------------------------------------------------------+
 | Estilo bibliográfico abntex2-alf.bst versão v-1.9.6           |
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 38 entries,
+You've used 41 entries,
             6669 wiz_defined-function locations,
-            1442 strings with 16558 characters,
-and the built_in function-call counts, 41884 in all, are:
-= -- 4323
-> -- 1059
+            1456 strings with 16749 characters,
+and the built_in function-call counts, 43631 in all, are:
+= -- 4451
+> -- 1104
 < -- 658
-+ -- 1046
-- -- 322
-* -- 2737
-:= -- 5349
-add.period$ -- 159
-call.type$ -- 38
-change.case$ -- 382
-chr.to.int$ -- 72
-cite$ -- 42
-duplicate$ -- 3315
-empty$ -- 2297
-format.name$ -- 1531
-if$ -- 9097
++ -- 1061
+- -- 337
+* -- 2829
+:= -- 5593
+add.period$ -- 173
+call.type$ -- 41
+change.case$ -- 408
+chr.to.int$ -- 75
+cite$ -- 48
+duplicate$ -- 3420
+empty$ -- 2455
+format.name$ -- 1600
+if$ -- 9520
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 660
-newline$ -- 200
-num.names$ -- 180
-pop$ -- 846
+missing$ -- 713
+newline$ -- 217
+num.names$ -- 195
+pop$ -- 919
 preamble$ -- 1
-purify$ -- 146
+purify$ -- 155
 quote$ -- 0
-skip$ -- 3397
+skip$ -- 3498
 stack$ -- 1
-substring$ -- 1786
-swap$ -- 1309
+substring$ -- 1817
+swap$ -- 1349
 text.length$ -- 51
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 8
-warning$ -- 6
-while$ -- 274
+warning$ -- 9
+while$ -- 289
 width$ -- 0
-write$ -- 587
-(There were 6 warnings)
+write$ -- 631
+(There were 9 warnings)

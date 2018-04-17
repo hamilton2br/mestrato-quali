@@ -11,7 +11,7 @@ O \textit{Enhanced Digital Investigation Process Model}, proposto por Carrier e 
 %
 Entretanto, como tais modelos de investigação foram desenvolvidos antes da aparição de tecnologias de computação em nuvem, muitos partem do pressuposto que o investigador tem acesso e controle sobre o sistema sob investigação \cite{GrisposChallengesCloudComputing:2012}.
 %
-Esta defasagem está no centro dos desafios da forense digital atual.
+Esta defasagem é um dos desafios da forense digital atual.
 
 
 Neste capítulo, são discutidos os principais conceitos que permeiam esse cenário.
@@ -27,20 +27,20 @@ Uma nuvem computacional é um modelo de infraestrutura no qual recursos comparti
 Existem basicamente três modelos principais de comercialização de uso da nuvem \cite{NIST2011}: 
 
 \begin{itemize}
-	\item SaaS ( \textit{Software as a Service} -- \textit{Software} como serviço ): se provê o \textit{software} que será utilizado; nesse caso, os clientes do serviço são os usuários finais o software.
+	\item SaaS ( \textit{Software as a Service} -- \textit{Software} como serviço ): Onde se provê o \textit{software} que será utilizado; nesse caso, os clientes do serviço são os usuários finais o software.
 	
-	\item PaaS ( \textit{Platform as a Service} -- Plataforma como serviço ): se provê o ambiente para o desenvolvimento, teste e execução do \textit{software}; nesse caso, os clientes do serviço são desenvolvedores de aplicações.
+	\item PaaS ( \textit{Platform as a Service} -- Plataforma como serviço ): Onde se provê o ambiente para o desenvolvimento, teste e execução do \textit{software}; nesse caso, os clientes do serviço são desenvolvedores de aplicações.
 	
-	\item IaaS ( \textit{Infrastructure as a Service} -- Infraestrutura como serviço ): são fornecidos recursos computacionais básicos, como processamento, memória e redes, em geral de forma virtualizada; os clientes desse tipo de serviço costumam ser arquitetos de sistemas.
+	\item IaaS ( \textit{Infrastructure as a Service} -- Infraestrutura como serviço ): Onde são fornecidos recursos computacionais básicos, como processamento, memória e redes, em geral de forma virtualizada; os clientes desse tipo de serviço costumam ser arquitetos de sistemas.
 \end{itemize}
 
 O tipo de serviço de nuvem mais pertinente para este trabalho é o IaaS, uma solução muito usada atualmente pela sua capacidade de prover recursos sob demanda de forma auto-escalável.
 %
 Nesse cenário, o uso intenso de tecnologias de virtualização costuma levar a recursos altamente voláteis, que são alocados e desalocados a qualquer momento pelo orquestrador da nuvem para suprir um suprir eventuais aumentos e reduções de demanda.
 %
-É possível até mesmo construir scripts para a automatizar a construção da arquitetura desejada, permitindo a instanciação e interconexão de máquinas adequadas para a atividade fim do sistema \marcos{citar_pupper+chef_ou_outras tecnologias_para_esse_fim}.
+É possível até mesmo construir scripts para a automatizar a construção da arquitetura desejada, permitindo a instanciação e interconexão de máquinas adequadas para a atividade fim do sistema \marcos{citar_pupper+chef_ou_outras tecnologias_para_esse_fim - Hamilton: Feito}.
 %
-Esses scripts, escritos em linguagem específica, podem conter instruções de como distribuir o tráfego de rede entre as diferentes instâncias de computação ou armazenamento.
+Esses scripts, escritos em linguagem específica como Puppet \cite{Puppet2018}, Chef \cite{Chef2018} e Vagrant \cite{Vagrant2018}, podem conter instruções de como distribuir o tráfego de rede entre as diferentes instâncias de computação ou armazenamento.
 %
 Dentre as vantagens de sua utilização, podem ser citadas a capacidade de usar os recursos de nuvem de uma forma mais eficiente, levar a uma menor necessidade de intervenção humana, e prover maior resiliência a variações de demanda do sistema.
 
@@ -88,17 +88,19 @@ A área de forense digital (também conhecida por forense computacional) refe-se
 Tal como a forense tradicional, a forense digital se baseia no princípio de Locard, estabelecido pelo médico francês Edmond Locard da seguinte forma: ``Quando um indivíduo entra em contato com outro objeto ou indivíduo, este sempre deixa vestígio deste contato'' \cite{Ramos:2011}.
 %
 De forma similar, a forense digital tem por objetivo a investigação de evidências digitais da interação entre homem e máquina, de modo a reconstruir a cadeia de eventos passados para que suas conclusões sejam validadas por terceiros e sejam aceitas em um processo legal.
+%
 
-\marcos{senti falta de uma frase aqui para preparar o leitor para as sub-seções a seguir. O que são as sub-seções? Princípios que devem ser seguidos pela forense digital? Desafios da forense digital? Outra coisa? Inclua uma frase aqui para fazer esse ``gancho''}
+A seguir são detalhados os principais desafios enfrentados pela forense digital quando aplicada a infraestruturas em nuvem pública.
+\marcos{senti falta de uma frase aqui para preparar o leitor para as sub-seções a seguir. O que são as sub-seções? Princípios que devem ser seguidos pela forense digital? Desafios da forense digital? Outra coisa? Inclua uma frase aqui para fazer esse ``gancho'' - Hamilton: feito}
 
 \subsection{Aceitabilidade da evidência em processo legal.}
 \label{sec:credibilidadeaceitabilidadeevidencia}
 
 O processo de análise forense no evento de um crime digital é descrito no EDIPM ( \textit{Enhanced Digital Investigation Process Model} -- Modelo Melhorado para Processo de Investigação Digital )\marcos{Sigla sem colocar por extenso o significado = Erro comum 40. Revise o texto INTEIRO por esse erro pfv. - Hamilton: Feito} por 4 fases \cite{GrisposChallengesCloudComputing:2012}: identificar, preservar, examinar e apresentar.
 %
-A fase mais pertinente a este trabalho é a de preservação da evidência, que deve ser conduzida de forma ``forensicamente aceitável''.
+A fase mais pertinente a este trabalho é a de preservação da evidência, que deve ser conduzida de forma forensicamente aceitável.
 %
-Ou seja, deve-se coletar as evidências de forma que as mesmas sejam aceitas em um processo legal e não sejam invalidadas no curso do mesmo.
+Ou seja, deve-se coletar as evidências de forma que elas sejam aceitas em um processo legal e não sejam invalidadas no curso do mesmo.
 
 
 Para atingir tal objetivo, o primeiro passo é a garantia da cadeia de custódia relacionada a evidência.
@@ -128,7 +130,7 @@ A reprodutibilidade do processo de coleta e a manutenção da integridade da evi
 
 Já em um cenário de computação em nuvem, especialmente as de infraestrutura auto-escalável, existe um conjunto de novos desafios. 
 %
-\marcos{REMOVIDO: ``O recurso físico não pode mais ser removido pois o mesmo é utilizado por outros usuários não relacionados a investigação, fazê-lo constituiria violação de privacidade'' -- NOTA: ``o mesmo'' não deve ser usado para substituir ``ele''... a frase ``antes de entrar no elevador, verifique se o mesmo se encontra parado neste andar'' é um exemplo de uso \textbf{incorreto} de ``o mesmo'' (eu descobri isso há uns 2 meses atrás...). Por favor corrija no documento INTEIRO: o correto é usar ``ele'', ou então repetir a palavra em questão}. \marcos{No texto original tem vários erros incorretos de tempo verbal: você usa passado para se referir a forense em infraestrutura física e presente/futuro para infraestrutura em nuvem. Isso não faz sentido algum: nem tudo no mundo é nuvem, então qualquer coisa que você falar sobre infra física é *presente*}
+\marcos{REMOVIDO: ``O recurso físico não pode mais ser removido pois o mesmo é utilizado por outros usuários não relacionados a investigação, fazê-lo constituiria violação de privacidade'' -- NOTA: ``o mesmo'' não deve ser usado para substituir ``ele''... a frase ``antes de entrar no elevador, verifique se o mesmo se encontra parado neste andar'' é um exemplo de uso \textbf{incorreto} de ``o mesmo'' (eu descobri isso há uns 2 meses atrás...). Por favor corrija no documento INTEIRO: o correto é usar ``ele'', ou então repetir a palavra em questão - Hamilton: Feito}. \marcos{No texto original tem vários erros incorretos de tempo verbal: você usa passado para se referir a forense em infraestrutura física e presente/futuro para infraestrutura em nuvem. Isso não faz sentido algum: nem tudo no mundo é nuvem, então qualquer coisa que você falar sobre infra física é *presente* - Hamilton: Feito. Acho que você já tinha corrigido algumas ocorrências}
 Primeiramente, em contraste com infraestruturas tradicionais, o recurso físico em princípio não pode ser removido: como os recursos são utilizados por outros usuários não relacionados à investigação, fazê-lo constituiria violação de privacidade.
 %
 A volatilidade dos recursos também torna a verificação do seu autor um processo mais complexo, pois o recurso que gera certa evidência pode deixar de existir algum tempo depois de fazê-lo \cite{SimouCloudChlng:2014}.
@@ -141,16 +143,16 @@ Infelizmente, a violação de qualquer uma dessas características pode colocar 
 \subsection{Volume de dados para coleta}
 \label{sec:volumedados}
 
-O processo de coleta da evidências na forense digital herdou suas práticas da forense tradicional, na qual isola-se cena do crime e coletam-se as evidências presentes. 
+O processo de coleta de evidências na forense digital herda suas práticas da forense tradicional, na qual isola-se cena do crime e coletam-se as evidências presentes. 
 %
-Transportando esse método para a forense digital, introduziu-se a realização da cópia bit a bit da informação que se deseja analisar.
+Transportando esse método para a forense digital, introduz-se a realização da cópia bit a bit da informação que se deseja analisar.
 %
 No passado, com as soluções manipulando quantidades bem menores de memória, disco e tráfego, tal prática não era considerada muito problemática. 
 %
-Entretanto, nas atuais soluções, aplicações e arquiteturas em nuvem, o volume de dados aumentou consideravelmente.
+Entretanto, nas atuais soluções, aplicações e arquiteturas em nuvem, o volume de dados é consideravelmente maior \cite{QuickIncreaseVolumeImpact:2014}.
 %
-Por exemplo, em 2014 investigadores forenses tinham em média 6 meses de backlog para analisar \cite{QuickIncreaseVolumeImpact:2014} \marcos{Legal ter um exemplo, mas precisa *discutir* esse exemplo. E daí que tinha 6 meses de backlog? O que isso tem a ver com nuvem?! Vc não explicou o cenário, então pra mim como leitor esse backlog pode ser de um servidor a um tiozinho que anota em papel a entrada de pessoas... Mais CLAREZA!!!}.
-
+%Por exemplo, em 2014 investigadores forenses tinham em média 6 meses de backlog para analisar \cite{QuickIncreaseVolumeImpact:2014} 
+\marcos{Legal ter um exemplo, mas precisa *discutir* esse exemplo. E daí que tinha 6 meses de backlog? O que isso tem a ver com nuvem?! Vc não explicou o cenário, então pra mim como leitor esse backlog pode ser de um servidor a um tiozinho que anota em papel a entrada de pessoas... Mais CLAREZA!!! - Hamilton: Removido. Da forma com que é mencionado na referência, os 6 meses podem ser associados a processos pouco eficiêntes}.
 
 Encontrar uma forma de armazenar menos informações, de modo a tornar a fase de análise mais rápida e eficiente, é um importante passo para permitir investigações forenses mais céleres.
 
@@ -175,9 +177,9 @@ Neste cenário encontrar uma forma de coletar a evidência sem violar jurisdiç�
 \subsection{Coleta de evidências de memória volátil de máquinas em nuvem}
 \label{sec:forensenuvem}
 
-A prática de armazenar histórico de tráfego de rede e alterações de dados armazenados em disco já é bem difundida na comunidade \marcos{Qual comunidade? Do Jacarezinho? De Heliópolis? De novo, CLAREZA!!!}.
+A prática de armazenar histórico de tráfego de rede e alterações de dados armazenados em disco já é bem difundida na comunidade forense\marcos{Qual comunidade? Do Jacarezinho? De Heliópolis? De novo, CLAREZA!!! - Hamilton: Feito}.
 %
-Por outro lado, a memória volátil de computadores não costuma receber o mesmo tratamento: suas alterações quase nunca são armazenadas, seja por questões de desempenho \marcos{NÃO use a palavra ``performance'' em textos científicos. Reserve o uso de ``performance'' para uma apresentação de música ou dança... em computação, o nome certo é ``desempenho''} ou por simples praticidade, dado a alta sobrevida dessas informações.
+Por outro lado, a memória volátil de computadores não costuma receber o mesmo tratamento: suas alterações quase nunca são armazenadas, seja por questões de desempenho \marcos{NÃO use a palavra ``performance'' em textos científicos. Reserve o uso de ``performance'' para uma apresentação de música ou dança... em computação, o nome certo é ``desempenho'' - Hamilton: Falha minha, um momento de fraqueza} ou por simples praticidade, dado a alta sobrevida dessas informações.
 %
 Infelizmente, isso acaba dificultando a análise de uma classe específica de ataques, conhecidos como injeção de código em memória \cite{CaseMemoryForensics:2014}. 
 %
