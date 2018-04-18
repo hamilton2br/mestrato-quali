@@ -231,33 +231,29 @@ Em resumo, \fancyname tem como focos (1) a reprodutibilidade do processo de cole
 
 \begin{abstract}
 \marcos{Reescreva considerando as revisões na parte em português.}
-The adoption of cloud architectures increases every day and with it, also the number of cases where such technology is used for illicit purposes.
+The adoption of cloud architectures increases every day, and with it increases the number of cases in which this type of technology is used for illicit purposes.
 %
-In 2015, the number of notarial records acts related to digital abuses and virtual crimes grew by 87\%.
+Unfortunately, due to the volatile nature of the cloud, the task of collecting evidences for forensic analysis in this environment has run into practical and legal challenges.
 %
-Unfortunately, due to the volatile nature of the cloud, the task of collecting evidences for forensic analysis frequently run into practical and legal issues.
+The practice inherited from the traditional forensics, through which the crime scene is isolated and all the evidence is collected, when applied to digital forensics, led to the collection of large volumes of information for analysis.
 %
-The practice, inherited from the traditional forensics, to isolate the crime scene and collect all evidences, has been translated to digital forensic as the bitwise copy of the media to be investigated. 
+Such practice had a negative impact on the time of investigation. 
 %
-Although thorough, this practice led to the collection of large volumes of information for analysis which in its turn impacted investigation time.
+In addition, two characteristics of cloud solutions make it difficult to obtain valid evidence. 
 %
-On top of that, two other features of cloud solutions have made it difficult to obtain valid evidence.
+The first is that the physical resources are shared among multiple users which prevents their removal for analysis, as this would violate the privacy of individuals not involved in the investigation.
 %
-The sharing of physical resources among multiple users which prevents the removal of hardware for analysis as this violates the privacy of parties not involved in the investigation.
+The second is the resource's physical location which can be in a different geographical region where the crime was committed and may prevent the collection of evidence if there are no cooperation agreements in place. 
 %
-The geographic location of the physical resource which, if located in a country different from where the crime was committed, may prevent the collection of evidence if cooperation agreements are not in place.
+These aspects, if not taken into consideration may call into question the credibility of the evidence. 
 %
-These aspects, if not taken into account, may call into question the credibility of the evidence in a court of law.
+This work analyzes proposals in the literature aimed at solving such challenges, discussing its limitations and proposes a solution that covers collection, transportation and storage of evidence, aiming at overcoming existing limitations in the state of art.
 %
-This work analyzes other proposals aimed at solving the main challenges of collecting forensic evidence in the cloud, discusses their limitations and then proposes a solution that covers collection, transport and storage of evidence in order to overcome them.
+The proposed solution, called Dizang, provides a way of correlating evidence and its virtual origin, allowing the transport and storage of such data without affecting its credibility. 
 %
-This proposal provides a way of correlating evidence and its virtual origin, transport and store such data without affecting its credibility. 
+For this, containers are used for their ability to preserve the relationship evidence-source even though the latter does not exist in the system under investigation.
 %
-For this we make use of Linux Container and its identifier to relate the evidence to its origin.
-%
-Such a technique has the advantage that it can preserve the relation evidence - origin even though the origin doesn't exists anymore. 
-%
-It focus on (1) the reproductibility of the collection process, (2) the non violation of juristiction, and (3) the non violation of privacy of those not involved in the investigation.
+In summary, Dizang focuses on (1) the reproducibility of the collection process, (2)the establishment of a link between the evidence collected and its origin, (3) the preservation of jurisdiction and privacy of users not involved in the investigation and (4)the evidence's chain of custody.
 \end{abstract}
 
 \listoffigures
