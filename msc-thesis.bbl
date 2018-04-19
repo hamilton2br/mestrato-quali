@@ -110,6 +110,14 @@ p. 499--503, 2012.}
 {LINUXCONTAINERS.ORG. \emph{{Linux Containers (LXC)}}. 2015.
 Available from Internet: \url{https://linuxcontainers.org/lxc/introduction/}.}
 
+\bibitem[Luis, Sanchez and Giova 2016]{LuisDigitalChainOfCustody:2016}
+\abntrefinfo{Luis, Sanchez and Giova}{LUIS; SANCHEZ; GIOVA}{2016}
+{LUIS, P.; SANCHEZ, P.; GIOVA, G. {Digital Chain of Custody Quality
+  Assessment}.
+\emph{International Journal of Computer Science and Network Security (IJCSNS)},
+  vol.~16, no.~4, p. 41--48, 2016.
+ISSN 17387906.}
+
 \bibitem[Mell and Grance 2011]{NIST2011}
 \abntrefinfo{Mell and Grance}{MELL; GRANCE}{2011}
 {MELL, P.; GRANCE, T. \emph{The {NIST} definition of cloud computing}. 2011.
