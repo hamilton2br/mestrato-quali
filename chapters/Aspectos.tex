@@ -7,7 +7,7 @@
 
 Desde 2001, diversos modelos para a condução de investigação digital foram propostos. 
 %
-O \textit{Enhanced Digital Investigation Process Model}, proposto por Carrier e Stafford em 2003, é a última iteração na evolução do processo forense digital \cite{GrisposChallengesCloudComputing:2012}. \marcos{TODO: Precisa da referência completa na seção de referências e uma citação aqui... - Hamilton: Feito}
+O \textit{Enhanced Digital Investigation Process Model}, proposto por Carrier e Stafford em 2003, é a última iteração na evolução do processo forense digital \cite{GrisposChallengesCloudComputing:2012}.
 %
 Entretanto, como tais modelos de investigação foram desenvolvidos antes da aparição de tecnologias de computação em nuvem, muitos partem do pressuposto que o investigador tem acesso e controle sobre o sistema sob investigação \cite{GrisposChallengesCloudComputing:2012}.
 %
@@ -38,9 +38,9 @@ O tipo de serviço de nuvem mais pertinente para este trabalho é o IaaS, uma so
 %
 Nesse cenário, o uso intenso de tecnologias de virtualização costuma levar a recursos altamente voláteis, que são alocados e desalocados a qualquer momento pelo orquestrador da nuvem para suprir um suprir eventuais aumentos e reduções de demanda.
 %
-É possível até mesmo construir scripts para a automatizar a construção da arquitetura desejada, permitindo a instanciação e interconexão de máquinas adequadas para a atividade fim do sistema \marcos{citar_pupper+chef_ou_outras tecnologias_para_esse_fim - Hamilton: Feito}.
+É possível até mesmo construir scripts para a automatizar a construção da arquitetura desejada, permitindo a instanciação e interconexão de máquinas adequadas para a atividade fim do sistema.
 %
-Esses scripts, escritos em linguagem específica como Puppet \cite{Puppet2018}, Chef \cite{Chef2018} e Vagrant \cite{Vagrant2018}, podem conter instruções de como distribuir o tráfego de rede entre as diferentes instâncias de computação ou armazenamento.
+Esses scripts, escritos em linguagem específica como Puppet \cite{Puppet2018}, Chef \cite{Chef2018} ou Vagrant \cite{Vagrant2018}, podem conter instruções de como distribuir o tráfego de rede entre as diferentes instâncias de computação ou armazenamento.
 %
 Dentre as vantagens de sua utilização, podem ser citadas a capacidade de usar os recursos de nuvem de uma forma mais eficiente, levar a uma menor necessidade de intervenção humana, e prover maior resiliência a variações de demanda do sistema.
 
@@ -88,15 +88,14 @@ A área de forense digital (também conhecida por forense computacional) refe-se
 Tal como a forense tradicional, a forense digital se baseia no princípio de Locard, estabelecido pelo médico francês Edmond Locard da seguinte forma: ``Quando um indivíduo entra em contato com outro objeto ou indivíduo, este sempre deixa vestígio deste contato'' \cite{Ramos:2011}.
 %
 De forma similar, a forense digital tem por objetivo a investigação de evidências digitais da interação entre homem e máquina, de modo a reconstruir a cadeia de eventos passados para que suas conclusões sejam validadas por terceiros e sejam aceitas em um processo legal.
-% 
+ 
 
 A seguir são detalhados os principais desafios enfrentados pela forense digital quando aplicada a infraestruturas em nuvem.
-\marcos{senti falta de uma frase aqui para preparar o leitor para as sub-seções a seguir. O que são as sub-seções? Princípios que devem ser seguidos pela forense digital? Desafios da forense digital? Outra coisa? Inclua uma frase aqui para fazer esse ``gancho'' - Hamilton: feito}
 
 \subsection{Aceitabilidade da evidência em processo legal.}
 \label{sec:credibilidadeaceitabilidadeevidencia}
 
-O processo de análise forense no evento de um crime digital é descrito no EDIPM ( \textit{Enhanced Digital Investigation Process Model} -- Modelo Melhorado para Processo de Investigação Digital )\marcos{Sigla sem colocar por extenso o significado = Erro comum 40. Revise o texto INTEIRO por esse erro pfv. - Hamilton: Feito} por 4 fases \cite{GrisposChallengesCloudComputing:2012}: identificar, preservar, examinar e apresentar.
+O processo de análise forense no evento de um crime digital é descrito no EDIPM ( \textit{Enhanced Digital Investigation Process Model} -- Modelo Melhorado para Processo de Investigação Digital) na forma de 4 fases \cite{GrisposChallengesCloudComputing:2012}: identificar, preservar, examinar e apresentar.
 %
 A fase mais pertinente a este trabalho é a de preservação da evidência, que deve ser conduzida de forma forensicamente aceitável.
 %
@@ -107,13 +106,15 @@ Para atingir tal objetivo, o primeiro passo é a garantia da cadeia de custódia
 %
 Cadeia de custódia é o processo de documentação da história cronológica da evidência de modo a saber onde a evidência esteve e quem teve acesso a ela \cite{Ramos:2011}. 
 %
-Uma cadeia de custódia ótima deve tornar visível o estado da evidência antes, durante e após a interação com o processo de investigação \cite{LuisDigitalChainOfCustody:2016}, pois alguns processos investigativos podem causar alteração da evidência na forma que foi coletada, como por exemplo o reintegração dos arquivos que compoem uma base distribuída.
+Uma cadeia de custódia idealmente deve tornar visível o estado da evidência antes, durante e após a interação com o processo de investigação \cite{LuisDigitalChainOfCustody:2016}.
+%
+A razão para essa preocupação é que alguns processos investigativos podem causar alteração da evidência na forma que foi coletada, como, por exemplo, a consolidação em um único local dos arquivos que compõem uma base de dados distribuída.
 %A SENASP (Secretaria Nacional de Segurança Pública) \marcos{Que sigla é essa? Cadê a referência? - Hamilton: removido, repetitivo} define cadeia de custódia como ``a sistemática de procedimentos que visa à preservação do valor probatório da prova pericial caracterizada.''
 
 
 O passo seguinte é a garantia da autenticidade e da integridade da evidência.
 %
-Autenticidade pode ser definida como ``o processo pelo qual se pode garantir a autoria do documento eletrônico'', ou seja, por meio do qual se não permite dúvida quanto à identificação do autor \cite{Ramos:2011}. \marcos{Se usou aspas, é porque copiou de algum lugar. Nesse caso, faltou a referência (é ``\cite{Ramos:2011}''?). Se não copiou de algum lugar, então o uso de aspas está incorreto. - Hamilton : Feito}.
+Autenticidade pode ser definida como ``o processo pelo qual se pode garantir a autoria do documento eletrônico'' \cite{Ramos:2011}, ou seja, por meio do qual se não permite dúvida quanto à identificação do autor .
 %
 Já a integridade pode ser definida como ``o atestado da inteireza do documento eletrônico após sua transmissão, bem como apontar eventual alteração irregular de seu conteúdo'' \cite{Ramos:2011}. 
 %
@@ -131,12 +132,11 @@ A reprodutibilidade do processo de coleta e a manutenção da integridade da evi
 
 Já em um cenário de computação em nuvem, especialmente as de infraestrutura auto-escalável, existe um conjunto de novos desafios. 
 %
-\marcos{REMOVIDO: ``O recurso físico não pode mais ser removido pois o mesmo é utilizado por outros usuários não relacionados a investigação, fazê-lo constituiria violação de privacidade'' -- NOTA: ``o mesmo'' não deve ser usado para substituir ``ele''... a frase ``antes de entrar no elevador, verifique se o mesmo se encontra parado neste andar'' é um exemplo de uso \textbf{incorreto} de ``o mesmo'' (eu descobri isso há uns 2 meses atrás...). Por favor corrija no documento INTEIRO: o correto é usar ``ele'', ou então repetir a palavra em questão - Hamilton: Feito}. \marcos{No texto original tem vários erros incorretos de tempo verbal: você usa passado para se referir a forense em infraestrutura física e presente/futuro para infraestrutura em nuvem. Isso não faz sentido algum: nem tudo no mundo é nuvem, então qualquer coisa que você falar sobre infra física é *presente* - Hamilton: Feito. Acho que você já tinha corrigido algumas ocorrências}
 Primeiramente, em contraste com infraestruturas tradicionais, o recurso físico em princípio não pode ser removido: como os recursos são utilizados por outros usuários não relacionados à investigação, fazê-lo constituiria violação de privacidade.
 %
 A volatilidade dos recursos também torna a verificação do seu autor um processo mais complexo, pois o recurso que gera certa evidência pode deixar de existir algum tempo depois de fazê-lo \cite{SimouCloudChlng:2014}.
 %
-A integridade da evidência também acaba sendo uma tarefa mais complexa, pois ela precisa ser coletada, transportada e armazenada, o que evidencia a necessidade de preservação da cadeia de custódia.
+A integridade da evidência também acaba sendo uma tarefa não trivial, pois ela precisa ser coletada, transportada e armazenada, o que caracteriza a necessidade de preservação da cadeia de custódia.
 %
 Infelizmente, a violação de qualquer uma dessas características pode colocar em dúvida a credibilidade da evidência.
 
@@ -152,12 +152,12 @@ No passado, com as soluções manipulando quantidades bem menores de memória, d
 %
 Entretanto, nas atuais soluções, aplicações e arquiteturas em nuvem, o volume de dados é consideravelmente maior \cite{QuickIncreaseVolumeImpact:2014}.
 %
-O acesso fácil a aumentos na capacidade de armazenamento e recursos de processamento como máquinas virtuais, balanceadores de carga e \textit{firewalls}, aumentou a quantidade elementos geradores de evidência.
+Afinal, o acesso fácil e dinâmico a recursos de armazenamento e de processamento, como máquinas virtuais, balanceadores de carga e \textit{firewalls}, acaba também aumentando a quantidade elementos geradores de evidência.
 %
-Desta forma, a quantidade de dados a ser análisado em uma investigação foi crescendo até que em 2014, para que todo o back-log fosse analisado, seriam necessários 6 meses \cite{QuickIncreaseVolumeImpact:2014} 
-\marcos{Legal ter um exemplo, mas precisa *discutir* esse exemplo. E daí que tinha 6 meses de backlog? O que isso tem a ver com nuvem?! Vc não explicou o cenário, então pra mim como leitor esse backlog pode ser de um servidor a um tiozinho que anota em papel a entrada de pessoas... Mais CLAREZA!!! - Hamilton: acho que foi}.
+Esse problema é ilustrado em \cite{QuickIncreaseVolumeImpact:2014}, onde se discute uma investigação na qual a quantidade de dados a serem analisados para fins de forense digital tomaria 6 meses.
 
-Encontrar uma forma de armazenar menos informações, de modo a tornar a fase de análise mais rápida e eficiente, é um importante passo para permitir investigações forenses mais céleres.
+
+Encontrar uma forma de armazenar menos informações e, assim, tornar a fase de análise mais rápida e eficiente, é um passo importante para garantir a celeridade de investigações forenses.
 
 
 \subsection{Privacidade e jurisdição}
@@ -169,22 +169,26 @@ Encontrar uma forma de armazenar menos informações, de modo a tornar a fase de
 %
 \marcos{Eu acho que já li essa frase... (sim, está repetitivo... resuma em uma frase curta, potencialmente fazendo referência à seção anterior) - Hamilton: Assim?}
 %
-Ainda relacionado à coleta da evidência, nas soluções de infra estrutura física, o processo de coleta de evidência mencionado na seção anterior não traz grandes problemas pois os objetos ou indivíduos sob investigação estão diretamente relacionados ao equipamento removido.
+A prática de remoção de equipamentos para coleta de evidências, mencionada na seção \ref{sec:volumedados}, também traz consequências negativas do ponto de vista de privacidade.
 %
-Nas soluções em nuvem, entretanto a adoção de tal prática não é recomendada porque o recurso físico é compartilhado por vários usuários, inclusive indivíduos não envolvidos na investigação, de modo que remover tais recursos configuraria violação de privacidade.
+Mais precisamente, em soluções envolvendo infraestruturas físicas, tal prática não costuma trazer grandes problemas porque os objetos ou indivíduos sob investigação normalmente estão diretamente relacionados ao equipamento removido.
 %
-Como um complicador adicional, o fato de os dados não estarem armazenados no mesmo território em que a investigação é realizada acaba demandando acordos de cooperação jurídica entre as partes, o que nem sempre é possível \cite{SimouCloudChlng:2014}.
+Nas soluções em nuvem, entretanto, tal prática não é recomendada porque o recurso físico é compartilhado por vários usuários, inclusive indivíduos não envolvidos na investigação.
+%
+Logo, remover tais recursos configuraria violação de privacidade.
+%
+Como um complicador adicional, o fato de os dados potencialmente não estarem armazenados no mesmo território em que a investigação é realizada acaba demandando acordos de cooperação jurídica entre as partes, o que nem sempre é possível \cite{SimouCloudChlng:2014}.
 
 
-Neste cenário encontrar uma forma de coletar a evidência sem violar jurisdição e privacidade ganham importância.
+Neste cenário, encontrar uma forma de coletar a evidência sem violar jurisdição e privacidade ganham importância.
 
 
 \subsection{Coleta de evidências de memória volátil de máquinas em nuvem}
 \label{sec:forensenuvem}
 
-A prática de armazenar histórico de tráfego de rede e alterações de dados armazenados em disco já é bem difundida na comunidade forense\marcos{Qual comunidade? Do Jacarezinho? De Heliópolis? De novo, CLAREZA!!! - Hamilton: Feito}.
+A prática de armazenar histórico de tráfego de rede e alterações de dados armazenados em disco já é bem difundida na comunidade forense.
 %
-Por outro lado, a memória volátil de computadores não costuma receber o mesmo tratamento: suas alterações quase nunca são armazenadas, seja por questões de desempenho \marcos{NÃO use a palavra ``performance'' em textos científicos. Reserve o uso de ``performance'' para uma apresentação de música ou dança... em computação, o nome certo é ``desempenho'' - Hamilton: Falha minha, um momento de fraqueza} ou por simples praticidade, dado a alta sobrevida dessas informações.
+Por outro lado, a memória volátil de computadores não costuma receber o mesmo tratamento: suas alterações quase nunca são armazenadas, seja por questões de desempenho ou por simples praticidade, dado a reduzida sobrevida dessas informações.
 %
 Infelizmente, isso acaba dificultando a análise de uma classe específica de ataques, conhecidos como injeção de código em memória \cite{CaseMemoryForensics:2014}. 
 %
@@ -211,8 +215,6 @@ Em particular, têm especial interesse quatro tipos particulares dessa família 
  
  \item \textbf{Injeção de processo vazio}: Um processo malicioso dispara uma instância de um processo legítimo no estado ``suspenso''; a área do executável é então liberada e realocada com código malicioso.
 \end{itemize}
-
-
 
 
 
