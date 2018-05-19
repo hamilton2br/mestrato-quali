@@ -15,11 +15,14 @@ A solução aqui apresentada, denominada \fancyname, é descrita em detalhes a s
 \section{Descrição}
 \label{sec:proposta-desc}
 
-Em sistemas computacionais executados sobre uma infraestrutura física (i.e., não virtualizada), pode-se fazer uma associação direta entre um recurso qualquer, como uma informação da memória, imagem de disco ou pacotes trafegando na rede, e sua origem correspondente.
+Em sistemas computacionais executados sobre uma infraestrutura física (i.e., não virtualizada), pode-se fazer uma associação direta entre um recurso qualquer e sua origem correspondente, seja esse recurso uma informação da memória, imagem de disco ou pacotes trafegando na rede.
 %
-Já em sistemas construídos sobre uma infraestrutura virtual, em especial quando esta é auto-escalável, os recursos computacionais são altamente voláteis e, portanto, podem ser desalocados a qualquer momento.
+Já em sistemas construídos sobre uma infraestrutura virtual, em especial quando ela é auto-escalável, os recursos computacionais são altamente voláteis e, portanto, podem ser desalocados a qualquer momento.
+
+
+Para conseguir correlacionar uma evidência a sua origem volátil, é necessário utilizar outro elemento em que persista a relação fonte-evidência.
 %
-Para conseguir correlacionar uma evidência a sua origem volátil, é necessário utilizar outro elemento em que persista a relação fonte-evidência, o que na presente proposta é feito por meio de contêineres linux (LXC).
+Na presente proposta, isso  é feito por meio de contêineres linux (LXC).
 %
 Embora um contêiner seja um \textit{software} e, portanto, também volátil, cada imagem compilada e sua execução na forma de contêiner são normalmente atrelados a um \textit{hash} que identifica univocamente essa relação.
 %
@@ -41,7 +44,10 @@ Ao realizar a coleta em intervalos de tempo adequados, é possível construir um
 %
 %\marcosT{A ligação entre as frases anterior e a seguir está bem ruim... você parece estar mudando completamente de assunto... Acredito que faltou uma frase dizendo que ``''salvar toda a memória'' pode se tornar um problema, reforçar isso com as duas frases que já estão a seguir, e depois dizer que você vai resolver.}
 
-A maioria das técnicas forenses mais usadas atualmente são voltadas à obtenção da informação em sua totalidade, seja via cópia bit a bit, seja por meio da obtenção do \textit{hardware} físico \cite{SimouCloudChlng:2014} \cite{BemPastPresentFuture:2008}. 
+
+A maioria das técnicas forenses mais usadas atualmente são voltadas à obtenção da informação em sua totalidade.
+%
+Isso comumente é feito via cópia bit a bit ou por meio da obtenção do \textit{hardware} físico \cite{SimouCloudChlng:2014} \cite{BemPastPresentFuture:2008}. 
 %
 Embora tais técnicas possam parecer interessantes à primeira vista, elas muitas vezes acabam sendo responsáveis por um problema: o crescente volume de informações que os investigadores precisam analisar \cite{QuickIncreaseVolumeImpact:2014}.
 %
@@ -49,11 +55,13 @@ Para mitigar essa dificuldade, em \fancyname são adotadas duas estratégias: a 
 %
 Para detectar e analisar intrusões na memória de processos, é necessário ter uma cópia da memória antes e depois da intrusão \cite{CaseMemoryForensics:2014}. 
 %
-Assim, a solução proposta implementa uma janela de instantâneos de memória cobrindo um intervalo de tempo pré-definido, como ilustrado na Fig. \ref{fig:janela}. 
+Assim, a solução proposta implementa uma janela de instantâneos de memória cobrindo um intervalo de tempo pré-definido, como ilustrado na Figura \ref{fig:janela}. 
 %
 Em condições normais de operação, as evidências são coletadas com certa periodicidade e coletas que atingem uma determinada idade são descartadas.
 %
-Em contraste, após a detecção de um evento de ataque (e.g., por um sistema de detecção de intrusões), \fancyname deixa de descartar as coletas mais antigas do \textit{log} de monitoramento, sendo possível conhecer o sistema antes e depois do ataque e, assim, avaliar sua evolução.
+Em contraste, após a detecção de um evento de ataque (e.g., por um sistema de detecção de intrusões), \fancyname deixa de descartar as coletas mais antigas do \textit{log} de monitoramento.
+%
+Como resultado, é possível conhecer o sistema antes e depois do ataque e, assim, avaliar sua evolução.
 %
 %\marcosR{Não sei por que você está utilizando $\backslash\backslash$ no final das suas frases, mas pare de fazer isso... deixe o LaTeX se virar com a formatação. No final, quando você tiver tudo escrito, aí pode fazer algum sentido se preocupar com formatação, mas não antes disso... - Hamilton: é pra formatação mesmo :-) OK vou deixar o latex se virar}
 %
@@ -70,9 +78,11 @@ Fonte: Próprio autor
 \end{figure}
 
 %\marcosT{Essa frase não faz sentido: não se ``assina'' nada com um ``hash''. Você pode ``calcular o hash'' ou ``assinar um dado'' (e.g., um dado juntamente com o hash de alguma coisa). Revise essa frase... - Hamilton: Feito}
-Para persistir a relação evidência-origem e garantir a integridade da mesma, a presente proposta calcula o hash do par [evidência, identificador da imagem do contêiner] e armazena a tripla [hash, identificador da imagem do contêiner, evidência].
+Finalmente, para persistir a relação evidência-origem e garantir a sua integridade, \fancyname calcula o hash do par [evidência, identificador da imagem do contêiner] e armazena a tripla [hash, identificador da imagem do contêiner, evidência].
 %
-Para evitar eventuais problemas com o armazenamento desses dados em países com jurisdições diferentes daquelas que devem ser aplicadas na investigação em questão, as evidências coletadas são armazenadas em um local físico fora da nuvem, após serem transportadas por meio de um canal seguro (e.g., via TLS ( \textit{Transport Layer Security} -- Camada de Transporte Seguro ) \cite{DierksT2008}).
+Adicionalmente, a presente proposta evita eventuais problemas com o armazenamento desses dados em países com jurisdições diferentes daquelas que devem ser aplicadas na investigação em questão.
+%
+Especificamente, as evidências coletadas são armazenadas em um local físico fora da nuvem, após serem transportadas por meio de um canal seguro (e.g., via TLS (\textit{Transport Layer Security} -- Camada de Transporte Seguro) \cite{DierksT2008}).
 %
 
 \section{Implementação}
@@ -92,21 +102,28 @@ Fonte: Próprio autor
 \end{figure}
 
 
-Os métodos propostos foram implementados em uma plataforma de testes visando avaliar a eficácia de \fancyname em coletar as informações de memória dos contêineres de forma reprodutível, sem violar jurisdições ou a privacidade de usuários.
+Os mecanismos propostos foram implementados em uma plataforma de testes visando avaliar a eficácia de \fancyname em coletar as informações de memória dos contêineres de forma reprodutível, sem violar jurisdições ou a privacidade de usuários.
 %
-A solução, ilustrada na Fig. \ref{fig:Solucao}, consistiu na criação de 1 VM  ( \textit{Virtual Machine} -- Máquina Virtual ) usando o Oracle Virtual Box 5.0 \cite{VirtualBox} 
-em um notebook Intel i5 de 2.30Mhz e 4Gb de RAM com sistema operacional de 64 bits.
+A solução, ilustrada na Figura \ref{fig:Solucao}, consistiu na criação de 1 VM  (\textit{Virtual Machine} -- Máquina Virtual) usando o Oracle Virtual Box 5.0 \cite{VirtualBox} em um notebook Intel i5 de 2.30Mhz e 4Gb de RAM com sistema operacional de 64 bits.
 %
 Essas VMs possuem 2 Gb de memória RAM e emulam apenas 1 processador, e em cada uma delas foi instalado o Docker Engine 1.10%\cite{DockerInc} 
-e a API Docker 1.21%\cite{DockerInc}
+ e a API Docker 1.21%\cite{DockerInc}
 , com os quais foram criados 3 contêineres executando o nginx 1.0%\cite{nginx}
  em diferentes portas. 
+
+
+Usando uma aplicação Java que descobre o identificador de processo associado a cada contêiner, pode-se copiar conteúdo do \textit{descritor de alocação de memória não uniforme} (\textbf{/proc/pid/numa\_maps}).
 %
-Usando uma aplicação Java que descobre o identificador de processo associado a cada contêiner, pode-se copiar conteúdo do \textit{descritor de alocação de memória não uniforme} (\textbf{/proc/pid/numa\_maps}), o qual contém a alocação das páginas de memória, os nós que estão associados a essas páginas, o que está alocado e suas respectivas políticas de acesso \cite{UnixManPagesNumaMaps}.
+Assim, obtém-se a alocação das páginas de memória, os nós que estão associados a essas páginas, o que está alocado e suas respectivas políticas de acesso \cite{UnixManPagesNumaMaps}.
 %
-A cópia e gravação do arquivo é tal que, a cada minuto, a aplicação (1) pausa o contêiner em questão, (2) copia a diretório \textbf{numa\_maps}, (3)  concatena os dados obtidos com o \textit{hash} de identificação da imagem do contêiner, (4) calcula o \textit{hash} do conjunto e (5) salva o resultado em um arquivo cujo nome é o identificador da imagem do contêiner e a extensão é \textbf{.mem}. 
+A cópia e gravação do arquivo é tal que, a cada minuto, a aplicação:
+(1) pausa o contêiner em questão; 
+(2) copia a diretório \textbf{numa\_maps}; 
+(3)  concatena os dados obtidos com o \textit{hash} de identificação da imagem do contêiner;
+(4) calcula o \textit{hash} do conjunto; e 
+(5) salva o resultado em um arquivo cujo nome é o identificador da imagem do contêiner e a extensão é \textbf{.mem}. 
 %
-Após a conclusão do processo de cópia, a mesma aplicação verifica se existem arquivos \textbf{.mem} em disco mais antigos que um certo intervalo de tempo ``t'', descartando-os.
+Após a conclusão do processo de cópia, a mesma aplicação verifica se existem arquivos \textbf{.mem} em disco mais antigos que um certo intervalo de tempo ``t'', descartando-os em caso positivo.
 %
 
 %\marcosT{IMPORTANTE: discuta em alguns parágrafos os resultados. Até aqui, você só disse o que fez, mas não falou nada sobre o que isso traz de impactos positivos ou negativos. Por exemplo: quanto tempo demora a cópia (isso pode ser crítico para um processo que opera em tempo real, já que ele será pausado...)? Enfim, tire conclusões dos experimentos, porque senão os experimentos não têm qualquer utilidade para o leitor... Quanto mais completa a discussão (não só ``tempos'', mas também memória, quantidade de dados gerados por hora, uso de banda, etc.), melhor. Gráficos e tabelas com dados obtidos são muito bem vindos. - Hamilton: Feito}
@@ -114,7 +131,7 @@ Após a conclusão do processo de cópia, a mesma aplicação verifica se existe
 %\marcosT{IMPORTANTE: Discuta também a relação entre o que foi feito e os ataques de injeção mencionados na introdução. O seu texto inicialmente menciona tais ataques como parte do seu foco, mas nunca mais retoma a existência deles depois que você descreve a solução... Não precisa ser uma discussão longa, mas ao menos algumas considerações sobre o porquê de você conseguir analisar tais ataques usando a técnica proposta - Hamilton: Feito.}
 %
 
-\section{Resultados experimentais}
+\section{Resultados experimentais preliminares}
 \label{sec:proposta-exp}
 
 Para avaliar a efetividade de \fancyname na coleta de evidências, alguns experimentos foram realizados usando o ambiente implementado (descrito na Seção \ref{sec:proposta-impl}).
@@ -128,7 +145,7 @@ A cada coleta, foi executado o comando \texttt{du -sh *.mem} do \textit{Unix} no
 Ao fim do experimento, os contêineres foram removidos.
 
 
-A ocupação em disco devido aos instantâneos de memória capturados durante o experimento é mostrada no gráfico da Fig. \ref{fig:evolucao-coleta}. 
+A ocupação em disco devido aos instantâneos de memória capturados durante o experimento é mostrada no gráfico da Figura \ref{fig:evolucao-coleta}. 
 %
 O gráfico mostra que o aumento do uso do espaço em disco é linear e o crescimento se interrompe quando é atingido o limite de tempo configurado para a janela, pois as coletas com tempo de vida maior que tal limite são apagadas do disco. 
 %
@@ -195,7 +212,7 @@ Fonte: Próprio autor
 
 
 \begin{comment}
-A Fig. \ref{fig:memoria_salva}, por sua vez, mostra uma listagem de alguns dos instantâneos de memória salvos pela solução depois que os contêineres são removidos. 
+A Figura \ref{fig:memoria_salva}, por sua vez, mostra uma listagem de alguns dos instantâneos de memória salvos pela solução depois que os contêineres são removidos. 
 %
 Nela pode-se ver que as coletas continuaram no disco da máquina mesmo após a remoção dos contêineres. 
 %
@@ -229,7 +246,7 @@ Uma potencial limitação da solução proposta é que a pausa de um contêiner 
 %
 Para avaliar esse impacto, durante o experimento foram medidos os tempos de cópia da memória do contêiner.
 %
-Os resultados são mostrados no gráfico da Fig. \ref{fig:memoria-copia}.
+Os resultados são mostrados no gráfico da Figura \ref{fig:memoria-copia}.
 %
 É possível notar que, após a inicialização da aplicação, o tempo para realizar a cópia é bastante reduzido, variando entre 20 e 40 milissegundos. 
 %
@@ -295,13 +312,15 @@ Fonte: Próprio autor
 
 Como a solução descrita tem como foco coletar informações de memória no espaço do usuário (\textit{user space}), ela não consegue acessar o espaço de kernel (\textit{kernel space}). 
 %
-Assim, \fancyname em princípio não provê suporte a técnicas de investigação de malware que se baseiam em informações do \textit{kernel space}, como, por exemplo, a comparação de informações do PEB ( \textit{Process Environment Block} -- Bloco para o Ambiente dos Processos ), que ficam no \textit{user space}, com informações do VAD ( \textit{Virtual Address Descriptor} -- Descritor de Endereços de Memória Virtual ), que fica no \textit{kernel space}. 
+Assim, \fancyname em princípio não provê suporte a técnicas de investigação de malware que se baseiam em informações do \textit{kernel space}.
+%
+Isso inclui, por exemplo, a comparação de informações do PEB ( \textit{Process Environment Block} -- Bloco para o Ambiente dos Processos ), que ficam no \textit{user space}, com informações do VAD ( \textit{Virtual Address Descriptor} -- Descritor de Endereços de Memória Virtual ), que fica no \textit{kernel space}. 
 %
 Análise de ameaças do tipo DKOM ( \textit{Direct Kernel Object Manipulation} -- Manipulação Direta dos Objetos do Kernel ) também não se beneficiam com a solução aqui proposta. 
 %\marcosT{Não entendi a ``associação com o contêiner'' aqui. Você quer dizer que ``não se beneficiam com a solução aqui proposta'' ou outra coisa? Você não definiu o que seria a tal ``associação com o contêiner'' fora do contexto da sua solução, então ficou confuso - Hamilton: Feito}.
 
 
-\section{Conclusões e trabalhos futuros}
+\chapter{Conclusão}
 \label{sec:proposta-concl}
 
 %\marcosT{Uma boa conclusão retoma, logo na primeira frase, o problema que ela se propunha a resolver. Comece com uma ou mais frases nesse sentido, (nota: \textbf{sem} copiar+colar de outro ponto do texto). - Hamilton: Feito} \marcosT{Só que não: eu disse para você retomar o \textbf{problema} na sua primeira frase. Sua frase começa retomando a \textbf{solução}. Essa que você colocou como primeira seria boa como uma segunda frase, em que você reforça como resolve o problema - Hamilton: Acho que agora foi :)}
@@ -324,48 +343,51 @@ Combinada com uma ferramenta para identificação de ameaças, essas caracterís
 %Portanto, como trabalho futuro, pretende-se desenvolver uma ferramenta de detecção de ameaças mais flexível, que, embora potencialmente utilize técnicas similares àquelas adotadas em sistemas atuais, seja capaz de fazê-lo sem necessariamente ter acesso à memória completa da máquina.
 %
 
+\marcos{Er... isso era o trabalho futuro no artigo, quando você podia dizer absolutamente qualquer coisa. Na qualificação, só diga que é trabalho futuro aquilo que DE FATO você pretender fazer: você será cobrado por isso na defesa da dissertação... Vai fazer isso? Se for, não vai aqui, mas sim na seção em que você descreve os próximos passos.}
+
 Como trabalho futuro, pretende-se estudar o impacto provocado pela pausa do contêiner no desempenho de um sistema em produção e realizar uma análise da memória dos contêineres deste mesmo sistema utilizando as coletas feitas por \fancyname. 
 %
 Com esses resultados pretende-se implementar uma ferramenta mais flexível, que não precise ter acesso a memória completa da máquina, requisito comum de ferramentas de análise de malware atuais (e.g., FROST \cite{DykstraFROST:2013} e Volatility Framework \cite{VolatilityFoundation2014}).
 
 
-\section{O que foi feito e cronograma esperado para os próximos passos}
+\section{Cronograma esperado para os próximos passos}
 \label{sec:proposta-prox}
 
-A presente proposta está planejada para ser executada em 3 fases.
-%
-A primeira fase tem por objetivo encontrar uma forma de relacionar a evidência coletada de um contêiner a sua origem de forma que o processo seja reprodutível. 
-%
-Para atingir este objetivo será implementado um protótipo de coleta de memória de uma máquina virtual executando contêineres em um notebook.
-%
-A segunda fase tem por objetivo encontrar uma forma de transportar a evidência coletada a um local de armazenamento garantindo a cadeia de custódia.
-%
-Para atingir este objetivo, será definida uma cadeia de custódia. De posse desta será realizada em uma nuvem computacional e envolverá o transporte da evidência para uma máquina física fora da nuvem.
-%
-A terceira parte tem por objetivo a realização da análise de alguma vulnerabilidade utilizando-se do material coletado na primeira fase do projeto.
-%
-As ações para se atingir este objetivo serão realizadas em um notebook com ferramental voltado a análise forense em memória.
-%
-Até então foram realizados com sucesso a duas primeiras partes do projeto.
+\marcos{Mais atenção ao tempo verbal... você fica usando frases no futuro para as fases 1 e 2, e depois diz que já foram executadas (=passado)...?! Só confunde o leitor...}
 
-%
-Parte 1: A associação da evidência de memória coletada do contêiner de uma máquina virtual foi associada a sua origem através do \textit{hash} de identificação da imagem do contêiner. O processo de coleta foi reproduzido com sucesso diversas vezes.
-%
+A execução da presente proposta foi planejada para ser executada em três fases, das quais as duas primeiras foram executadas, conforme discutido a seguir.
 
-Parte 2: O transporte da evidência para uma máquina física fora da nuvem utilizando camada de transporte seguro a assinatura da mensagem.
-%
 
-Para o restante do projeto, que consiste da parte 3, espera-se seguir o cronograma descrito na figura \ref{fig:cronograma} onde serão executadas as seguintes atividades.
+A primeira fase teve por objetivo encontrar uma forma de relacionar a evidência coletada de um contêiner a sua origem de forma que o processo seja reprodutível. 
+%
+Para atingir este objetivo, foi implementado um protótipo de coleta de memória de uma máquina virtual executando contêineres em um computador físico. 
+%
+A associação da evidência de memória coletada do contêiner de uma máquina virtual foi associada a sua origem através do \textit{hash} de identificação da imagem do contêiner, e o processo de coleta foi reproduzido com sucesso diversas vezes.
+
+
+A segunda fase teve por objetivo encontrar uma forma de transportar a evidência coletada a um local de armazenamento garantindo a cadeia de custódia.
+%
+Para atingir este objetivo, foi definida uma cadeia de custódia, de modo que os evidência em memoória geradas em uma nuvem computacional pudessem ser transportados para uma máquina física fora da nuvem.
+%
+O transporte da evidência foi realizado usando TLS a assinatura dos dados.
+
+
+Finalmente, a terceira fase esperada para o projeto, que constite no próximo passo para a conclusão do mestrado, tem por objetivo a realização da análise experimental de alguma vulnerabilidade específica, utilizando-se do material coletado na primeira fase do projeto.
+%
+As ações para se atingir este objetivo serão realizadas em um computador físico com ferramental voltado à análise forense em memória.
+%
+A execução dessa fase deve seguir o cronograma descrito na Figura \ref{fig:cronograma}, que consiste nas seguintes atividades:
+
 
 \begin{itemize}
- \item \textbf{Estudo das ferramentas de análise de memória}: Onde serão avaliadas ferramentas de análise de memória na busca por alguma que consiga decodificar as informações coletadas 
- \item \textbf{Implementação / seleção de uma ferramenta de análise}: Nesta atividade será selecionada uma das ferramentas estudadas na atividade anterior. Caso nenhuma se mostre adequada, será implementada uma ferramente para o propósito da fase 3
- \item \textbf{Realização de análises com a ferramenta escolhida / criada}: Nesta fase ocorrerá a tentativa de analisar um malware encontrado em alguma coleta realizada na fase 1
+ \item \textbf{Estudo das ferramentas de análise de memória}: serão avaliadas ferramentas de análise de memória na busca por alguma solução que consiga decodificar as informações coletadas;
+ \item \textbf{Implementação / seleção de uma ferramenta de análise}: será selecionada uma das ferramentas estudadas na atividade anterior. Caso nenhuma se mostre adequada, será implementada uma ferramenta própria;
+ \item \textbf{Realização de análises com a ferramenta escolhida / criada}: será analisado um malware real, utilizando-se o processo de coleta definido por \fancyname.
 \end{itemize}
 
 \begin{figure}[htb!]
 \footnotesize
-\caption{Cronograma de projeto}
+\caption{Cronograma de projeto. \marcos{Ficou meio pequeno... melhor colocar números (e.g., em romanos) na primeira coluna e logo abaixo da tabela (ou mesmo aqui na legenda) colocar o que cada número significa.}}
 \includegraphics[scale=0.50]{crono-image.png}
 \centering
 \label{fig:cronograma}
@@ -374,10 +396,10 @@ Fonte: Próprio autor
 \end{center}
 \end{figure}
 
-\section{Contribuições}
-\label{sec:proposta-contrib}
-
-A contribuição esperada da presente proposta é o de demonstrar que é possível coletar evidências de uma infraestrutura em nuvem de modo a atender os pré-requisitos de não violação de privacidade, não violação da jurisdição, reprodutibilidade do processo de coleta da evidência e garantia da cadeia de custódia.
+%\section{Contribuições}
+%\label{sec:proposta-contrib}
 %
-Demonstrar que é possível realizar a análise de evidência de memória com apenas a parte \textit{user space} da memória coletada
+%A contribuição esperada da presente proposta é o de demonstrar que é possível coletar evidências de uma infraestrutura em nuvem de modo a atender os pré-requisitos de não violação de privacidade, não violação da jurisdição, reprodutibilidade do processo de coleta da evidência e garantia da cadeia de custódia.
+%%
+%Demonstrar que é possível realizar a análise de evidência de memória com apenas a parte \textit{user space} da memória coletada
 

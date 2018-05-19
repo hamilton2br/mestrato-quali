@@ -11,14 +11,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1000
-NormalPos.bottom=478
+NormalPos.right=1629
+NormalPos.bottom=713
 Class=LaTeXView
 Document=msc-thesis.tex
 
 [Frame0_View0,0]
-TopLine=0
-Cursor=0
+TopLine=288
+Cursor=12635
 
 [Frame1]
 Flags=0
@@ -29,13 +29,13 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1000
-NormalPos.bottom=478
+NormalPos.right=1629
+NormalPos.bottom=713
 Class=LaTeXView
 Document=chapters\Introducao.tex
 
 [Frame1_View0,0]
-TopLine=130
+TopLine=84
 Cursor=8124
 
 [Frame2]
@@ -47,14 +47,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1000
-NormalPos.bottom=478
+NormalPos.right=1629
+NormalPos.bottom=713
 Class=LaTeXView
 Document=chapters\Aspectos.tex
 
 [Frame2_View0,0]
-TopLine=309
-Cursor=16731
+TopLine=47
+Cursor=3075
 
 [Frame3]
 Flags=0
@@ -65,13 +65,13 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1000
-NormalPos.bottom=478
+NormalPos.right=1629
+NormalPos.bottom=713
 Class=BibTeXView
 Document=bibliography.bib
 
 [Frame3_View0,0]
-TopLine=790
+TopLine=928
 Cursor=44225
 
 [Frame4]
@@ -83,16 +83,34 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1000
-NormalPos.bottom=478
+NormalPos.right=1629
+NormalPos.bottom=713
 Class=LaTeXView
 Document=chapters\Revisao.tex
 
 [Frame4_View0,0]
-TopLine=2
-Cursor=952
+TopLine=368
+Cursor=20779
+
+[Frame5]
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-1
+MaxPos.y=-1
+NormalPos.left=4
+NormalPos.top=26
+NormalPos.right=1629
+NormalPos.bottom=713
+Class=LaTeXView
+Document=chapters\Proposta.tex
+
+[Frame5_View0,0]
+TopLine=441
+Cursor=28333
 
 [SessionInfo]
-FrameCount=5
-ActiveFrame=4
+FrameCount=6
+ActiveFrame=5
 

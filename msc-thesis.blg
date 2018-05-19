@@ -33,24 +33,24 @@ Warning--campo year vazio ou faltando em Vagrant2018
 +---------------------------------------------------------+
 You've used 42 entries,
             6669 wiz_defined-function locations,
-            1465 strings with 16998 characters,
-and the built_in function-call counts, 44673 in all, are:
+            1467 strings with 17056 characters,
+and the built_in function-call counts, 44682 in all, are:
 = -- 4528
 > -- 1156
 < -- 662
 + -- 1080
 - -- 352
-* -- 2918
+* -- 2920
 := -- 5726
 add.period$ -- 177
 call.type$ -- 42
 change.case$ -- 423
 chr.to.int$ -- 79
 cite$ -- 49
-duplicate$ -- 3471
-empty$ -- 2515
+duplicate$ -- 3472
+empty$ -- 2518
 format.name$ -- 1670
-if$ -- 9761
+if$ -- 9764
 int.to.chr$ -- 5
 int.to.str$ -- 0
 missing$ -- 732
@@ -60,10 +60,10 @@ pop$ -- 944
 preamble$ -- 1
 purify$ -- 160
 quote$ -- 0
-skip$ -- 3543
+skip$ -- 3542
 stack$ -- 1
 substring$ -- 1859
-swap$ -- 1378
+swap$ -- 1379
 text.length$ -- 54
 text.prefix$ -- 0
 top$ -- 0

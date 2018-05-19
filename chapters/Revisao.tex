@@ -4,39 +4,45 @@
 \chapter{Revisão da literatura}
 \label{chp:revisão}
 
-Os principais aspectos relacionados à coleta de evidências para análise forense em nuvem são: coleta, transporte, armazenamento, garantia da cadeia de custódia e reprodutibilidade do processo de coleta. 
+Os principais aspectos relacionados ao tratamento de evidências para análise forense em nuvem são: coleta, transporte, armazenamento, garantia da cadeia de custódia e reprodutibilidade do processo de coleta. 
 %
-Este capítulo descreve o estado da arte e discute onde a presente proposta contribui para melhorar os trabalhos existentes.
+Este capítulo descreve o estado da arte e discute como a presente proposta se insere nesse contexto.
 
-\marcos{Separe em seções essa discussão: isso facilita muito a leitura. Também precisa traduzir as figuras: seu texto está em português, então não faz sentido suas figuras estarem em inglês. Isso vale para qualquer figura, tabela, etc., mesmo se forem de outros trabalhos. Simplesmente diga que foi ``Adaptado de REFERENCIA'' quando for apresentar a figura - Hamilton: Opine por favor}
 
-\section{Estado da Arte}
+\section{Soluções para análise forense em nuvem}
 \label{sec:estadodaarte}
 
-Nesta seção são descritas as propostas existentes hoje para coleta de evidências forenses.
+\marcos{Do jeito que você está apresentando as figuras, você pode ser criticado pelo fato delas terem sempre muito mais informação do que você discute no texto. Não é crítico, mas talvez (se quiser se precaver de críticas) você queira repensar a forma como você discute a solução, para cobrir de forma mais ampla as caixas mostradas na figura (não precisa ser todas as caixinhas, mas pelo menos algumas é bom o leitor saber pra que servem... aí é analisar uma a uma o que potencialmente poderia ser melhor descrito.}
+
+Nesta seção são descritas algumas das principais propostas existentes para coleta de evidências forenses, fornecendo uma visão geral do estado da arte na área.
 
 \subsection{Modelo automático de aquisição de dados para fins forenses}
 \label{sec:aquisicaoautomatica}
 
-O modelo proposto por \cite{ReichertAutoAcquisition:2015} é um processo de coleta de evidências integrado ao \textit{hypervisor} e disparado por algum sistema de detecção de intrusão. 
+\marcos{é sempre ``a Figura X'' (maiúsculo, porque é nome próprio), e ``essa figura'' (minúscula, porque não é nome próprio''}
+
+O modelo proposto por \cite{ReichertAutoAcquisition:2015}, ilustrado na Figura \ref{fig:ReichertAutoAcquisitionModel}, é um processo de coleta de evidências integrado ao \textit{hypervisor} e disparado por algum sistema de detecção de intrusão. 
 %
-A partir do momento em que uma ameaça é detectada, o modelo tira instantâneos das máquinas virtuais comprometidas. O modelo toma cuidado para excluir informações de clientes não relacionados a investigação e armazena o restante em local seguro, tudo de forma automatizada.
+A partir do momento em que uma ameaça é detectada, o modelo dita que sejam criados instantâneos (\textit{snapshots}) das máquinas virtuais comprometidas. 
 %
-O autor não descreve os detalhes do armazenamento mas diz que é ``forensicamente aceitável''.
+O intervalo de tempo em que os instantâneos de memória são gerados é configurável, e todos eles são armazenados em persistência.
 %
-O modelo faz uso de GRR ( \textit{Google Rapid Response} -- Resposta Rápida Google ) para agregar e analisar as evidências coletadas. 
+O modelo se preocupa em, de forma automatizada, excluir informações de clientes não relacionados à investigação e também em armazenar o restante em local seguro.
 %
-O modelo possui um motor de regras que se baseia em um conjunto de descrições de ameaças conhecidas armazenadas em banco para, caso alguma evidência coletada coincida com ameaças armazenadas, ele alerta um usuário humano para uma avaliação mais detalhada.
+O autor não descreve os detalhes do armazenamento, embora afirma que isso deve ser feito de forma ``forensicamente aceitável''.
+
+
+Para agregar e analisar as evidências coletadas, o modelo faz uso do GRR (\textit{Google Rapid Response} -- Resposta Rápida Google), uma ferramenta de resposta a incidentes fornecida pelo Google para facilitar análises forenses de forma remota (e.g., acesso de baixo nível ao disco e à memória das máquinas analisadas) \marcos{REFERENCIA?!?}.
 %
-O intervalo de tempo em que os instantâneos de memória são gerados é configurável e são todos armazenados em persistência.
+O tratamento de evidências usa um motor de regras baseado em um conjunto de descrições de ameaças conhecidas, as quais são armazenadas em um banco de dados.
 %
-Este modelo tem como principal vantagem a automação do processo de coleta que dispensa intervenção humana. 
+Caso alguma evidência coletada coincida com ameaças armazenadas, esse motor alerta um usuário humano para uma avaliação mais detalhada.
 %
-A figura \ref{fig:ReichertAutoAcquisitionModel} mostra o desenho da arquitetura proposta pelo autor.
+Este modelo tem dentre suas principais vantagens a automação do processo de coleta, já que, ao menos em parte, ele dispensa intervenção humana. 
 
 \begin{figure}[htb!]
 \footnotesize
-\caption{\textit{Modelo Automático de Aquisição de Dados Forenses}}
+\caption{Modelo Automático de Aquisição de Dados Forenses \marcos{A fonte do texto está muito pequena... Colocando em 100\% de zoom no pdf, a menor fonte que pode aparecer na figura tem que ser maior ou igual a fonte do footnote do documento. Fontes menores do que isso precisam ser aumentadas. \textbf{Isso vale para todas as figuras.} Além disso: por que ``Actor'' e não ``Ator''...?}}
 \includegraphics[scale=0.50]{ReichertAutoAcquisitionModel.png}
 \centering
 \label{fig:ReichertAutoAcquisitionModel}
@@ -49,19 +55,22 @@ Adaptado de \cite{ReichertAutoAcquisition:2015}
 \subsection{Introspecção em máquina virtual}
 \label{sec:VMI}
 
-A proposta de \cite{PoiselVMI:2013} é baseada na técnica de VMI ( \textit{Virtual Machine Introspection} -- Introspecção em Máquina Virtual ) para coleta de memória volátil. 
+A proposta de \cite{PoiselVMI:2013} é baseada na técnica de VMI (\textit{Virtual Machine Introspection} -- Introspecção em Máquina Virtual) para coleta de memória volátil. 
 %
-Esta técnica se apoia na necessidade do VMM ( \textit{Virtual Machine Manager} -- Gerenciador de Máquinas Virtuais ) em mapear recursos físicos da máquina hospedeira a recursos alocados à máquina virtual cliente.
+Essa técnica se apoia no fato de que o o VMM (\textit{Virtual Machine Manager} -- Gerenciador de Máquinas Virtuais) mapeia os recursos alocados para máquinas virtuais nos recursos físicos correspondentes da máquina hospedeira.
 %
-Este mapeamento é usado para permitir que a memória volátil copiada da máquina virtual seja reconstruída em uma máquina física para realização da análise.
+Este mapeamento é usado para permitir que a memória volátil copiada da máquina virtual seja reconstruída em uma máquina física, para análise posterior.
 %
-A proposta utiliza de coleta contínua dos instantâneos de memória durante o funcionamento do sistema sem distinção do que aconteceu antes ou depois do fato de interesse, e todos os instantâneos de memória são armazenados para posterior análise.
+A proposta realiza coleta contínua de instantâneos de memória durante o funcionamento do sistema, sem distinção do que aconteceu antes ou depois do fato de interesse, e todos os instantâneos de memória são armazenados para análise.
 %
-Para eliminar a chance de inconsistências no instantâneo de memória volátil, a máquina virtual tem sua execução suspensa durante o processo de extração.
+Visando eliminar a chance de inconsistências no instantâneo de memória volátil, a máquina virtual tem sua execução suspensa durante o processo de extração.
+
+
+Uma desvantagem da técnica de VMI, mencionada pelo próprio autor \marcos{\cite[Seção {QUAL SECAO?}]{PoiselVMI:2013}} é a necessidade de tradução de endereços de memória da máquina virtual em endereços de memória da máquina física hospedeira.
 %
-Uma desvantagem da técnica de VMI mencionado pelo próprio autor é a necessidade de tradução de endereços de memória da máquina virtual em endereços de memória da máquina física hospedeira.
+Como essa tradução depende de conhecimento do que está sendo executado na máquina virtual, uma solução baseada em VMI não é completamente portável, sendo necessárias adequações para diferentes clientes.
 %
-Esta tradução depende de conhecimento do que está sendo executado na máquina virtual, logo uma solução baseada em VMI não é completamente portável sendo necessário adequações para diferentes clientes além de ser computacionalmente custoso.
+Além disso, o custo computacional dessa tradução é potencialmente elevado \marcos{É isso mesmo? Não ficou claro na frase original o que era ``computacionalmente custoso'', então assumi aqui que é ``a tradução''.}.
 %
 
 \subsection{Virtuoso}
@@ -69,17 +78,22 @@ Esta tradução depende de conhecimento do que está sendo executado na máquina
 
 Também na vertente de introspecção de máquina virtual, \cite{Dolan-GavittSemanticGap:2011} propõe o \textit{Virtuoso}, um arcabouço de coleta de informações de processos específicos em uma máquina virtual.
 %
-O arcabouço funciona em três fases, a primeira realiza um estudo em uma máquina virtual teste do processo que se deseja coletar dados de memória mapeando o conjunto de instruções executado. 
+O arcabouço funciona em três fases.
 %
-A fase dois traduz o conjunto de instruções mapeados na fase um e cria um executável para que o processo seja rodado fora da máquina virtual.
+A primeira realiza um estudo em uma máquina virtual de testes, mapeando o conjunto de instruções executado pelo processo do qual se deseja coletar dados de memória. 
 %
-A terceira fase usa um ambiente na máquina hospedeira para executar as instruções extraídas na fase dois. Este ambiente consegue acessar os endereços de memória do máquina virtual tornando possível coletar instantâneos de memória do processo em execução.
+A segunda fase traduz o conjunto de instruções mapeados na fase anterior, e então cria um arquivo executável para que o processo seja reproduzido fora da máquina virtual.
 %
-A principal vantagem deste arcabouço é a capacidade de coletar instantâneos de memória de um processo específico.
+Para executar as instruções assim extraídas, a terceira fase usa um ambiente na máquina hospedeira capaz de acessar os endereços de memória da máquina virtual, tornando possível coletar instantâneos de memória do processo em execução.
 %
-A desvantagem deste método é que sua atuação é após o fato.
+A figura \ref{fig:Dolan-GavittSemanticGap} ilustra o funcionamento desse arcabouço. 
+
+
+A principal vantagem do Virtuoso é a capacidade de coletar instantâneos de memória de um processo específico.
 %
-A figura \ref{fig:Dolan-GavittSemanticGap} mostra um esquema do funcionamento do arcabouço
+Uma desvantagem importante, entretanto, é que sua atuação se dá apenas após o evento que se deseja avaliar forensicamente.
+%
+
 
 \begin{figure}[htb!]
 \footnotesize
@@ -96,17 +110,21 @@ Adaptado de \cite{Dolan-GavittSemanticGap:2011}
 \subsection{Abordagem baseada em logs}
 \label{sec:modelologs}
 
-O arcabouço proposto por \cite{SangLogApproach:2013} é um sistema que funciona em parceria com o provedor de nuvem onde este último envia informações ao arcabouço que os armazena em um local centralizado.
+O arcabouço proposto por \cite{SangLogApproach:2013} é um sistema que funciona em parceria com o provedor de nuvem: o provedor último envia informações ao arcabouço, que por sua vez as armazena em um local adequado, de forma centralizada.
 %
-O conjunto de informações armazenadas é acordado antecipadamente com o provedor de nuvem e vão desde instantâneos de memória volátil até pacotes trafegados nas interfaces de rede da máquina virtual.
+O conjunto de informações armazenadas é negociado antecipadamente com o provedor de nuvem, indo desde instantâneos de memória volátil até pacotes trafegados nas interfaces de rede da máquina virtual.
 %
 O arcabouço coleta informações continuamente e usa cálculo de hash das evidências enviadas pelo provedor de nuvem para garantir que elas não foram alteradas durante o transporte.
 %
-Assim como as propostas anteriores, esta também não faz distinção do que aconteceu antes ou depois do fato de interesse coletando constantemente informações da máquina virtual.
+A Figura \ref{fig:SangLogApproach} ilustra o funcionamento da solução, focando em um caso específico de log de rede, de modo similar ao descrito em \cite{SangLogApproach:2013}.
+
+
+Assim como as propostas anteriores, o arcabouço em questão também não faz distinção do que aconteceu antes ou depois do fato de interesse, mas  coleta constantemente informações da máquina virtual.
 %
-O próprio autor menciona que o arcabouço tem a desvantagem de depender da cooperação do provedor de nuvem. Esta dependência é uma estratégia considerada fraca pela comunidade forense pois a prioridade do CSP ( \textit{Cloud Service Provider} -- Provedor de Serviços de Nuvem ) é o de garantir a disponibilidade do serviço não o de coletar evidências \cite{ClarkeReviewOfChallenges2015}.
+Outra potencial limitação é que o arcabouço depende da cooperação do provedor de nuvem. 
 %
-A figura \ref{fig:SangLogApproach} mostra um esquema do funcionamento da solução focada em um caso específico de log de rede como proposta pelo autor.
+Tal dependência é uma estratégia considerada fraca pela comunidade forense, pois a prioridade do CSP (\textit{Cloud Service Provider} -- Provedor de Serviços de Nuvem) é a de garantir a disponibilidade do serviço, não de coletar evidências \cite{ClarkeReviewOfChallenges2015}.
+%
 
 \begin{figure}[htb!]
 \footnotesize
@@ -123,15 +141,17 @@ Adaptado de \cite{SangLogApproach:2013}
 \subsection{Abordagem baseada em backups}
 \label{sec:modelobackup}
 
-O trabalho descrito em \cite{DezfouliBackupApproach:2012} é voltada a dispositivos móveis e tem como principal vantagem a preocupação com as limitações de armazenamento do dispositivo.
+O trabalho descrito em \cite{DezfouliBackupApproach:2012} é voltado a dispositivos móveis e tem como principal característica a preocupação com as limitações de armazenamento do dispositivo.
 %
-O processo de coleta do instantâneo de memória volátil do dispositivo separa as informações e as armazena por processo ativo, o autor usa esta técnica para melhor gerenciar o espaço que as informações estão ocupando em disco. 
+Por essa razão, o processo de coleta de instantâneos de memória volátil separa as informações e as armazena por processo ativo \marcos{O que seria ``armazenar por processo ativo''? Eu nem sabia que dava para ``armazenar por processo passivo''...}, de modo a permitir um gerenciamento adequado do espaço em disco ocupado pelas informações. 
 %
-Possui inteligência para descartar informações de processos que foram terminados e removidos da memória assim como inteligência para fazer uso ótimo do espaço de armazenamento do dispositivo.
+A solução também se preocupa em descartar informações de processos que foram terminados e removidos da memória, além de buscar u uso consciente do espaço de armazenamento disponível no dispositivo.
 %
-O processo de coleta de informações de memória volátil é feita continuamente independente de eventos de interesse como detecção de ameaças.
+A figura \ref{fig:DezfouliBackupApproach} mostra, em alto nível, a forma como o armazenamento de evidências é gerenciado.
+
+Como em diversas outras propostas, processo de coleta de informações de memória volátil em \cite{DezfouliBackupApproach:2012} é executado continuamente, independente de eventos de interesse (e.g., detecção de ameaças).
 %
-A figura \ref{fig:DezfouliBackupApproach} o autor mostra um esquema macro de como o armazenamento da evidência é gerenciado.
+
 
 \begin{figure}[htb!]
 \footnotesize
@@ -145,20 +165,24 @@ Adaptado de \cite{DezfouliBackupApproach:2012}
 \end{figure}
 
 
-\subsection{Arcabouço forense para Open Stack}
+\subsection{Arcabouço forense para OpenStack}
 \label{sec:frost}
 
-A ferramenta FROST ( \textit{FoRensic Open Stack Tools} -- Ferramentas Forenses para Arcabouço Open Stack ) proposto por \cite{DykstraFROST:2013} descreve um conjunto de bibliotecas integradas ao arcabouço \textit{Open Stack Framework} de gerenciamento de infra estruturas virtualizadas.
+A ferramenta FROST (\textit{FoRensic Open Stack Tools} -- Ferramentas Forenses para Arcabouço Open Stack), proposta por \cite{DykstraFROST:2013}, consiste em um conjunto de bibliotecas integradas ao OpenStack \marcos{REFERENCIA}, um dos arcabouços de gerenciamento de infra estruturas virtualizadas bastante difundido.
 %
-Através desta integração, FROST expõe um conjunto de API para serem usadas por aplicações de coleta de evidências forenses que dão acesso a recursos da máquina virtual sendo administrada como disco, logs de trafego de rede e memória volátil.
+Por meio dessa integração, o FROST expõe um conjunto de APIs que podem ser usadas por aplicações de coleta de evidências forenses.
 %
-A proposta descreve apenas o arcabouço, deixa a critério do usuário detalhes como periodicidade e tamanho da coleta assim como a forma de transporte da evidência e onde ela será armazenada.
+Essas APIs dão acesso a recursos da máquina virtual administrada, tais como disco, logs de tráfego de rede e memória volátil.
 %
-De todas as propostas descritas neste capítulo esta é a única que demonstra preocupação com adequação a questões legais e padrões já estabelecidos na industria forense.
+A proposta descreve apenas o arcabouço, deixando a critério do usuário detalhes como periodicidade e tamanho da coleta, bem como a forma de transporte da evidência e onde ela é armazenada.
 %
-O autor declara que FROST segue as práticas definidas no SWGDE ( \textit{Scientific Working Group on Digital Evidence} -- Grupo de Pesquisa Scientífica Em Evidência Digital ) e do Manual de Busca em Apreensão do Departamento de Justiça Norte-Americano.
+A Figura \ref{fig:DykstraFROST} ilustra a integração entre FROST e OpenStack.
+
+De todas as propostas avaliadas, a FROST é a única que mostra preocupação com adequação a questões legais e padrões já estabelecidos na indústria forense.
 %
-A figura \ref{fig:DykstraFROST} o autor mostra um esquema macro da integração entre FROST e o arcabouço \textit{Open Stack}
+Especificamente, o autor declara que FROST segue as práticas definidas no SWGDE (\textit{Scientific Working Group on Digital Evidence} -- Grupo de Pesquisa Scientífica Em Evidência Digital) e do Manual de Busca em Apreensão do Departamento de Justiça Norte-Americano.
+%
+
 
 \begin{figure}[htb!]
 \footnotesize
@@ -176,15 +200,14 @@ Adaptado de \cite{DykstraFROST:2013}
 \subsection{Forense como serviço}
 \label{sec:frost}
 
-O trabalho descrito em \cite{GeorgeDF2CE:2012} está focado em monitoração de rede e opera em uma arquitetura FaaS ( \textit{Forense as a Service} -- Forense Como Serviço ). 
+O trabalho descrito em \cite{GeorgeDF2CE:2012} se concentra em monitoramento de rede, operando em uma arquitetura FaaS (\textit{Forense as a Service} -- Forense Como Serviço). 
 %
-O autor propõe um conjunto de ferramentas que tem capacidade de realizar auto descoberta das interfaces sob monitoração, coletar evidências de tais máquinas e armazená-las.
+Conforme ilustrado na Figura \ref{fig:GeorgeDF2CE}, a arquitetura da solução consiste em um conjunto de ferramentas com capacidade de descobrir automaticamente as interfaces sob monitoramento, além de coletar evidências de tais máquinas e armazená-las.
 %
-O processo de auto descoberta e associação das evidências com usuários de rede é realizado por um motor baseado em ontologias armazenadas em um banco de dados próprio.
+O processo de auto-descoberta e associação das evidências com usuários de rede é realizado por um motor baseado em ontologias, as quais são armazenadas em um banco de dados próprio.
 %
-Esta proposta foca apenas no processo de coleta. A descrição do armazenamento e transporte é superficial.
-%
-Na figura \ref{fig:GeorgeDF2CE} mostra o desenho da arquitetura proposta pelo autor.
+Entretanto, a proposta se concentra apenas no processo de coleta, enquanto a descrição dos mecanismos de armazenamento e transporte não é detalhada.
+
 
 \begin{figure}[htb!]
 \footnotesize
@@ -201,17 +224,20 @@ Adaptado de \cite{GeorgeDF2CE:2012}
 \subsection{Abordagem de indexação de dados coletados para fins forenses}
 \label{sec:indexacaoforense}
 
-Na mesma vertente de forense como serviço, \cite{FaaSIndexedSearch:2012} ataca o problema de grande volume de dados coletados propondo serviço de coleta e indexação de evidências.
+Na mesma vertente da solução de forense como serviço descrita na Seção \ref{sec:frost}, \cite{FaaSIndexedSearch:2012} trata o problema de grande volume de dados coletados por meio de um serviço de coleta e indexação de evidências.
 %
-O serviço espera receber dados da execução do comando unix DD \cite{UnixManPagesDD} nas máquinas alvo onde, apoiado em processos ETL ( \textit{Extract, Transform and Load} -- Extrair, Transformar e Carregar ) e MapReduce \cite{WikipediaMapReduce}, os dados serão disponibilizados para consulta pelos investigadores.
+O serviço espera receber dados da execução do comando unix DD \cite{UnixManPagesDD} nas máquinas alvo, onde, apoiado em processos ETL (\textit{Extract, Transform and Load} -- Extrair, Transformar e Carregar) e MapReduce \cite{WikipediaMapReduce}, os dados são disponibilizados para consulta pelos investigadores.
 %
-A coleta ocorre continuamente a intervalos de tempo configuráveis.
+A coleta ocorre continuamente, em intervalos de tempo configuráveis.
 %
-O autor não descreve onde os dados serão armazenados e quem será responsável pela infraestrutura de armazenamento.
+A Figura \ref{fig:FaaSIndexedSearch} mostra a arquitetura da solução.
+
+
+Embora interessante, a solução não deixa claro onde os dados são armazenados, nem quem é responsável pela infraestrutura de armazenamento.
 %
-O autor também não fala como os dados serão transportados até o armazenamento e como ele garante que estes não foram alteramos no processo.
+Também não é discutido como os dados são transportados até o ponto de armazenamento, nem como garantir que esses dados não sejam alteramos no processo.
 %
-A figura \ref{fig:FaaSIndexedSearch} mostra o desenho da arquitetura do serviço proposta pelo autor
+
 
 \begin{figure}[htb!]
 \footnotesize
@@ -228,7 +254,7 @@ Adaptado de \cite{FaaSIndexedSearch:2012}
 \section{Aspectos relacionados a coleta de evidência}
 \label{sec:coletadeevidencia}
 
-Nesta seção, os trabalhos mencionados acima são agrupados e avaliados com base nos diferentes aspectos que abordam.
+Para uma discussão mais estruturada, a seguir os trabalhos mencionados na Seção \ref{sec:VMI} são agrupados e avaliados com base nos diferentes aspectos que abordam.
 
 \subsection{Acessar e coletar as informações de memória das máquinas virtuais em nuvem}
 \label{sec:coletadeevidencia}
@@ -254,7 +280,9 @@ Existem ainda trabalhos voltados à coleta de informações durante a execução
 Esse é o caso de trabalhos como \cite{PoiselVMI:2013,DykstraFROST:2013,SangLogApproach:2013,Dolan-GavittSemanticGap:2011}, que adotam a estratégia de isolar e parar a máquina virtual para em seguida realizar o processo de coleta. 
 %
 %Nas duas estratégias citadas anteriormente, o problema do grande volume de informações coletadas não é abordado pelo autores nem o cenário onde é necessário coletar evidências de uma máquina virtual que já foi despejada do pool e os recursos liberados. 
-Embora interessantes, as abordagens descritas nesses trabalhos podem levar a um elevado volume de dados coletados, além de também não tratarem o cenário em que é necessário coletar evidências quando os recursos virtuais contendo tais informações são liberados.
+Embora interessantes, as abordagens descritas nesses trabalhos podem levar a um elevado volume de dados coletados.
+%
+Além disso, elas não tratam o cenário em que é necessário coletar evidências quando são liberados os recursos virtuais que as contêm.
 
 
 \subsection{Capacidade de reproduzir o processo e obter os mesmos resultados}
@@ -264,16 +292,20 @@ Se, durante uma análise forense, analistas diferentes obtêm resultados distint
 %
 Por essa razão, a reprodutibilidade do processo de coleta é uma parte importante da geração de evidências para análise forense.
 %
-Infelizmente, entretanto, nenhuma das propostas encontradas na literatura atualmente permite tal reprodutibilidade em cenários de nuvem em que máquinas virtuais ou contêineres são desativados e seus recursos físicos liberados: todas elas dependem da existência do recurso virtual para a repetição do processo de coleta.
+Infelizmente, entretanto, nenhuma das propostas encontradas na literatura atualmente permite tal reprodutibilidade em cenários de nuvem, em que máquinas virtuais ou contêineres são desativados e seus recursos físicos liberados.
+%
+Afinal, todas elas dependem da existência do recurso virtual para a repetição do processo de coleta.
 
 \subsection{Não violar privacidade ou jurisdição das partes não envolvidas na investigação}
 \label{sec:legais}
 
-Em um ambiente de nuvem pública, remover o \textit{hardware} para análise posterior pode levar à violação de privacidade de usuários, uma vez que o multi-inquilinato desse cenário faz com que uma mesma máquina física guarde informações de diversos clientes, alguns dos quais podem não estar envolvidos na investigação em curso.
+Em um ambiente de nuvem pública, remover o \textit{hardware} para análise posterior pode levar à violação de privacidade de usuários.
 %
-Diversos trabalhos na literatura tratam esse problema adequadamente, por meio das duas estratégias principais: a primeira, adotada em \cite{ReichertAutoAcquisition:2015,GeorgeDF2CE:2012,PoiselVMI:2013,DykstraFROST:2013,FaaSIndexedSearch:2012}, consiste em coletar dados pertinentes à investigação e armazená-los fora da nuvem; a segunda, empregada em \cite{SangLogApproach:2013} e que constitui um caso específico de \cite{GeorgeDF2CE:2012}, depende da cooperação do provedor de serviços de nuvem para conseguir as informações necessárias à investigação. 
+A razão é que o multi-inquilinato desse cenário faz com que uma mesma máquina física guarde informações de diversos clientes, alguns dos quais podem não estar envolvidos na investigação em curso.
 %
-Depender do provedor de serviços de nuvem é uma estratégia pouco recomendada, entretanto, pois (1) o volume de dados de usuários pode forçar os provedores a limitar o tamanho dos \textit{logs} armazenados, e (2) caso ocorra uma indisponibilidade causada por um ataque, o objetivo do provedor será o de restabelecer o serviço, não necessariamente o de preservar evidências\cite{ClarkeReviewOfChallenges2015}. 
+Diversos trabalhos na literatura tratam esse problema adequadamente, por meio de duas estratégias principais: a primeira, adotada em \cite{ReichertAutoAcquisition:2015,GeorgeDF2CE:2012,PoiselVMI:2013,DykstraFROST:2013,FaaSIndexedSearch:2012}, consiste em coletar dados pertinentes à investigação e armazená-los fora da nuvem; a segunda, empregada em \cite{SangLogApproach:2013} e que constitui um caso específico de \cite{GeorgeDF2CE:2012}, depende da cooperação do provedor de serviços de nuvem para conseguir as informações necessárias à investigação. 
+%
+Depender do provedor de serviços de nuvem é uma estratégia pouco recomendada, entretanto, pois (1) o volume de dados de usuários pode forçar os provedores a limitar o tamanho dos \textit{logs} armazenados, e (2) caso ocorra uma indisponibilidade causada por um ataque, o objetivo do provedor será o de restabelecer o serviço, não necessariamente o de preservar evidências \cite{ClarkeReviewOfChallenges2015}. 
 
 
 \subsection{Garantir a cadeia de custódia da evidência}
@@ -281,9 +313,13 @@ Depender do provedor de serviços de nuvem é uma estratégia pouco recomendada,
 
 Dentre os trabalhos analisados, apenas \cite{SangLogApproach:2013} aborda a questão da garantia da cadeia de custódia. 
 %
-Especificamente, o trabalho emprega \textit{hashes} para verificar a integridade da evidência, permitindo a detecção de alterações na mesma, embora não explique os mecanismos que poderiam ser utilizados para impedir acesso não autorizado (e, assim, potencial alteração) aos próprios hashes. 
+Especificamente, o trabalho emprega \textit{hashes} para verificar a integridade da evidência, permitindo a detecção de alterações.
 %
-As propostas dos outros autores concentram-se apenas no aspecto técnico da coleta, sem discutir claramente garantia de custódia mas apenas mencionando que as evidências devem ser coletadas de forma forensicamente aceitável.
+Uma limitação desse trabalho, entretanto, é que ele não deixa explícitos os mecanismos que poderiam ser utilizados para impedir acesso não autorizado (e, assim, potencial alteração) aos próprios hashes. 
+%
+As propostas dos outros autores concentram-se apenas no aspecto técnico da coleta, sem discutir detalhadamente garantia de custódia.
+%
+Em geral, os trabalhos apenas mencionam que as evidências devem ser coletadas de forma forensicamente aceitável.
 
 \section{Resumo}
 \label{sec:resumo}
