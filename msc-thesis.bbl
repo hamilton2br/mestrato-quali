@@ -88,6 +88,11 @@ ISBN 9781905824342.}
 ISSN 1098-6596.
 ISBN 9788578110796.}
 
+\bibitem[Google 2013]{GRRRapidResponse:2013}
+\abntrefinfo{Google}{GOOGLE}{2013}
+{GOOGLE. \emph{{GRR Rapid Response}}. 2013.
+Available from Internet: \url{http://www.grr-response.com/faq.html}.}
+
 \bibitem[Grispos, Storer and Glisson
   2012]{GrisposChallengesCloudComputing:2012}
 \abntrefinfo{Grispos, Storer and Glisson}{GRISPOS; STORER; GLISSON}{2012}
@@ -214,6 +219,11 @@ PhD Thesis (PhD) --- Universidade de Brasilia, 2011.}
   vol.~8484, p. 271--284.
 ISBN 9783319078809.
 ISSN 16113349.}
+
+\bibitem[Stack 2018]{StackFramework:2018}
+\abntrefinfo{Stack}{STACK}{2018}
+{STACK, O. \emph{{OPen Stack Framework}}. 2018.
+Available from Internet: \url{https://www.openstack.org}.}
 
 \bibitem[{Unix Man Pages}]{UnixManPagesControlGroups}
 \abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{a}

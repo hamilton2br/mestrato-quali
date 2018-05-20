@@ -1,13 +1,13 @@
 \select@language {brazil}
-\contentsline {figure}{\numberline {1}{\ignorespaces Modelo Autom\IeC {\'a}tico de Aquisi\IeC {\c c}\IeC {\~a}o de Dados Forenses ~~\leavevmode {\color {blue}\textbf {\mathversion {bold}MARCOS: A fonte do texto est\IeC {\'a} muito pequena... Colocando em 100\% de zoom no pdf, a menor fonte que pode aparecer na figura tem que ser maior ou igual a fonte do footnote do documento. Fontes menores do que isso precisam ser aumentadas. \textbf {\mathversion {bold}Isso vale para todas as figuras.} Al\IeC {\'e}m disso: por que ``Actor'' e n\IeC {\~a}o ``Ator''...?}}}}{24}{figure.3.1}
+\contentsline {figure}{\numberline {1}{\ignorespaces Modelo Autom\IeC {\'a}tico de Aquisi\IeC {\c c}\IeC {\~a}o de Dados Forenses}}{24}{figure.3.1}
 \contentsline {figure}{\numberline {2}{\ignorespaces Virtuoso}}{26}{figure.3.2}
 \contentsline {figure}{\numberline {3}{\ignorespaces \textit {A Log Based Approach Model}}}{27}{figure.3.3}
 \contentsline {figure}{\numberline {4}{\ignorespaces \textit {Backup Approach Model}}}{28}{figure.3.4}
-\contentsline {figure}{\numberline {5}{\ignorespaces \textit {FoRensic Open Stack Tools}}}{30}{figure.3.5}
+\contentsline {figure}{\numberline {5}{\ignorespaces \textit {FoRensic Open Stack Tools}}}{29}{figure.3.5}
 \contentsline {figure}{\numberline {6}{\ignorespaces \textit {Digital Forensic Framework for Cloud Environment}}}{31}{figure.3.6}
 \contentsline {figure}{\numberline {7}{\ignorespaces \textit {Digital Forensic as a Service - Indexed Data}}}{32}{figure.3.7}
 \contentsline {figure}{\numberline {8}{\ignorespaces Janela deslizante de coleta de evid\IeC {\^e}ncia}}{38}{figure.4.8}
 \contentsline {figure}{\numberline {9}{\ignorespaces Arquitetura geral da solu\IeC {\c c}\IeC {\~a}o Dizang}}{39}{figure.4.9}
 \contentsline {figure}{\numberline {10}{\ignorespaces Evolu\IeC {\c c}\IeC {\~a}o do uso do espa\IeC {\c c}o em disco com o Dizang}}{41}{figure.4.10}
 \contentsline {figure}{\numberline {11}{\ignorespaces Tempo de c\IeC {\'o}pia da mem\IeC {\'o}ria de um cont\IeC {\^e}iner}}{42}{figure.4.11}
-\contentsline {figure}{\numberline {12}{\ignorespaces Cronograma de projeto. ~~\leavevmode {\color {blue}\textbf {\mathversion {bold}MARCOS: Ficou meio pequeno... melhor colocar n\IeC {\'u}meros (e.g., em romanos) na primeira coluna e logo abaixo da tabela (ou mesmo aqui na legenda) colocar o que cada n\IeC {\'u}mero significa.}}}}{45}{figure.5.12}
+\contentsline {figure}{\numberline {12}{\ignorespaces Cronograma de projeto.}}{45}{figure.5.12}

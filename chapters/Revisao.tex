@@ -19,7 +19,7 @@ Nesta seção são descritas algumas das principais propostas existentes para co
 \subsection{Modelo automático de aquisição de dados para fins forenses}
 \label{sec:aquisicaoautomatica}
 
-\marcos{é sempre ``a Figura X'' (maiúsculo, porque é nome próprio), e ``essa figura'' (minúscula, porque não é nome próprio''}
+\marcos{é sempre ``a Figura X'' (maiúsculo, porque é nome próprio), e ``essa figura'' (minúscula, porque não é nome próprio'' - Hamilton : Feito}
 
 O modelo proposto por \cite{ReichertAutoAcquisition:2015}, ilustrado na Figura \ref{fig:ReichertAutoAcquisitionModel}, é um processo de coleta de evidências integrado ao \textit{hypervisor} e disparado por algum sistema de detecção de intrusão. 
 %
@@ -32,7 +32,7 @@ O modelo se preocupa em, de forma automatizada, excluir informações de cliente
 O autor não descreve os detalhes do armazenamento, embora afirma que isso deve ser feito de forma ``forensicamente aceitável''.
 
 
-Para agregar e analisar as evidências coletadas, o modelo faz uso do GRR (\textit{Google Rapid Response} -- Resposta Rápida Google), uma ferramenta de resposta a incidentes fornecida pelo Google para facilitar análises forenses de forma remota (e.g., acesso de baixo nível ao disco e à memória das máquinas analisadas) \marcos{REFERENCIA?!?}.
+Para agregar e analisar as evidências coletadas, o modelo faz uso do GRR (\textit{Google Rapid Response} -- Resposta Rápida Google), uma ferramenta de resposta a incidentes criado no projeto 20\% na Google para facilitar análises forenses de forma remota (e.g., acesso de baixo nível ao disco e à memória das máquinas analisadas) \cite{GRRRapidResponse:2013}.
 %
 O tratamento de evidências usa um motor de regras baseado em um conjunto de descrições de ameaças conhecidas, as quais são armazenadas em um banco de dados.
 %
@@ -42,7 +42,7 @@ Este modelo tem dentre suas principais vantagens a automação do processo de co
 
 \begin{figure}[htb!]
 \footnotesize
-\caption{Modelo Automático de Aquisição de Dados Forenses \marcos{A fonte do texto está muito pequena... Colocando em 100\% de zoom no pdf, a menor fonte que pode aparecer na figura tem que ser maior ou igual a fonte do footnote do documento. Fontes menores do que isso precisam ser aumentadas. \textbf{Isso vale para todas as figuras.} Além disso: por que ``Actor'' e não ``Ator''...?}}
+\caption{Modelo Automático de Aquisição de Dados Forenses} %\marcos{A fonte do texto está muito pequena... Colocando em 100\% de zoom no pdf, a menor fonte que pode aparecer na figura tem que ser maior ou igual a fonte do footnote do documento. Fontes menores do que isso precisam ser aumentadas. \textbf{Isso vale para todas as figuras.} Além disso: por que ``Actor'' e não ``Ator''...? - Hamilton: Feito}}
 \includegraphics[scale=0.50]{ReichertAutoAcquisitionModel.png}
 \centering
 \label{fig:ReichertAutoAcquisitionModel}
@@ -86,7 +86,7 @@ A segunda fase traduz o conjunto de instruções mapeados na fase anterior, e en
 %
 Para executar as instruções assim extraídas, a terceira fase usa um ambiente na máquina hospedeira capaz de acessar os endereços de memória da máquina virtual, tornando possível coletar instantâneos de memória do processo em execução.
 %
-A figura \ref{fig:Dolan-GavittSemanticGap} ilustra o funcionamento desse arcabouço. 
+A Figura \ref{fig:Dolan-GavittSemanticGap} ilustra o funcionamento desse arcabouço. 
 
 
 A principal vantagem do Virtuoso é a capacidade de coletar instantâneos de memória de um processo específico.
@@ -147,7 +147,7 @@ Por essa razão, o processo de coleta de instantâneos de memória volátil sepa
 %
 A solução também se preocupa em descartar informações de processos que foram terminados e removidos da memória, além de buscar u uso consciente do espaço de armazenamento disponível no dispositivo.
 %
-A figura \ref{fig:DezfouliBackupApproach} mostra, em alto nível, a forma como o armazenamento de evidências é gerenciado.
+A Figura \ref{fig:DezfouliBackupApproach} mostra, em alto nível, a forma como o armazenamento de evidências é gerenciado.
 
 Como em diversas outras propostas, processo de coleta de informações de memória volátil em \cite{DezfouliBackupApproach:2012} é executado continuamente, independente de eventos de interesse (e.g., detecção de ameaças).
 %
@@ -168,7 +168,7 @@ Adaptado de \cite{DezfouliBackupApproach:2012}
 \subsection{Arcabouço forense para OpenStack}
 \label{sec:frost}
 
-A ferramenta FROST (\textit{FoRensic Open Stack Tools} -- Ferramentas Forenses para Arcabouço Open Stack), proposta por \cite{DykstraFROST:2013}, consiste em um conjunto de bibliotecas integradas ao OpenStack \marcos{REFERENCIA}, um dos arcabouços de gerenciamento de infra estruturas virtualizadas bastante difundido.
+A ferramenta FROST (\textit{FoRensic Open Stack Tools} -- Ferramentas Forenses para Arcabouço Open Stack), proposta por \cite{DykstraFROST:2013}, consiste em um conjunto de bibliotecas integradas ao OpenStack, um dos arcabouços de gerenciamento de infra estruturas virtualizadas bastante difundido \cite{StackFramework:2018}.
 %
 Por meio dessa integração, o FROST expõe um conjunto de APIs que podem ser usadas por aplicações de coleta de evidências forenses.
 %
