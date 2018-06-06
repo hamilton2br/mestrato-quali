@@ -31,45 +31,45 @@ Warning--campo year vazio ou faltando em Vagrant2018
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 44 entries,
+You've used 43 entries,
             6669 wiz_defined-function locations,
-            1477 strings with 17256 characters,
-and the built_in function-call counts, 47052 in all, are:
-= -- 4806
-> -- 1186
+            1472 strings with 17127 characters,
+and the built_in function-call counts, 46435 in all, are:
+= -- 4759
+> -- 1171
 < -- 725
-+ -- 1153
-- -- 362
-* -- 3053
-:= -- 6032
-add.period$ -- 185
-call.type$ -- 44
-change.case$ -- 435
-chr.to.int$ -- 81
-cite$ -- 51
-duplicate$ -- 3715
-empty$ -- 2632
-format.name$ -- 1716
-if$ -- 10238
++ -- 1148
+- -- 357
+* -- 3017
+:= -- 5945
+add.period$ -- 180
+call.type$ -- 43
+change.case$ -- 427
+chr.to.int$ -- 80
+cite$ -- 50
+duplicate$ -- 3680
+empty$ -- 2574
+format.name$ -- 1693
+if$ -- 10090
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 764
-newline$ -- 233
-num.names$ -- 210
-pop$ -- 986
+missing$ -- 746
+newline$ -- 228
+num.names$ -- 205
+pop$ -- 964
 preamble$ -- 1
-purify$ -- 166
+purify$ -- 163
 quote$ -- 0
-skip$ -- 3793
+skip$ -- 3760
 stack$ -- 1
-substring$ -- 1957
-swap$ -- 1460
+substring$ -- 1936
+swap$ -- 1446
 text.length$ -- 56
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 8
 warning$ -- 9
-while$ -- 312
+while$ -- 306
 width$ -- 0
-write$ -- 677
+write$ -- 662
 (There were 9 warnings)

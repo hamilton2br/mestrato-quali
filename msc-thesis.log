@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  20 MAY 2018 09:33
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  6 JUN 2018 15:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1419,7 +1419,7 @@ l.294 \tableofcontents
 (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.21 ...ense para OpenStack}{27}{subsection.3.1.6}
+l.21 ...ense para OpenStack}{28}{subsection.3.1.6}
                                                    [7
 
 ])
@@ -1718,7 +1718,7 @@ Package pdftex.def Info: images/memoria-copia.jpg used on input line 302.
 Cap\'{\i }tulo 5.
 [43
 
-] [44] <images/crono-image.png, id=600, 1013.7875pt x 348.30125pt>
+] [44] <images/crono-image.png, id=595, 1013.7875pt x 348.30125pt>
 File: images/crono-image.png Graphic file (type png)
 
 <use images/crono-image.png>
@@ -1747,10 +1747,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 309.
  ) 
 Here is how much of TeX's memory you used:
- 22214 strings out of 493304
- 398179 string characters out of 6139871
- 540515 words of memory out of 5000000
- 24946 multiletter control sequences out of 15000+600000
+ 22212 strings out of 493304
+ 398115 string characters out of 6139871
+ 540516 words of memory out of 5000000
+ 24945 multiletter control sequences out of 15000+600000
  53375 words of font info for 109 fonts, out of 8000000 for 9000
  963 hyphenation exceptions out of 8191
  56i,17n,56p,1013b,585s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1761,10 +1761,10 @@ e/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/share/texlive/texmf-dist
 onts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on msc-thesis.pdf (49 pages, 1049493 bytes).
+Output written on msc-thesis.pdf (49 pages, 1048961 bytes).
 PDF statistics:
- 711 PDF objects out of 1000 (max. 8388607)
- 622 compressed objects within 7 object streams
- 137 named destinations out of 1000 (max. 500000)
+ 705 PDF objects out of 1000 (max. 8388607)
+ 616 compressed objects within 7 object streams
+ 136 named destinations out of 1000 (max. 500000)
  83 words of extra memory for PDF output out of 10000 (max. 10000000)
 
