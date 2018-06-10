@@ -40,6 +40,13 @@ Caso alguma evidência coletada coincida com ameaças armazenadas, esse motor al
 %
 Este modelo tem dentre suas principais vantagens a automação do processo de coleta, já que, ao menos em parte, ele dispensa intervenção humana. 
 
+
+Quando acionado, o Motor gera instantâneos das máquinas virtuais em \textit{Hypervisor 1} e \textit{Hypervisor 2} e os envia para o Armazenamento de \textit{Back-End}.
+%
+Os instantâneos são instalados em um ambiente controlado junto com agentes GRR que através de comandos específicos extraem dados para análise. 
+%
+Estes dados são então comparados com ameaças já conhecidas pelo modelo.
+
 \begin{figure}[htb!]
 \footnotesize
 \caption{Modelo Automático de Aquisição de Dados Forenses} %\marcos{A fonte do texto está muito pequena... Colocando em 100\% de zoom no pdf, a menor fonte que pode aparecer na figura tem que ser maior ou igual a fonte do footnote do documento. Fontes menores do que isso precisam ser aumentadas. \textbf{Isso vale para todas as figuras.} Além disso: por que ``Actor'' e não ``Ator''...? - Hamilton: Feito}}
@@ -57,7 +64,7 @@ Adaptado de \cite{ReichertAutoAcquisition:2015}
 
 A proposta de \cite{PoiselVMI:2013} é baseada na técnica de VMI (\textit{Virtual Machine Introspection} -- Introspecção em Máquina Virtual) para coleta de memória volátil. 
 %
-Essa técnica se apoia no fato de que o o VMM (\textit{Virtual Machine Manager} -- Gerenciador de Máquinas Virtuais) mapeia os recursos alocados para máquinas virtuais nos recursos físicos correspondentes da máquina hospedeira.
+Essa técnica se apoia no fato de que o VMM (\textit{Virtual Machine Manager} -- Gerenciador de Máquinas Virtuais) mapeia os recursos alocados para máquinas virtuais nos recursos físicos correspondentes da máquina hospedeira.
 %
 Este mapeamento é usado para permitir que a memória volátil copiada da máquina virtual seja reconstruída em uma máquina física, para análise posterior.
 %
@@ -66,11 +73,11 @@ A proposta realiza coleta contínua de instantâneos de memória durante o funci
 Visando eliminar a chance de inconsistências no instantâneo de memória volátil, a máquina virtual tem sua execução suspensa durante o processo de extração.
 
 
-Uma desvantagem da técnica de VMI, mencionada pelo próprio autor \marcos{\cite[Seção {QUAL SECAO?}]{PoiselVMI:2013}} é a necessidade de tradução de endereços de memória da máquina virtual em endereços de memória da máquina física hospedeira.
+Uma desvantagem da técnica de VMI, mencionada pelo próprio autor em \cite{PoiselVMI:2013}, no capítulo 3.1, é a necessidade de tradução de endereços de memória da máquina virtual em endereços de memória da máquina física hospedeira.
 %
 Como essa tradução depende de conhecimento do que está sendo executado na máquina virtual, uma solução baseada em VMI não é completamente portável, sendo necessárias adequações para diferentes clientes.
 %
-Além disso, o custo computacional dessa tradução é potencialmente elevado \marcos{É isso mesmo? Não ficou claro na frase original o que era ``computacionalmente custoso'', então assumi aqui que é ``a tradução''.}.
+Além disso, esta tradução de endereços pode ser computacionalmente custosa.\marcos{É isso mesmo? Não ficou claro na frase original o que era ``computacionalmente custoso'', então assumi aqui que é ``a tradução''. - Hamilton: sim era mas você tem razão, mudei}.
 %
 
 \subsection{Virtuoso}
@@ -82,14 +89,16 @@ O arcabouço funciona em três fases.
 %
 A primeira realiza um estudo em uma máquina virtual de testes, mapeando o conjunto de instruções executado pelo processo do qual se deseja coletar dados de memória. 
 %
-A segunda fase traduz o conjunto de instruções mapeados na fase anterior, e então cria um arquivo executável para que o processo seja reproduzido fora da máquina virtual.
+O estudo é realizado no Ambientes de Treino e o Leitor de Instruções coleta e armazena as instruções geradas pelo processo alvo da análise e os armazena no banco de dados de Instruções Armazenadas.
 %
-Para executar as instruções assim extraídas, a terceira fase usa um ambiente na máquina hospedeira capaz de acessar os endereços de memória da máquina virtual, tornando possível coletar instantâneos de memória do processo em execução.
+Na segunda fase, o Analisador de Instruções cria um executável a partir do conjunto de instruções coletado na fase anterior. Estas instruções precisam ter suas referências de memória traduzidas para que seja possível executá-las fora do ambiente original, o que ocorre no Tradutor de Instruções.
+%
+Com o executável, a terceira fase usa um Ambiente Virtual Seguro na máquina hospedeira capaz de acessar os endereços de memória do Ambiente Virtual Não Confiável, tornando possível coletar instantâneos de memória do processo em execução.
 %
 A Figura \ref{fig:Dolan-GavittSemanticGap} ilustra o funcionamento desse arcabouço. 
 
 
-A principal vantagem do Virtuoso é a capacidade de coletar instantâneos de memória de um processo específico.
+A principal vantagem do Virtuoso é a capacidade de coletar instantâneos de memória de um processo específico e reproduzi-lo em um ambiente confiável.
 %
 Uma desvantagem importante, entretanto, é que sua atuação se dá apenas após o evento que se deseja avaliar forensicamente.
 %
@@ -143,13 +152,17 @@ Adaptado de \cite{SangLogApproach:2013}
 
 O trabalho descrito em \cite{DezfouliBackupApproach:2012} é voltado a dispositivos móveis e tem como principal característica a preocupação com as limitações de armazenamento do dispositivo.
 %
-Por essa razão, o processo de coleta de instantâneos de memória volátil separa as informações e as armazena por processo ativo \marcos{O que seria ``armazenar por processo ativo''? Eu nem sabia que dava para ``armazenar por processo passivo''...}, de modo a permitir um gerenciamento adequado do espaço em disco ocupado pelas informações. 
+Por essa razão, o processo de coleta de instantâneos de memória volátil armazena separadamente as informações de cada processo que está ativo de modo a permitir um gerenciamento adequado do espaço em disco ocupado pelas informações. 
+ %
+\marcos{O que seria ``armazenar por processo ativo''? Eu nem sabia que dava para ``armazenar por processo passivo''... - Hamilton: Melhorei}.
 %
-A solução também se preocupa em descartar informações de processos que foram terminados e removidos da memória, além de buscar u uso consciente do espaço de armazenamento disponível no dispositivo.
+A solução também se preocupa em descartar informações de processos que foram terminados e removidos da memória, além de buscar o uso consciente do espaço de armazenamento disponível no dispositivo.
 %
 A Figura \ref{fig:DezfouliBackupApproach} mostra, em alto nível, a forma como o armazenamento de evidências é gerenciado.
 
-Como em diversas outras propostas, processo de coleta de informações de memória volátil em \cite{DezfouliBackupApproach:2012} é executado continuamente, independente de eventos de interesse (e.g., detecção de ameaças).
+Como em diversas outras propostas, processo de coleta de informações de memória volátil em \cite{DezfouliBackupApproach:2012} é executado continuamente, independente de eventos de interesse (e.g., detecção de ameaças). 
+%
+Um outro fator que conta como desvantagem nesta proposta é o processo não armazenar histórico das coletas anteriores, como é possível ver na Figura \ref{fig:DezfouliBackupApproach}. A coleta anterior é substituída pela nova.
 %
 
 
@@ -175,12 +188,18 @@ Por meio dessa integração, o FROST expõe um conjunto de APIs que podem ser us
 Essas APIs dão acesso a recursos da máquina virtual administrada, tais como disco, logs de tráfego de rede e memória volátil.
 %
 A proposta descreve apenas o arcabouço, deixando a critério do usuário detalhes como periodicidade e tamanho da coleta, bem como a forma de transporte da evidência e onde ela é armazenada.
+
+
+A Figura \ref{fig:DykstraFROST} ilustra a integração entre FROST e o arcabouço \textit{OpenStack}.
 %
-A Figura \ref{fig:DykstraFROST} ilustra a integração entre FROST e OpenStack.
+Nela é possível ver os dois pontos desta integração. O primeiro em sua camada de interface de administração web, o \textit{Horizon} (referência), onde o usuário pode acionar a coleta de artefatos para análise.
+%
+A segunda ocorre em seu núcleo, adiciona novas chamadas a API do \textit{Open Stack} para viabilizar a coleta de informações da máquina virtual e também integra com os processos de rede para extrair logs de tráfego da rede.
+
 
 De todas as propostas avaliadas, a FROST é a única que mostra preocupação com adequação a questões legais e padrões já estabelecidos na indústria forense.
 %
-Especificamente, o autor declara que FROST segue as práticas definidas no SWGDE (\textit{Scientific Working Group on Digital Evidence} -- Grupo de Pesquisa Scientífica Em Evidência Digital) e do Manual de Busca em Apreensão do Departamento de Justiça Norte-Americano.
+Especificamente, o autor declara que FROST segue as práticas definidas no SWGDE (\textit{Scientific Working Group on Digital Evidence} -- Grupo de Pesquisa Scientífica Em Evidência Digital) e do Manual de Busca e Apreensão do Departamento de Justiça Norte-Americano.
 %
 
 
@@ -203,9 +222,19 @@ Adaptado de \cite{DykstraFROST:2013}
 O trabalho descrito em \cite{GeorgeDF2CE:2012} se concentra em monitoramento de rede, operando em uma arquitetura FaaS (\textit{Forense as a Service} -- Forense Como Serviço). 
 %
 Conforme ilustrado na Figura \ref{fig:GeorgeDF2CE}, a arquitetura da solução consiste em um conjunto de ferramentas com capacidade de descobrir automaticamente as interfaces sob monitoramento, além de coletar evidências de tais máquinas e armazená-las.
+
+
+O processo de autodescoberta e associação das evidências com usuários de rede é realizado por um motor baseado em ontologias, que são armazenadas em um banco de dados próprio. 
 %
-O processo de auto-descoberta e associação das evidências com usuários de rede é realizado por um motor baseado em ontologias, as quais são armazenadas em um banco de dados próprio.
+As ontologias são utilizadas para resolver a associação da evidência coletada e os usuários ou artefatos que geraram as evidências.
 %
+O Motor de Interface usa as informações descobertas a partir dos dados trafegados pela rede para determinar o relacionamento entre elas e suas respectivas fonte.
+%
+O Minerador de dados de Log implementa um algoritmo de descoberta de arquivos de log de artefatos de rede definidos como relevantes.
+%
+O Monitor de rede é responsável por interceptar o tráfego entre as partes consideradas suspeitas e por fim, a Monitoração do Sistema em Tempo Real captura informações específicas do sistema em execução como instantâneos dos processos sob investigação.
+
+
 Entretanto, a proposta se concentra apenas no processo de coleta, enquanto a descrição dos mecanismos de armazenamento e transporte não é detalhada.
 
 
