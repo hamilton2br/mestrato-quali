@@ -12,7 +12,7 @@ Este capítulo descreve o estado da arte e discute como a presente proposta se i
 \section{Soluções para análise forense em nuvem}
 \label{sec:estadodaarte}
 
-\marcos{Do jeito que você está apresentando as figuras, você pode ser criticado pelo fato delas terem sempre muito mais informação do que você discute no texto. Não é crítico, mas talvez (se quiser se precaver de críticas) você queira repensar a forma como você discute a solução, para cobrir de forma mais ampla as caixas mostradas na figura (não precisa ser todas as caixinhas, mas pelo menos algumas é bom o leitor saber pra que servem... aí é analisar uma a uma o que potencialmente poderia ser melhor descrito.}
+\marcos{Do jeito que você está apresentando as figuras, você pode ser criticado pelo fato delas terem sempre muito mais informação do que você discute no texto. Não é crítico, mas talvez (se quiser se precaver de críticas) você queira repensar a forma como você discute a solução, para cobrir de forma mais ampla as caixas mostradas na figura (não precisa ser todas as caixinhas, mas pelo menos algumas é bom o leitor saber pra que servem... aí é analisar uma a uma o que potencialmente poderia ser melhor descrito. - Hamilton: Feito}
 
 Nesta seção são descritas algumas das principais propostas existentes para coleta de evidências forenses, fornecendo uma visão geral do estado da arte na área.
 
@@ -199,7 +199,7 @@ A segunda ocorre em seu núcleo, adiciona novas chamadas a API do \textit{Open S
 
 De todas as propostas avaliadas, a FROST é a única que mostra preocupação com adequação a questões legais e padrões já estabelecidos na indústria forense.
 %
-Especificamente, o autor declara que FROST segue as práticas definidas no SWGDE (\textit{Scientific Working Group on Digital Evidence} -- Grupo de Pesquisa Scientífica Em Evidência Digital) e do Manual de Busca e Apreensão do Departamento de Justiça Norte-Americano.
+Especificamente, o autor declara que FROST segue as práticas definidas no SWGDE (\textit{Scientific Working Group on Digital Evidence} -- Grupo de Pesquisa Cientifica Em Evidência Digital) e do Manual de Busca e Apreensão do Departamento de Justiça Norte-Americano.
 %
 
 
@@ -258,11 +258,18 @@ Na mesma vertente da solução de forense como serviço descrita na Seção \ref
 O serviço espera receber dados da execução do comando unix DD \cite{UnixManPagesDD} nas máquinas alvo, onde, apoiado em processos ETL (\textit{Extract, Transform and Load} -- Extrair, Transformar e Carregar) e MapReduce \cite{WikipediaMapReduce}, os dados são disponibilizados para consulta pelos investigadores.
 %
 A coleta ocorre continuamente, em intervalos de tempo configuráveis.
+
+
+A Figura \ref{fig:FaaSIndexedSearch} mostra a arquitetura da solução. Um NAS (\textit{Network Accessed Storage} -- Armazenamento acessado via rede) é usado para armazenar as evidências coletadas.
 %
-A Figura \ref{fig:FaaSIndexedSearch} mostra a arquitetura da solução.
+Antes da análise dos dados pelos processos de MapReduce é necessário executar o processo de ETL para adequar a informação a necessidade específica da investigação. Esta fase ocorre nos Nós Filtrando.
+%
+Em seguida a informação é submetida ao processo de MapReduce e armazenado em um HBase.
+%
+O Nó Mestre tem o papel de orquestrador, ele envia os comandos de indexação dos dados coletados, recebe as requisições de busca e devolve a resposta aos usuários via seu Servidor Web.
 
 
-Embora interessante, a solução não deixa claro onde os dados são armazenados, nem quem é responsável pela infraestrutura de armazenamento.
+Embora interessante, a solução não deixa claro a localização do armazenamento dos dados coletados, nem quem é responsável pela infraestrutura de armazenamento.
 %
 Também não é discutido como os dados são transportados até o ponto de armazenamento, nem como garantir que esses dados não sejam alteramos no processo.
 %

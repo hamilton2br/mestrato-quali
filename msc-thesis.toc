@@ -23,15 +23,15 @@
 \contentsline {subsection}{\numberline {3.1.8}Abordagem de indexa\IeC {\c c}\IeC {\~a}o de dados coletados para fins forenses}{31}{subsection.3.1.8}
 \contentsline {section}{\numberline {3.2}Aspectos relacionados a coleta de evid\IeC {\^e}ncia}{33}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Acessar e coletar as informa\IeC {\c c}\IeC {\~o}es de mem\IeC {\'o}ria das m\IeC {\'a}quinas virtuais em nuvem}{33}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Capacidade de reproduzir o processo e obter os mesmos resultados}{34}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2}Capacidade de reproduzir o processo e obter os mesmos resultados}{35}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}N\IeC {\~a}o violar privacidade ou jurisdi\IeC {\c c}\IeC {\~a}o das partes n\IeC {\~a}o envolvidas na investiga\IeC {\c c}\IeC {\~a}o}{35}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Garantir a cadeia de cust\IeC {\'o}dia da evid\IeC {\^e}ncia}{35}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.4}Garantir a cadeia de cust\IeC {\'o}dia da evid\IeC {\^e}ncia}{36}{subsection.3.2.4}
 \contentsline {section}{\numberline {3.3}Resumo}{36}{section.3.3}
-\contentsline {chapter}{\numberline {4}Proposta de projeto: Dizang }{37}{chapter.4}
-\contentsline {section}{\numberline {4.1}Descri\IeC {\c c}\IeC {\~a}o}{37}{section.4.1}
-\contentsline {section}{\numberline {4.2}Implementa\IeC {\c c}\IeC {\~a}o}{40}{section.4.2}
-\contentsline {section}{\numberline {4.3}Resultados experimentais preliminares}{41}{section.4.3}
-\contentsline {section}{\numberline {4.4}Limita\IeC {\c c}\IeC {\~o}es}{43}{section.4.4}
-\contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o}{44}{chapter.5}
-\contentsline {section}{\numberline {5.1}Cronograma esperado para os pr\IeC {\'o}ximos passos}{45}{section.5.1}
-\contentsline {chapter}{Refer\^encias}{47}{chapter.5}
+\contentsline {chapter}{\numberline {4}Proposta de projeto: Dizang }{38}{chapter.4}
+\contentsline {section}{\numberline {4.1}Descri\IeC {\c c}\IeC {\~a}o}{38}{section.4.1}
+\contentsline {section}{\numberline {4.2}Implementa\IeC {\c c}\IeC {\~a}o}{41}{section.4.2}
+\contentsline {section}{\numberline {4.3}Resultados experimentais preliminares}{42}{section.4.3}
+\contentsline {section}{\numberline {4.4}Limita\IeC {\c c}\IeC {\~o}es}{44}{section.4.4}
+\contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o}{45}{chapter.5}
+\contentsline {section}{\numberline {5.1}Cronograma esperado para os pr\IeC {\'o}ximos passos}{46}{section.5.1}
+\contentsline {chapter}{Refer\^encias}{48}{chapter.5}
