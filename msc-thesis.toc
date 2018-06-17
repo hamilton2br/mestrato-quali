@@ -23,7 +23,7 @@
 \contentsline {subsection}{\numberline {3.1.8}Abordagem de indexa\IeC {\c c}\IeC {\~a}o de dados coletados para fins forenses}{31}{subsection.3.1.8}
 \contentsline {section}{\numberline {3.2}Aspectos relacionados a coleta de evid\IeC {\^e}ncia}{33}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Acessar e coletar as informa\IeC {\c c}\IeC {\~o}es de mem\IeC {\'o}ria das m\IeC {\'a}quinas virtuais em nuvem}{33}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Capacidade de reproduzir o processo e obter os mesmos resultados}{35}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2}Capacidade de reproduzir o processo e obter os mesmos resultados}{34}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}N\IeC {\~a}o violar privacidade ou jurisdi\IeC {\c c}\IeC {\~a}o das partes n\IeC {\~a}o envolvidas na investiga\IeC {\c c}\IeC {\~a}o}{35}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}Garantir a cadeia de cust\IeC {\'o}dia da evid\IeC {\^e}ncia}{36}{subsection.3.2.4}
 \contentsline {section}{\numberline {3.3}Resumo}{36}{section.3.3}

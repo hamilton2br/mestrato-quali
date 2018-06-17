@@ -18,6 +18,7 @@ Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Warning--campo year vazio ou faltando em Chef2018
+Warning--campo year vazio ou faltando em Hbase2018
 Warning--campo year vazio ou faltando em VirtualBox
 Warning--campo year vazio ou faltando em Puppet2018
 Warning--campo year vazio ou faltando em UnixManPagesControlGroups
@@ -31,45 +32,45 @@ Warning--campo year vazio ou faltando em Vagrant2018
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 43 entries,
+You've used 44 entries,
             6669 wiz_defined-function locations,
-            1472 strings with 17127 characters,
-and the built_in function-call counts, 46435 in all, are:
-= -- 4759
-> -- 1171
+            1478 strings with 17208 characters,
+and the built_in function-call counts, 47000 in all, are:
+= -- 4799
+> -- 1186
 < -- 725
-+ -- 1148
-- -- 357
-* -- 3017
-:= -- 5945
-add.period$ -- 180
-call.type$ -- 43
-change.case$ -- 427
-chr.to.int$ -- 80
-cite$ -- 50
-duplicate$ -- 3680
-empty$ -- 2574
-format.name$ -- 1693
-if$ -- 10090
++ -- 1153
+- -- 362
+* -- 3047
+:= -- 6025
+add.period$ -- 184
+call.type$ -- 44
+change.case$ -- 435
+chr.to.int$ -- 81
+cite$ -- 52
+duplicate$ -- 3713
+empty$ -- 2626
+format.name$ -- 1716
+if$ -- 10227
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 746
-newline$ -- 228
-num.names$ -- 205
-pop$ -- 964
+missing$ -- 763
+newline$ -- 233
+num.names$ -- 210
+pop$ -- 987
 preamble$ -- 1
-purify$ -- 163
+purify$ -- 166
 quote$ -- 0
-skip$ -- 3760
+skip$ -- 3795
 stack$ -- 1
-substring$ -- 1936
-swap$ -- 1446
+substring$ -- 1945
+swap$ -- 1458
 text.length$ -- 56
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 8
-warning$ -- 9
-while$ -- 306
+warning$ -- 10
+while$ -- 311
 width$ -- 0
-write$ -- 662
-(There were 9 warnings)
+write$ -- 676
+(There were 10 warnings)

@@ -104,6 +104,11 @@ ISSN 1466640073.
 Available from Internet:
   \url{www.igi-global.com/article/calm-before-storm/68408}.}
 
+\bibitem[{HBase}]{Hbase2018}
+\abntrefinfo{{HBase}}{{HBase}}{}
+{{HBase}. \emph{{HBaset}}. Https://hbase.apache.org/.
+Acessado em: 16-06-2018.}
+
 \bibitem[Lee and Un 2012]{FaaSIndexedSearch:2012}
 \abntrefinfo{Lee and Un}{LEE; UN}{2012}
 {LEE, J.; UN, S. {Digital Forensics as a Service: A case study of forensic
