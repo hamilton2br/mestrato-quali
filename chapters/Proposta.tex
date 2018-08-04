@@ -106,10 +106,7 @@ Os mecanismos propostos foram implementados em uma plataforma de testes visando 
 %
 A solução, ilustrada na Figura \ref{fig:Solucao}, consistiu na criação de 1 VM  (\textit{Virtual Machine} -- Máquina Virtual) usando o Oracle Virtual Box 5.0 \cite{VirtualBox} em um notebook Intel i5 de 2.30Mhz e 4Gb de RAM com sistema operacional de 64 bits.
 %
-Essas VMs possuem 2 Gb de memória RAM e emulam apenas 1 processador, e em cada uma delas foi instalado o Docker Engine 1.10%\cite{DockerInc} 
- e a API Docker 1.21%\cite{DockerInc}
-, com os quais foram criados 3 contêineres executando o nginx 1.0%\cite{nginx}
- em diferentes portas. 
+Essas VMs possuem 2 Gb de memória RAM e emulam apenas 1 processador, e em cada uma delas foi instalado o Docker Engine 1.10 e a API Docker 1.21, com os quais foram criados 3 contêineres executando o nginx 1.0 em diferentes portas. 
 
 
 Usando uma aplicação Java que descobre o identificador de processo associado a cada contêiner, pode-se copiar conteúdo do \textit{descritor de alocação de memória não uniforme} (\textbf{/proc/pid/numa\_maps}).
@@ -367,12 +364,12 @@ A associação da evidência de memória coletada do contêiner de uma máquina 
 
 A segunda fase teve por objetivo encontrar uma forma de transportar a evidência coletada a um local de armazenamento garantindo a cadeia de custódia.
 %
-Para atingir este objetivo, foi definida uma cadeia de custódia, de modo que os evidência em memoória geradas em uma nuvem computacional pudessem ser transportados para uma máquina física fora da nuvem.
+Para atingir este objetivo, foi definida uma cadeia de custódia, de modo que os evidência em memória geradas em uma nuvem computacional pudessem ser transportados para uma máquina física fora da nuvem.
 %
 O transporte da evidência foi realizado usando TLS a assinatura dos dados.
 
 
-Finalmente, a terceira fase esperada para o projeto, que constite no próximo passo para a conclusão do mestrado, tem por objetivo a realização da análise experimental de alguma vulnerabilidade específica, utilizando-se do material coletado na primeira fase do projeto.
+Finalmente, a terceira fase esperada para o projeto, que consiste no próximo passo para a conclusão do mestrado, tem por objetivo a realização da análise experimental de alguma vulnerabilidade específica, utilizando-se do material coletado na primeira fase do projeto.
 %
 As ações para se atingir este objetivo serão realizadas em um computador físico com ferramental voltado à análise forense em memória.
 %

@@ -24,10 +24,10 @@ Especificamente, após uma discussão geral sobre computação em nuvem e suas p
 
 Uma nuvem computacional é um modelo de infraestrutura no qual recursos compartilhados em quantidade configurável, acessíveis via rede, são alocados e desalocados com esforço mínimo de gerenciamento por parte de um provedor de serviços.
 %
-Existem basicamente três modelos principais de comercialização de uso da nuvem \cite{NIST2011}: 
+Existem três modelos principais de comercialização de uso da nuvem \cite{NIST2011}: 
 
 \begin{itemize}
-	\item SaaS ( \textit{Software as a Service} -- \textit{Software} como serviço ): Onde se provê o \textit{software} que será utilizado; nesse caso, os clientes do serviço são os usuários finais o software.
+	\item SaaS ( \textit{Software as a Service} -- \textit{Software} como serviço ): Onde se provê o \textit{software} que será utilizado; nesse caso, os clientes do serviço são os usuários finais do software.
 	
 	\item PaaS ( \textit{Platform as a Service} -- Plataforma como serviço ): Onde se provê o ambiente para o desenvolvimento, teste e execução do \textit{software}; nesse caso, os clientes do serviço são desenvolvedores de aplicações.
 	
@@ -36,7 +36,7 @@ Existem basicamente três modelos principais de comercialização de uso da nuve
 
 O tipo de serviço de nuvem mais pertinente para este trabalho é o IaaS, uma solução muito usada atualmente pela sua capacidade de prover recursos sob demanda de forma auto-escalável.
 %
-Nesse cenário, o uso intenso de tecnologias de virtualização costuma levar a recursos altamente voláteis, que são alocados e desalocados a qualquer momento pelo orquestrador da nuvem para suprir um suprir eventuais aumentos e reduções de demanda.
+Nesse cenário, o uso intenso de tecnologias de virtualização costuma levar a recursos altamente voláteis, que são alocados e desalocados a qualquer momento pelo orquestrador da nuvem para suprir eventuais aumentos e reduções de demanda.
 %
 É possível até mesmo construir scripts para a automatizar a construção da arquitetura desejada, permitindo a instanciação e interconexão de máquinas adequadas para a atividade fim do sistema.
 %
@@ -61,7 +61,7 @@ Uma implementação bastante utilizada para esse propósito são os LXC ( \texti
 %
 Mais precisamente, a funcionalidade de \textit{cgroups} ( \textit{Control Groups} -- Grupos de Controle ) presente no Kernel do Linux limita e isola o uso de recursos como CPU, memória e disco de um conjunto de processos, além de organizá-los de forma hierárquica. 
 %
-O trabalho nessa funcionalidade começou em 2006 na Google, sob a denominação de \textit{process container}. 
+O trabalho nessa funcionalidade começou em 2006 na Google sob a denominação de \textit{process container}. 
 %
 No final de 2007, seu nome foi alterado para \textit{control groups}, e o resultado foi então adicionado à versão 2.6.24 do kernel lançado em 2008 \cite{UnixManPagesControlGroups}.
 
@@ -83,7 +83,7 @@ Desta forma, pode-se instalar uma distribuição Linux secundária em uma pasta,
 \label{sec:forensedigital}
 
 
-A área de forense digital (também conhecida por forense computacional) refere-se a um conjunto de técnicas de coleta e análise da interação entre humanos e computadores de forma que esta seja aceita em um processo legal.
+A área de forense digital (também conhecida por forense computacional) refere-se a um conjunto de técnicas de coleta e análise da interação entre humanos e computadores de forma que suas conclusões sejam aceitas em um processo legal.
 %
 Tal como a forense tradicional, a forense digital se baseia no princípio de Locard, estabelecido pelo médico francês Edmond Locard da seguinte forma: ``Quando um indivíduo entra em contato com outro objeto ou indivíduo, este sempre deixa vestígio deste contato'' \cite{Ramos:2011}.
 %
