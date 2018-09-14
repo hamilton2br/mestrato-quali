@@ -22,25 +22,25 @@ Já em sistemas construídos sobre uma infraestrutura virtual, em especial quand
 
 Para conseguir correlacionar uma evidência a sua origem volátil, é necessário utilizar outro elemento em que persista a relação fonte-evidência.
 %
-Na presente proposta, isso  é feito por meio de contêineres linux (LXC).
+O presente trabalho propõe que isto seja feito por meio de cálculo de hash do recurso em nuvem que produziu a evidência. %removendo contêiner para deixar mais genérico
 %
-Embora um contêiner seja um \textit{software} e, portanto, também volátil, cada imagem compilada e sua execução na forma de contêiner são normalmente atrelados a um \textit{hash} que identifica univocamente essa relação.
+%Embora um contêiner seja um \textit{software} e, portanto, também volátil, cada imagem compilada e sua execução na forma de contêiner são normalmente atrelados a um \textit{hash} que identifica univocamente essa relação. %removendo para deixar mais genérico
 %
-O contêiner também permite identificar com mais precisão a fonte de uma evidência, uma vez que é possível dividir as partes de um sistema em contêineres: por exemplo, um contêiner para o motor de páginas dinâmicas (e.g., Apache%\cite{Tomcat}
-), outro com a lógica de negócios (e.g., \textit{golang}%\cite{Google}
-) e um terceiro para um banco de dados (e.g., \textit{Cassandra}%\cite{Cassandra}
-).
+O hash de um recurso em nuvem permite identificar univocamente a fonte de uma evidência. Em arquiteturas que utilizam contêiner por exemplo, é possível identificar se a evidência veio do contêiner do motor de páginas dinâmicas (e.g., Apache%\cite{Tomcat}
+), do contêiner da lógica de negócios (e.g., \textit{golang}%\cite{Google}
+) ou do contêiner do banco de dados (e.g., \textit{Cassandra}%\cite{Cassandra}
+). %removendo contêiner e deixando mais genérico
 
 %\marcosT{O parágrafo estava muito grande, então quebrei aqui. O problema é que falta uma frase para ligar a frase a seguir ao contexto da discussão... Coloque uma frase aqui, deixando claro qual requisito você quer satisfazer com essa ideia de ``interromper temporariamente a execução do contêiner''. Aplique isso para TUDO que for proposta: o leitor tem que saber de antemão pra que você está fazendo alguma coisa, ou vai ficar se perguntando ``Espera, mas pra que fazer isso?!'' - Hamilton: Feito}
 A cópia de memória não é uma atividade atômica, pois ela é executada em conjunto com outros processos. 
 %
-Portanto, caso um desses processos seja um código malicioso apagando traços de sua existência da memória do contêiner, informações possivelmente importantes para a investigação podem acabar sendo perdidas. 
+Portanto, caso um desses processos seja um código malicioso apagando traços de sua existência da memória do recurso, informações possivelmente importantes para a investigação podem acabar sendo perdidas. 
 %
-Com o objetivo de deixar o processo de cópia da memória mais atômico, \fancyname interrompe temporariamente a execução do contêiner, realiza a cópia de sua memória, e em seguida retoma sua execução. 
+Com o objetivo de deixar o processo de cópia da memória mais atômico, a fim de evitar inconsistências na informação coletada \cite{CaseMemoryForensics:2014}, \fancyname propõe que a execução do recurso em nuvem seja temporariamente suspenso para que seja realizada a cópia de sua memória. 
 %
-Essa técnica, que é semelhante àquela adotada em \cite{RafiqueStaticLiveDigitalForensics:2013} para VMs, produz um instantâneo da memória volátil do contêiner; isso permite sua análise em um estado de repouso, ou seja, sem a necessidade de ter o contêiner em execução.
+Essa técnica, que é semelhante àquela adotada em \cite{RafiqueStaticLiveDigitalForensics:2013} para VMs, produz um instantâneo da memória volátil do recurso; isso permite sua análise em um estado de repouso, ou seja, sem a necessidade de ter o recurso em execução.
 %
-Ao realizar a coleta em intervalos de tempo adequados, é possível construir um histórico do estado da memória durante a execução no contêiner.
+Ao realizar a coleta em intervalos de tempo adequados, é possível construir um histórico do estado da memória durante a execução no recurso.
 %
 %\marcosT{A ligação entre as frases anterior e a seguir está bem ruim... você parece estar mudando completamente de assunto... Acredito que faltou uma frase dizendo que ``''salvar toda a memória'' pode se tornar um problema, reforçar isso com as duas frases que já estão a seguir, e depois dizer que você vai resolver.}
 
@@ -78,7 +78,7 @@ Fonte: Próprio autor
 \end{figure}
 
 %\marcosT{Essa frase não faz sentido: não se ``assina'' nada com um ``hash''. Você pode ``calcular o hash'' ou ``assinar um dado'' (e.g., um dado juntamente com o hash de alguma coisa). Revise essa frase... - Hamilton: Feito}
-Finalmente, para persistir a relação evidência-origem e garantir a sua integridade, \fancyname calcula o hash do par [evidência, identificador da imagem do contêiner] e armazena a tripla [hash, identificador da imagem do contêiner, evidência].
+Finalmente, para persistir a relação evidência-origem e garantir a sua integridade, \fancyname calcula o hash do par [evidência, identificador da imagem do contêiner] e armazena a tripla [hash do conteúdo da evidência, hash que identifica univocamente o recurso, evidência].
 %
 Adicionalmente, a presente proposta evita eventuais problemas com o armazenamento desses dados em países com jurisdições diferentes daquelas que devem ser aplicadas na investigação em questão.
 %
@@ -329,7 +329,7 @@ Esse problema é especialmente notável em sistemas de computação em nuvem, no
 Essa característica, aliada a aspectos como multi-inquilinato e multi-jurisdição de nuvens computacionais, dificulta a coleta de evidências para a investigação de incidentes.
 
 
-Nesse cenário, a proposta apresentada visa relacionar o instantâneo de memória a sua origem, utilizando o \textit{hash} calculado da imagem do contêiner como identificador da evidência armazenada.
+Nesse cenário, a proposta apresentada visa relacionar o instantâneo de memória a sua origem, utilizando o \textit{hash} calculado do recurso computacional em nuvem como identificador da origem da evidência armazenada.
 %
 Para evitar uso excessivo de memória, a quantidade de dados armazenados usa uma janela de armazenamento, o que permite descrever a memória antes e depois de um ataque (e.g., de injeção de memória). 
 %
