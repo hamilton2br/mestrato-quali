@@ -32,6 +32,6 @@
 \contentsline {section}{\numberline {4.2}Implementa\IeC {\c c}\IeC {\~a}o}{40}{section.4.2}
 \contentsline {section}{\numberline {4.3}Resultados experimentais preliminares}{41}{section.4.3}
 \contentsline {section}{\numberline {4.4}Limita\IeC {\c c}\IeC {\~o}es}{43}{section.4.4}
-\contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o}{44}{chapter.5}
-\contentsline {section}{\numberline {5.1}Cronograma esperado para os pr\IeC {\'o}ximos passos}{44}{section.5.1}
-\contentsline {chapter}{Refer\^encias}{47}{chapter.5}
+\contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o}{45}{chapter.5}
+\contentsline {section}{\numberline {5.1}Cronograma esperado para os pr\IeC {\'o}ximos passos}{45}{section.5.1}
+\contentsline {chapter}{Refer\^encias}{48}{chapter.5}

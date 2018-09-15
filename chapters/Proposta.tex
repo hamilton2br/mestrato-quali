@@ -307,15 +307,21 @@ Fonte: Próprio autor
 \section{Limitações}
 \label{sec:proposta-limit}
 
-Como a solução descrita tem como foco coletar informações de memória no espaço do usuário (\textit{user space}), ela não consegue acessar o espaço de kernel (\textit{kernel space}). 
+A proposta descrita pede que o recurso em nuvem seja identificável de forma única a fim de realizar a associação entre evidência e sua origem.
 %
-Assim, \fancyname em princípio não provê suporte a técnicas de investigação de malware que se baseiam em informações do \textit{kernel space}.
+Durante o curso deste projeto essa identificação única só foi possível através do hash da imagem do contêiner. Este foi o único recurso que, submetido ao processo de construção a partir da mesma receita resultou no mesmo hash da imagem.
+%
+Assim, a implementação para verificação da solução proposta consegue apenas coletar informações de memória no espaço do usuário (\textit{user space}), ela não consegue acessar o espaço de kernel (\textit{kernel space}). 
+%
+Assim, a implementação de \fancyname neste documento em princípio não consegue investigar malwares que se baseiam em informações do \textit{kernel space}.
 %
 Isso inclui, por exemplo, a comparação de informações do PEB ( \textit{Process Environment Block} -- Bloco para o Ambiente dos Processos ), que ficam no \textit{user space}, com informações do VAD ( \textit{Virtual Address Descriptor} -- Descritor de Endereços de Memória Virtual ), que fica no \textit{kernel space}. 
 %
-Análise de ameaças do tipo DKOM ( \textit{Direct Kernel Object Manipulation} -- Manipulação Direta dos Objetos do Kernel ) também não se beneficiam com a solução aqui proposta. 
+%Análise de ameaças do tipo DKOM ( \textit{Direct Kernel Object Manipulation} -- Manipulação Direta dos Objetos do Kernel ) também não se beneficiam com a solução aqui proposta. 
 %\marcosT{Não entendi a ``associação com o contêiner'' aqui. Você quer dizer que ``não se beneficiam com a solução aqui proposta'' ou outra coisa? Você não definiu o que seria a tal ``associação com o contêiner'' fora do contexto da sua solução, então ficou confuso - Hamilton: Feito}.
 
+%
+Outra limitação da solução proposta é a necessidade da mesma estar instalada no sistema sob investigação a priori para que os resultados descritos neste documento sejam alcançados.
 
 \chapter{Conclusão}
 \label{sec:proposta-concl}
