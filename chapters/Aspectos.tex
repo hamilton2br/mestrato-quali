@@ -99,7 +99,7 @@ O processo de análise forense no evento de um crime digital é descrito no EDIP
 %
 A fase mais pertinente a este trabalho é a de preservação da evidência, que deve ser conduzida de forma forensicamente aceitável.
 %
-Ou seja, deve-se coletar as evidências de forma que elas sejam aceitas em um processo legal e não sejam invalidadas no curso do mesmo.
+Ou seja, deve-se coletar as evidências de forma que elas sejam aceitas em um processo legal e não tenham sua credibilidade questionada no curso do mesmo.
 
 
 Para atingir tal objetivo, o primeiro passo é a garantia da cadeia de custódia relacionada a evidência.
@@ -138,7 +138,7 @@ A volatilidade dos recursos também torna a verificação do seu autor um proces
 %
 A integridade da evidência também acaba sendo uma tarefa não trivial, pois ela precisa ser coletada, transportada e armazenada, o que caracteriza a necessidade de preservação da cadeia de custódia.
 %
-A violação de qualquer uma dessas características pode colocar em dúvida a credibilidade da evidência. Embora a admissibilidade da evidência em um processo legal seja uma decisão do juiz a credibilidade da mesma tem papel importante nesta decisão (referencia)
+A violação de qualquer uma dessas características pode colocar em dúvida a credibilidade da evidência. Embora a admissibilidade da evidência em um processo legal seja uma decisão do juiz a credibilidade da mesma tem papel importante nesta decisão.
 %Infelizmente, a violação de qualquer uma dessas características pode colocar em dúvida a credibilidade da evidência.
 
 
@@ -181,9 +181,9 @@ Logo, remover tais recursos configuraria violação de privacidade.
 Como um complicador adicional, o fato de os dados potencialmente não estarem armazenados no mesmo território em que a investigação é realizada acaba demandando acordos de cooperação jurídica entre as partes, o que nem sempre é possível \cite{SimouCloudChlng:2014}.
 
 
-O ''State of the Cloud Report'', relatório produzido pela empresa Right Scale \cite{RightScale2017}, cita nas páginas 21 e 22 que os maiores desafios na adoção de núvem são, \textit{redução de custo} e \textit{segurança}.
+O ''State of the Cloud Report'', relatório produzido pela empresa Right Scale \cite{RightScale2017}, cita nas páginas 21 e 22 que os maiores desafios na adoção de nuvem são, \textit{redução de custo} e \textit{segurança}.
 %
-Embora privacidade e jurisdição sejam aspectos distintos e possuidores de suas particularidades, neste documento eles são discutidos em conjunto pois em busca de otimização de custos as empresas tendem a buscar regiões mais baratas e infraestruturas compartilhadas.
+Embora privacidade e jurisdição sejam aspectos distintos e possuidores de suas particularidades, neste documento eles são discutidos em conjunto pois em busca de otimização de custos as empresas tendem a buscar regiões mais baratas e compartilhamento do recurso físico.
 
 
 Neste cenário, encontrar uma forma de coletar a evidência sem violar jurisdição e privacidade ganham importância.
@@ -227,7 +227,7 @@ Em particular, têm especial interesse quatro tipos particulares dessa família 
 \label{sec:forenseeincidentes}
 
 %
-Gestão de incidentes é uma estratégia para reduzir os riscos a confidencialidade, integridade e disponibilidade de ativos de uma organização, bem como minimizar sua perda.
+Gestão de incidentes é uma estratégia para reduzir os riscos à confidencialidade, integridade e disponibilidade de ativos de uma organização, bem como minimizar sua perda.
 %
 As fases relevantes de uma estratégia de gestão de incidentes são \cite{AdhiantoFasesGestaoIncidente:2010}: 
 
@@ -236,15 +236,17 @@ As fases relevantes de uma estratégia de gestão de incidentes são \cite{Adhia
 %
 \item \textbf{Preparação}: Onde se organiza o ambiente para minimizar impactos de um incidente, nesta fase também é definido o time de resposta a incidente que tem como responsabilidade determinar o que ocorreu e quais ações devem ser tomadas.
 %
-\item \textbf{Detecção}: Tem como objetivo minimizar o risco pois nem todas as ameaças podem ser antecipadas. A fase de detecção começa quando alguma atividade suspeita é detectada por algum serviço automático como um sistema de detecção de ameaças ou por intervenção humana como o de um resposável pela análise de risco.
+\item \textbf{Detecção}: Tem como objetivo minimizar o risco das ameaças que não foram antecipadas. A fase de detecção começa quando alguma atividade suspeita é detectada por algum serviço automático como um sistema de detecção de ameaças ou por intervenção humana como o de um responsável pela análise de risco.
 %
-\item \textbf{Resposta ao incidente}: Comtém as fases de contenção, erradicação e recuperação. Não existe um procedimento que atenda a todas os cenários, os procedimentos são feitos de acordo com a natureza e as necessidades do negócio.
+\item \textbf{Resposta ao incidente}: Contém as fases de \textit{contenção}, \textit{erradicação} e \textit{recuperação}. Não existe um procedimento que atenda a todas os cenários, os procedimentos são feitos de acordo com a natureza e as necessidades do negócio.
 %
-\item \textbf{Pós incidente}: Última fase da gestão de incidentes e sua preocupação principal é coleta de informações das três fases anteriores para alimentar um processo de aprendizado visando evitar futuros incidentes semelhantes.
+\item \textbf{Pós incidente}: Última fase da gestão de incidentes, sua principal preocupação é coleta de informações das três fases anteriores para alimentar um processo de aprendizado visando evitar futuros incidentes semelhantes.
 
 \end{itemize}
 
-A gestão de incidentes tem o foco em conter falhas de segurança, considerações como coleta de evidências costuma ser secundário \cite{AdhiantoFasesGestaoIncidente:2010}. 
+A gestão de incidentes tem o foco em conter falhas de segurança. 
+%
+Considerações como coleta de evidências costuma ser secundário \cite{AdhiantoFasesGestaoIncidente:2010}. 
 %
 A oportunidade de se aplicar processos de coleta forenses em gestão de incidente já foi levantado por \cite{AdhiantoIncidentHandlingForensic:2016} uma vez que ambos compartilhar de um ferramental em comum.
 %
@@ -252,7 +254,7 @@ A oportunidade de se aplicar processos de coleta forenses em gestão de incident
 %
 Ferramental e técnicas forenses estão se tornando úteis não só para geração de evidências para processos jurídicos mas também para ajudar na reconstrução de eventos.
 %
-Incorporando práticas forenses na estratégia de gestão de incidente ajuda a gerar as evidências necessárias para eventual processo jurídico como também proteger as eviidencias de dano como resultado das fase de resposta ao incidente.
+Incorporando práticas forenses na estratégia de gestão de incidente ajuda a gerar as evidências necessárias para eventual processo jurídico como também proteger as evidencias de dano como resultado das fase de resposta ao incidente.
 
 
 
