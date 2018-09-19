@@ -5,6 +5,14 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.6 }
 
+\bibitem[{Ab Rahman} and Choo 2015]{AdhiantoFasesGestaoIncidente:2010}
+\abntrefinfo{{Ab Rahman} and Choo}{{Ab Rahman}; CHOO}{2015}
+{{Ab Rahman}, N.~H.; CHOO, K. K.~R. {A survey of information security incident
+  handling in the cloud}.
+\emph{Computers and Security}, Elsevier Ltd, vol.~49, p. 45--69, 2015.
+ISSN 01674048.
+Available from Internet: \url{http://dx.doi.org/10.1016/j.cose.2014.11.006}.}
+
 \bibitem[Alqahtany et al. 2015]{ClarkeReviewOfChallenges2015}
 \abntrefinfo{Alqahtany et al.}{ALQAHTANY et al.}{2015}
 {ALQAHTANY, S. et al. Cloud forensics: A review of challenges, solutions and
@@ -183,6 +191,12 @@ Available from Internet: \url{dx.doi.org/10.1016/j.diin.2014.09.002}.}
 \emph{IJSER}, vol.~4, no.~10, p. 1048--1056, 2013.
 Available from Internet:
   \url{www.ijser.org/researchpaper{\\%}5CExploring-Static-and-Live-Digital-Forensic-Methods-Practices-and-Tools.}}
+
+\bibitem[Rahman, Cahyani and Choo 2016]{AdhiantoIncidentHandlingForensic:2016}
+\abntrefinfo{Rahman, Cahyani and Choo}{RAHMAN; CAHYANI; CHOO}{2016}
+{RAHMAN, N. H.~A.; CAHYANI, N. D.~W.; CHOO, K.-K.~R. {Cloud incident handling
+  and forensic-by-design: cloud storage as a case study}.
+\emph{Concurrency Computation Practice and Experience}, p. 685--701, 2016.}
 
 \bibitem[Rahman and Khan 2015]{RahmanLiveForensicsTechniques:2015}
 \abntrefinfo{Rahman and Khan}{RAHMAN; KHAN}{2015}

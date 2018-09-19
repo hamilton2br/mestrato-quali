@@ -33,8 +33,8 @@ Afinal, como ele é compartilhado por vários usuários, removê-los para análi
 %
 Já a natureza distribuída da nuvem pode levar à alocação de informações relevantes em vários países, dificultando a sua obtenção, em especial quando não existem acordos de cooperação entre as entidades envolvidas \cite{DykstraAcquiringForIAAS:2012}.
 %
-Combinadas, tais características limitam a coleta de evidências com a credibilidade necessária para que elas possam ser usadas em processos legais,  que exigem o respeito à privacidade, à jurisdição e à cadeia de custódia, bem como a reprodutibilidade do processo de coleta \cite{RahmanLiveForensicsTechniques:2015}.
-
+%Combinadas, tais características limitam a coleta de evidências com a credibilidade necessária para que elas possam ser usadas em processos legais,  que exigem o respeito à privacidade, à jurisdição e à cadeia de custódia, bem como a reprodutibilidade do processo de coleta \cite{RahmanLiveForensicsTechniques:2015}.
+Combinadas, tais características limitam a coleta de evidências com a credibilidade necessária para que elas possam ser aceitas em processos legais \cite{RahmanLiveForensicsTechniques:2015}.
 \section{Motivação}
 \label{sec:intro-motiv}
 
@@ -64,11 +64,10 @@ Mais precisamente, por meio de uma proposta que tem como focos (1) a reprodutibi
 %
 Desta forma, a solução buscada deve prover uma forma de obter dados relevantes para investigações ao mesmo tempo que permita transportar e armazenar tais dados preservando sua credibilidade.
 %
-Para isso, a proposta supõe que o sistema sendo monitorado é executado dentro de um ambiente virtualizado em nuvem, tendo como foco a tecnologia de contêineres.
+Para isso, a proposta supõe que o sistema sendo monitorado é executado dentro de um ambiente virtualizado em nuvem.
 %
 %
-A presente proposta tem como foco prover uma solução técnica que atenda as necessidades juridicas pertinentes, não faz parte dos objetivos deste trabalho propor alterações na legislação ou nos processos vigentes.
-
+A presente proposta tem como foco prover uma solução técnica que atenda as necessidades juridicas presentes hoje, não faz parte dos objetivos deste trabalho propor alterações na legislação ou nos procedimentos legaus vigentes.
 
 
 \section{Justificativa}
@@ -87,6 +86,10 @@ Embora a virtualização de recursos na nuvem seja tradicionalmente feita por me
 %
 De fato, conforme o ``Container Market Adoption Survey 2016'', realizado com 235 empresas que têm desenvolvimento de software como sua atividade fim ou como suporte à atividade fim, 76\% dos respondentes utilizam contêineres para melhorar a eficiência do processo de desenvolvimento e em suas arquiteturas de microsserviços em nuvem.
 %
+
+Por fim, gestão de incidentes, que cada vez mais compartilha processos em comum com forense digital, pode se beneficiar de uma solução de coleta e preservação de evidências que esteja pronta na fase de \textit{preparação ao incidente} e seja capaz de preservar as evidências para a fase de \textit{pós-incidente} permitindo assim que na fase de \textit{detecção e análise} não seja preciso se preocupar com perda parcial ou total de evidências.
+
+
 Essa tendência motiva a construção de soluções que levem em consideração as particularidades inerentes aos recursos disponíveis em nuvens computacionais.
 %Essa tendência motiva a construção de soluções que levem em consideração as particularidades inerentes a contêineres computacionais, e que sejam capazes de tirar vantagem de suas características. reescrevi para dar menos ênfase a contêiner
 
