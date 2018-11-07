@@ -31,7 +31,7 @@
 \contentsline {chapter}{\numberline {4}Proposta de projeto: Dizang }{39}{chapter.4}
 \contentsline {section}{\numberline {4.1}Descri\IeC {\c c}\IeC {\~a}o}{39}{section.4.1}
 \contentsline {section}{\numberline {4.2}Implementa\IeC {\c c}\IeC {\~a}o}{42}{section.4.2}
-\contentsline {section}{\numberline {4.3}Resultados experimentais preliminares}{43}{section.4.3}
+\contentsline {section}{\numberline {4.3}Resultados experimentais}{43}{section.4.3}
 \contentsline {section}{\numberline {4.4}Limita\IeC {\c c}\IeC {\~o}es}{45}{section.4.4}
 \contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o}{47}{chapter.5}
 \contentsline {section}{\numberline {5.1}Cronograma esperado para os pr\IeC {\'o}ximos passos}{47}{section.5.1}

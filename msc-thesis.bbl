@@ -156,11 +156,6 @@ Available from Internet:
   University, 2010. Available from Internet:
   \url{https://arxiv.org/abs/1609.01107}.}
 
-\bibitem[Oracle]{VirtualBox}
-\abntrefinfo{Oracle}{ORACLE}{}
-{ORACLE. \emph{{Virtual Box 5.1}}.
-Available from Internet: \url{https://www.virtualbox.org/}.}
-
 \bibitem[Poisel, Malzer and Tjoa 2013]{PoiselVMI:2013}
 \abntrefinfo{Poisel, Malzer and Tjoa}{POISEL; MALZER; TJOA}{2013}
 {POISEL, R.; MALZER, E.; TJOA, S. {Evidence and cloud computing: The virtual

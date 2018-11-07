@@ -101,34 +101,35 @@ Fonte: Próprio autor
 \end{center}
 \end{figure}
 
-
-Os mecanismos propostos foram implementados em uma plataforma de testes visando avaliar a eficácia de \fancyname em coletar as informações de memória dos contêineres de forma reprodutível, sem violar jurisdições ou a privacidade de usuários.
 %
-A solução, ilustrada na Figura \ref{fig:Solucao}, consistiu na criação de 1 VM  (\textit{Virtual Machine} -- Máquina Virtual) usando o Oracle Virtual Box 5.0 \cite{VirtualBox} em um notebook Intel i5 de 2.30Mhz e 4Gb de RAM com sistema operacional de 64 bits.
+Os mecanismos propostos foram implementados em uma plataforma de testes visando avaliar a eficácia de \fancyname em coletar as informações de memória dos contêineres de forma reprodutível, sem violar jurisdições ou a privacidade de usuários e a capacidade de detectar injeção de código usando as evidências coletadas.
 %
-Essas VMs possuem 2 Gb de memória RAM e emulam apenas 1 processador, e em cada uma delas foi instalado o Docker Engine 1.10 e a API Docker 1.21, com os quais foram criados 3 contêineres executando o nginx 1.0 em diferentes portas. 
-
-
-Usando uma aplicação Java que descobre o identificador de processo associado a cada contêiner, pode-se copiar conteúdo do \textit{descritor de alocação de memória não uniforme} (\textbf{/proc/pid/numa\_maps}).
+A solução, ilustrada na Fig. \ref{fig:Solucao}, consistiu na criação de uma instancia \textit{t2.micro} na zona Ohio da AWS com 3.3Mhz, 1Gb de RAM e sistema operacional de 64 bits. 
+%na criação de 1 VM usando o Oracle Virtual Box 5.0%\cite{VirtualBox} em um notebook Intel i5 de 2.30Mhz e 4Gb de RAM com sistema operacional de 64 bits.
 %
-Assim, obtém-se a alocação das páginas de memória, os nós que estão associados a essas páginas, o que está alocado e suas respectivas políticas de acesso \cite{UnixManPagesNumaMaps}.
+Nesta instância AWS foi instalado o Docker Engine 1.10 e a API Docker 1.21, com os quais foram criados 3 contêineres executando o nginx 1.0 em diferentes portas. 
 %
-A cópia e gravação do arquivo é tal que, a cada minuto, a aplicação:
-(1) pausa o contêiner em questão; 
-(2) copia a diretório \textbf{numa\_maps}; 
-(3)  concatena os dados obtidos com o \textit{hash} de identificação da imagem do contêiner;
-(4) calcula o \textit{hash} do conjunto; e 
-(5) salva o resultado em um arquivo cujo nome é o identificador da imagem do contêiner e a extensão é \textbf{.mem}. 
+Usando uma aplicação Java que descobre o identificador de processo associado a cada contêiner, pôde-se copiar conteúdo do \textit{descritor de alocação de memória não uniforme} (\textbf{/proc/pid/numa\_maps}), o qual contém a alocação das páginas de memória, os nós que estão associados a essas páginas, o que está alocado e suas respectivas políticas de acesso \cite{UnixManPagesNumaMaps}.
 %
-Após a conclusão do processo de cópia, a mesma aplicação verifica se existem arquivos \textbf{.mem} em disco mais antigos que um certo intervalo de tempo ``t'', descartando-os em caso positivo.
+A cópia e gravação do arquivo é tal que, a cada minuto, a aplicação (1) pausa o contêiner em questão, (2) copia a diretório \textbf{numa\_maps}, (3)  concatena os dados obtidos com o \textit{hash} de identificação da imagem do contêiner, (4) calcula o \textit{hash} do conjunto e (5) salva o resultado em um arquivo cujo nome é o identificador da imagem do contêiner e a extensão é \textbf{.mem}. 
 %
-
-%\marcosT{IMPORTANTE: discuta em alguns parágrafos os resultados. Até aqui, você só disse o que fez, mas não falou nada sobre o que isso traz de impactos positivos ou negativos. Por exemplo: quanto tempo demora a cópia (isso pode ser crítico para um processo que opera em tempo real, já que ele será pausado...)? Enfim, tire conclusões dos experimentos, porque senão os experimentos não têm qualquer utilidade para o leitor... Quanto mais completa a discussão (não só ``tempos'', mas também memória, quantidade de dados gerados por hora, uso de banda, etc.), melhor. Gráficos e tabelas com dados obtidos são muito bem vindos. - Hamilton: Feito}
-
-%\marcosT{IMPORTANTE: Discuta também a relação entre o que foi feito e os ataques de injeção mencionados na introdução. O seu texto inicialmente menciona tais ataques como parte do seu foco, mas nunca mais retoma a existência deles depois que você descreve a solução... Não precisa ser uma discussão longa, mas ao menos algumas considerações sobre o porquê de você conseguir analisar tais ataques usando a técnica proposta - Hamilton: Feito.}
+O transporte seguro da evidência para um armazenamento físico fora da AWS foi implementado usando uma instância \textit{t2.micro} na zona Ohio da AWS onde foi instalado um servidor \textit{OpenVPN}.
+%
+A instância EC2 que contém as evidências foi configurada para aceitar conexões apenas de máquinas na VPN.
+%
+Uma máquina fisica fora da AWS, usou o cliente do \textit{OpenVPN} para estabelecer uma conexão VPN com a instância que contém as evidências e as transportou para o disco da máquina física.
+%
+Após a conclusão do processo de transporte, a máquina física verifica se existem arquivos \textbf{.mem} em disco mais antigos que um certo intervalo de tempo ``t'', descartando-os.
 %
 
-\section{Resultados experimentais preliminares}
+
+Após cinco minutos de execução das coletas mencionadas no parágrafo anterior, uma biblioteca que imprime um ponto (".") na saída padrão foi injetada na memória de um dos contêiners.
+%
+Após a injeção permitiu-se que a solução continuasse coletando por mais 5 minutos onde realizamos a análise das evidências coletadas.
+%
+
+
+\section{Resultados experimentais}
 \label{sec:proposta-exp}
 
 Para avaliar a efetividade de \fancyname na coleta de evidências, alguns experimentos foram realizados usando o ambiente implementado (descrito na Seção \ref{sec:proposta-impl}).

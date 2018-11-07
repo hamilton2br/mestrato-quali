@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  19 SEP 2018 16:27
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  7 NOV 2018 14:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1696,39 +1696,34 @@ File: images/solucao.jpg Graphic file (type jpg)
 <use images/solucao.jpg>
 Package pdftex.def Info: images/solucao.jpg used on input line 96.
 (pdftex.def)             Requested size: 323.47057pt x 268.32419pt.
- [41 <./images/janela.jpg>]
-
-Package hyperref Warning: Suppressing empty link on input line 107.
-
-[42 <./images/solucao.jpg>]
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 140.
-
+ [41 <./images/janela.jpg>] [42 <./images/solucao.jpg>]
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 141.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 ) [43]
-<images/evolucao-coleta.jpg, id=605, 1172.38pt x 558.085pt>
+<images/evolucao-coleta.jpg, id=607, 1172.38pt x 558.085pt>
 File: images/evolucao-coleta.jpg Graphic file (type jpg)
 
 <use images/evolucao-coleta.jpg>
-Package pdftex.def Info: images/evolucao-coleta.jpg used on input line 202.
+Package pdftex.def Info: images/evolucao-coleta.jpg used on input line 203.
 (pdftex.def)             Requested size: 375.16927pt x 178.59085pt.
  Excluding 'comment' comment. [44 <./images/evolucao-coleta.jpg>] <images/memor
-ia-copia.jpg, id=612, 1264.725pt x 614.295pt>
+ia-copia.jpg, id=614, 1264.725pt x 614.295pt>
 File: images/memoria-copia.jpg Graphic file (type jpg)
 
 <use images/memoria-copia.jpg>
-Package pdftex.def Info: images/memoria-copia.jpg used on input line 303.
+Package pdftex.def Info: images/memoria-copia.jpg used on input line 304.
 (pdftex.def)             Requested size: 379.42043pt x 184.28992pt.
  [45 <./images/memoria-copia.jpg>] [46]
 Cap\'{\i }tulo 5.
 [47
 
-] <images/crono-image.png, id=628, 1013.7875pt x 348.30125pt>
+] <images/crono-image.png, id=630, 1013.7875pt x 348.30125pt>
 File: images/crono-image.png Graphic file (type png)
 
 <use images/crono-image.png>
-Package pdftex.def Info: images/crono-image.png used on input line 400.
+Package pdftex.def Info: images/crono-image.png used on input line 401.
 (pdftex.def)             Requested size: 405.50783pt x 139.31802pt.
 ) (./msc-thesis.bbl [48] [49 <./images/crono-image.png>] [50
 
@@ -1753,13 +1748,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 313.
  ) 
 Here is how much of TeX's memory you used:
- 22232 strings out of 493304
- 398657 string characters out of 6139871
- 543034 words of memory out of 5000000
- 24957 multiletter control sequences out of 15000+600000
+ 22233 strings out of 493304
+ 398651 string characters out of 6139871
+ 542896 words of memory out of 5000000
+ 24959 multiletter control sequences out of 15000+600000
  53375 words of font info for 109 fonts, out of 8000000 for 9000
  963 hyphenation exceptions out of 8191
- 56i,17n,56p,1013b,600s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,17n,56p,1013b,599s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1
@@ -1767,10 +1762,10 @@ e/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/share/texlive/texmf-dist
 onts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on msc-thesis.pdf (54 pages, 1004575 bytes).
+Output written on msc-thesis.pdf (54 pages, 1004900 bytes).
 PDF statistics:
- 749 PDF objects out of 1000 (max. 8388607)
- 655 compressed objects within 7 object streams
- 144 named destinations out of 1000 (max. 500000)
+ 750 PDF objects out of 1000 (max. 8388607)
+ 656 compressed objects within 7 object streams
+ 143 named destinations out of 1000 (max. 500000)
  83 words of extra memory for PDF output out of 10000 (max. 10000000)
 
