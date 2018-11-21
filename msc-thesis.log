@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  9 NOV 2018 18:01
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  21 NOV 2018 18:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1412,22 +1412,28 @@ l.265 \begin{listofabbrv}{FlexDHE}
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.298 \tableofcontents
-                       [6
-
-] (./msc-thesis.tocpdfTeX warning (ext4): destination with the same identifier 
-(name{page.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.21 ... baseada em backups}{28}{subsection.3.1.5}
-                                                   [7
+l.286 \end{listofabbrv}
+                        [6
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.38 ...ne {chapter}{Refer\^encias}{50}{chapter.5}
-                                                   [8])
+l.299 \tableofcontents
+                       [7] (./msc-thesis.tocpdfTeX warning (ext4): destination 
+with the same identifier (name{page.}) has been already used, duplicate ignored
+
+<to be read again> 
+                   \relax 
+l.21 ... baseada em backups}{29}{subsection.3.1.5}
+                                                   [8
+
+]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.40 ...ne {chapter}{Refer\^encias}{52}{chapter.5}
+                                                   [9])
 \tf@toc=\write8
 \openout8 = `msc-thesis.toc'.
 
@@ -1435,13 +1441,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.298 \tableofcontents
-                       [9] (./chapters/Introducao.tex
+l.299 \tableofcontents
+                       [10] (./chapters/Introducao.tex
 Cap\'{\i }tulo 1.
-[10
+[11
 
 
-] [11] [12]) (./chapters/Aspectos.tex [13]
+] [12] [13]) (./chapters/Aspectos.tex [14]
 Cap\'{\i }tulo 2.
 LaTeX Font Info:    Try loading font information for OMS+txr on input line 30.
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxr.fd
@@ -1449,7 +1455,7 @@ File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
 (Font)              Font shape `OMS/txsy/m/n' tried instead on input line 30.
- [14
+ [15
 
 ]
 
@@ -1461,73 +1467,73 @@ Package hyperref Warning: Suppressing empty link on input line 43.
 
 Package hyperref Warning: Suppressing empty link on input line 43.
 
-[15] [16] [17] [18] [19] [20] [21] [22]) (./chapters/Revisao.tex [23]
+[16] [17] [18] [19] [20] [21] [22] [23]) (./chapters/Revisao.tex [24]
 Cap\'{\i }tulo 3.
-[24
+[25
 
-] <images/ReichertAutoAcquisitionModel.png, id=345, 693.59125pt x 827.09pt>
+] <images/ReichertAutoAcquisitionModel.png, id=356, 693.59125pt x 827.09pt>
 File: images/ReichertAutoAcquisitionModel.png Graphic file (type png)
 
 <use images/ReichertAutoAcquisitionModel.png>
 Package pdftex.def Info: images/ReichertAutoAcquisitionModel.png used on input 
 line 53.
 (pdftex.def)             Requested size: 346.79477pt x 413.54398pt.
- [25] [26 <./images/ReichertAutoAcquisitionModel.png>]
-<images/Dolan-GavittSemanticGap.png, id=368, 810.02625pt x 298.11375pt>
+ [26] [27 <./images/ReichertAutoAcquisitionModel.png>]
+<images/Dolan-GavittSemanticGap.png, id=379, 810.02625pt x 298.11375pt>
 File: images/Dolan-GavittSemanticGap.png Graphic file (type png)
 
 <use images/Dolan-GavittSemanticGap.png>
 Package pdftex.def Info: images/Dolan-GavittSemanticGap.png used on input line 
 110.
 (pdftex.def)             Requested size: 405.01213pt x 149.0565pt.
- [27]
-<images/SangLogApproach.png, id=383, 387.4475pt x 759.83875pt>
+ [28]
+<images/SangLogApproach.png, id=394, 387.4475pt x 759.83875pt>
 File: images/SangLogApproach.png Graphic file (type png)
 
 <use images/SangLogApproach.png>
 Package pdftex.def Info: images/SangLogApproach.png used on input line 141.
 (pdftex.def)             Requested size: 193.72327pt x 379.91844pt.
- [28 <./images/Dolan-GavittSemanticGap.png>]
-[29 <./images/SangLogApproach.png>]
-<images/DezfouliBackupApproach.png, id=404, 387.4475pt x 538.01pt>
+ [29 <./images/Dolan-GavittSemanticGap.png>]
+[30 <./images/SangLogApproach.png>]
+<images/DezfouliBackupApproach.png, id=416, 387.4475pt x 538.01pt>
 File: images/DezfouliBackupApproach.png Graphic file (type png)
 
 <use images/DezfouliBackupApproach.png>
 Package pdftex.def Info: images/DezfouliBackupApproach.png used on input line 1
 72.
 (pdftex.def)             Requested size: 193.72327pt x 269.00433pt.
- [30 <./images/DezfouliBackupApproach.png>] <images/DykstraFROST.png, id=420, 7
+ [31 <./images/DezfouliBackupApproach.png>] <images/DykstraFROST.png, id=431, 7
 43.77875pt x 693.59125pt>
 File: images/DykstraFROST.png Graphic file (type png)
 
 <use images/DykstraFROST.png>
 Package pdftex.def Info: images/DykstraFROST.png used on input line 209.
 (pdftex.def)             Requested size: 371.88846pt x 346.79477pt.
- [31]
-<images/GeorgeDF2CE.png, id=430, 824.07875pt x 989.6975pt>
+ [32]
+<images/GeorgeDF2CE.png, id=441, 824.07875pt x 989.6975pt>
 File: images/GeorgeDF2CE.png Graphic file (type png)
 
 <use images/GeorgeDF2CE.png>
 Package pdftex.def Info: images/GeorgeDF2CE.png used on input line 242.
 (pdftex.def)             Requested size: 412.03836pt x 494.84753pt.
- [32 <./images/DykstraFROST.png>] [33 <./images/GeorgeDF2CE.png>]
+ [33 <./images/DykstraFROST.png>] [34 <./images/GeorgeDF2CE.png>]
 
 Package hyperref Warning: Suppressing empty link on input line 265.
 
-<images/FaaSIndexedSearch.png, id=455, 914.41624pt x 603.25375pt>
+<images/FaaSIndexedSearch.png, id=466, 914.41624pt x 603.25375pt>
 File: images/FaaSIndexedSearch.png Graphic file (type png)
 
 <use images/FaaSIndexedSearch.png>
 Package pdftex.def Info: images/FaaSIndexedSearch.png used on input line 279.
 (pdftex.def)             Requested size: 411.4835pt x 271.46167pt.
- [34 <./images/FaaSIndexedSearch.png>]
-[35] [36] <images/check.png, id=536, 602.25pt x 602.25pt>
+ [35 <./images/FaaSIndexedSearch.png>]
+[36] [37] <images/check.png, id=547, 602.25pt x 602.25pt>
 File: images/check.png Graphic file (type png)
 
 <use images/check.png>
 Package pdftex.def Info: images/check.png used on input line 377.
 (pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
- <images/x.png, id=537, 1027.84pt x 1027.84pt>
+ <images/x.png, id=548, 1027.84pt x 1027.84pt>
 File: images/x.png Graphic file (type png)
 
 <use images/x.png>
@@ -1680,78 +1686,99 @@ File: images/check.png Graphic file (type png)
 Package pdftex.def Info: images/check.png used on input line 380.
 (pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
 )
-(./chapters/Proposta.tex [37] [38 <./images/check.png> <./images/x.png>]
+(./chapters/Proposta.tex [38] [39 <./images/check.png> <./images/x.png>]
 Cap\'{\i }tulo 4.
-[39
+[40
 
-] [40] <images/janela.jpg, id=575, 614.295pt x 447.92343pt>
+] [41] <images/janela.jpg, id=586, 614.295pt x 447.92343pt>
 File: images/janela.jpg Graphic file (type jpg)
 
 <use images/janela.jpg>
 Package pdftex.def Info: images/janela.jpg used on input line 72.
 (pdftex.def)             Requested size: 245.71364pt x 179.1662pt.
- <images/solucao.jpg, id=578, 788.9475pt x 654.445pt>
+ <images/solucao.jpg, id=589, 788.9475pt x 654.445pt>
 File: images/solucao.jpg Graphic file (type jpg)
 
 <use images/solucao.jpg>
 Package pdftex.def Info: images/solucao.jpg used on input line 96.
 (pdftex.def)             Requested size: 323.47057pt x 268.32419pt.
- [41 <./images/janela.jpg>] [42 <./images/solucao.jpg>]
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 141.
+ [42 <./images/janela.jpg>] [43 <./images/solucao.jpg>]
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 140.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
-) [43]
-<images/evolucao-coleta.jpg, id=607, 1172.38pt x 558.085pt>
+) [44]
+<images/evolucao-coleta.jpg, id=618, 1172.38pt x 558.085pt>
 File: images/evolucao-coleta.jpg Graphic file (type jpg)
 
 <use images/evolucao-coleta.jpg>
-Package pdftex.def Info: images/evolucao-coleta.jpg used on input line 203.
+Package pdftex.def Info: images/evolucao-coleta.jpg used on input line 202.
 (pdftex.def)             Requested size: 375.16927pt x 178.59085pt.
- Excluding 'comment' comment. [44 <./images/evolucao-coleta.jpg>] <images/memor
-ia-copia.jpg, id=614, 1264.725pt x 614.295pt>
+ Excluding 'comment' comment. [45 <./images/evolucao-coleta.jpg>] <images/memor
+ia-copia.jpg, id=625, 1264.725pt x 614.295pt>
 File: images/memoria-copia.jpg Graphic file (type jpg)
 
 <use images/memoria-copia.jpg>
-Package pdftex.def Info: images/memoria-copia.jpg used on input line 304.
+Package pdftex.def Info: images/memoria-copia.jpg used on input line 260.
 (pdftex.def)             Requested size: 379.42043pt x 184.28992pt.
- [45 <./images/memoria-copia.jpg>] [46]
-Cap\'{\i }tulo 5.
-[47
+ [46 <./images/memoria-copia.jpg>]
+<images/comando-copia-memoria-gdb.png, id=631, 639.13782pt x 51.94406pt>
+File: images/comando-copia-memoria-gdb.png Graphic file (type png)
 
-] <images/crono-image.png, id=630, 1013.7875pt x 348.30125pt>
+<use images/comando-copia-memoria-gdb.png>
+Package pdftex.def Info: images/comando-copia-memoria-gdb.png used on input lin
+e 281.
+(pdftex.def)             Requested size: 415.43466pt x 33.76323pt.
+
+Overfull \hbox (2.86969pt too wide) in paragraph at lines 281--284
+ [][] 
+ []
+
+<images/nao-consido-dumpar-memoria.png, id=633, 526.96875pt x 268.75406pt>
+File: images/nao-consido-dumpar-memoria.png Graphic file (type png)
+
+<use images/nao-consido-dumpar-memoria.png>
+Package pdftex.def Info: images/nao-consido-dumpar-memoria.png used on input li
+ne 299.
+(pdftex.def)             Requested size: 342.52562pt x 174.68806pt.
+ [47 <./images/comando-copia-memoria-gdb.png> <./images/nao-consido-dumpar-memo
+ria.png>] [48]
+Cap\'{\i }tulo 5.
+[49
+
+] <images/crono-image.png, id=653, 1013.7875pt x 348.30125pt>
 File: images/crono-image.png Graphic file (type png)
 
 <use images/crono-image.png>
-Package pdftex.def Info: images/crono-image.png used on input line 401.
+Package pdftex.def Info: images/crono-image.png used on input line 446.
 (pdftex.def)             Requested size: 405.50783pt x 139.31802pt.
-) (./msc-thesis.bbl [48] [49 <./images/crono-image.png>] [50
+) (./msc-thesis.bbl [50] [51 <./images/crono-image.png>] [52
 
-] [51] [52]) 
+] [53] [54]) 
 AED: lastpage setting LastPage
-[53]
+[55]
 +-------------------------------------------------------------------+
 | Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
 |                  http://abntex.codigolivre.org.br                 |
 +-------------------------------------------------------------------+
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 313.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 313.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 314.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 314.
 (./msc-thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 313.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 313.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 314.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 314.
 Package rerunfilecheck Info: File `msc-thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 313.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 314.
  ) 
 Here is how much of TeX's memory you used:
- 22233 strings out of 493304
- 398651 string characters out of 6139871
- 542896 words of memory out of 5000000
- 24959 multiletter control sequences out of 15000+600000
+ 22245 strings out of 493304
+ 399095 string characters out of 6139871
+ 543195 words of memory out of 5000000
+ 24964 multiletter control sequences out of 15000+600000
  53375 words of font info for 109 fonts, out of 8000000 for 9000
  963 hyphenation exceptions out of 8191
  56i,17n,56p,1013b,599s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1762,10 +1789,10 @@ e/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/share/texlive/texmf-dist
 onts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on msc-thesis.pdf (54 pages, 1004904 bytes).
+Output written on msc-thesis.pdf (56 pages, 1084079 bytes).
 PDF statistics:
- 750 PDF objects out of 1000 (max. 8388607)
- 656 compressed objects within 7 object streams
- 143 named destinations out of 1000 (max. 500000)
- 83 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 774 PDF objects out of 1000 (max. 8388607)
+ 674 compressed objects within 7 object streams
+ 148 named destinations out of 1000 (max. 500000)
+ 93 words of extra memory for PDF output out of 10000 (max. 10000000)
 

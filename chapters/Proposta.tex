@@ -123,17 +123,16 @@ Após a conclusão do processo de transporte, a máquina física verifica se exi
 %
 
 
-Após cinco minutos de execução das coletas mencionadas no parágrafo anterior, uma biblioteca que imprime um ponto (".") na saída padrão foi injetada na memória de um dos contêiners.
-%
-Após a injeção permitiu-se que a solução continuasse coletando por mais 5 minutos onde realizamos a análise das evidências coletadas.
-%
-
-
 \section{Resultados experimentais}
 \label{sec:proposta-exp}
 
 Para avaliar a efetividade de \fancyname na coleta de evidências, alguns experimentos foram realizados usando o ambiente implementado (descrito na Seção \ref{sec:proposta-impl}).
 %
+
+
+\subsection{Coleta de evidências}
+\label{sec:proposta-exp-coleta}
+
 Primeiramente, o sistema foi configurado para realizar coletas de memória em intervalos de 1 minuto, salvá-las em disco externo e apagar amostras coletadas há mais de 5 minutos. 
 %
 O sistema foi então executado por 30 minutos, tempo durante o qual foram coletadas como métricas (1) o uso de espaço em disco utilizado pelos instantâneos de memória salvos e (2) o tempo de pausa no contêiner necessário para a cópia delas.
@@ -255,6 +254,63 @@ Para os casos em que a interrupção da execução do recurso computacional mesm
 %
 Assim, ao invés de suspender a execução de todos os recursos computacionais para realização da coleta simultaneamente, o procedimento interrompe-as sequencialmente.
 
+\begin{figure}[htb!]
+\footnotesize
+\caption{Tempo de cópia da memória de um contêiner}
+\includegraphics[scale=0.30]{memoria-copia.jpg}
+\centering
+\label{fig:memoria-copia}
+\begin{center}
+Fonte: Próprio autor 
+\end{center}
+\end{figure}
+
+
+\subsection{Análise das evidências}
+\label{sec:proposta-exp-analise}
+
+Um segundo experimento teve como objetivo determinar se, através da análise das evidências coletadas, era possível identificar injeção de malware na memória do contêiner.
+%
+Além da coleta do conteúdo do diretório \textbf{/proc/pid/numa\_maps}, realizou-se também uma cópia crua da memória do processo do contêiner utilizando o utilitário \textit{GDB} do Linux via comando descrito na Figura \ref{fig:comando-copia}.
+%
+Após cinco minutos de \fancyname realizando coletas, uma biblioteca foi injetada na memória de um dos contêiners e permitiu-se que a solução continuasse coletando por mais 5 minutos.
+
+\begin{figure}[htb!]
+\footnotesize
+\caption{Comando para cópia crua da memória do processo do contêiner}
+\includegraphics[scale=0.65]{comando-copia-memoria-gdb.png}
+\centering
+\label{fig:comando-copia}
+\begin{center}
+Fonte: Próprio autor 
+\end{center}
+\end{figure}
+
+%
+Embora as coletas via cópia do diretório \textit{numa\_maps} tenham sido bem sucedidas, não foi possível realizar a cópia crua da memória do processo do contêiner via \textit{GDB}. 
+%
+Segundo Fabio Kung (referencia) isto ocorre porque o \textit{GDB} foi criado antes da existência de \textit{cgroups} no \textit{kernel} do linux e sendo assim não tem consciência da existência de isolamento entre processos.
+%
+Quando o \textit{GDB} tenta acessar uma área de memória isolada por \textit{cgroups}, o \textit{kernel} envia um sinal de violação de acesso de memória, o resultado é mostrado na Figura \ref{fig:erro-copia-gdb}.
+
+\begin{figure}[htb!]
+\footnotesize
+\caption{Erro de acesso ao tentar copiar memória do processo de um contêiner}
+\includegraphics[scale=0.65]{nao-consido-dumpar-memoria.png}
+\centering
+\label{fig:erro-copia-gdb}
+\begin{center}
+Fonte: Próprio autor 
+\end{center}
+\end{figure}
+
+%
+As alternativas encontradas para cópia da memória de contêiner são específicas de versão e implementação de contêiner como \textit{nsenter} (referencia).
+%
+Sendo assim o presente trabalho optou por limitar a análise apenas as evidências coletadas via cópia do diretório \textit{numa\_maps}.
+
+
+
 %\marcosT{Essas duas frases não é resultado do experimento, mas apenas característica da sua solução, então não faz muito sentido colocar aqui. Melhor mover essas considerações para o local em que você descreve essas características, fazendo merge com o texto que já esteja lá. Se você já fez essa discussão naquele ponto, então não precisa repetir. Se for fazer o merge, lembre-se (repita 2x ao dia, como um mantra): NÃO USE PRIMEIRA PESSOA EM TEXTOS FORMAIS EM PORTUGUÊS. - Hamilton: Feito. Desulpas, fraquejei :p}
 %
 
@@ -297,17 +353,6 @@ Assim, ao invés de suspender a execução de todos os recursos computacionais p
 %13                            & 30               \\ \hline
 %\end{tabular}
 %\end{table}
-
-\begin{figure}[htb!]
-\footnotesize
-\caption{Tempo de cópia da memória de um contêiner}
-\includegraphics[scale=0.30]{memoria-copia.jpg}
-\centering
-\label{fig:memoria-copia}
-\begin{center}
-Fonte: Próprio autor 
-\end{center}
-\end{figure}
 
 \section{Limitações}
 \label{sec:proposta-limit}
