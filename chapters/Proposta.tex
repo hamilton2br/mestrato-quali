@@ -126,14 +126,14 @@ Após a conclusão do processo de transporte, a máquina física verifica se exi
 \section{Resultados experimentais}
 \label{sec:proposta-exp}
 
-Para avaliar a efetividade de \fancyname na coleta de evidências, alguns experimentos foram realizados usando o ambiente implementado (descrito na Seção \ref{sec:proposta-impl}).
+Para avaliar a efetividade de \fancyname na coleta de evidências e identificação de injeção de código, dois experimentos foram realizados usando o ambiente implementado (descrito na Seção \ref{sec:proposta-impl}).
 %
 
 
 \subsection{Coleta de evidências}
 \label{sec:proposta-exp-coleta}
 
-Primeiramente, o sistema foi configurado para realizar coletas de memória em intervalos de 1 minuto, salvá-las em disco externo e apagar amostras coletadas há mais de 5 minutos. 
+Para o primeiro experimento, o sistema foi configurado para realizar coletas de memória em intervalos de 1 minuto, salvá-las em disco externo e apagar amostras coletadas há mais de 5 minutos. 
 %
 O sistema foi então executado por 30 minutos, tempo durante o qual foram coletadas como métricas (1) o uso de espaço em disco utilizado pelos instantâneos de memória salvos e (2) o tempo de pausa no contêiner necessário para a cópia delas.
 %
@@ -146,7 +146,7 @@ A ocupação em disco devido aos instantâneos de memória capturados durante o 
 %
 O gráfico mostra que o aumento do uso do espaço em disco é linear e o crescimento se interrompe quando é atingido o limite de tempo configurado para a janela, pois as coletas com tempo de vida maior que tal limite são apagadas do disco. 
 %
-Assim, que a solução mantém sob controle o espaço em disco ocupado pelas amostras coletadas.
+Assim, a solução mantém sob controle o espaço em disco ocupado pelas amostras coletadas.
 %
 Ao mesmo tempo, instantâneos de memória salvos pela solução depois que os contêineres são removidos continuam no disco da máquina, podendo ser associados a sua origem (i.e., contêiner e imagem), conforme esperado para uma análise forense.
 %
@@ -269,11 +269,13 @@ Fonte: Próprio autor
 \subsection{Análise das evidências}
 \label{sec:proposta-exp-analise}
 
-Um segundo experimento teve como objetivo determinar se, através da análise das evidências coletadas, era possível identificar injeção de malware na memória do contêiner.
+Um segundo experimento teve como objetivo determinar se é possível, através da análise das evidências coletadas, identificar injeção de malware na memória do contêiner.
+%
+Para este fim uma biblioteca \textbf{libexample.so} simulando um malware foi injetado em um dos contêineres.
+%
+Após cinco minutos de \fancyname realizando coletas, uma biblioteca foi injetada na memória de um dos contêiners. Após a injeção permitiu-se que a solução continuasse coletando por mais 5 minutos.
 %
 Além da coleta do conteúdo do diretório \textbf{/proc/pid/numa\_maps}, realizou-se também uma cópia crua da memória do processo do contêiner utilizando o utilitário \textit{GDB} do Linux via comando descrito na Figura \ref{fig:comando-copia}.
-%
-Após cinco minutos de \fancyname realizando coletas, uma biblioteca foi injetada na memória de um dos contêiners e permitiu-se que a solução continuasse coletando por mais 5 minutos.
 
 \begin{figure}[htb!]
 \footnotesize
@@ -287,7 +289,37 @@ Fonte: Próprio autor
 \end{figure}
 
 %
-Embora as coletas via cópia do diretório \textit{numa\_maps} tenham sido bem sucedidas, não foi possível realizar a cópia crua da memória do processo do contêiner via \textit{GDB}. 
+De posse das coletas do diretório \textbf{/proc/pid/numa\_maps} comparou-se dois momentos distintos na vida do contêiner, antes e depois da injeção da biblioteca.
+%
+Observando as figuras \ref{fig:antes-injecao} e \ref{fig:apos-injecao} é possível notar que no instantâneo após a injeção aparece a biblioteca \textbf{libexample.so} simulando o malware entre os endereços \textbf{7fbb52a50000} e \textbf{7fbb52c51000}
+%
+Logo, é possível identificar a injeção de um malware via evidência coletada por \fancyname do diretório \textbf{/proc/pid/numa\_maps}, permitindo-se por exemplo que ataques de injeção de código sejam identificados. 
+
+\begin{figure}[htb!]
+\footnotesize
+\caption{Parte do arquivo \textbf{/proc/pid/numa\_maps} ANTES da injeção }
+\includegraphics[scale=0.65]{antes-injecao.png}
+\centering
+\label{fig:antes-injecao}
+\begin{center}
+Fonte: Próprio autor 
+\end{center}
+\end{figure}
+
+
+\begin{figure}[htb!]
+\footnotesize
+\caption{Parte do arquivo \textbf{/proc/pid/numa\_maps} APÓS a injeção }
+\includegraphics[scale=0.65]{apos-injecao.png}
+\centering
+\label{fig:apos-injecao}
+\begin{center}
+Fonte: Próprio autor 
+\end{center}
+\end{figure}
+
+%
+Embora as coletas via cópia do diretório \textbf{/proc/pid/numa\_maps} tenham sido bem sucedidas, não foi possível realizar a cópia crua da memória do processo do contêiner via \textit{GDB}. 
 %
 Segundo Fabio Kung (referencia) isto ocorre porque o \textit{GDB} foi criado antes da existência de \textit{cgroups} no \textit{kernel} do linux e sendo assim não tem consciência da existência de isolamento entre processos.
 %
@@ -307,7 +339,7 @@ Fonte: Próprio autor
 %
 As alternativas encontradas para cópia da memória de contêiner são específicas de versão e implementação de contêiner como \textit{nsenter} (referencia).
 %
-Sendo assim o presente trabalho optou por limitar a análise apenas as evidências coletadas via cópia do diretório \textit{numa\_maps}.
+Sendo assim o presente trabalho optou por limitar a análise apenas às evidências coletadas via cópia do diretório \textbf{/proc/pid/numa\_maps}.
 
 
 

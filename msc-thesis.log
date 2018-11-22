@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  21 NOV 2018 18:16
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  22 NOV 2018 17:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1432,7 +1432,7 @@ l.21 ... baseada em backups}{29}{subsection.3.1.5}
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.40 ...ne {chapter}{Refer\^encias}{52}{chapter.5}
+l.40 ...ne {chapter}{Refer\^encias}{53}{chapter.5}
                                                    [9])
 \tf@toc=\write8
 \openout8 = `msc-thesis.toc'.
@@ -1471,7 +1471,7 @@ Package hyperref Warning: Suppressing empty link on input line 43.
 Cap\'{\i }tulo 3.
 [25
 
-] <images/ReichertAutoAcquisitionModel.png, id=356, 693.59125pt x 827.09pt>
+] <images/ReichertAutoAcquisitionModel.png, id=361, 693.59125pt x 827.09pt>
 File: images/ReichertAutoAcquisitionModel.png Graphic file (type png)
 
 <use images/ReichertAutoAcquisitionModel.png>
@@ -1479,7 +1479,7 @@ Package pdftex.def Info: images/ReichertAutoAcquisitionModel.png used on input
 line 53.
 (pdftex.def)             Requested size: 346.79477pt x 413.54398pt.
  [26] [27 <./images/ReichertAutoAcquisitionModel.png>]
-<images/Dolan-GavittSemanticGap.png, id=379, 810.02625pt x 298.11375pt>
+<images/Dolan-GavittSemanticGap.png, id=384, 810.02625pt x 298.11375pt>
 File: images/Dolan-GavittSemanticGap.png Graphic file (type png)
 
 <use images/Dolan-GavittSemanticGap.png>
@@ -1487,7 +1487,7 @@ Package pdftex.def Info: images/Dolan-GavittSemanticGap.png used on input line
 110.
 (pdftex.def)             Requested size: 405.01213pt x 149.0565pt.
  [28]
-<images/SangLogApproach.png, id=394, 387.4475pt x 759.83875pt>
+<images/SangLogApproach.png, id=399, 387.4475pt x 759.83875pt>
 File: images/SangLogApproach.png Graphic file (type png)
 
 <use images/SangLogApproach.png>
@@ -1495,14 +1495,14 @@ Package pdftex.def Info: images/SangLogApproach.png used on input line 141.
 (pdftex.def)             Requested size: 193.72327pt x 379.91844pt.
  [29 <./images/Dolan-GavittSemanticGap.png>]
 [30 <./images/SangLogApproach.png>]
-<images/DezfouliBackupApproach.png, id=416, 387.4475pt x 538.01pt>
+<images/DezfouliBackupApproach.png, id=421, 387.4475pt x 538.01pt>
 File: images/DezfouliBackupApproach.png Graphic file (type png)
 
 <use images/DezfouliBackupApproach.png>
 Package pdftex.def Info: images/DezfouliBackupApproach.png used on input line 1
 72.
 (pdftex.def)             Requested size: 193.72327pt x 269.00433pt.
- [31 <./images/DezfouliBackupApproach.png>] <images/DykstraFROST.png, id=431, 7
+ [31 <./images/DezfouliBackupApproach.png>] <images/DykstraFROST.png, id=436, 7
 43.77875pt x 693.59125pt>
 File: images/DykstraFROST.png Graphic file (type png)
 
@@ -1510,7 +1510,7 @@ File: images/DykstraFROST.png Graphic file (type png)
 Package pdftex.def Info: images/DykstraFROST.png used on input line 209.
 (pdftex.def)             Requested size: 371.88846pt x 346.79477pt.
  [32]
-<images/GeorgeDF2CE.png, id=441, 824.07875pt x 989.6975pt>
+<images/GeorgeDF2CE.png, id=446, 824.07875pt x 989.6975pt>
 File: images/GeorgeDF2CE.png Graphic file (type png)
 
 <use images/GeorgeDF2CE.png>
@@ -1520,20 +1520,20 @@ Package pdftex.def Info: images/GeorgeDF2CE.png used on input line 242.
 
 Package hyperref Warning: Suppressing empty link on input line 265.
 
-<images/FaaSIndexedSearch.png, id=466, 914.41624pt x 603.25375pt>
+<images/FaaSIndexedSearch.png, id=471, 914.41624pt x 603.25375pt>
 File: images/FaaSIndexedSearch.png Graphic file (type png)
 
 <use images/FaaSIndexedSearch.png>
 Package pdftex.def Info: images/FaaSIndexedSearch.png used on input line 279.
 (pdftex.def)             Requested size: 411.4835pt x 271.46167pt.
  [35 <./images/FaaSIndexedSearch.png>]
-[36] [37] <images/check.png, id=547, 602.25pt x 602.25pt>
+[36] [37] <images/check.png, id=552, 602.25pt x 602.25pt>
 File: images/check.png Graphic file (type png)
 
 <use images/check.png>
 Package pdftex.def Info: images/check.png used on input line 377.
 (pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
- <images/x.png, id=548, 1027.84pt x 1027.84pt>
+ <images/x.png, id=553, 1027.84pt x 1027.84pt>
 File: images/x.png Graphic file (type png)
 
 <use images/x.png>
@@ -1690,13 +1690,13 @@ Package pdftex.def Info: images/check.png used on input line 380.
 Cap\'{\i }tulo 4.
 [40
 
-] [41] <images/janela.jpg, id=586, 614.295pt x 447.92343pt>
+] [41] <images/janela.jpg, id=591, 614.295pt x 447.92343pt>
 File: images/janela.jpg Graphic file (type jpg)
 
 <use images/janela.jpg>
 Package pdftex.def Info: images/janela.jpg used on input line 72.
 (pdftex.def)             Requested size: 245.71364pt x 179.1662pt.
- <images/solucao.jpg, id=589, 788.9475pt x 654.445pt>
+ <images/solucao.jpg, id=594, 788.9475pt x 654.445pt>
 File: images/solucao.jpg Graphic file (type jpg)
 
 <use images/solucao.jpg>
@@ -1708,55 +1708,73 @@ LaTeX Font Info:    Try loading font information for T1+txtt on input line 140.
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 ) [44]
-<images/evolucao-coleta.jpg, id=618, 1172.38pt x 558.085pt>
+<images/evolucao-coleta.jpg, id=622, 1172.38pt x 558.085pt>
 File: images/evolucao-coleta.jpg Graphic file (type jpg)
 
 <use images/evolucao-coleta.jpg>
 Package pdftex.def Info: images/evolucao-coleta.jpg used on input line 202.
 (pdftex.def)             Requested size: 375.16927pt x 178.59085pt.
  Excluding 'comment' comment. [45 <./images/evolucao-coleta.jpg>] <images/memor
-ia-copia.jpg, id=625, 1264.725pt x 614.295pt>
+ia-copia.jpg, id=628, 1264.725pt x 614.295pt>
 File: images/memoria-copia.jpg Graphic file (type jpg)
 
 <use images/memoria-copia.jpg>
 Package pdftex.def Info: images/memoria-copia.jpg used on input line 260.
 (pdftex.def)             Requested size: 379.42043pt x 184.28992pt.
  [46 <./images/memoria-copia.jpg>]
-<images/comando-copia-memoria-gdb.png, id=631, 639.13782pt x 51.94406pt>
+<images/comando-copia-memoria-gdb.png, id=634, 639.13782pt x 51.94406pt>
 File: images/comando-copia-memoria-gdb.png Graphic file (type png)
 
 <use images/comando-copia-memoria-gdb.png>
 Package pdftex.def Info: images/comando-copia-memoria-gdb.png used on input lin
-e 281.
+e 283.
 (pdftex.def)             Requested size: 415.43466pt x 33.76323pt.
 
-Overfull \hbox (2.86969pt too wide) in paragraph at lines 281--284
+Overfull \hbox (2.86969pt too wide) in paragraph at lines 283--286
  [][] 
  []
 
-<images/nao-consido-dumpar-memoria.png, id=633, 526.96875pt x 268.75406pt>
+<images/antes-injecao.png, id=637, 653.44125pt x 252.945pt>
+File: images/antes-injecao.png Graphic file (type png)
+
+<use images/antes-injecao.png>
+Package pdftex.def Info: images/antes-injecao.png used on input line 301.
+(pdftex.def)             Requested size: 424.73178pt x 164.4123pt.
+
+Overfull \hbox (12.16681pt too wide) in paragraph at lines 301--304
+ [][] 
+ []
+
+<images/apos-injecao.png, id=638, 619.56468pt x 310.15875pt>
+File: images/apos-injecao.png Graphic file (type png)
+
+<use images/apos-injecao.png>
+Package pdftex.def Info: images/apos-injecao.png used on input line 313.
+(pdftex.def)             Requested size: 402.71227pt x 201.6008pt.
+ [47 <./images/comando-copia-memoria-gdb.png> <./images/antes-injecao.png>]
+<images/nao-consido-dumpar-memoria.png, id=646, 526.96875pt x 268.75406pt>
 File: images/nao-consido-dumpar-memoria.png Graphic file (type png)
 
 <use images/nao-consido-dumpar-memoria.png>
 Package pdftex.def Info: images/nao-consido-dumpar-memoria.png used on input li
-ne 299.
+ne 331.
 (pdftex.def)             Requested size: 342.52562pt x 174.68806pt.
- [47 <./images/comando-copia-memoria-gdb.png> <./images/nao-consido-dumpar-memo
-ria.png>] [48]
+ [48 <./images/apos-injecao.png>]
+[49 <./images/nao-consido-dumpar-memoria.png>]
 Cap\'{\i }tulo 5.
-[49
+[50
 
-] <images/crono-image.png, id=653, 1013.7875pt x 348.30125pt>
+] <images/crono-image.png, id=666, 1013.7875pt x 348.30125pt>
 File: images/crono-image.png Graphic file (type png)
 
 <use images/crono-image.png>
-Package pdftex.def Info: images/crono-image.png used on input line 446.
+Package pdftex.def Info: images/crono-image.png used on input line 478.
 (pdftex.def)             Requested size: 405.50783pt x 139.31802pt.
-) (./msc-thesis.bbl [50] [51 <./images/crono-image.png>] [52
+) (./msc-thesis.bbl [51] [52 <./images/crono-image.png>] [53
 
-] [53] [54]) 
+] [54] [55]) 
 AED: lastpage setting LastPage
-[55]
+[56]
 +-------------------------------------------------------------------+
 | Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
 |                  http://abntex.codigolivre.org.br                 |
@@ -1775,10 +1793,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 314.
  ) 
 Here is how much of TeX's memory you used:
- 22245 strings out of 493304
- 399095 string characters out of 6139871
- 543195 words of memory out of 5000000
- 24964 multiletter control sequences out of 15000+600000
+ 22260 strings out of 493304
+ 399420 string characters out of 6139871
+ 543364 words of memory out of 5000000
+ 24974 multiletter control sequences out of 15000+600000
  53375 words of font info for 109 fonts, out of 8000000 for 9000
  963 hyphenation exceptions out of 8191
  56i,17n,56p,1013b,599s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1789,10 +1807,10 @@ e/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/share/texlive/texmf-dist
 onts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on msc-thesis.pdf (56 pages, 1084079 bytes).
+Output written on msc-thesis.pdf (57 pages, 1242341 bytes).
 PDF statistics:
- 774 PDF objects out of 1000 (max. 8388607)
- 674 compressed objects within 7 object streams
- 148 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 788 PDF objects out of 1000 (max. 8388607)
+ 683 compressed objects within 7 object streams
+ 151 named destinations out of 1000 (max. 500000)
+ 103 words of extra memory for PDF output out of 10000 (max. 10000000)
 
