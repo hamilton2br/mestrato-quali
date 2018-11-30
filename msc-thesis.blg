@@ -18,6 +18,8 @@ Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Warning--campo year vazio ou faltando em Chef2018
+Warning--campo year vazio ou faltando em capabilities
+Warning--campo year vazio ou faltando em cgroupsxptrace
 Warning--campo year vazio ou faltando em Hbase2018
 Warning--campo year vazio ou faltando em Puppet2018
 Warning--campo year vazio ou faltando em UnixManPagesControlGroups
@@ -31,45 +33,45 @@ Warning--campo year vazio ou faltando em Vagrant2018
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 45 entries,
+You've used 47 entries,
             6669 wiz_defined-function locations,
-            1489 strings with 17703 characters,
-and the built_in function-call counts, 48727 in all, are:
-= -- 4965
-> -- 1255
+            1498 strings with 17955 characters,
+and the built_in function-call counts, 49857 in all, are:
+= -- 5045
+> -- 1285
 < -- 746
-+ -- 1196
-- -- 382
-* -- 3188
-:= -- 6230
-add.period$ -- 189
-call.type$ -- 45
-change.case$ -- 455
-chr.to.int$ -- 85
-cite$ -- 52
-duplicate$ -- 3835
-empty$ -- 2698
-format.name$ -- 1810
-if$ -- 10599
++ -- 1206
+- -- 392
+* -- 3248
+:= -- 6390
+add.period$ -- 197
+call.type$ -- 47
+change.case$ -- 471
+chr.to.int$ -- 87
+cite$ -- 56
+duplicate$ -- 3901
+empty$ -- 2802
+format.name$ -- 1856
+if$ -- 10873
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 785
-newline$ -- 240
-num.names$ -- 215
-pop$ -- 1017
+missing$ -- 819
+newline$ -- 250
+num.names$ -- 225
+pop$ -- 1063
 preamble$ -- 1
-purify$ -- 172
+purify$ -- 178
 quote$ -- 0
-skip$ -- 3900
+skip$ -- 3970
 stack$ -- 1
-substring$ -- 2047
-swap$ -- 1517
+substring$ -- 2065
+swap$ -- 1541
 text.length$ -- 59
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 8
-warning$ -- 9
-while$ -- 324
+warning$ -- 11
+while$ -- 334
 width$ -- 0
-write$ -- 697
-(There were 9 warnings)
+write$ -- 725
+(There were 11 warnings)

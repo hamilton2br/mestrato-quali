@@ -33,8 +33,9 @@
 \contentsline {section}{\numberline {4.2}Implementa\IeC {\c c}\IeC {\~a}o}{43}{section.4.2}
 \contentsline {section}{\numberline {4.3}Resultados experimentais}{44}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Coleta de evid\IeC {\^e}ncias}{44}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}An\IeC {\'a}lise das evid\IeC {\^e}ncias}{46}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Limita\IeC {\c c}\IeC {\~o}es}{48}{section.4.4}
-\contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o}{50}{chapter.5}
-\contentsline {section}{\numberline {5.1}Cronograma esperado para os pr\IeC {\'o}ximos passos}{50}{section.5.1}
+\contentsline {subsection}{\numberline {4.3.2}An\IeC {\'a}lise das evid\IeC {\^e}ncias}{47}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Limita\IeC {\c c}\IeC {\~o}es}{49}{section.4.4}
+\contentsline {chapter}{\numberline {5}Conclus\IeC {\~o}es e recomenda\IeC {\c c}\IeC {\~o}es para trabalhos futuros}{51}{chapter.5}
+\contentsline {subsection}{\numberline {5.0.1}Conclus\IeC {\~o}es}{51}{subsection.5.0.1}
+\contentsline {subsection}{\numberline {5.0.2}Trabalhos futuros}{52}{subsection.5.0.2}
 \contentsline {chapter}{Refer\^encias}{53}{chapter.5}

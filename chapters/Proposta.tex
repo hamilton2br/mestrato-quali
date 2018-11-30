@@ -266,6 +266,33 @@ Fonte: Próprio autor
 \end{figure}
 
 
+Outra preocupação é o tempo de transporte das evidências para o armazenamento fora da nuvem.
+%
+O transporte da evidência pode levar mais tempo que o intervalo de geração levando a perdas da evidências durante o transporte. 
+%
+Para avaliar esse impacto, durante o experimento foram medidos os tempos de transporte das evidências para o armazenamento fora da nuvem.
+%
+Os resultados são mostrados no gráfico da Figura \ref{fig:evidencia_transporte}.
+%
+É possível notar que o tempo de transporte estabiliza após atingido o tamanho da janela. O tempo de transporte da evidência fica, em média proximo dos 30 segundos. 
+
+%
+A topologia é um fator que pode contrubuir tanto positiva quanto negativamente no tempo de transporte. 
+%
+Neste experimento o gerador de evidências está na América do Norte enquanto que a máquina física para onde as evidências foram transportadas está na América do Sul.
+
+\begin{figure}[htb!]
+\footnotesize
+\caption{Tempo de transporte da evidência}
+\includegraphics[scale=0.35]{evidencia-download.jpg}
+\centering
+\label{fig:evidencia-transporte}
+\begin{center}
+Fonte: Próprio autor 
+\end{center}
+\end{figure}
+
+
 \subsection{Análise das evidências}
 \label{sec:proposta-exp-analise}
 
@@ -319,11 +346,16 @@ Fonte: Próprio autor
 \end{figure}
 
 %
-Embora as coletas via cópia do diretório \textbf{/proc/pid/numa\_maps} tenham sido bem sucedidas, não foi possível realizar a cópia crua da memória do processo do contêiner via \textit{GDB}. 
+Apesar do sucesso na coleta via cópia do diretório \textbf{/proc/pid/numa\_maps}, não foi possível realizar a cópia do conteúdo da memória do processo do contêiner via \textit{ptrace}. 
 %
-Segundo Fabio Kung (referencia) isto ocorre porque o \textit{GDB} foi criado antes da existência de \textit{cgroups} no \textit{kernel} do linux e sendo assim não tem consciência da existência de isolamento entre processos.
+Segundo \cite{cgroupsxptrace} isto ocorre pois as chamadas de sistema que ferramentas como \textit{ptrace} e \textit{htop} usam foram criadas antes da implementação de \textit{cgroups} no \textit{kernel} do linux e sendo assim não tem consciência da existência de isolamento entre processos.
 %
-Quando o \textit{GDB} tenta acessar uma área de memória isolada por \textit{cgroups}, o \textit{kernel} envia um sinal de violação de acesso de memória, o resultado é mostrado na Figura \ref{fig:erro-copia-gdb}.
+Quando o \textit{ptrace} tenta acessar uma área de memória isolada por \textit{cgroups}, o \textit{kernel} envia um sinal de violação de acesso de memória, o resultado é mostrado na Figura \ref{fig:erro-copia-gdb}.
+%
+A documentação do Docker \cite{capabilities} menciona o comando \texttt{--cap-add=SYS_PTRACE --security-opt-seccomp=unconfined} que permite que o \textit{ptrace} consiga acessar a memória de um processo dentro do contêiner mas não permite que a máquina hospedeira ou outro contêiner tenha acesso (referência).
+%
+Ainda segundo \cite{cgroupsxptrace} uma alternativa para viabilizar a monitoração e acesso a informações de memória seria o de expor tais informações na estrutura de \textbf{/sys/fs/cgroup/} da mesma forma que é feita para \textbf{/proc/pid/}.
+
 
 \begin{figure}[htb!]
 \footnotesize
@@ -336,55 +368,6 @@ Fonte: Próprio autor
 \end{center}
 \end{figure}
 
-%
-As alternativas encontradas para cópia da memória de contêiner são específicas de versão e implementação de contêiner como \textit{nsenter} (referencia).
-%
-Sendo assim o presente trabalho optou por limitar a análise apenas às evidências coletadas via cópia do diretório \textbf{/proc/pid/numa\_maps}.
-
-
-
-%\marcosT{Essas duas frases não é resultado do experimento, mas apenas característica da sua solução, então não faz muito sentido colocar aqui. Melhor mover essas considerações para o local em que você descreve essas características, fazendo merge com o texto que já esteja lá. Se você já fez essa discussão naquele ponto, então não precisa repetir. Se for fazer o merge, lembre-se (repita 2x ao dia, como um mantra): NÃO USE PRIMEIRA PESSOA EM TEXTOS FORMAIS EM PORTUGUÊS. - Hamilton: Feito. Desulpas, fraquejei :p}
-%
-
-%\begin{table}[htb!]
-%\centering
-%\caption{Tempo de cópia da memória de um contêiner}
-%\label{tab:results-conteiner}
-%\begin{tabular}{c|c}
-%\hline
-%Tempo de cópia (Milisegundos) & Coleta           \\ \hline
-%149                           & 1                \\ \hline
-%59                            & 2                \\ \hline
-%23                            & 3                \\ \hline
-%32                            & 4                \\ \hline
-%35                            & 5                \\ \hline
-%21                            & 6                \\ \hline
-%17                            & 7                \\ \hline
-%38                            & 8                \\ \hline
-%16                            & 9                \\ \hline
-%33                            & 10               \\ \hline
-%17                            & 11               \\ \hline
-%36                            & 12               \\ \hline
-%18                            & 13               \\ \hline
-%25                            & 14               \\ \hline
-%31                            & 15               \\ \hline
-%14                            & 16               \\ \hline
-%33                            & 17               \\ \hline
-%19                            & 18               \\ \hline
-%13                            & 19               \\ \hline
-%20                            & 20               \\ \hline
-%18                            & 21               \\ \hline
-%24                            & 22               \\ \hline
-%8                             & 23               \\ \hline
-%9                             & 24               \\ \hline
-%19                            & 25               \\ \hline
-%7                             & 26               \\ \hline
-%8                             & 27               \\ \hline
-%11                            & 28               \\ \hline
-%35                            & 29               \\ \hline
-%13                            & 30               \\ \hline
-%\end{tabular}
-%\end{table}
 
 \section{Limitações}
 \label{sec:proposta-limit}
@@ -407,7 +390,13 @@ Outra limitação da solução proposta é a necessidade da mesma estar instalad
 %
 Como mencionado em \cite{CaseMemoryForensics:2014}, ``para uma análise eficiente de um incidente em memória, são necessárias cópias da mesma \textbf{antes e depois} do incidente.''
 
-\chapter{Conclusão}
+\chapter{Conclusões e recomendações para trabalhos futuros}
+\label{sec:proposta-concl-recom}
+
+%
+Neste capítulo são apresentadas as conclusões do presente trabalho e as recomendações para a continuidade dos trabalhos neste campo de estudo.
+
+\subsection{Conclusões}
 \label{sec:proposta-concl}
 
 %\marcosT{Uma boa conclusão retoma, logo na primeira frase, o problema que ela se propunha a resolver. Comece com uma ou mais frases nesse sentido, (nota: \textbf{sem} copiar+colar de outro ponto do texto). - Hamilton: Feito} \marcosT{Só que não: eu disse para você retomar o \textbf{problema} na sua primeira frase. Sua frase começa retomando a \textbf{solução}. Essa que você colocou como primeira seria boa como uma segunda frase, em que você reforça como resolve o problema - Hamilton: Acho que agora foi :)}
@@ -418,75 +407,21 @@ Esse problema é especialmente notável em sistemas de computação em nuvem, no
 %
 Essa característica, aliada a aspectos como multi-inquilinato e multi-jurisdição de nuvens computacionais, dificulta a coleta de evidências para a investigação de incidentes.
 
-
+%
 Nesse cenário, a proposta apresentada visa relacionar o instantâneo de memória a sua origem, utilizando o \textit{hash} calculado do recurso computacional em nuvem como identificador da origem da evidência armazenada.
 %
 Para evitar uso excessivo de memória, a quantidade de dados armazenados usa uma janela de armazenamento, o que permite descrever a memória antes e depois de um ataque (e.g., de injeção de memória). 
 %
+Transportando de forma segura e armazenando a evidência em local conhecido fora da nuvem, evitam-se os problemas relacionados a multi-jurisdição e multi-inquilinato das nuvens computacionais.
+%
 Combinada com uma ferramenta para identificação de ameaças, essas características de \fancyname o transformam em uma solução poderosa para prover evidências e, assim, viabilizar análises forenses na nuvem.
+
+
+\subsection{Trabalhos futuros}
+\label{sec:proposta-trab-fut}
+
 %
-%Cabe notar, entretanto, que muitas ferramentas de análise malware disponíveis no mercado necessitam que todo o conteúdo da memória da máquina esteja disponível para realização da análise (e.g., FROST \cite{Dykstra_FROST:2013} e Volatility Framework \cite{VolatilityFoundation2014}), o que inviabiliza seu uso diretamente sobre a memória de processos conforme coletado por \fancyname.
+Como mencionado em \ref{sec:proposta-exp-analise} não foi possível realizar a cópia do conteúdo do processo rodando dentro do contêiner. 
 %
-%Portanto, como trabalho futuro, pretende-se desenvolver uma ferramenta de detecção de ameaças mais flexível, que, embora potencialmente utilize técnicas similares àquelas adotadas em sistemas atuais, seja capaz de fazê-lo sem necessariamente ter acesso à memória completa da máquina.
-%
-
-%\marcos{Er... isso era o trabalho futuro no artigo, quando você podia dizer absolutamente qualquer coisa. Na qualificação, só diga que é trabalho futuro aquilo que DE FATO você pretender fazer: você será cobrado por isso na defesa da dissertação... Vai fazer isso? Se for, não vai aqui, mas sim na seção em que você descreve os próximos passos. Hamilton - Feito, movi para a seção ``próximos passos''}
-
-%Como trabalho futuro, pretende-se estudar o impacto provocado pela pausa do contêiner no desempenho de um sistema em produção e realizar uma análise da memória dos contêineres deste mesmo sistema utilizando as coletas feitas por \fancyname. 
-%
-%Com esses resultados pretende-se implementar uma ferramenta mais flexível, que não precise ter acesso a memória completa da máquina, requisito comum de ferramentas de análise de malware atuais (e.g., FROST \cite{DykstraFROST:2013} e Volatility Framework \cite{VolatilityFoundation2014}).
-
-
-\section{Cronograma esperado para os próximos passos}
-\label{sec:proposta-prox}
-
-%\marcos{Mais atenção ao tempo verbal... você fica usando frases no futuro para as fases 1 e 2, e depois diz que já foram executadas (=passado)...?! Só confunde o leitor... - Hamilton: vi que você mudou aqui, mantive}
-
-A execução da presente proposta foi planejada para ser executada em três fases, das quais as duas primeiras foram executadas, conforme discutido a seguir.
-
-
-A primeira fase teve por objetivo encontrar uma forma de relacionar a evidência coletada de um contêiner a sua origem de forma que o processo seja reprodutível. 
-%
-Para atingir este objetivo, foi implementado um protótipo de coleta de memória de uma máquina virtual executando contêineres em um computador físico. 
-%
-A associação da evidência de memória coletada do contêiner de uma máquina virtual foi associada a sua origem através do \textit{hash} de identificação da imagem do contêiner, e o processo de coleta foi reproduzido com sucesso diversas vezes.
-
-
-A segunda fase teve por objetivo encontrar uma forma de transportar a evidência coletada a um local de armazenamento garantindo a cadeia de custódia.
-%
-Para atingir este objetivo, foi definida uma cadeia de custódia, de modo que os evidência em memória geradas em uma nuvem computacional pudessem ser transportados para uma máquina física fora da nuvem.
-%
-O transporte da evidência foi realizado usando TLS a assinatura dos dados.
-
-
-Finalmente, a terceira fase esperada para o projeto, que consiste no próximo passo para a conclusão do mestrado, tem por objetivo a realização da análise experimental de alguma vulnerabilidade específica, utilizando-se do material coletado na primeira fase do projeto.
-%
-As ações para se atingir este objetivo serão realizadas em um computador físico com ferramental voltado à análise forense em memória.
-%
-A execução dessa fase deve seguir o cronograma descrito na Figura \ref{fig:cronograma}, que consiste nas seguintes atividades:
-
-
-\begin{itemize}
- \item \textbf{Estudo das ferramentas de análise de memória}: serão avaliadas ferramentas de análise de memória na busca por alguma solução que consiga decodificar as informações coletadas;
- \item \textbf{Implementação / seleção de uma ferramenta de análise}: será selecionada uma das ferramentas estudadas na atividade anterior. Caso nenhuma se mostre adequada, será implementada uma ferramenta própria;
- \item \textbf{Realização de análises com a ferramenta escolhida / criada}: será analisado um malware real, utilizando-se o processo de coleta definido por \fancyname.
-\end{itemize}
-
-\begin{figure}[htb!]
-\footnotesize
-\caption{Cronograma de projeto.} %\marcos{Ficou meio pequeno... melhor colocar números (e.g., em romanos) na primeira coluna e logo abaixo da tabela (ou mesmo aqui na legenda) colocar o que cada número significa. - Hamilton: Feito}}
-\includegraphics[scale=0.40]{crono-image.png}
-\centering
-\label{fig:cronograma}
-\begin{center}
-Fonte: Próprio autor 
-\end{center}
-\end{figure}
-
-%\section{Contribuições}
-%\label{sec:proposta-contrib}
-%
-%A contribuição esperada da presente proposta é o de demonstrar que é possível coletar evidências de uma infraestrutura em nuvem de modo a atender os pré-requisitos de não violação de privacidade, não violação da jurisdição, reprodutibilidade do processo de coleta da evidência e garantia da cadeia de custódia.
-%%
-%Demonstrar que é possível realizar a análise de evidência de memória com apenas a parte \textit{user space} da memória coletada
+Em função da complexidade e dos conhecimentos necessários para realizar a alteração sugerida e do trâmite para aceitação do mesmo na base de código do linux, recomenda-se para trabalhos futuros a incorporação a \fancyname uma forma de resolver de conseguir acesso ao conteúdo da memória de um contêiner a partir do sistema hospedeiro.
 

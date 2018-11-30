@@ -52,6 +52,12 @@ Acessado em: 16-04-2018.}
 {{Dierks T}, R.~E. \emph{{The Transport Layer Security (TLS) Protocol}}.
   Fremont, CA: IETF, 2008. IETF: \urls{https://tools.ietf.org/html/rfc5246}.}
 
+\bibitem[{Docker}]{capabilities}
+\abntrefinfo{{Docker}}{{Docker}}{}
+{{Docker}. \emph{{Runtime privilege and Linux capabilities}}.
+  Https://docs.docker.com/engine/reference/run/.
+Acessado em: 30-11-2018.}
+
 \bibitem[Dolan-Gavitt et al. 2011]{Dolan-GavittSemanticGap:2011}
 \abntrefinfo{Dolan-Gavitt et al.}{DOLAN-GAVITT et al.}{2011}
 {DOLAN-GAVITT, B. et al. Virtuoso: Narrowing the semantic gap in virtual
@@ -77,6 +83,12 @@ Available from Internet: \url{dx.doi.org/10.1016/j.diin.2012.05.001}.}
 ISSN 17422876.
 (Proc. of 13th Annual DFRWS Conference).
 Available from Internet: \url{dx.doi.org/10.1016/j.diin.2013.06.010}.}
+
+\bibitem[{Fabio Kung}]{cgroupsxptrace}
+\abntrefinfo{{Fabio Kung}}{{Fabio Kung}}{}
+{{Fabio Kung}. \emph{{Memory inside LInux containers}}.
+  Https://fabiokung.com/2014/03/13/memory-inside-linux-containers/.
+Acessado em: 30-11-2018.}
 
 \bibitem[Fewer 2008]{FewerReflectiveLibraryInject:2008}
 \abntrefinfo{Fewer}{FEWER}{2008}
