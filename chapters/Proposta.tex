@@ -117,7 +117,7 @@ O transporte seguro da evidência para um armazenamento físico fora da AWS foi 
 %
 A instância EC2 que contém as evidências foi configurada para aceitar conexões apenas de máquinas na VPN.
 %
-Uma máquina fisica fora da AWS, usou o cliente do \textit{OpenVPN} para estabelecer uma conexão VPN com a instância que contém as evidências e as transportou para o disco da máquina física.
+Uma máquina física fora da AWS, usou o cliente do \textit{OpenVPN} para estabelecer uma conexão VPN com a instância que contém as evidências e as transportou para o disco da máquina física.
 %
 Após a conclusão do processo de transporte, a máquina física verifica se existem arquivos \textbf{.mem} em disco mais antigos que um certo intervalo de tempo ``t'', descartando-os.
 %
@@ -274,10 +274,10 @@ Para avaliar esse impacto, durante o experimento foram medidos os tempos de tran
 %
 Os resultados são mostrados no gráfico da Figura \ref{fig:evidencia_transporte}.
 %
-É possível notar que o tempo de transporte estabiliza após atingido o tamanho da janela. O tempo de transporte da evidência fica, em média proximo dos 30 segundos. 
+É possível notar que o tempo de transporte estabiliza após atingido o tamanho da janela. O tempo de transporte da evidência fica, em média próximo dos 30 segundos. 
 
 %
-A topologia é um fator que pode contrubuir tanto positiva quanto negativamente no tempo de transporte. 
+A topologia é um fator que pode contribuir tanto positiva quanto negativamente no tempo de transporte. 
 %
 Neste experimento o gerador de evidências está na América do Norte enquanto que a máquina física para onde as evidências foram transportadas está na América do Sul.
 
@@ -300,7 +300,7 @@ Um segundo experimento teve como objetivo determinar se é possível, através d
 %
 Para este fim uma biblioteca \textbf{libexample.so} simulando um malware foi injetado em um dos contêineres.
 %
-Após cinco minutos de \fancyname realizando coletas, uma biblioteca foi injetada na memória de um dos contêiners. Após a injeção permitiu-se que a solução continuasse coletando por mais 5 minutos.
+Após cinco minutos de \fancyname realizando coletas, uma biblioteca foi injetada na memória de um dos contêineres. Após a injeção permitiu-se que a solução continuasse coletando por mais 5 minutos.
 %
 Além da coleta do conteúdo do diretório \textbf{/proc/pid/numa\_maps}, realizou-se também uma cópia crua da memória do processo do contêiner utilizando o utilitário \textit{GDB} do Linux via comando descrito na Figura \ref{fig:comando-copia}.
 
