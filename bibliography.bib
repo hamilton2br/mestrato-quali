@@ -1,3 +1,27 @@
+@article{Stelly2017,
+abstract = {The rapid growth of raw data volume requiring forensic processing has become one of the top concerns of forensic analysts. At present, there are no readily available solutions that provide: a) open and flexible integration of existing forensic tools into a processing pipeline; and b) scale-out architecture that is compatible with common cloud technologies. Containers, lightweight OS-level virtualized environments, are quickly becoming the preferred architectural unit for building large-scale data processing systems. We present a container-based software framework, SCARF, which applies this approach to forensic computations. Our prototype demonstrates its practicality by providing low-cost integration of both custom code and a variety of third-party tools via simple data interfaces. The resulting system fits well with the data parallel nature of most forensic tasks, which tend to have few dependencies that limit parallel execution. Our experimental evaluation shows that for several types of processing tasksesuch as hashing, indexing and bulk processingeperformance scales almost linearly with the addition of hardware resources. We show that the software engineering effort to integrate new tools is quite modest, and all the critical task scheduling and resource allocation are automatically managed by the container orchestration runtimeeDocker Swarm, or similar.},
+author = {Stelly, Christopher and Roussev, Vassil},
+doi = {10.1016/j.diin.2017.06.008},
+file = {:home/hamilton/host/SCARF A container-based approach to cloud-scale digital forensic processing.pdf:pdf},
+issn = {1742-2876},
+journal = {Digital Investigation},
+keywords = {Cloud computing,Containers,Large-scale forensics,Real-time forensics,SCARF},
+pages = {S39--S47},
+publisher = {Elsevier Ltd},
+title = {{SCARF: A container-based approach to cloud-scale digital forensic processing}},
+url = {http://dx.doi.org/10.1016/j.diin.2017.06.008},
+volume = {22},
+year = {2017}
+}
+
+@misc{nsenter,
+abstract = {Enters the namespaces of one or more other processes and then executes the specified program.},
+author = {{Eric Biederman ⟨biederm@xmission.com⟩ and Karel Zak ⟨kzak@redhat.com⟩}},
+title = {{nsenter - run program with namespaces of other processes}},
+howpublished = {https://http://man7.org/linux/man-pages/man1/nsenter.1.html},
+note = {Acessado em: 26-14-2019} 
+}
+
 @misc{capabilities,
 abstract = {By default, Docker containers are unprivileged and cannot, for example, run a Docker daemon inside a Docker container. This is because by default a container is not allowed to access any devices, but a privileged container is given access to all devices (see the documentation on cgroups devices).},
 author = {{Docker}},

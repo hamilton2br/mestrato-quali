@@ -69,7 +69,7 @@ Como resultado, é possível conhecer o sistema antes e depois do ataque e, assi
 \begin{figure}[htb!]
 \footnotesize
 \caption{Janela deslizante de coleta de evidência}
-\includegraphics[scale=0.40]{janela.jpg}
+\includegraphics[scale=1.00]{janela.pdf}
 \centering
 \label{fig:janela}
 \begin{center}
@@ -93,7 +93,7 @@ Especificamente, as evidências coletadas são armazenadas em um local físico f
 \begin{figure}[htb!]
 \footnotesize
 \caption{Arquitetura geral da solução Dizang}
-\includegraphics[scale=0.41]{solucao.jpg}
+\includegraphics[scale=0.70]{Solucao.pdf}
 \centering
 \label{fig:Solucao}
 \begin{center}
@@ -199,7 +199,7 @@ Logo, é possível descrever o estado do sistema antes e depois do incidente \ci
 \begin{figure}[htb!]
 \footnotesize
 \caption{Evolução do uso do espaço em disco com o Dizang}
-\includegraphics[scale=0.32]{evolucao-coleta.jpg}
+\includegraphics[scale=0.60]{evolucao-coleta.pdf}
 \centering
 \label{fig:evolucao-coleta}
 \begin{center}
@@ -257,7 +257,7 @@ Assim, ao invés de suspender a execução de todos os recursos computacionais p
 \begin{figure}[htb!]
 \footnotesize
 \caption{Tempo de cópia da memória de um contêiner}
-\includegraphics[scale=0.30]{memoria-copia.jpg}
+\includegraphics[scale=0.70]{memoria-copia.pdf}
 \centering
 \label{fig:memoria-copia}
 \begin{center}
@@ -268,7 +268,7 @@ Fonte: Próprio autor
 
 Outra preocupação é o tempo de transporte das evidências para o armazenamento fora da nuvem.
 %
-O transporte da evidência pode levar mais tempo que o intervalo de geração levando a perdas da evidências durante o transporte. 
+O transporte da evidência pode levar mais tempo que o intervalo de geração levando a perdas da evidências durante o transporte.7
 %
 Para avaliar esse impacto, durante o experimento foram medidos os tempos de transporte das evidências para o armazenamento fora da nuvem.
 %
@@ -284,7 +284,7 @@ Neste experimento o gerador de evidências está na América do Norte enquanto q
 \begin{figure}[htb!]
 \footnotesize
 \caption{Tempo de transporte da evidência}
-\includegraphics[scale=0.35]{evidencia-download.jpg}
+\includegraphics[scale=0.70]{evidencia-download.pdf}
 \centering
 \label{fig:evidencia_transporte}
 \begin{center}
@@ -307,7 +307,7 @@ Além da coleta do conteúdo do diretório \textbf{/proc/pid/numa\_maps}, realiz
 \begin{figure}[htb!]
 \footnotesize
 \caption{Comando para cópia crua da memória do processo do contêiner}
-\includegraphics[scale=0.65]{comando-copia-memoria-gdb.png}
+\includegraphics[scale=0.60]{comando-copia-memoria-gdb.pdf}
 \centering
 \label{fig:comando-copia}
 \begin{center}
@@ -325,7 +325,7 @@ Logo, é possível identificar a injeção de um malware via evidência coletada
 \begin{figure}[htb!]
 \footnotesize
 \caption{Parte do arquivo \textbf{/proc/pid/numa\_maps} ANTES da injeção }
-\includegraphics[scale=0.65]{antes-injecao.png}
+\includegraphics[scale=0.80]{antes-injecao.pdf}
 \centering
 \label{fig:antes-injecao}
 \begin{center}
@@ -337,7 +337,7 @@ Fonte: Próprio autor
 \begin{figure}[htb!]
 \footnotesize
 \caption{Parte do arquivo \textbf{/proc/pid/numa\_maps} APÓS a injeção }
-\includegraphics[scale=0.65]{apos-injecao.png}
+\includegraphics[scale=0.80]{apos-injecao.pdf}
 \centering
 \label{fig:apos-injecao}
 \begin{center}
