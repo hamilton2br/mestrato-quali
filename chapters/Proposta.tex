@@ -4,7 +4,7 @@
 \chapter{Proposta de projeto: \fancyname}
 \label{chp:proposta}
 
-A presente proposta tem como objetivo principal coletar memória de recursos computacionais virtuais de modo a conseguir: 
+A presente proposta tem como objetivo principal coletar memória de recursos computacionais virtuais em arquitetura volátil de modo a conseguir: 
 (1) identificar a fonte da evidência, mesmo se o recurso virtual não existir mais; 
 (2) descrever o sistema antes e depois do incidente;
 (3) transportar e armazenar a memória coletada de uma forma que garanta sua integridade e confidencialidade; e
@@ -12,12 +12,14 @@ A presente proposta tem como objetivo principal coletar memória de recursos com
 %
 A solução aqui apresentada, denominada \fancyname, é descrita em detalhes a seguir.
 
-\section{Descrição}
-\label{sec:proposta-desc}
+\section{Identificação da origem}
+\label{sec:proposal-desc-origin}
 
-Em sistemas computacionais executados sobre uma infraestrutura física (i.e., não virtualizada), pode-se fazer uma associação direta entre um recurso qualquer e sua origem correspondente, seja esse recurso uma informação da memória, imagem de disco ou pacotes trafegando na rede.
+Em sistemas computacionais executados sobre uma infraestrutura física (i.e., não virtualizada), pode-se fazer uma associação direta entre um recurso qualquer e sua origem correspondente, seja este recurso uma informação da memória, imagem de disco ou pacotes trafegando na rede.
 %
 Já em sistemas construídos sobre uma infraestrutura virtual, em especial quando ela é auto-escalável, os recursos computacionais são altamente voláteis e, portanto, podem ser desalocados a qualquer momento.
+%
+Este fato torna difícil a associação de uma informação gerada por esta infraestrutura com sua origem.
 
 
 Para conseguir correlacionar uma evidência a sua origem volátil, é necessário utilizar outro elemento em que persista a relação fonte-evidência.
@@ -30,6 +32,9 @@ O hash de um recurso em nuvem permite identificar univocamente a fonte de uma ev
 ), do contêiner da lógica de negócios (e.g., \textit{golang}%\cite{Google}
 ) ou do contêiner do banco de dados (e.g., \textit{Cassandra}%\cite{Cassandra}
 ). %removendo contêiner e deixando mais genérico
+
+\section{Descrever o sistema antes e depois do incidente}
+\label{sec:proposal-desc-incident}
 
 %\marcosT{O parágrafo estava muito grande, então quebrei aqui. O problema é que falta uma frase para ligar a frase a seguir ao contexto da discussão... Coloque uma frase aqui, deixando claro qual requisito você quer satisfazer com essa ideia de ``interromper temporariamente a execução do contêiner''. Aplique isso para TUDO que for proposta: o leitor tem que saber de antemão pra que você está fazendo alguma coisa, ou vai ficar se perguntando ``Espera, mas pra que fazer isso?!'' - Hamilton: Feito}
 A cópia de memória não é uma atividade atômica, pois ela é executada em conjunto com outros processos. 
@@ -77,8 +82,11 @@ Fonte: Próprio autor
 \end{center}
 \end{figure}
 
+\section{Garantindo integridade, confidencialidade e protegendo privacidade e jurisdição}
+\label{sec:proposal-desc-chain-of-custody}
+
 %\marcosT{Essa frase não faz sentido: não se ``assina'' nada com um ``hash''. Você pode ``calcular o hash'' ou ``assinar um dado'' (e.g., um dado juntamente com o hash de alguma coisa). Revise essa frase... - Hamilton: Feito}
-Finalmente, para persistir a relação evidência-origem e garantir a sua integridade, \fancyname calcula o hash do par [evidência, identificador da imagem do contêiner] e armazena a tripla [hash do conteúdo da evidência, hash que identifica univocamente o recurso, evidência].
+Finalmente, para persistir a relação evidência-origem e garantir a sua integridade, \fancyname calcula o hash $H$ do par \{evidência, identificador da imagem do contêiner\} e armazena a tripla \{$H$, identificador do recurso, evidência\}.
 %
 Adicionalmente, a presente proposta evita eventuais problemas com o armazenamento desses dados em países com jurisdições diferentes daquelas que devem ser aplicadas na investigação em questão.
 %
@@ -109,17 +117,17 @@ A solução, ilustrada na Fig. \ref{fig:Solucao}, consistiu na criação de uma 
 %
 Nesta instância AWS foi instalado o Docker Engine 1.10 e a API Docker 1.21, com os quais foram criados 3 contêineres executando o nginx 1.0 em diferentes portas. 
 %
-Usando uma aplicação Java que descobre o identificador de processo associado a cada contêiner, pôde-se copiar conteúdo do \textit{descritor de alocação de memória não uniforme} (\textbf{/proc/pid/numa\_maps}), o qual contém a alocação das páginas de memória, os nós que estão associados a essas páginas, o que está alocado e suas respectivas políticas de acesso \cite{UnixManPagesNumaMaps}.
+Foi desenvolvida uma aplicação Java que, executada no sistema operacional hospedeiro, descobre o identificador de processo associado a cada contêiner, copia o conteúdo do \textit{descritor de alocação de memória não uniforme} (\textbf{/proc/pid/numa\_maps}), o qual contém a alocação das páginas de memória, os nós que estão associados a essas páginas, o que está alocado e suas respectivas políticas de acesso \cite{UnixManPagesNumaMaps}.
 %
-A cópia e gravação do arquivo é tal que, a cada minuto, a aplicação (1) pausa o contêiner em questão, (2) copia a diretório \textbf{numa\_maps}, (3)  concatena os dados obtidos com o \textit{hash} de identificação da imagem do contêiner, (4) calcula o \textit{hash} do conjunto e (5) salva o resultado em um arquivo cujo nome é o identificador da imagem do contêiner e a extensão é \textbf{.mem}. 
+A cópia e gravação do arquivo é tal que, a cada intervalo de tempo $t$, a aplicação (1) pausa o contêiner em questão, (2) copia a diretório \textbf{numa\_maps}, (3)  concatena os dados obtidos com o identificador da imagem e do contêiner, (4) calcula o $H$ do conjunto e (5) salva o resultado em um arquivo cujo nome é o identificador da imagem e do contêiner e a extensão é \textbf{.mem}. 
 %
 O transporte seguro da evidência para um armazenamento físico fora da AWS foi implementado usando uma instância \textit{t2.micro} na zona Ohio da AWS onde foi instalado um servidor \textit{OpenVPN}.
 %
-A instância EC2 que contém as evidências foi configurada para aceitar conexões apenas de máquinas na VPN.
+Como uma forma básica de controle de acesso, a instância EC2 que contém as evidências foi configurada para aceitar conexões apenas de máquinas na VPN.
 %
 Uma máquina física fora da AWS, usou o cliente do \textit{OpenVPN} para estabelecer uma conexão VPN com a instância que contém as evidências e as transportou para o disco da máquina física.
 %
-Após a conclusão do processo de transporte, a máquina física verifica se existem arquivos \textbf{.mem} em disco mais antigos que um certo intervalo de tempo ``t'', descartando-os.
+Após a conclusão do processo de transporte, a máquina física verifica se existem arquivos \textbf{.mem} em disco mais antigos que um certo intervalo de tempo $t$, descartando-os.
 %
 
 
