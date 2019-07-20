@@ -138,19 +138,15 @@ Para avaliar a efetividade de \fancyname na coleta de evidências e identificaç
 %
 
 
-\subsection{Coleta de evidências}
-\label{sec:proposta-exp-coleta}
+\subsection{Análise do desempenho}
+\label{sec:proposta-exp-desempenho}
 
-Para o primeiro experimento, o sistema foi configurado para realizar coletas de memória em intervalos de 1 minuto, salvá-las em disco externo e apagar amostras coletadas há mais de 5 minutos. 
+No o primeiro experimento, o sistema foi configurado para realizar coletas de memória em intervalos de 1 minuto, salvá-las em armazenamento externo a nuvem e apagar amostras coletadas há mais de 5 minutos. 
 %
-O sistema foi então executado por 30 minutos, tempo durante o qual foram coletadas como métricas (1) o uso de espaço em disco utilizado pelos instantâneos de memória salvos e (2) o tempo de pausa no contêiner necessário para a cópia delas.
-%
-A cada coleta, foi executado o comando \texttt{du -sh *.mem} do \textit{Unix} no disco de armazenamento externo, para retornar a lista dos arquivos onde os instantâneos de memória foram armazenados e o espaço em disco ocupado pelos mesmos. 
-%
-Ao fim do experimento, os contêineres foram removidos.
+O sistema foi então executado por 30 minutos, tempo durante o qual foram coletadas como métricas (1) o uso de espaço em disco utilizado pelos instantâneos de memória salvos, (2) o tempo de pausa no contêiner necessário para a cópia delas e (3) o tempo de transporte das evidências para o armazenamento externo a nuvem.
 
 
-A ocupação em disco devido aos instantâneos de memória capturados durante o experimento é mostrada no gráfico da Figura \ref{fig:evolucao-coleta}. 
+Neste experimento os instantâneos de memória tem 244kb de tamanho. A evolução do espaço em disco ocupado pelos instantâneos de memória, acompanhado através do comando \texttt{du -sh *.mem} do \textit{Unix} no disco de armazenamento externo, é mostrada no gráfico da Figura \ref{fig:evolucao-coleta}.
 %
 O gráfico mostra que o aumento do uso do espaço em disco é linear e o crescimento se interrompe quando é atingido o limite de tempo configurado para a janela, pois as coletas com tempo de vida maior que tal limite são apagadas do disco. 
 %
@@ -161,6 +157,7 @@ Ao mesmo tempo, instantâneos de memória salvos pela solução depois que os co
 Essa capacidade se mantém após a detecção de uma ameaça, pois nesse caso coletas mais antigas deixam de ser apagadas.
 %
 Logo, é possível descrever o estado do sistema antes e depois do incidente \cite{CaseMemoryForensics:2014}, permitindo-se, por exemplo, que ataques de injeção de código em memória sejam analisados.
+
 
 
 %\marcos{EVITE REDUNDÂNCIA ENTRE GRÁFICO E TABELA. Faz sentido apenas se um deles for trazer informações adicionais (e, nesses casos, em geral o gráfico/tabela acaba tendo algum highlight, para deixar a utilidade dessa redundância)
@@ -256,11 +253,12 @@ Os resultados são mostrados no gráfico da Figura \ref{fig:memoria-copia}.
 É possível notar que, após a inicialização da aplicação, o tempo para realizar a cópia é bastante reduzido, variando entre 20 e 40 milissegundos. 
 %
 Em especial, para contêineres executando um motor de páginas web dinâmicas, como é o caso do experimento em questão, essa latência deve ser pouco perceptível por usuários finais.
-
-
+%
 Para os casos em que a interrupção da execução do recurso computacional mesmo por breves momentos cause problemas de disponibilidade, é possível realizar o procedimento de coleta em instantes de tempo separados.
 %
 Assim, ao invés de suspender a execução de todos os recursos computacionais para realização da coleta simultaneamente, o procedimento interrompe-as sequencialmente.
+%
+Desta forma, a latência demonstrada pode ser considerado o pior caso neste experimento.
 
 \begin{figure}[htb!]
 \footnotesize
@@ -276,7 +274,7 @@ Fonte: Próprio autor
 
 Outra preocupação é o tempo de transporte das evidências para o armazenamento fora da nuvem.
 %
-O transporte da evidência pode levar mais tempo que o intervalo de geração levando a perdas da evidências durante o transporte.7
+Caso o transporte da evidência leve mais tempo que a geração do próximo instantâneo, um backlog de transporte se formará levando a perdas da evidências para o transporte.
 %
 Para avaliar esse impacto, durante o experimento foram medidos os tempos de transporte das evidências para o armazenamento fora da nuvem.
 %
@@ -285,9 +283,9 @@ Os resultados são mostrados no gráfico da Figura \ref{fig:evidencia_transporte
 É possível notar que o tempo de transporte estabiliza após atingido o tamanho da janela. O tempo de transporte da evidência fica, em média próximo dos 30 segundos. 
 
 %
-A topologia é um fator que pode contribuir tanto positiva quanto negativamente no tempo de transporte. 
+Tanto a topologia quando a arquitetura do transporte da evidência são fatores que contribuem tanto positiva quando negativamente no tempo de transporte.
 %
-Neste experimento o gerador de evidências está na América do Norte enquanto que a máquina física para onde as evidências foram transportadas está na América do Sul.
+Neste experimento o gerador de evidências está na América do Norte enquanto que a máquina física para onde as evidências foram transportadas e que é responsável pelo transporte da evidência está na América do Sul.
 
 \begin{figure}[htb!]
 \footnotesize
@@ -301,8 +299,8 @@ Fonte: Próprio autor
 \end{figure}
 
 
-\subsection{Análise das evidências}
-\label{sec:proposta-exp-analise}
+\subsection{Identificação de injeção de código malicioso}
+\label{sec:proposta-exp-malware}
 
 Um segundo experimento teve como objetivo determinar se é possível, através da análise das evidências coletadas, identificar injeção de malware na memória do contêiner.
 %
@@ -310,7 +308,7 @@ Para este fim uma biblioteca \textbf{libexample.so} simulando um malware foi inj
 %
 Após cinco minutos de \fancyname realizando coletas, uma biblioteca foi injetada na memória de um dos contêineres. Após a injeção permitiu-se que a solução continuasse coletando por mais 5 minutos.
 %
-Além da coleta do conteúdo do diretório \textbf{/proc/pid/numa\_maps}, realizou-se também uma cópia crua da memória do processo do contêiner utilizando o utilitário \textit{GDB} do Linux via comando descrito na Figura \ref{fig:comando-copia}.
+Além da coleta do conteúdo do diretório \textbf{/proc/pid/numa\_maps}, realizou-se também uma cópia crua da memória do processo do contêiner utilizando o utilitário \textit{nsenter} via comando descrito na Figura \ref{fig:comando-copia}.
 
 \begin{figure}[htb!]
 \footnotesize
@@ -326,9 +324,11 @@ Fonte: Próprio autor
 %
 De posse das coletas do diretório \textbf{/proc/pid/numa\_maps} comparou-se dois momentos distintos na vida do contêiner, antes e depois da injeção da biblioteca.
 %
-Observando as figuras \ref{fig:antes-injecao} e \ref{fig:apos-injecao} é possível notar que no instantâneo após a injeção aparece a biblioteca \textbf{libexample.so} simulando o malware entre os endereços \textbf{7fbb52a50000} e \textbf{7fbb52c51000}
+Observando as Figuras \ref{fig:antes-injecao} e \ref{fig:apos-injecao} é possível notar que no instantâneo após a injeção aparece a biblioteca \textbf{libexample.so} simulando o malware entre os endereços \textbf{7f85631b8000} e \textbf{7f85633b9000}
 %
-Logo, é possível identificar a injeção de um malware via evidência coletada por \fancyname do diretório \textbf{/proc/pid/numa\_maps}, permitindo-se por exemplo que ataques de injeção de código sejam identificados. 
+Logo, é possível identificar a injeção de um malware via evidência coletada por \fancyname do diretório \textbf{/proc/pid/numa\_maps}, permitindo-se por exemplo que ataques de injeção de código sejam identificados.
+%
+A Figura \ref{fig:conteudo-memoria-copia-gdb} mostra o conteúdo da parte legível da memória no endereço \textbf{0x7f85633b9000} onde a biblioteca \textbf{libexample.so} simulando um código malicioso está alocada.
 
 \begin{figure}[htb!]
 \footnotesize
@@ -367,7 +367,19 @@ Ainda segundo \cite{cgroupsxptrace} uma alternativa para viabilizar a monitoraç
 
 \begin{figure}[htb!]
 \footnotesize
-\caption{Erro de acesso ao tentar copiar memória do processo de um contêiner}
+\caption{Conteúdo da memória onde libexample.so está alocado}
+\includegraphics[scale=0.65]{conteudo-memoria-copia-gdb.pdf}
+\centering
+\label{fig:conteudo-memoria-copia-gdb}
+\begin{center}
+Fonte: Próprio autor 
+\end{center}
+\end{figure}
+
+
+\begin{figure}[htb!]
+\footnotesize
+\caption{Conteúdo da memória onde libexample.so está alocado}
 \includegraphics[scale=0.65]{nao-consido-dumpar-memoria.png}
 \centering
 \label{fig:erro-copia-gdb}
