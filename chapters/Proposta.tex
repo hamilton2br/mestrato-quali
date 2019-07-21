@@ -123,7 +123,7 @@ A cópia e gravação do arquivo é tal que, a cada intervalo de tempo $t$, a ap
 %
 O transporte seguro da evidência para um armazenamento físico fora da AWS foi implementado usando uma instância \textit{t2.micro} na zona Ohio da AWS onde foi instalado um servidor \textit{OpenVPN}.
 %
-Como uma forma básica de controle de acesso, a instância EC2 que contém as evidências foi configurada para aceitar conexões apenas de máquinas na VPN.
+Como uma forma básica de controle de acesso, a instância EC2 que contém as evidências foi configurada para aceitar conexões apenas de máquinas nesta VPN.
 %
 Uma máquina física fora da AWS, usou o cliente do \textit{OpenVPN} para estabelecer uma conexão VPN com a instância que contém as evidências e as transportou para o disco da máquina física.
 %
@@ -354,7 +354,7 @@ Fonte: Próprio autor
 \end{figure}
 
 %
-Apesar do sucesso na coleta via cópia do diretório \textbf{/proc/pid/numa\_maps}, não foi possível realizar a cópia do conteúdo da memória do processo do contêiner via \textit{ptrace}. 
+As primeiras tentativas de cópia do conteúdo da memória do processo do contêiner foram feitas via \textit{ptrace} e não obteve sucesso. 
 %
 Segundo \cite{cgroupsxptrace} isto ocorre pois as chamadas de sistema que ferramentas como \textit{ptrace} e \textit{htop} usam foram criadas antes da implementação de \textit{cgroups} no \textit{kernel} do linux e sendo assim não tem consciência da existência de isolamento entre processos.
 %
@@ -363,7 +363,9 @@ Quando o \textit{ptrace} tenta acessar uma área de memória isolada por \textit
 A documentação do Docker \cite{capabilities} menciona o comando \texttt{--cap-add=SYS_PTRACE --security-opt-seccomp=unconfined} que permite que o \textit{ptrace} consiga acessar a memória de um processo dentro do contêiner mas não permite que a máquina hospedeira ou outro contêiner tenha acesso (referência).
 %
 Ainda segundo \cite{cgroupsxptrace} uma alternativa para viabilizar a monitoração e acesso a informações de memória seria o de expor tais informações na estrutura de \textbf{/sys/fs/cgroup/} da mesma forma que é feita para \textbf{/proc/pid/}.
-
+%
+O sucesso na cópia do conteúdo da memória do processo do contêiner só foi alcançado quando utilizou-se a ferramenta \textit{nsenter}.
+%
 
 \begin{figure}[htb!]
 \footnotesize
@@ -379,7 +381,7 @@ Fonte: Próprio autor
 
 \begin{figure}[htb!]
 \footnotesize
-\caption{Conteúdo da memória onde libexample.so está alocado}
+\caption{Tentativa mal sucedidad de cópia do conteúdo da memória}
 \includegraphics[scale=0.65]{nao-consido-dumpar-memoria.png}
 \centering
 \label{fig:erro-copia-gdb}
@@ -435,13 +437,3 @@ Para evitar uso excessivo de memória, a quantidade de dados armazenados usa uma
 Transportando de forma segura e armazenando a evidência em local conhecido fora da nuvem, evitam-se os problemas relacionados a multi-jurisdição e multi-inquilinato das nuvens computacionais.
 %
 Combinada com uma ferramenta para identificação de ameaças, essas características de \fancyname o transformam em uma solução poderosa para prover evidências e, assim, viabilizar análises forenses na nuvem.
-
-
-\subsection{Trabalhos futuros}
-\label{sec:proposta-trab-fut}
-
-%
-Como mencionado em \ref{sec:proposta-exp-analise} não foi possível realizar a cópia do conteúdo do processo rodando dentro do contêiner. 
-%
-Em função da complexidade e dos conhecimentos necessários para realizar a alteração sugerida e do trâmite para aceitação do mesmo na base de código do linux, recomenda-se para trabalhos futuros a incorporação a \fancyname uma forma de resolver de conseguir acesso ao conteúdo da memória de um contêiner a partir do sistema hospedeiro.
-
