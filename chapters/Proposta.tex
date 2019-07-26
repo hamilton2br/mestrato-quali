@@ -112,7 +112,7 @@ Fonte: Próprio autor
 %
 Os mecanismos propostos foram implementados em uma plataforma de testes visando avaliar a eficácia de \fancyname em coletar as informações de memória dos contêineres de forma reprodutível, sem violar jurisdições ou a privacidade de usuários e a capacidade de detectar injeção de código usando as evidências coletadas.
 %
-A solução, ilustrada na Fig. \ref{fig:Solucao}, consistiu na criação de uma instancia \textit{t2.micro} na zona Ohio da AWS com 3.3Mhz, 1Gb de RAM e sistema operacional de 64 bits. 
+A solução, ilustrada na Figura \ref{fig:Solucao}, consistiu na criação de uma instancia \textit{t2.micro} na zona Ohio da AWS com 3.3Mhz, 1Gb de RAM e sistema operacional de 64 bits. 
 %na criação de 1 VM usando o Oracle Virtual Box 5.0%\cite{VirtualBox} em um notebook Intel i5 de 2.30Mhz e 4Gb de RAM com sistema operacional de 64 bits.
 %
 Nesta instância AWS foi instalado o Docker Engine 1.10 e a API Docker 1.21, com os quais foram criados 3 contêineres executando o nginx 1.0 em diferentes portas. 
@@ -141,12 +141,12 @@ Para avaliar a efetividade de \fancyname na coleta de evidências e identificaç
 \subsection{Análise do desempenho}
 \label{sec:proposta-exp-desempenho}
 
-No o primeiro experimento, o sistema foi configurado para realizar coletas de memória em intervalos de 1 minuto, salvá-las em armazenamento externo a nuvem e apagar amostras coletadas há mais de 5 minutos. 
+No primeiro experimento, o sistema foi configurado para realizar coletas de memória em intervalos de 1 minuto, salvá-las em armazenamento externo à nuvem e apagar amostras coletadas há mais de 5 minutos. 
 %
 O sistema foi então executado por 30 minutos, tempo durante o qual foram coletadas como métricas (1) o uso de espaço em disco utilizado pelos instantâneos de memória salvos, (2) o tempo de pausa no contêiner necessário para a cópia delas e (3) o tempo de transporte das evidências para o armazenamento externo a nuvem.
 
 
-Neste experimento os instantâneos de memória tem 244kb de tamanho. A evolução do espaço em disco ocupado pelos instantâneos de memória, acompanhado através do comando \texttt{du -sh *.mem} do \textit{Unix} no disco de armazenamento externo, é mostrada no gráfico da Figura \ref{fig:evolucao-coleta}.
+Neste experimento os instantâneos de memória tem 244kb de tamanho. A evolução do espaço em disco ocupado pelos instantâneos de memória, acompanhado através da execução do comando \texttt{du -sh *.mem} do \textit{Unix} no disco de armazenamento externo, é mostrada no gráfico da Figura \ref{fig:evolucao-coleta}.
 %
 O gráfico mostra que o aumento do uso do espaço em disco é linear e o crescimento se interrompe quando é atingido o limite de tempo configurado para a janela, pois as coletas com tempo de vida maior que tal limite são apagadas do disco. 
 %
@@ -274,7 +274,7 @@ Fonte: Próprio autor
 
 Outra preocupação é o tempo de transporte das evidências para o armazenamento fora da nuvem.
 %
-Caso o transporte da evidência leve mais tempo que a geração do próximo instantâneo, um backlog de transporte se formará levando a perdas da evidências para o transporte.
+Caso o transporte da evidência leve mais tempo que a geração do próximo instantâneo, um backlog de transporte se formará levando a perdas nas evidências que estejam pendentes para transporte.
 %
 Para avaliar esse impacto, durante o experimento foram medidos os tempos de transporte das evidências para o armazenamento fora da nuvem.
 %
@@ -283,9 +283,9 @@ Os resultados são mostrados no gráfico da Figura \ref{fig:evidencia_transporte
 É possível notar que o tempo de transporte estabiliza após atingido o tamanho da janela. O tempo de transporte da evidência fica, em média próximo dos 30 segundos. 
 
 %
-Tanto a topologia quando a arquitetura do transporte da evidência são fatores que contribuem tanto positiva quando negativamente no tempo de transporte.
+Tanto a topologia quando a arquitetura do transporte da evidência até a arquitetura do que se deseja extrair a evidência são fatores que contribuem tanto positiva quando negativamente no tempo de transporte.
 %
-Neste experimento o gerador de evidências está na América do Norte enquanto que a máquina física para onde as evidências foram transportadas e que é responsável pelo transporte da evidência está na América do Sul.
+Neste experimento o gerador de evidências, um motor de páginas dinâmicas, está na América do Norte enquanto que a máquina física para onde as evidências foram transportadas e que é responsável pelo transporte da evidência está na América do Sul.
 
 \begin{figure}[htb!]
 \footnotesize
@@ -324,7 +324,7 @@ Fonte: Próprio autor
 %
 De posse das coletas do diretório \textbf{/proc/pid/numa\_maps} comparou-se dois momentos distintos na vida do contêiner, antes e depois da injeção da biblioteca.
 %
-Observando as Figuras \ref{fig:antes-injecao} e \ref{fig:apos-injecao} é possível notar que no instantâneo após a injeção aparece a biblioteca \textbf{libexample.so} simulando o malware entre os endereços \textbf{7f85631b8000} e \textbf{7f85633b9000}
+Observando as Figuras \ref{fig:antes-injecao} e \ref{fig:apos-injecao} é possível notar que no instantâneo após a injeção aparece a biblioteca \textbf{libexample.so} simulando o malware entre os endereços \textbf{7f85631b8000} e \textbf{7f85633b9000}.
 %
 Logo, é possível identificar a injeção de um malware via evidência coletada por \fancyname do diretório \textbf{/proc/pid/numa\_maps}, permitindo-se por exemplo que ataques de injeção de código sejam identificados.
 %
@@ -360,6 +360,7 @@ Segundo \cite{cgroupsxptrace} isto ocorre pois as chamadas de sistema que ferram
 %
 Quando o \textit{ptrace} tenta acessar uma área de memória isolada por \textit{cgroups}, o \textit{kernel} envia um sinal de violação de acesso de memória, o resultado é mostrado na Figura \ref{fig:erro-copia-gdb}.
 %
+
 A documentação do Docker \cite{capabilities} menciona o comando \texttt{--cap-add=SYS_PTRACE --security-opt-seccomp=unconfined} que permite que o \textit{ptrace} consiga acessar a memória de um processo dentro do contêiner mas não permite que a máquina hospedeira ou outro contêiner tenha acesso (referência).
 %
 Ainda segundo \cite{cgroupsxptrace} uma alternativa para viabilizar a monitoração e acesso a informações de memória seria o de expor tais informações na estrutura de \textbf{/sys/fs/cgroup/} da mesma forma que é feita para \textbf{/proc/pid/}.
@@ -369,7 +370,7 @@ O sucesso na cópia do conteúdo da memória do processo do contêiner só foi a
 
 \begin{figure}[htb!]
 \footnotesize
-\caption{Conteúdo da memória onde libexample.so está alocado}
+\caption{Conteúdo da memória de \textbf{libexample.so} no formato [endereço]: [conteúdo]}
 \includegraphics[scale=0.65]{conteudo-memoria-copia-gdb.pdf}
 \centering
 \label{fig:conteudo-memoria-copia-gdb}
@@ -381,7 +382,7 @@ Fonte: Próprio autor
 
 \begin{figure}[htb!]
 \footnotesize
-\caption{Tentativa mal sucedidad de cópia do conteúdo da memória}
+\caption{Tentativa mal sucedida de cópia do conteúdo da memória}
 \includegraphics[scale=0.65]{nao-consido-dumpar-memoria.png}
 \centering
 \label{fig:erro-copia-gdb}

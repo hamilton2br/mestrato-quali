@@ -14,5 +14,5 @@
 \contentsline {figure}{\numberline {13}{\ignorespaces Comando para c\IeC {\'o}pia crua da mem\IeC {\'o}ria do processo do cont\IeC {\^e}iner}}{50}{figure.4.13}
 \contentsline {figure}{\numberline {14}{\ignorespaces Parte do arquivo \textbf {\mathversion {bold}/proc/pid/numa\_maps} ANTES da inje\IeC {\c c}\IeC {\~a}o }}{50}{figure.4.14}
 \contentsline {figure}{\numberline {15}{\ignorespaces Parte do arquivo \textbf {\mathversion {bold}/proc/pid/numa\_maps} AP\IeC {\'O}S a inje\IeC {\c c}\IeC {\~a}o }}{51}{figure.4.15}
-\contentsline {figure}{\numberline {16}{\ignorespaces Conte\IeC {\'u}do da mem\IeC {\'o}ria onde libexample.so est\IeC {\'a} alocado}}{52}{figure.4.16}
-\contentsline {figure}{\numberline {17}{\ignorespaces Tentativa mal sucedidad de c\IeC {\'o}pia do conte\IeC {\'u}do da mem\IeC {\'o}ria}}{52}{figure.4.17}
+\contentsline {figure}{\numberline {16}{\ignorespaces Conte\IeC {\'u}do da mem\IeC {\'o}ria de \textbf {\mathversion {bold}libexample.so} no formato [endere\IeC {\c c}o]: [conte\IeC {\'u}do]}}{52}{figure.4.16}
+\contentsline {figure}{\numberline {17}{\ignorespaces Tentativa mal sucedida de c\IeC {\'o}pia do conte\IeC {\'u}do da mem\IeC {\'o}ria}}{52}{figure.4.17}
