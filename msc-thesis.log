@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  25 JUL 2019 21:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  27 JUL 2019 12:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1872,15 +1872,9 @@ Cap\'{\i }tulo 5.
 ) (./msc-thesis.bbl [54
 
 ] [55]
-Underfull \hbox (badness 1803) in paragraph at lines 57--60
+Underfull \hbox (badness 1803) in paragraph at lines 63--66
 []\T1/txr/m/n/12 Docker. \T1/txr/m/it/12 Run-time pri-vi-lege and Li-nux ca-pa-
 bi-li-ties\T1/txr/m/n/12 . 
- []
-
-
-Underfull \hbox (badness 2418) in paragraph at lines 89--92
-[]\T1/txr/m/n/12 Fabio Kung. \T1/txr/m/it/12 Me-mory in-side LI-nux con-tai-ner
-s\T1/txr/m/n/12 . 
  []
 
 [56
@@ -1911,22 +1905,23 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 314.
 Here is how much of TeX's memory you used:
  22288 strings out of 493304
  400120 string characters out of 6139871
- 542973 words of memory out of 5000000
+ 542958 words of memory out of 5000000
  24993 multiletter control sequences out of 15000+600000
  53615 words of font info for 110 fonts, out of 8000000 for 9000
  963 hyphenation exceptions out of 8191
- 56i,17n,56p,1013b,598s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,17n,56p,1013b,592s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txf
-onts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on msc-thesis.pdf (60 pages, 689987 bytes).
+/fonts/type1/public/txfonts/rtxi.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfo
+nts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/urw/times/utmri8a.pfb>
+Output written on msc-thesis.pdf (60 pages, 695052 bytes).
 PDF statistics:
- 996 PDF objects out of 1000 (max. 8388607)
- 848 compressed objects within 9 object streams
+ 1027 PDF objects out of 1200 (max. 8388607)
+ 878 compressed objects within 9 object streams
  159 named destinations out of 1000 (max. 500000)
  108 words of extra memory for PDF output out of 10000 (max. 10000000)
 

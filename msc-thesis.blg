@@ -36,43 +36,43 @@ Warning--campo year vazio ou faltando em Vagrant2018
 +---------------------------------------------------------+
 You've used 47 entries,
             6669 wiz_defined-function locations,
-            1499 strings with 18010 characters,
-and the built_in function-call counts, 49857 in all, are:
-= -- 5045
-> -- 1285
-< -- 746
-+ -- 1206
-- -- 392
-* -- 3248
-:= -- 6390
-add.period$ -- 197
+            1515 strings with 19332 characters,
+and the built_in function-call counts, 73058 in all, are:
+= -- 8714
+> -- 1302
+< -- 1938
++ -- 2404
+- -- 396
+* -- 4504
+:= -- 8912
+add.period$ -- 216
 call.type$ -- 47
-change.case$ -- 471
+change.case$ -- 476
 chr.to.int$ -- 87
 cite$ -- 56
-duplicate$ -- 3901
-empty$ -- 2802
-format.name$ -- 1856
-if$ -- 10873
+duplicate$ -- 7443
+empty$ -- 2847
+format.name$ -- 1885
+if$ -- 14618
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 819
-newline$ -- 250
-num.names$ -- 225
-pop$ -- 1063
+missing$ -- 818
+newline$ -- 258
+num.names$ -- 226
+pop$ -- 1111
 preamble$ -- 1
-purify$ -- 178
+purify$ -- 179
 quote$ -- 0
-skip$ -- 3970
+skip$ -- 7466
 stack$ -- 1
-substring$ -- 2065
-swap$ -- 1541
-text.length$ -- 59
+substring$ -- 3240
+swap$ -- 2718
+text.length$ -- 76
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 8
+type$ -- 10
 warning$ -- 11
-while$ -- 334
+while$ -- 351
 width$ -- 0
-write$ -- 725
+write$ -- 742
 (There were 12 warnings)

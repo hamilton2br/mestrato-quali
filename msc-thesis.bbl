@@ -17,19 +17,23 @@ Available from Internet: \url{http://dx.doi.org/10.1016/j.cose.2014.11.006}.}
 \abntrefinfo{Alqahtany et al.}{ALQAHTANY et al.}{2015}
 {ALQAHTANY, S. et al. Cloud forensics: A review of challenges, solutions and
   open problems. In \emph{Int. Conference on Cloud Computing (ICCC)}. Plymouth,
-  UK: IEEE, 2015. p.~1--9.}
+  UK: IEEE, 2015. p.~1--9. Available from Internet:
+  \url{https://ieeexplore.ieee.org/document/7149635}.}
 
 \bibitem[Bem et al. 2008]{BemPastPresentFuture:2008}
 \abntrefinfo{Bem et al.}{BEM et al.}{2008}
 {BEM, D. et al. Computer forensics - past , present and future.
 \emph{Journal of Information Science and Technology}, vol.~5, no.~3, p. 43--59,
-  2008.}
+  2008.
+Available from Internet:
+  \url{http://www.cis.gsu.edu/rbaskerville/cis8630/Bernetal2008.pdf}.}
 
 \bibitem[Bernstein 2014]{containers-tech:2014}
 \abntrefinfo{Bernstein}{BERNSTEIN}{2014}
 {BERNSTEIN, D. Containers and cloud: From {LXC} to {Docker} to {Kubernetes}.
 \emph{IEEE Cloud Computing}, vol.~1, no.~3, p. 81--84, Sept 2014.
-ISSN 2325-6095.}
+ISSN 2325-6095.
+Available from Internet: \url{https://ieeexplore.ieee.org/document/7036275}.}
 
 \bibitem[Case et al. 2014]{CaseMemoryForensics:2014}
 \abntrefinfo{Case et al.}{CASE et al.}{2014}
@@ -45,7 +49,9 @@ Acessado em: 16-04-2018.}
 \abntrefinfo{Dezfouli et al.}{DEZFOULI et al.}{2012}
 {DEZFOULI, F. et al. Volatile memory acquisition using backup for forensic
   investigation. In \emph{Int. Conf. on Cyber Security, Cyber Warfare and
-  Digital Forensic (CyberSec)}. Plymouth, UK: IEEE, 2012. p. 186--189.}
+  Digital Forensic (CyberSec)}. Plymouth, UK: IEEE, 2012. p. 186--189.
+ISBN 978-1-4673-6618-2. Available from Internet:
+  \url{https://ieeexplore.ieee.org/document/6246108}.}
 
 \bibitem[{Dierks T} 2008]{DierksT2008}
 \abntrefinfo{{Dierks T}}{{Dierks T}}{2008}
@@ -63,7 +69,8 @@ Acessado em: 30-11-2018.}
 {DOLAN-GAVITT, B. et al. Virtuoso: Narrowing the semantic gap in virtual
   machine introspection. In \emph{IEEE Symposium on Security and Privacy}.
   Plymouth, UK: IEEE, 2011. p. 297--312.
-ISSN 1081-6011.}
+ISSN 1081-6011. Available from Internet:
+  \url{https://ieeexplore.ieee.org/document/5958036}.}
 
 \bibitem[Dykstra and Sherman 2012]{DykstraAcquiringForIAAS:2012}
 \abntrefinfo{Dykstra and Sherman}{DYKSTRA; SHERMAN}{2012}
@@ -73,7 +80,7 @@ ISSN 1081-6011.}
 \emph{Digital Investigation}, Elsevier Ltd, vol.~9, p. S90--S98, 2012.
 ISSN 17422876.
 (Proc. of the 12th Annual DFRWS Conference).
-Available from Internet: \url{dx.doi.org/10.1016/j.diin.2012.05.001}.}
+Available from Internet: \url{http://dx.doi.org/10.1016/j.diin.2012.05.001}.}
 
 \bibitem[Dykstra and Sherman 2013]{DykstraFROST:2013}
 \abntrefinfo{Dykstra and Sherman}{DYKSTRA; SHERMAN}{2013}
@@ -82,36 +89,35 @@ Available from Internet: \url{dx.doi.org/10.1016/j.diin.2012.05.001}.}
 \emph{Digital Investigation}, Elsevier Ltd, vol.~10, p. S87--S95, 2013.
 ISSN 17422876.
 (Proc. of 13th Annual DFRWS Conference).
-Available from Internet: \url{dx.doi.org/10.1016/j.diin.2013.06.010}.}
+Available from Internet: \url{http://dx.doi.org/10.1016/j.diin.2013.06.010}.}
 
 \bibitem[{Fabio Kung}]{cgroupsxptrace}
 \abntrefinfo{{Fabio Kung}}{{Fabio Kung}}{}
-{{Fabio Kung}. \emph{{Memory inside LInux containers}}.
-  Https://fabiokung.com/2014/03/13/memory-inside-linux-containers/.
-Acessado em: 30-11-2018.}
+{{Fabio Kung}. \emph{{Memory inside Linux containers}}.
+Acessado em: 30-11-2018.
+Available from Internet:
+  \url{https://fabiokung.com/2014/03/13/memory-inside-linux-containers/}.}
 
 \bibitem[Fewer 2008]{FewerReflectiveLibraryInject:2008}
 \abntrefinfo{Fewer}{FEWER}{2008}
 {FEWER, B.~S. {Reflective DLL Injection}.
-no. October, 2008.}
+no. October, 2008.
+Available from Internet:
+  \url{https://www.dc414.org/wp-content/uploads/2011/01/242.pdf}.}
 
 \bibitem[George, Venter and Thomas 2012]{GeorgeDF2CE:2012}
 \abntrefinfo{George, Venter and Thomas}{GEORGE; VENTER; THOMAS}{2012}
 {GEORGE, S.; VENTER, H.; THOMAS, F. {Digital Forensic Framework for a Cloud
-  Environment}. In \emph{IST Africa}. Tanzania: IIMC, 2012. p.~1--8.
-ISBN 9781905824342.}
-
-\bibitem[Gilbert and Sujeet 2008]{BashAdvInForensics:2015}
-\abntrefinfo{Gilbert and Sujeet}{GILBERT; SUJEET}{2008}
-{GILBERT, P.; SUJEET, S. \emph{{Advances in Digital Forensics IV}}. 1. ed.
-  Orlando: Springer-US, 2008. vol.~1.
-ISSN 1098-6596.
-ISBN 9788578110796.}
+  Environment}. In \emph{IST Africa Conference Report}. Tanzania: IIMC, 2012.
+  p.~1--8.
+ISBN 978-1-905824-34-2. Available from Internet:
+  \url{https://pdfs.semanticscholar.org/104f/cc8b4b9ddc4926d76bb85ce564adcaaf70b4.pdf}.}
 
 \bibitem[Google 2013]{GRRRapidResponse:2013}
 \abntrefinfo{Google}{GOOGLE}{2013}
 {GOOGLE. \emph{{GRR Rapid Response}}. 2013.
-Available from Internet: \url{http://www.grr-response.com/faq.html}.}
+Available from Internet:
+  \url{https://grr-doc.readthedocs.io/en/v3.2.1/what-is-grr.html}.}
 
 \bibitem[Grispos, Storer and Glisson
   2012]{GrisposChallengesCloudComputing:2012}
@@ -129,11 +135,20 @@ Available from Internet:
 {{HBase}. \emph{{HBaset}}. Https://hbase.apache.org/.
 Acessado em: 16-06-2018.}
 
+\bibitem[Keyun et al. 2011]{BashAdvInForensics:2015}
+\abntrefinfo{Keyun et al.}{KEYUN et al.}{2011}
+{KEYUN, R. et al. {Advances in Digital Forensics VII}. In GILBERT, P.; SUJEET,
+  S. (Ed.). \emph{7th IFIP WG 11.9 International Conference on Digital
+  Forensics}. 7. ed. Orlando: [s.n.], 2011. vol.~1, chap.~3.
+ISBN 9788578110796.
+Available from Internet: \url{https://www.springer.com/gp/book/9783642242113}.}
+
 \bibitem[Lee and Un 2012]{FaaSIndexedSearch:2012}
 \abntrefinfo{Lee and Un}{LEE; UN}{2012}
 {LEE, J.; UN, S. {Digital Forensics as a Service: A case study of forensic
   indexed search}.
-p. 499--503, 2012.}
+p. 499--503, 2012.
+Available from Internet: \url{https://ieeexplore.ieee.org/document/6387185}.}
 
 \bibitem[Linuxcontainers.org 2015]{Linuxcontainers.org2015}
 \abntrefinfo{Linuxcontainers.org}{LINUXCONTAINERS.ORG}{2015}
@@ -146,20 +161,22 @@ Available from Internet: \url{https://linuxcontainers.org/lxc/introduction/}.}
   Assessment}.
 \emph{International Journal of Computer Science and Network Security (IJCSNS)},
   vol.~16, no.~4, p. 41--48, 2016.
-ISSN 17387906.}
+ISSN 17387906.
+Available from Internet:
+  \url{https://www.researchgate.net/publication/303250922\_Digital\_Chain\_of\_Custody\_Quality\_Assessment}.}
 
 \bibitem[Mell and Grance 2011]{NIST2011}
 \abntrefinfo{Mell and Grance}{MELL; GRANCE}{2011}
 {MELL, P.; GRANCE, T. \emph{The {NIST} definition of cloud computing}. 2011.
   7~p. NIST SP 800-145.
 Available from Internet:
-  \url{csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf}.}
+  \url{http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf}.}
 
 \bibitem[Miller and Turkulainen 2004]{MillerRemoteLibraryInjection:2004}
 \abntrefinfo{Miller and Turkulainen}{MILLER; TURKULAINEN}{2004}
 {MILLER, M.; TURKULAINEN, J. \emph{{Remote Library Injection}}. 2004. Tech.
   Report:
-  \urls{www.nologin.org/Downloads/Papers/remote-library-injection.pdf}.}
+  \urls{http://www.hick.org/code/skape/papers/remote-library-injection.pdf}.}
 
 \bibitem[Morsy, Grundy and Muller 2010]{MorsyCloudSecurity:2010}
 \abntrefinfo{Morsy, Grundy and Muller}{MORSY; GRUNDY; MULLER}{2010}
@@ -176,7 +193,7 @@ Available from Internet:
   Applications}, vol.~4, no.~1, p. 135--152, 2013.
 ISSN 20935374 (ISSN).
 Available from Internet:
-  \url{citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.469.937}.}
+  \url{http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.469.937}.}
 
 \bibitem[{Puppet}]{Puppet2018}
 \abntrefinfo{{Puppet}}{{Puppet}}{}
@@ -189,41 +206,48 @@ Acessado em: 16-04-2018.}
   data: A survey and future research challenges}.
 \emph{Digital Investigation}, Elsevier Ltd, vol.~11, no.~4, p. 273--294, 2014.
 ISSN 17422876.
-Available from Internet: \url{dx.doi.org/10.1016/j.diin.2014.09.002}.}
+Available from Internet: \url{http://dx.doi.org/10.1016/j.diin.2014.09.002}.}
 
 \bibitem[Rafique and Khan 2013]{RafiqueStaticLiveDigitalForensics:2013}
 \abntrefinfo{Rafique and Khan}{RAFIQUE; KHAN}{2013}
 {RAFIQUE, M.; KHAN, M. N.~A. {Exploring Static and Live Digital Forensics:
   Methods, Practices and Tools}.
-\emph{IJSER}, vol.~4, no.~10, p. 1048--1056, 2013.
+\emph{International Journal of Scientific \& Engineering Research}, vol.~4,
+  no.~10, p. 1048--1056, 2013.
 Available from Internet:
-  \url{www.ijser.org/researchpaper{\\%}5CExploring-Static-and-Live-Digital-Forensic-Methods-Practices-and-Tools.}}
+  \url{www.ijser.org/researchpaper/Exploring-Static-and-Live-Digital-Forensic-Methods-Practices-and-Tools.pdf}.}
 
 \bibitem[Rahman, Cahyani and Choo 2016]{AdhiantoIncidentHandlingForensic:2016}
 \abntrefinfo{Rahman, Cahyani and Choo}{RAHMAN; CAHYANI; CHOO}{2016}
 {RAHMAN, N. H.~A.; CAHYANI, N. D.~W.; CHOO, K.-K.~R. {Cloud incident handling
   and forensic-by-design: cloud storage as a case study}.
-\emph{Concurrency Computation Practice and Experience}, p. 685--701, 2016.}
+\emph{Concurrency Computation Practice and Experience}, p. 685--701, 2016.
+Available from Internet:
+  \url{https://www.researchgate.net/publication/303373633\_Cloud\_incident\_handling\_and\_forensic-by-design\_cloud\_storage\_as\_a\_case\_study\_Cloud\_Incident\_Handling\_and\_Forensic-by-Design}.}
 
 \bibitem[Rahman and Khan 2015]{RahmanLiveForensicsTechniques:2015}
 \abntrefinfo{Rahman and Khan}{RAHMAN; KHAN}{2015}
 {RAHMAN, S.; KHAN, M. N.~A. {Review of live forensic analysis techniques}.
 \emph{International Journal of Hybrid Information Technology}, vol.~8, no.~2,
   p. 379--388, 2015.
-Available from Internet: \url{www.sersc.org/journals/IJHIT/}.}
+Available from Internet:
+  \url{https://www.researchgate.net/publication/283740637\_Review\_of\_Live\_Forensic\_Analysis\_Techniques}.}
 
 \bibitem[Ramos 2011]{Ramos:2011}
 \abntrefinfo{Ramos}{RAMOS}{2011}
 {RAMOS, M.~G.
 \emph{{Do Valor Probat{\'{o}}rio do Arquivo Digital}}.
-PhD Thesis (PhD) --- Universidade de Brasilia, 2011.}
+PhD Thesis (PhD) --- Universidade de Brasilia, 2011.
+Available from Internet:
+  \url{http://bdm.unb.br/bitstream/10483/1843/1/2011\_MonicaGomesRamos.pdf}.}
 
 \bibitem[Reichert, Richards and Yoshigoe 2015]{ReichertAutoAcquisition:2015}
 \abntrefinfo{Reichert, Richards and Yoshigoe}{REICHERT; RICHARDS;
   YOSHIGOE}{2015}
 {REICHERT, Z.; RICHARDS, K.; YOSHIGOE, K. {Automated forensic data acquisition
   in the cloud}.
-\emph{IEEE Int. Conf. on Mobile Ad Hoc and Sensor Systems}, p. 725--730, 2015.}
+\emph{IEEE Int. Conf. on Mobile Ad Hoc and Sensor Systems}, p. 725--730, 2015.
+Available from Internet: \url{https://ieeexplore.ieee.org/document/7035772}.}
 
 \bibitem[{Right Scale} 2018]{RightScale2018}
 \abntrefinfo{{Right Scale}}{{Right Scale}}{2018}
@@ -234,8 +258,9 @@ PhD Thesis (PhD) --- Universidade de Brasilia, 2011.}
 \abntrefinfo{Sang}{SANG}{2013}
 {SANG, T. {A log-based approach to make digital forensics easier on cloud
   computing}.
-\emph{Intelligent System Design and Engineering Applications (ISDEA)}, p.
-  91--94, 2013.}
+\emph{2013 3rd International Conference on Intelligent System Design and
+  Engineering Applications, ISDEA 2013}, p. 91--94, 2013.
+Available from Internet: \url{https://ieeexplore.ieee.org/document/6454779}.}
 
 \bibitem[Simou et al. 2014]{SimouCloudChlng:2014}
 \abntrefinfo{Simou et al.}{SIMOU et al.}{2014}
@@ -244,11 +269,12 @@ PhD Thesis (PhD) --- Universidade de Brasilia, 2011.}
   Cham, CH: Springer International Publishing Switzerland 2014, 2014.
   vol.~8484, p. 271--284.
 ISBN 9783319078809.
-ISSN 16113349.}
+ISSN 16113349. Available from Internet:
+  \url{https://www.researchgate.net/publication/289531775\_Cloud\_Forensics\_Identifying\_the\_Major\_Issues\_and\_Challenges}.}
 
 \bibitem[Stack 2018]{StackFramework:2018}
 \abntrefinfo{Stack}{STACK}{2018}
-{STACK, O. \emph{{OPen Stack Framework}}. 2018.
+{STACK, O. \emph{{Open Stack Framework}}. 2018.
 Available from Internet: \url{https://www.openstack.org}.}
 
 \bibitem[{Unix Man Pages}]{UnixManPagesControlGroups}
@@ -278,7 +304,7 @@ Acessado em: 15-09-2017.}
 \bibitem[{Unix Man Pages}]{UnixManPagesNumaMaps}
 \abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{e}
 {\underline{\ \ \ \ \ \ \ \ }. \emph{{Numa Maps - Non Uniform Memory
-  Architecture}}. \urls{man7.org/linux/man-pages/man7/numa.7.html}.
+  Architecture}}. \urls{http://man7.org/linux/man-pages/man7/numa.7.html}.
 Acessado em: 24-06-2017.}
 
 \bibitem[{Vagrant}]{Vagrant2018}
@@ -289,12 +315,10 @@ Acessado em: 16-04-2018.}
 \bibitem[V\"{o}mel and St\"{u}ttgen 2013]{VomelMemoryAcquisition:2013}
 \abntrefinfo{V\"{o}mel and St\"{u}ttgen}{V\"{o}MEL; ST\"{u}TTGEN}{2013}
 {V\"{o}MEL, S.; ST\"{u}TTGEN, J. An evaluation platform for forensic memory
-  acquisition software.
-\emph{Digit. Investig.}, Elsevier Science Publishers B. V., Amsterdam, The
-  Netherlands, The Netherlands, vol.~10, p. S30--S40, 2013.
-ISSN 1742-2876.
-Elsevier Science Publishers.
-Available from Internet: \url{http://dx.doi.org/10.1016/j.diin.2013.06.004}.}
+  acquisition software. In . Amsterdam, The Netherlands, The Netherlands:
+  Elsevier Science Publishers B. V., 2013. vol.~10, p. S30--S40.
+ISSN 1742-2876. Elsevier Science Publishers. Available from Internet:
+  \url{http://dx.doi.org/10.1016/j.diin.2013.06.004}.}
 
 \bibitem[Wikipedia 2018]{WikipediaMapReduce}
 \abntrefinfo{Wikipedia}{WIKIPEDIA}{2018}
