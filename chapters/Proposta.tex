@@ -354,18 +354,18 @@ Fonte: Próprio autor
 \end{figure}
 
 %
-As primeiras tentativas de cópia do conteúdo da memória do processo do contêiner foram feitas via \textit{ptrace} e não obteve sucesso. 
+%As primeiras tentativas de cópia do conteúdo da memória do processo do contêiner foram feitas via \textit{ptrace} e não obteve sucesso. 
 %
-Segundo \cite{cgroupsxptrace} isto ocorre pois as chamadas de sistema que ferramentas como \textit{ptrace} e \textit{htop} usam foram criadas antes da implementação de \textit{cgroups} no \textit{kernel} do linux e sendo assim não tem consciência da existência de isolamento entre processos.
+%Segundo \cite{cgroupsxptrace} isto ocorre pois as chamadas de sistema que ferramentas como \textit{ptrace} e \textit{htop} usam foram criadas antes da implementação de \textit{cgroups} no \textit{kernel} do linux e sendo assim não tem consciência da existência de isolamento entre processos.
 %
-Quando o \textit{ptrace} tenta acessar uma área de memória isolada por \textit{cgroups}, o \textit{kernel} envia um sinal de violação de acesso de memória, o resultado é mostrado na Figura \ref{fig:erro-copia-gdb}.
+%Quando o \textit{ptrace} tenta acessar uma área de memória isolada por \textit{cgroups}, o \textit{kernel} envia um sinal de violação de acesso de memória, o resultado é mostrado na Figura \ref{fig:erro-copia-gdb}.
 %
 
-A documentação do Docker \cite{capabilities} menciona o comando \texttt{--cap-add=SYS_PTRACE --security-opt-seccomp=unconfined} que permite que o \textit{ptrace} consiga acessar a memória de um processo dentro do contêiner mas não permite que a máquina hospedeira ou outro contêiner tenha acesso (referência).
+%A documentação do Docker \cite{capabilities} menciona o comando \texttt{--cap-add=SYS_PTRACE --security-opt-seccomp=unconfined} que permite que o \textit{ptrace} consiga acessar a memória de um processo dentro do contêiner mas não permite que a máquina hospedeira ou outro contêiner tenha acesso (referência).
 %
-Ainda segundo \cite{cgroupsxptrace} uma alternativa para viabilizar a monitoração e acesso a informações de memória seria o de expor tais informações na estrutura de \textbf{/sys/fs/cgroup/} da mesma forma que é feita para \textbf{/proc/pid/}.
+%Ainda segundo \cite{cgroupsxptrace} uma alternativa para viabilizar a monitoração e acesso a informações de memória seria o de expor tais informações na estrutura de \textbf{/sys/fs/cgroup/} da mesma forma que é feita para \textbf{/proc/pid/}.
 %
-O sucesso na cópia do conteúdo da memória do processo do contêiner só foi alcançado quando utilizou-se a ferramenta \textit{nsenter}.
+%O sucesso na cópia do conteúdo da memória do processo do contêiner só foi alcançado quando utilizou-se a ferramenta \textit{nsenter}.
 %
 
 \begin{figure}[htb!]
@@ -380,16 +380,16 @@ Fonte: Próprio autor
 \end{figure}
 
 
-\begin{figure}[htb!]
-\footnotesize
-\caption{Tentativa mal sucedida de cópia do conteúdo da memória}
-\includegraphics[scale=0.65]{nao-consido-dumpar-memoria.png}
-\centering
-\label{fig:erro-copia-gdb}
-\begin{center}
-Fonte: Próprio autor 
-\end{center}
-\end{figure}
+%\begin{figure}[htb!]
+%\footnotesize
+%\caption{Tentativa mal sucedida de cópia do conteúdo da memória}
+%\includegraphics[scale=0.65]{nao-consido-dumpar-memoria.png}
+%\centering
+%\label{fig:erro-copia-gdb}
+%\begin{center}
+%Fonte: Próprio autor 
+%\end{center}
+%\end{figure}
 
 
 \section{Limitações}
@@ -413,14 +413,14 @@ Outra limitação da solução proposta é a necessidade da mesma estar instalad
 %
 Como mencionado em \cite{CaseMemoryForensics:2014}, ``para uma análise eficiente de um incidente em memória, são necessárias cópias da mesma \textbf{antes e depois} do incidente.''
 
-\chapter{Conclusões e recomendações para trabalhos futuros}
+\chapter{Conclusões}
 \label{sec:proposta-concl-recom}
 
 %
-Neste capítulo são apresentadas as conclusões do presente trabalho e as recomendações para a continuidade dos trabalhos neste campo de estudo.
+%Neste capítulo são apresentadas as conclusões do presente trabalho e as recomendações para a continuidade dos trabalhos neste campo de estudo.
 
-\subsection{Conclusões}
-\label{sec:proposta-concl}
+%\subsection{Conclusões}
+%\label{sec:proposta-concl}
 
 %\marcosT{Uma boa conclusão retoma, logo na primeira frase, o problema que ela se propunha a resolver. Comece com uma ou mais frases nesse sentido, (nota: \textbf{sem} copiar+colar de outro ponto do texto). - Hamilton: Feito} \marcosT{Só que não: eu disse para você retomar o \textbf{problema} na sua primeira frase. Sua frase começa retomando a \textbf{solução}. Essa que você colocou como primeira seria boa como uma segunda frase, em que você reforça como resolve o problema - Hamilton: Acho que agora foi :)}
 %
