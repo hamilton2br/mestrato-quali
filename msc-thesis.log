@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  30 JUL 2019 22:22
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  1 AUG 2019 22:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1487,7 +1487,7 @@ Cap\'{\i }tulo 3.
 [25
 
 ]
-<images/ReichertAutoAcquisitionModel.pdf, id=363, 499.8675pt x 595.26389pt>
+<images/ReichertAutoAcquisitionModel.pdf, id=367, 499.8675pt x 595.26389pt>
 File: images/ReichertAutoAcquisitionModel.pdf Graphic file (type pdf)
 
 <use images/ReichertAutoAcquisitionModel.pdf>
@@ -1499,7 +1499,7 @@ line 53.
 pdfTeX warning: /usr/bin/pdflatex (file ./images/ReichertAutoAcquisitionModel.p
 df): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', ty
 pe <array>); ignored.
->] <images/Dolan-GavittSemanticGap.pdf, id=403, 583.21887pt x 214.8828pt>
+>] <images/Dolan-GavittSemanticGap.pdf, id=407, 583.21887pt x 214.8828pt>
 File: images/Dolan-GavittSemanticGap.pdf Graphic file (type pdf)
 
 <use images/Dolan-GavittSemanticGap.pdf>
@@ -1507,7 +1507,7 @@ Package pdftex.def Info: images/Dolan-GavittSemanticGap.pdf used on input line
 110.
 (pdftex.def)             Requested size: 408.25043pt x 150.41692pt.
  [28]
-<images/SangLogApproach.pdf, id=418, 280.1667pt x 548.0475pt>
+<images/SangLogApproach.pdf, id=422, 280.1667pt x 548.0475pt>
 File: images/SangLogApproach.pdf Graphic file (type pdf)
 
 <use images/SangLogApproach.pdf>
@@ -1523,7 +1523,7 @@ rray>); ignored.
 pdfTeX warning: /usr/bin/pdflatex (file ./images/SangLogApproach.pdf): PDF incl
 usion: invalid other resource which is no dict (key 'ProcSets', type <array>); 
 ignored.
->] <images/DezfouliBackupApproach.pdf, id=463, 280.1667pt x 388.33081pt>
+>] <images/DezfouliBackupApproach.pdf, id=467, 280.1667pt x 388.33081pt>
 File: images/DezfouliBackupApproach.pdf Graphic file (type pdf)
 
 <use images/DezfouliBackupApproach.pdf>
@@ -1535,7 +1535,7 @@ Package pdftex.def Info: images/DezfouliBackupApproach.pdf used on input line 1
 pdfTeX warning: /usr/bin/pdflatex (file ./images/DezfouliBackupApproach.pdf): P
 DF inclusion: invalid other resource which is no dict (key 'ProcSets', type <ar
 ray>); ignored.
->] <images/DykstraFROST.pdf, id=484, 536.0025pt x 499.8675pt>
+>] <images/DykstraFROST.pdf, id=488, 536.0025pt x 499.8675pt>
 File: images/DykstraFROST.pdf Graphic file (type pdf)
 
 <use images/DykstraFROST.pdf>
@@ -1551,7 +1551,7 @@ Overfull \hbox (16.23761pt too wide) in paragraph at lines 209--212
 pdfTeX warning: /usr/bin/pdflatex (file ./images/DykstraFROST.pdf): PDF inclusi
 on: invalid other resource which is no dict (key 'ProcSets', type <array>); ign
 ored.
->] <images/GeorgeDF2CE.pdf, id=513, 593.3367pt x 712.58218pt>
+>] <images/GeorgeDF2CE.pdf, id=517, 593.3367pt x 712.58218pt>
 File: images/GeorgeDF2CE.pdf Graphic file (type pdf)
 
 <use images/GeorgeDF2CE.pdf>
@@ -1570,7 +1570,7 @@ Package hyperref Warning: Suppressing empty link on input line 265.
 pdfTeX warning: /usr/bin/pdflatex (file ./images/GeorgeDF2CE.pdf): PDF inclusio
 n: invalid other resource which is no dict (key 'ProcSets', type <array>); igno
 red.
->] <images/FaaSIndexedSearch.pdf, id=551, 658.37968pt x 434.58359pt>
+>] <images/FaaSIndexedSearch.pdf, id=555, 658.37968pt x 434.58359pt>
 File: images/FaaSIndexedSearch.pdf Graphic file (type pdf)
 
 <use images/FaaSIndexedSearch.pdf>
@@ -1581,13 +1581,13 @@ Package pdftex.def Info: images/FaaSIndexedSearch.pdf used on input line 279.
 pdfTeX warning: /usr/bin/pdflatex (file ./images/FaaSIndexedSearch.pdf): PDF in
 clusion: invalid other resource which is no dict (key 'ProcSets', type <array>)
 ; ignored.
->] [37] [38] <images/check.png, id=639, 602.25pt x 602.25pt>
+>] [37] [38] <images/check.png, id=643, 602.25pt x 602.25pt>
 File: images/check.png Graphic file (type png)
 
 <use images/check.png>
 Package pdftex.def Info: images/check.png used on input line 377.
 (pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
- <images/x.png, id=641, 1027.84pt x 1027.84pt>
+ <images/x.png, id=645, 1027.84pt x 1027.84pt>
 File: images/x.png Graphic file (type png)
 
 <use images/x.png>
@@ -1744,7 +1744,7 @@ Package pdftex.def Info: images/check.png used on input line 380.
 Cap\'{\i }tulo 4.
 [41
 
-] [42] <images/janela.pdf, id=677, 369.29968pt x 294.13892pt>
+] [42] <images/janela.pdf, id=681, 369.29968pt x 294.13892pt>
 File: images/janela.pdf Graphic file (type pdf)
 
 <use images/janela.pdf>
@@ -1754,7 +1754,7 @@ Package pdftex.def Info: images/janela.pdf used on input line 77.
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/janela.pdf): PDF inclusion: in
 valid other resource which is no dict (key 'ProcSets', type <array>); ignored.
->] <images/Solucao.pdf, id=698, 568.04218pt x 471.68219pt>
+>] <images/Solucao.pdf, id=702, 568.04218pt x 471.68219pt>
 File: images/Solucao.pdf Graphic file (type pdf)
 
 <use images/Solucao.pdf>
@@ -1771,14 +1771,14 @@ LaTeX Font Info:    Try loading font information for T1+txtt on input line 149.
  (/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 ) [46]
-<images/evolucao-coleta.pdf, id=737, 602.25pt x 372.39125pt>
+<images/evolucao-coleta.pdf, id=741, 602.25pt x 372.39125pt>
 File: images/evolucao-coleta.pdf Graphic file (type pdf)
 
 <use images/evolucao-coleta.pdf>
 Package pdftex.def Info: images/evolucao-coleta.pdf used on input line 207.
 (pdftex.def)             Requested size: 361.35278pt x 223.43646pt.
  Excluding 'comment' comment.
-<images/memoria-copia.pdf, id=739, 602.25pt x 372.39125pt>
+<images/memoria-copia.pdf, id=743, 602.25pt x 372.39125pt>
 File: images/memoria-copia.pdf Graphic file (type pdf)
 
 <use images/memoria-copia.pdf>
@@ -1790,7 +1790,7 @@ Overfull \hbox (9.00714pt too wide) in paragraph at lines 266--269
  []
 
 [47 <./images/evolucao-coleta.pdf>] [48 <./images/memoria-copia.pdf>]
-<images/evidencia-download.pdf, id=785, 602.25pt x 372.39125pt>
+<images/evidencia-download.pdf, id=789, 602.25pt x 372.39125pt>
 File: images/evidencia-download.pdf Graphic file (type pdf)
 
 <use images/evidencia-download.pdf>
@@ -1801,14 +1801,14 @@ Overfull \hbox (9.00714pt too wide) in paragraph at lines 293--296
  [][] 
  []
 
-<images/comando-copia-memoria-gdb.pdf, id=787, 586.10968pt x 100.45529pt>
+<images/comando-copia-memoria-gdb.pdf, id=791, 586.10968pt x 100.45529pt>
 File: images/comando-copia-memoria-gdb.pdf Graphic file (type pdf)
 
 <use images/comando-copia-memoria-gdb.pdf>
 Package pdftex.def Info: images/comando-copia-memoria-gdb.pdf used on input lin
 e 316.
 (pdftex.def)             Requested size: 351.66852pt x 60.27362pt.
- [49 <./images/evidencia-download.pdf>] <images/antes-injecao.pdf, id=812, 420.
+ [49 <./images/evidencia-download.pdf>] <images/antes-injecao.pdf, id=816, 420.
 61137pt x 269.08528pt>
 File: images/antes-injecao.pdf Graphic file (type pdf)
 
@@ -1816,14 +1816,14 @@ File: images/antes-injecao.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/antes-injecao.pdf used on input line 336.
 (pdftex.def)             Requested size: 336.48956pt x 215.26851pt.
 
-<images/apos-injecao.pdf, id=813, 384.47638pt x 348.34138pt>
+<images/apos-injecao.pdf, id=817, 384.47638pt x 348.34138pt>
 File: images/apos-injecao.pdf Graphic file (type pdf)
 
 <use images/apos-injecao.pdf>
 Package pdftex.def Info: images/apos-injecao.pdf used on input line 348.
 (pdftex.def)             Requested size: 307.58151pt x 278.67348pt.
 
-<images/conteudo-memoria-copia-gdb.pdf, id=814, 470.7186pt x 319.1925pt>
+<images/conteudo-memoria-copia-gdb.pdf, id=818, 470.7186pt x 319.1925pt>
 File: images/conteudo-memoria-copia-gdb.pdf Graphic file (type pdf)
 
 <use images/conteudo-memoria-copia-gdb.pdf>
@@ -1852,13 +1852,13 @@ pdfTeX warning: /usr/bin/pdflatex (file ./images/conteudo-memoria-copia-gdb.pdf
  <array>); ignored.
 >] [52]
 Cap\'{\i }tulo 5.
-) (./msc-thesis.bbl [53
+[53
 
-] [54
+]) (./msc-thesis.bbl [54] [55
 
-] [55] [56]) 
+] [56] [57]) 
 AED: lastpage setting LastPage
-[57]
+[58]
 +-------------------------------------------------------------------+
 | Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
 |                  http://abntex.codigolivre.org.br                 |
@@ -1880,10 +1880,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 314.
  ) 
 Here is how much of TeX's memory you used:
- 22265 strings out of 493304
- 399602 string characters out of 6139871
- 542426 words of memory out of 5000000
- 24977 multiletter control sequences out of 15000+600000
+ 22270 strings out of 493304
+ 399685 string characters out of 6139871
+ 542641 words of memory out of 5000000
+ 24979 multiletter control sequences out of 15000+600000
  53615 words of font info for 110 fonts, out of 8000000 for 9000
  963 hyphenation exceptions out of 8191
  56i,17n,56p,1013b,590s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1895,10 +1895,10 @@ nts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmri8a.pfb>
-Output written on msc-thesis.pdf (58 pages, 628993 bytes).
+Output written on msc-thesis.pdf (59 pages, 630265 bytes).
 PDF statistics:
- 1004 PDF objects out of 1200 (max. 8388607)
- 859 compressed objects within 9 object streams
- 153 named destinations out of 1000 (max. 500000)
+ 1013 PDF objects out of 1200 (max. 8388607)
+ 867 compressed objects within 9 object streams
+ 156 named destinations out of 1000 (max. 500000)
  103 words of extra memory for PDF output out of 10000 (max. 10000000)
 

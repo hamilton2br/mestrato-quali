@@ -413,14 +413,14 @@ Outra limitação da solução proposta é a necessidade da mesma estar instalad
 %
 Como mencionado em \cite{CaseMemoryForensics:2014}, ``para uma análise eficiente de um incidente em memória, são necessárias cópias da mesma \textbf{antes e depois} do incidente.''
 
-\chapter{Conclusões}
+\chapter{Conclusões e recomendações para trabalhos futuros}
 \label{sec:proposta-concl-recom}
 
 %
-%Neste capítulo são apresentadas as conclusões do presente trabalho e as recomendações para a continuidade dos trabalhos neste campo de estudo.
+Neste capítulo são apresentadas as conclusões do presente trabalho e as recomendações para a continuidade dos trabalhos neste campo de estudo.
 
-%\subsection{Conclusões}
-%\label{sec:proposta-concl}
+\subsection{Conclusões}
+\label{sec:proposta-concl}
 
 %\marcosT{Uma boa conclusão retoma, logo na primeira frase, o problema que ela se propunha a resolver. Comece com uma ou mais frases nesse sentido, (nota: \textbf{sem} copiar+colar de outro ponto do texto). - Hamilton: Feito} \marcosT{Só que não: eu disse para você retomar o \textbf{problema} na sua primeira frase. Sua frase começa retomando a \textbf{solução}. Essa que você colocou como primeira seria boa como uma segunda frase, em que você reforça como resolve o problema - Hamilton: Acho que agora foi :)}
 %
@@ -437,4 +437,14 @@ Para evitar uso excessivo de memória, a quantidade de dados armazenados usa uma
 %
 Transportando de forma segura e armazenando a evidência em local conhecido fora da nuvem, evitam-se os problemas relacionados a multi-jurisdição e multi-inquilinato das nuvens computacionais.
 %
+A injeção de uma biblioteca simulado um código malicioso pôde ser identificada através da comparação de instantâneos de memória coletados em diferentes assim como foi possível extraír o conteúdo da parte legível da memória onde o código malicioso está alocado. 
+%
 Combinada com uma ferramenta para identificação de ameaças, essas características de \fancyname o transformam em uma solução poderosa para prover evidências e, assim, viabilizar análises forenses na nuvem.
+
+\subsection{Trabalhos Futuros}
+\label{sec: proposta-trab-fut}
+
+%
+Como mencionado em \ref{sec:proposta-limit} a solução proposta é capaz de gerar evidências de memória apenas do espaço do usuário \textit{user space}. 
+%
+Como alguns códigos malicioso são capazes de manipular o retorno de funções do kernel, recomenda-se para trabalhos futuros a incorporação a \fancyname uma forma de realizar a extração do conteúdo de memória do espaço do kernel \textit{kernel space}.
