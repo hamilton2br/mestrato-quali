@@ -146,7 +146,9 @@ No primeiro experimento, o sistema foi configurado para realizar coletas de mem�
 O sistema foi então executado por 30 minutos, tempo durante o qual foram coletadas como métricas (1) o uso de espaço em disco utilizado pelos instantâneos de memória salvos, (2) o tempo de pausa no contêiner necessário para a cópia delas e (3) o tempo de transporte das evidências para o armazenamento externo a nuvem.
 
 
-Neste experimento os instantâneos de memória tem 244kb de tamanho. A evolução do espaço em disco ocupado pelos instantâneos de memória, acompanhado através da execução do comando \texttt{du -sh *.mem} do \textit{Unix} no disco de armazenamento externo, é mostrada no gráfico da Figura \ref{fig:evolucao-coleta}.
+A evolução do espaço em disco ocupado pelos instantâneos de memória, acompanhado através da execução do comando \texttt{du -sh *.mem} do \textit{Unix} no disco de armazenamento externo, é mostrada no gráfico da Figura \ref{fig:evolucao-coleta}.
+%
+Neste experimento os instantâneos de memória tem 244kb de tamanho. 
 %
 O gráfico mostra que o aumento do uso do espaço em disco é linear e o crescimento se interrompe quando é atingido o limite de tempo configurado para a janela, pois as coletas com tempo de vida maior que tal limite são apagadas do disco. 
 %
@@ -283,7 +285,7 @@ Os resultados são mostrados no gráfico da Figura \ref{fig:evidencia_transporte
 É possível notar que o tempo de transporte estabiliza após atingido o tamanho da janela. O tempo de transporte da evidência fica, em média próximo dos 30 segundos. 
 
 %
-Tanto a topologia quando a arquitetura do transporte da evidência até a arquitetura do que se deseja extrair a evidência são fatores que contribuem tanto positiva quando negativamente no tempo de transporte.
+Tanto a topologia quando a arquitetura do transporte da evidência e a arquitetura do que se deseja extrair a evidência são fatores que contribuem tanto positiva quando negativamente no tempo de transporte.
 %
 Neste experimento o gerador de evidências, um motor de páginas dinâmicas, está na América do Norte enquanto que a máquina física para onde as evidências foram transportadas e que é responsável pelo transporte da evidência está na América do Sul.
 
@@ -437,7 +439,8 @@ Para evitar uso excessivo de memória, a quantidade de dados armazenados usa uma
 %
 Transportando de forma segura e armazenando a evidência em local conhecido fora da nuvem, evitam-se os problemas relacionados a multi-jurisdição e multi-inquilinato das nuvens computacionais.
 %
-A injeção de uma biblioteca simulado um código malicioso pôde ser identificada através da comparação de instantâneos de memória coletados em diferentes assim como foi possível extraír o conteúdo da parte legível da memória onde o código malicioso está alocado. 
+A comparação de instantâneos de memória coletados em diferentes instantes de tempo permite a identificação de injeção de código assim como extraír o conteúdo da parte legível do endereço de memória correspondente.
+
 %
 Combinada com uma ferramenta para identificação de ameaças, essas características de \fancyname o transformam em uma solução poderosa para prover evidências e, assim, viabilizar análises forenses na nuvem.
 
@@ -445,6 +448,6 @@ Combinada com uma ferramenta para identificação de ameaças, essas caracterís
 \label{sec: proposta-trab-fut}
 
 %
-Como mencionado em \ref{sec:proposta-limit} a solução proposta é capaz de gerar evidências de memória apenas do espaço do usuário \textit{user space}. 
+Como mencionado em \ref{sec:proposta-limit} a solução proposta é capaz de gerar evidências de memória apenas do espaço do usuário (\textit{user space}). 
 %
-Como alguns códigos malicioso são capazes de manipular o retorno de funções do kernel, recomenda-se para trabalhos futuros a incorporação a \fancyname uma forma de realizar a extração do conteúdo de memória do espaço do kernel \textit{kernel space}.
+Alguns códigos malicioso injetados em memória são capazes de manipular o retorno de funções do kernel. Recomenda-se para trabalhos futuros a incorporação à \fancyname uma forma de realizar a extração do conteúdo de memória do espaço do kernel (\textit{kernel space}).
