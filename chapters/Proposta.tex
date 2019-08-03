@@ -304,9 +304,9 @@ Fonte: Próprio autor
 \subsection{Identificação de injeção de código malicioso}
 \label{sec:proposta-exp-malware}
 
-Um segundo experimento teve como objetivo determinar se é possível, através da análise das evidências coletadas, identificar injeção de malware na memória do contêiner.
+Um segundo experimento teve como objetivo determinar se é possível, através da análise das evidências coletadas, identificar injeção de código malicioso na memória do contêiner.
 %
-Para este fim uma biblioteca \textbf{libexample.so} simulando um malware foi injetado em um dos contêineres.
+Para este fim uma biblioteca \textbf{libexample.so} simulando um código malicioso foi injetado em um dos contêineres.
 %
 Após cinco minutos de \fancyname realizando coletas, uma biblioteca foi injetada na memória de um dos contêineres. Após a injeção permitiu-se que a solução continuasse coletando por mais 5 minutos.
 %
@@ -326,9 +326,9 @@ Fonte: Próprio autor
 %
 De posse das coletas do diretório \textbf{/proc/pid/numa\_maps} comparou-se dois momentos distintos na vida do contêiner, antes e depois da injeção da biblioteca.
 %
-Observando as Figuras \ref{fig:antes-injecao} e \ref{fig:apos-injecao} é possível notar que no instantâneo após a injeção aparece a biblioteca \textbf{libexample.so} simulando o malware entre os endereços \textbf{7f85631b8000} e \textbf{7f85633b9000}.
+Observando as Figuras \ref{fig:antes-injecao} e \ref{fig:apos-injecao} é possível notar que no instantâneo após a injeção aparece a biblioteca \textbf{libexample.so} simulando o código malicioso entre os endereços \textbf{7f85631b8000} e \textbf{7f85633b9000}.
 %
-Logo, é possível identificar a injeção de um malware via evidência coletada por \fancyname do diretório \textbf{/proc/pid/numa\_maps}, permitindo-se por exemplo que ataques de injeção de código sejam identificados.
+Logo, é possível identificar a injeção de um código malicioso via evidência coletada por \fancyname do diretório \textbf{/proc/pid/numa\_maps}, permitindo-se por exemplo que ataques de injeção de código sejam identificados.
 %
 A Figura \ref{fig:conteudo-memoria-copia-gdb} mostra o conteúdo da parte legível da memória no endereço \textbf{0x7f85633b9000} onde a biblioteca \textbf{libexample.so} simulando um código malicioso está alocada.
 
@@ -403,7 +403,7 @@ Durante o curso deste projeto essa identificação única só foi possível atra
 %
 Assim, a implementação para verificação da solução proposta consegue apenas coletar informações de memória no espaço do usuário (\textit{user space}), ela não consegue acessar o espaço de kernel (\textit{kernel space}). 
 %
-A implementação de \fancyname neste documento em princípio não consegue investigar malwares que se baseiam em informações do \textit{kernel space}.
+A implementação de \fancyname neste documento em princípio não consegue investigar códigos malicioso que se baseiam em informações do \textit{kernel space}.
 %
 Isso inclui, por exemplo, a comparação de informações do PEB ( \textit{Process Environment Block} -- Bloco para o Ambiente dos Processos ), que ficam no \textit{user space}, com informações do VAD ( \textit{Virtual Address Descriptor} -- Descritor de Endereços de Memória Virtual ), que fica no \textit{kernel space}. 
 %
@@ -439,7 +439,7 @@ Para evitar uso excessivo de memória, a quantidade de dados armazenados usa uma
 %
 Transportando de forma segura e armazenando a evidência em local conhecido fora da nuvem, evitam-se os problemas relacionados a multi-jurisdição e multi-inquilinato das nuvens computacionais.
 %
-A comparação de instantâneos de memória coletados em diferentes instantes de tempo permite a identificação de injeção de código assim como extraír o conteúdo da parte legível do endereço de memória correspondente.
+A comparação de instantâneos de memória coletados em diferentes instantes de tempo permite a identificação de injeção de código assim como extrair o conteúdo da parte legível do endereço de memória correspondente.
 
 %
 Combinada com uma ferramenta para identificação de ameaças, essas características de \fancyname o transformam em uma solução poderosa para prover evidências e, assim, viabilizar análises forenses na nuvem.
