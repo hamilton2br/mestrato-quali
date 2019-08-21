@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  16 AUG 2019 20:53
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  20 AUG 2019 22:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1408,7 +1408,7 @@ l.218 \end{agradecimentos}
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.251 \end{resumo}
+l.250 \end{resumo}
                    [3
 
 
@@ -1905,8 +1905,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 334.
  ) 
 Here is how much of TeX's memory you used:
  22271 strings out of 493304
- 399710 string characters out of 6139871
- 542641 words of memory out of 5000000
+ 399700 string characters out of 6139871
+ 542627 words of memory out of 5000000
  24979 multiletter control sequences out of 15000+600000
  53615 words of font info for 110 fonts, out of 8000000 for 9000
  963 hyphenation exceptions out of 8191
@@ -1919,7 +1919,7 @@ nts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmri8a.pfb>
-Output written on msc-thesis.pdf (61 pages, 631334 bytes).
+Output written on msc-thesis.pdf (61 pages, 631284 bytes).
 PDF statistics:
  1025 PDF objects out of 1200 (max. 8388607)
  877 compressed objects within 9 object streams
