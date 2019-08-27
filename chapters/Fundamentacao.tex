@@ -27,11 +27,11 @@ Uma nuvem computacional é um modelo de infraestrutura no qual recursos comparti
 Existem três modelos principais de comercialização de uso da nuvem \cite{NIST2011}: 
 
 \begin{itemize}
-	\item SaaS ( \textit{Software as a Service} -- \textit{Software} como serviço ): Onde se provê o \textit{software} que será utilizado; nesse caso, os clientes do serviço são os usuários finais do software.
+	\item \textit{Software} como serviço ( \textit{Software as a Service} -- SaaS ): Onde se provê o \textit{software} que será utilizado; nesse caso, os clientes do serviço são os usuários finais do software.
 	
-	\item PaaS ( \textit{Platform as a Service} -- Plataforma como serviço ): Onde se provê o ambiente para o desenvolvimento, teste e execução do \textit{software}; nesse caso, os clientes do serviço são desenvolvedores de aplicações.
+	\item Plataforma como serviço ( \textit{Platform as a Service} -- PaaS ): Onde se provê o ambiente para o desenvolvimento, teste e execução do \textit{software}; nesse caso, os clientes do serviço são desenvolvedores de aplicações.
 	
-	\item IaaS ( \textit{Infrastructure as a Service} -- Infraestrutura como serviço ): Onde são fornecidos recursos computacionais básicos, como processamento, memória e redes, em geral de forma virtualizada; os clientes desse tipo de serviço costumam ser arquitetos de sistemas.
+	\item Infraestrutura como serviço ( \textit{Infrastructure as a Service} -- IaaS ): Onde são fornecidos recursos computacionais básicos, como processamento, memória e redes, em geral de forma virtualizada; os clientes desse tipo de serviço costumam ser arquitetos de sistemas.
 \end{itemize}
 
 O tipo de serviço de nuvem mais pertinente para este trabalho é o IaaS, uma solução muito usada atualmente pela sua capacidade de prover recursos sob demanda de forma auto-escalável.
@@ -57,7 +57,7 @@ Diferente das máquinas virtuais, a virtualização com contêineres é feita no
 Como resultado, tem-se uma implementação de virtualização na qual eliminam-se camadas entre o aplicativo executado e o \textit{hardware} físico, permitindo maior granularidade no controle sobre esses recursos e melhorando a eficiência da infraestrutura.
 
 
-Uma implementação bastante utilizada para esse propósito são os LXC ( \textit{LinuX Conteiners} -- Contêineres Linux ) \cite{Linuxcontainers.org2015}, que aproveitam-se de funcionalidades como \textit{cgroups}, \textit{kernel namespacing} e \textit{chroot} do kernel do Linux para auxiliar no gerenciamento e isolamento de recursos virtuais.
+Uma implementação bastante utilizada para esse propósito são os Contêineres Linux ( \textit{LinuX Conteiners} -- LXC ) \cite{Linuxcontainers.org2015}, que aproveitam-se de funcionalidades como \textit{cgroups}, \textit{kernel namespacing} e \textit{chroot} do kernel do Linux para auxiliar no gerenciamento e isolamento de recursos virtuais.
 %
 Mais precisamente, a funcionalidade de \textit{cgroups} ( \textit{Control Groups} -- Grupos de Controle ) presente no Kernel do Linux limita e isola o uso de recursos como CPU, memória e disco de um conjunto de processos, além de organizá-los de forma hierárquica. 
 %
@@ -95,7 +95,7 @@ A seguir são detalhados os principais desafios enfrentados pela forense digital
 \subsection{Admissibilidade da evidência em processo legal.}
 \label{sec:credibilidadeaceitabilidadeevidencia}
 
-O processo de análise forense no evento de um crime digital é descrito no EDIPM ( \textit{Enhanced Digital Investigation Process Model} -- Modelo Melhorado para Processo de Investigação Digital) na forma de 4 fases \cite{GrisposChallengesCloudComputing:2012}: identificar, preservar, examinar e apresentar.
+O processo de análise forense no evento de um crime digital é descrito no Modelo Melhorado para Processo de Investigação Digital ( \textit{Enhanced Digital Investigation Process Model} -- EDIPM) na forma de 4 fases \cite{GrisposChallengesCloudComputing:2012}: identificar, preservar, examinar e apresentar.
 %
 A fase mais pertinente a este trabalho é a de preservação da evidência, que deve ser conduzida de forma forensicamente aceitável.
 %

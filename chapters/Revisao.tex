@@ -32,7 +32,7 @@ O modelo se preocupa em, de forma automatizada, excluir informações de cliente
 O autor não descreve os detalhes do armazenamento, embora afirma que isso deve ser feito de forma ``forensicamente aceitável''.
 
 
-Para agregar e analisar as evidências coletadas, o modelo faz uso do GRR (\textit{Google Rapid Response} -- Resposta Rápida Google), uma ferramenta de resposta a incidentes criado no projeto 20\% na Google para facilitar análises forenses de forma remota (e.g., acesso de baixo nível ao disco e à memória das máquinas analisadas) \cite{GRRRapidResponse:2013}.
+Para agregar e analisar as evidências coletadas, o modelo faz uso do Resposta Rápida Google (\textit{Google Rapid Response} -- GRR), uma ferramenta de resposta a incidentes criado no projeto 20\% na Google para facilitar análises forenses de forma remota (e.g., acesso de baixo nível ao disco e à memória das máquinas analisadas) \cite{GRRRapidResponse:2013}.
 %
 O tratamento de evidências usa um motor de regras baseado em um conjunto de descrições de ameaças conhecidas, as quais são armazenadas em um banco de dados.
 %
@@ -62,9 +62,9 @@ Adaptado de \cite{ReichertAutoAcquisition:2015}
 \subsection{Introspecção em máquina virtual}
 \label{sec:VMI}
 
-A proposta de \cite{PoiselVMI:2013} é baseada na técnica de VMI (\textit{Virtual Machine Introspection} -- Introspecção em Máquina Virtual) para coleta de memória volátil. 
+A proposta de \cite{PoiselVMI:2013} é baseada na técnica de Introspecção em Máquina Virtual (\textit{Virtual Machine Introspection} -- VMI) para coleta de memória volátil. 
 %
-Essa técnica se apoia no fato de que o VMM (\textit{Virtual Machine Manager} -- Gerenciador de Máquinas Virtuais) mapeia os recursos alocados para máquinas virtuais nos recursos físicos correspondentes da máquina hospedeira.
+Essa técnica se apoia no fato de que o Gerenciador de Máquinas Virtuais (\textit{Virtual Machine Manager} -- VMM) mapeia os recursos alocados para máquinas virtuais nos recursos físicos correspondentes da máquina hospedeira.
 %
 Este mapeamento é usado para permitir que a memória volátil copiada da máquina virtual seja reconstruída em uma máquina física, para análise posterior.
 %
@@ -132,7 +132,7 @@ Assim como as propostas anteriores, o arcabouço em questão também não faz di
 %
 Outra potencial limitação é que o arcabouço depende da cooperação do provedor de nuvem. 
 %
-Tal dependência é uma estratégia considerada fraca pela comunidade forense, pois a prioridade do CSP (\textit{Cloud Service Provider} -- Provedor de Serviços de Nuvem) é a de garantir a disponibilidade do serviço, não de coletar evidências \cite{ClarkeReviewOfChallenges2015}.
+Tal dependência é uma estratégia considerada fraca pela comunidade forense, pois a prioridade do Provedor de Serviços de Nuvem (\textit{Cloud Service Provider} -- CSP) é a de garantir a disponibilidade do serviço, não de coletar evidências \cite{ClarkeReviewOfChallenges2015}.
 %
 
 \begin{figure}[htb!]
@@ -181,7 +181,7 @@ Adaptado de \cite{DezfouliBackupApproach:2012}
 \subsection{Arcabouço forense para OpenStack}
 \label{sec:frost}
 
-A ferramenta FROST (\textit{FoRensic Open Stack Tools} -- Ferramentas Forenses para Arcabouço Open Stack), proposta por \cite{DykstraFROST:2013}, consiste em um conjunto de bibliotecas integradas ao OpenStack, um dos arcabouços de gerenciamento de infra estruturas virtualizadas bastante difundido \cite{StackFramework:2018}.
+As Ferramentas Forenses para Arcabouço Open Stack (\textit{FoRensic Open Stack Tools} -- FROST), proposta por \cite{DykstraFROST:2013}, consiste em um conjunto de bibliotecas integradas ao OpenStack, um dos arcabouços de gerenciamento de infra estruturas virtualizadas bastante difundido \cite{StackFramework:2018}.
 %
 Por meio dessa integração, o FROST expõe um conjunto de APIs que podem ser usadas por aplicações de coleta de evidências forenses.
 %
@@ -199,7 +199,7 @@ A segunda ocorre em seu núcleo, adiciona novas chamadas a API do \textit{Open S
 
 De todas as propostas avaliadas, a FROST é a única que mostra preocupação com adequação a questões legais e padrões já estabelecidos na indústria forense.
 %
-Especificamente, o autor declara que FROST segue as práticas definidas no SWGDE (\textit{Scientific Working Group on Digital Evidence} -- Grupo de Pesquisa Cientifica Em Evidência Digital) e do Manual de Busca e Apreensão do Departamento de Justiça Norte-Americano.
+Especificamente, o autor declara que FROST segue as práticas definidas no Grupo de Pesquisa Cientifica Em Evidência Digital (\textit{Scientific Working Group on Digital Evidence} -- SWGDE) e do Manual de Busca e Apreensão do Departamento de Justiça Norte-Americano.
 %
 
 
@@ -219,7 +219,7 @@ Adaptado de \cite{DykstraFROST:2013}
 \subsection{Forense como serviço}
 \label{sec:frost}
 
-O trabalho descrito em \cite{GeorgeDF2CE:2012} se concentra em monitoramento de rede, operando em uma arquitetura FaaS (\textit{Forense as a Service} -- Forense Como Serviço). 
+O trabalho descrito em \cite{GeorgeDF2CE:2012} se concentra em monitoramento de rede, operando em uma arquitetura de Forense Como Serviço (\textit{Forensics as a Service} -- FaaS). 
 %
 Conforme ilustrado na Figura \ref{fig:GeorgeDF2CE}, a arquitetura da solução consiste em um conjunto de ferramentas com capacidade de descobrir automaticamente as interfaces sob monitoramento, além de coletar evidências de tais máquinas e armazená-las.
 
@@ -253,12 +253,12 @@ Adaptado de \cite{GeorgeDF2CE:2012}
 
 Na mesma vertente da solução de forense como serviço descrita na Seção \ref{sec:frost}, \cite{FaaSIndexedSearch:2012} trata o problema de grande volume de dados coletados por meio de um serviço de coleta e indexação de evidências.
 %
-O serviço espera receber dados da execução do comando unix DD \cite{UnixManPagesDD} nas máquinas alvo, onde, apoiado em processos ETL (\textit{Extract, Transform and Load} -- Extrair, Transformar e Carregar) e MapReduce \cite{WikipediaMapReduce}, os dados são disponibilizados para consulta pelos investigadores.
+O serviço espera receber dados da execução do comando unix DD \cite{UnixManPagesDD} nas máquinas alvo, onde, apoiado em processos de Extrair, Transformar e Carregar (\textit{Extract, Transform and Load} -- ETL) e MapReduce \cite{WikipediaMapReduce}, os dados são disponibilizados para consulta pelos investigadores.
 %
 A coleta ocorre continuamente, em intervalos de tempo configuráveis.
 
 
-A Figura \ref{fig:FaaSIndexedSearch} mostra a arquitetura da solução. Um NAS (\textit{Network Accessed Storage} -- Armazenamento acessado via rede) é usado para armazenar as evidências coletadas.
+A Figura \ref{fig:FaaSIndexedSearch} mostra a arquitetura da solução. Um Armazenamento Acessado via Rede (\textit{Network Accessed Storage} -- NAS) é usado para armazenar as evidências coletadas.
 %
 Antes da análise dos dados pelos processos de MapReduce é necessário executar o processo de ETL para adequar a informação a necessidade específica da investigação. Esta fase ocorre nos Nós Filtrando.
 %
