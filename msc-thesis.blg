@@ -13,7 +13,6 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Database file #1: abntex2-options.bib
 Database file #2: bibliography.bib
-Warning--I didn't find a database entry for "RightScale2017"
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
@@ -34,7 +33,7 @@ Warning--campo year vazio ou faltando em Vagrant2018
 +---------------------------------------------------------+
 You've used 45 entries,
             6669 wiz_defined-function locations,
-            1510 strings with 19226 characters,
+            1508 strings with 19198 characters,
 and the built_in function-call counts, 68959 in all, are:
 = -- 8157
 > -- 1272
@@ -73,4 +72,4 @@ warning$ -- 9
 while$ -- 337
 width$ -- 0
 write$ -- 718
-(There were 10 warnings)
+(There were 9 warnings)
