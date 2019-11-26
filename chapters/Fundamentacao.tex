@@ -7,11 +7,15 @@
 
 Desde 2001, diversos modelos para a condução de investigação digital foram propostos. 
 %
-O \textit{Enhanced Digital Investigation Process Model}, proposto por Carrier e Stafford em 2003, é a última iteração na evolução do processo forense digital \cite{GrisposChallengesCloudComputing:2012}.
+No \textit{First Digital Forensic Research Workshop} foi definido o primeiro modelo de processo investigativo genérico para atender às investigações envolvendo sistemas digitais.
+%
+Em seguida foi proposto o \textit{Abstract Digital Forensic Model}, mais detalhado que o modelo genérico anterior e o \textit{Integrated Digital Investigation Process}, baseado em teoria criminal e investigações não digitais do passado.
+%
+Finalmente em 2003, Carrier e Stafford propõem a última iteração na evolução do processo forense digital, o \textit{Enhanced Digital Investigation Process Model} \cite{SimouCloudChlng:2014}.
 %
 Entretanto, como tais modelos de investigação foram desenvolvidos antes da aparição de tecnologias de computação em nuvem, muitos partem do pressuposto que o investigador tem acesso e controle sobre o sistema sob investigação \cite{GrisposChallengesCloudComputing:2012}.
 %
-Esta defasagem é um dos desafios da forense digital atual.
+Novas pesquisas são necessárias para que a forense digital aborde apropriadamente as soluções em nuvem e suas particularidades.
 
 
 Neste capítulo, são discutidos os principais conceitos que permeiam esse cenário.
@@ -27,22 +31,22 @@ Uma nuvem computacional é um modelo de infraestrutura no qual recursos comparti
 Existem três modelos principais de comercialização de uso da nuvem \cite{NIST2011}: 
 
 \begin{itemize}
-	\item \textit{Software} como serviço ( \textit{Software as a Service} -- SaaS ): Onde se provê o \textit{software} que será utilizado; nesse caso, os clientes do serviço são os usuários finais do software.
+	\item \textit{Software} como serviço ( \textit{Software as a Service} -- SaaS ): No qual se provê o \textit{software} que será utilizado; nesse caso, os clientes do serviço são os usuários finais do software.
 	
-	\item Plataforma como serviço ( \textit{Platform as a Service} -- PaaS ): Onde se provê o ambiente para o desenvolvimento, teste e execução do \textit{software}; nesse caso, os clientes do serviço são desenvolvedores de aplicações.
+	\item Plataforma como serviço ( \textit{Platform as a Service} -- PaaS ): No qual se provê o ambiente para o desenvolvimento, teste e execução do \textit{software}; nesse caso, os clientes do serviço são desenvolvedores de aplicações.
 	
-	\item Infraestrutura como serviço ( \textit{Infrastructure as a Service} -- IaaS ): Onde são fornecidos recursos computacionais básicos, como processamento, memória e redes, em geral de forma virtualizada; os clientes desse tipo de serviço costumam ser arquitetos de sistemas.
+	\item Infraestrutura como serviço ( \textit{Infrastructure as a Service} -- IaaS ): No qual são fornecidos recursos computacionais básicos, como processamento, memória e redes, em geral de forma virtualizada; os clientes desse tipo de serviço costumam ser arquitetos de sistemas.
 \end{itemize}
 
 O tipo de serviço de nuvem mais pertinente para este trabalho é o IaaS, uma solução muito usada atualmente pela sua capacidade de prover recursos sob demanda de forma auto-escalável.
 %
 Nesse cenário, o uso intenso de tecnologias de virtualização costuma levar a recursos altamente voláteis, que são alocados e desalocados a qualquer momento pelo orquestrador da nuvem para suprir eventuais aumentos e reduções de demanda.
 %
-É possível até mesmo construir scripts para a automatizar a construção da arquitetura desejada, permitindo a instanciação e interconexão de máquinas adequadas para a atividade fim do sistema.
+É possível até mesmo construir \textit{scripts} para a automatizar a construção da arquitetura desejada, permitindo a instanciação e interconexão de máquinas adequadas para a atividade fim do sistema.
 %
-Esses scripts, escritos em linguagem específica como Puppet \cite{Puppet2018}, Chef \cite{Chef2018} ou Vagrant \cite{Vagrant2018}, podem conter instruções de como distribuir o tráfego de rede entre as diferentes instâncias de computação ou armazenamento.
+Esses \textit{scripts}, escritos em linguagem específica como Puppet \cite{Puppet2018}, Chef \cite{Chef2018} ou Vagrant \cite{Vagrant2018}, podem conter instruções de como distribuir o tráfego de rede entre as diferentes instâncias de computação ou armazenamento.
 %
-Dentre as vantagens de sua utilização, podem ser citadas a capacidade de usar os recursos de nuvem de uma forma mais eficiente, levar a uma menor necessidade de intervenção humana, e prover maior resiliência a variações de demanda do sistema.
+%Dentre as vantagens de sua utilização, podem ser citadas a capacidade de usar os recursos de nuvem de uma forma mais eficiente, levar a uma menor necessidade de intervenção humana, e prover maior resiliência a variações de demanda do sistema.
 
 
 %\section{Uso de contêineres}
@@ -52,27 +56,27 @@ Uma tecnologia de virtualização possível para cenários de nuvem, e cuja util
 %
 Basicamente, um contêiner é um método de virtualização do sistema operacional que permite executar uma aplicação, bem como suas dependências, em um processo no qual recursos como disco, memória e rede permanecem isolados.
 %
-Diferente das máquinas virtuais, a virtualização com contêineres é feita no nível do Sistema Operacional (SO) nativo.
+Diferente das máquinas virtuais, a virtualização com contêineres é feita no nível do sistema operacional (SO) nativo.
 %
 Como resultado, tem-se uma implementação de virtualização na qual eliminam-se camadas entre o aplicativo executado e o \textit{hardware} físico, permitindo maior granularidade no controle sobre esses recursos e melhorando a eficiência da infraestrutura.
 
 
-Uma implementação bastante utilizada para esse propósito são os Contêineres Linux ( \textit{LinuX Conteiners} -- LXC ) \cite{Linuxcontainers.org2015}, que aproveitam-se de funcionalidades como \textit{cgroups}, \textit{kernel namespacing} e \textit{chroot} do kernel do Linux para auxiliar no gerenciamento e isolamento de recursos virtuais.
+Uma implementação bastante utilizada para esse propósito são os Contêineres Linux ( \textit{LinuX Conteiners} -- LXC ) \cite{Linuxcontainers.org2015}, que aproveitam-se de funcionalidades como \textit{cgroups}, \textit{kernel namespacing} e \textit{chroot} do núcleo do Linux para auxiliar no gerenciamento e isolamento de recursos virtuais.
 %
-Mais precisamente, a funcionalidade de \textit{cgroups} ( \textit{Control Groups} -- Grupos de Controle ) presente no Kernel do Linux limita e isola o uso de recursos como CPU, memória e disco de um conjunto de processos, além de organizá-los de forma hierárquica. 
+Mais precisamente, a funcionalidade de \textit{cgroups} ( \textit{Control Groups} -- Grupos de Controle ) presente no núcleo do Linux limita e isola o uso de recursos como CPU, memória e disco de um conjunto de processos, além de organizá-los de forma hierárquica. 
 %
 O trabalho nessa funcionalidade começou em 2006 na Google sob a denominação de \textit{process container}. 
 %
-No final de 2007, seu nome foi alterado para \textit{control groups}, e o resultado foi então adicionado à versão 2.6.24 do kernel lançado em 2008 \cite{UnixManPagesControlGroups}.
+No final de 2007, seu nome foi alterado para \textit{control groups}, e o resultado foi então adicionado à versão 2.6.24 do núcleo lançado em 2008 \cite{UnixManPagesControlGroups}.
 
-Já o \textit{Namespacing} é uma funcionalidade do Kernel do Linux usada para isolar e virtualizar recursos do sistema operacional, como identificadores de processos, acessos à rede, comunicação inter-processos e sistema de arquivos.
+Já o \textit{Namespacing} é uma funcionalidade do núcleo do Linux usada para isolar e virtualizar recursos do sistema operacional, como identificadores de processos, acessos à rede, comunicação inter-processos e sistema de arquivos.
 %
-\textit{Namespacing} envolve os recursos do sistema operacional em uma abstração que faz parecer aos processos de um mesmo \textit{namespace} que eles tem sua própria instância isolada de um recurso global.
+\textit{Namespacing} envolve os recursos do sistema operacional em uma abstração que faz parecer aos processos de um mesmo \textit{namespace} que estes tem sua própria instância isolada de um recurso global.
 %
 Desta forma, essa é a principal funcionalidade por trás da implementação de Contêineres Linux \cite{UnixManPagesNamespacing}.
 
 
-Finalmente, \textit{chroot} ( \textit{Change Root} -- Mude Root ) é uma funcionalidade do Kernel do Linux usada para mudar o diretório \textit{root} enxergado pelo processo que está chamando a função, bem como por todos os seus processos filhos. 
+Finalmente, \textit{chroot} ( \textit{Change Root} -- Troque a raiz do sistema de arquivos ) é uma funcionalidade do núcleo do Linux usada para mudar o diretório \textit{root} utilizado pelo processo que está chamando a função, bem como por todos os seus processos filhos. 
 %
 A chamada a \textit{chroot} altera o processo de resolução de caminhos do sistema operacional para o processo que o chamou \cite{UnixManPagesChRoot}.
 %
@@ -85,26 +89,26 @@ Desta forma, pode-se instalar uma distribuição Linux secundária em uma pasta,
 
 A área de forense digital (também conhecida por forense computacional) refere-se a um conjunto de técnicas de coleta e análise da interação entre humanos e computadores de forma que suas conclusões sejam aceitas em um processo legal.
 %
-Tal como a forense tradicional, a forense digital se baseia no princípio de Locard, estabelecido pelo médico francês Edmond Locard da seguinte forma: ``Quando um indivíduo entra em contato com outro objeto ou indivíduo, este sempre deixa vestígio deste contato'' \cite{Ramos:2011}.
+Tal como a forense tradicional, a forense digital se baseia no princípio de Locard, estabelecido pelo médico francês Edmond Locard da seguinte forma: ``Quando um indivíduo entra em contato com outro objeto ou indivíduo, este sempre deixa vestígio deste contato'' \cite[p.~31]{Ramos:2011}.
 %
 De forma similar, a forense digital tem por objetivo a investigação de evidências digitais da interação entre homem e máquina, de modo a reconstruir a cadeia de eventos passados para que suas conclusões sejam validadas por terceiros e sejam aceitas em um processo legal.
  
 
-A seguir são detalhados os principais desafios enfrentados pela forense digital quando aplicada a infraestruturas em nuvem.
+Na próxima subseção são detalhados os principais desafios enfrentados pela forense digital quando aplicada a infraestruturas em nuvem.
 
 \subsection{Admissibilidade da evidência em processo legal.}
 \label{sec:credibilidadeaceitabilidadeevidencia}
 
-O processo de análise forense no evento de um crime digital é descrito no Modelo Melhorado para Processo de Investigação Digital ( \textit{Enhanced Digital Investigation Process Model} -- EDIPM) na forma de 4 fases \cite{GrisposChallengesCloudComputing:2012}: identificar, preservar, examinar e apresentar.
+O processo de análise forense no evento de um crime digital é descrito no Modelo Melhorado para Processo de Investigação Digital (\textit{Enhanced Digital Investigation Process Model} -- EDIPM) na forma de 4 fases \cite{GrisposChallengesCloudComputing:2012}: identificar, preservar, examinar e apresentar.
 %
 A fase mais pertinente a este trabalho é a de preservação da evidência, que deve ser conduzida de forma forensicamente aceitável.
 %
-Ou seja, deve-se coletar as evidências de forma que elas sejam aceitas em um processo legal e não tenham sua credibilidade questionada no curso do mesmo.
+Ou seja, deve-se coletar as evidências de forma que estas sejam aceitas em um processo legal e não tenham sua credibilidade questionada no curso do mesmo.
 
 
 Para atingir tal objetivo, o primeiro passo é a garantia da cadeia de custódia relacionada a evidência.
 %
-Cadeia de custódia é o processo de documentação da história cronológica da evidência de modo a saber onde a evidência esteve e quem teve acesso a ela \cite{Ramos:2011}. 
+Cadeia de custódia é o processo de documentação da história cronológica da evidência de modo a saber onde a evidência esteve e quem teve acesso a esta \cite[p.~21]{Ramos:2011}. 
 %
 Uma cadeia de custódia idealmente deve tornar visível o estado da evidência antes, durante e após a interação com o processo de investigação \cite{LuisDigitalChainOfCustody:2016}.
 %
@@ -125,7 +129,7 @@ Nesse caso, durante a perícia é analisado o autor da evidência, ou seja, veri
 
 Em uma infraestrutura física, a coleta de evidências pode ser feita de forma relativamente simples, bastando-se remover o recurso físico, transportar este para um laboratório e lá analisar os dados. 
 %
-Para limitar a exposição da evidência a manipulações indevidas, ela pode ser mantida em uma sala-cofre, à qual o acesso é controlado.
+Para limitar a exposição da evidência a manipulações indevidas, esta pode ser mantida em uma sala-cofre, à qual o acesso é controlado.
 %
 A reprodutibilidade do processo de coleta e a manutenção da integridade da evidência são, então, tarefas bem diretas.
 
@@ -155,9 +159,8 @@ Entretanto, nas atuais soluções, aplicações e arquiteturas em nuvem, o volum
 %
 Afinal, o acesso fácil e dinâmico a recursos de armazenamento e de processamento, como máquinas virtuais, balanceadores de carga e \textit{firewalls}, acaba também aumentando a quantidade elementos geradores de evidência.
 %
-Esse problema é ilustrado em \cite{QuickIncreaseVolumeImpact:2014}, onde se discute uma investigação na qual a quantidade de dados a serem analisados para fins de forense digital tomaria 6 meses.
-
-
+Esse problema é ilustrado em \cite{QuickIncreaseVolumeImpact:2014}, na qual se discute uma investigação na qual a quantidade de dados a serem analisados para fins de forense digital tomaria 6 meses.
+%
 Encontrar uma forma de armazenar menos informações e, assim, tornar a fase de análise mais rápida e eficiente, é um passo importante para garantir a celeridade de investigações forenses.
 
 
@@ -170,7 +173,7 @@ Encontrar uma forma de armazenar menos informações e, assim, tornar a fase de 
 %
 %\marcos{Eu acho que já li essa frase... (sim, está repetitivo... resuma em uma frase curta, potencialmente fazendo referência à seção anterior) - Hamilton: Assim?}
 %
-A prática de remoção de equipamentos para coleta de evidências, mencionada na seção \ref{sec:volumedados}, também traz consequências negativas do ponto de vista de privacidade.
+A prática de remoção de equipamentos para coleta de evidências, mencionada na subseção \ref{sec:volumedados}, também traz consequências negativas do ponto de vista de privacidade.
 %
 Mais precisamente, em soluções envolvendo infraestruturas físicas, tal prática não costuma trazer grandes problemas porque os objetos ou indivíduos sob investigação normalmente estão diretamente relacionados ao equipamento removido.
 %
@@ -183,9 +186,8 @@ Como um complicador adicional, o fato de os dados potencialmente não estarem ar
 
 O ''State of the Cloud Report'', relatório produzido pela empresa Right Scale \cite{RightScale2018}, cita nas páginas 21 e 22 que os maiores desafios na adoção de nuvem são, \textit{gerenciamento de custo} e \textit{segurança}.
 %
-Embora privacidade e jurisdição sejam aspectos distintos e possuidores de suas particularidades, neste documento eles são discutidos em conjunto pois em busca de otimização de custos as empresas tendem a buscar regiões mais baratas e compartilhamento do recurso físico.
-
-
+Embora privacidade e jurisdição sejam aspectos distintos e possuidores de suas particularidades, neste documento estes são discutidos em conjunto pois em busca de otimização de custos as empresas tendem a buscar regiões mais baratas e compartilhamento do recurso físico.
+%
 Neste cenário, encontrar uma forma de coletar a evidência sem violar jurisdição e privacidade ganham importância.
 
 
@@ -208,11 +210,11 @@ Em particular, têm especial interesse quatro tipos particulares dessa família 
  %
  Como resultado, o código da biblioteca carregada executa com os mesmos privilégios do executável em que ela foi injetada. 
  %
- Tal estratégia, comumente usada para instalar códigos malicioso, pode fazer com que uma biblioteca maliciosa armazenada no sistema seja distribuída por vários processos de uma mesma máquina, dificultando sua remoção \cite{MillerRemoteLibraryInjection:2004}.
+ Tal estratégia, comumente usada para instalar códigos maliciosos, pode fazer com que uma biblioteca maliciosa armazenada no sistema seja distribuída por vários processos de uma mesma máquina, dificultando sua remoção \cite{MillerRemoteLibraryInjection:2004}.
  
  \item \textbf{Inline Hooking}: Um processo malicioso escreve código como uma sequência de bytes diretamente no espaço de memória de um processo alvo, e então força este último a executar o código injetado. 
  %
- O código pode ser, por exemplo, um \textit{script} de \textit{shell}.
+ O código pode ser, por exemplo, um \textit{shell script}.
  
 
  \item \textbf{Injeção reflexiva de biblioteca}: Um processo malicioso acessa diretamente a memória do processo alvo, inserindo nela o código de uma biblioteca na forma de uma sequência de bytes, e então força o processo a executar essa biblioteca. 

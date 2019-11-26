@@ -6,22 +6,22 @@
 
 %==== CONTEXTO GERAL: Nuvem e volatilidade de VMs ====
 %
-Técnicas de virtualização, replicação de serviços e compartilhamento de recursos entre múltiplos usuários (multi-inquilinato) proveem a nuvens computacionais uma elevada escalabilidade \cite{MorsyCloudSecurity:2010}.
+Técnicas de virtualização, replicação de serviços e compartilhamento de recursos entre múltiplos usuários (multi-inquilinato) provêem a nuvens computacionais uma elevada escalabilidade \cite{MorsyCloudSecurity:2010}.
 %
-Ao mesmo tempo, tais mecanismos também criam grande volatilidade dos recursos virtuais que executam aplicações em nuvem.
+Ao mesmo tempo, tais mecanismos também tornam voláteis os recursos virtuais que executam aplicações em nuvem.
 %
-Afinal, quando submetida a uma carga elevada, uma aplicação hospedada na nuvem pode criar clones das máquinas virtuais que a hospedam e balancear a carga entre elas.
+Afinal, quando submetida a uma carga elevada, uma aplicação hospedada na nuvem pode criar instâncias das máquinas virtuais que a hospedam e balancear a carga entre elas.
 %
-Isso permite ao sistema em nuvem atender à demanda dos usuários da aplicação sem prejuízos na qualidade do serviço oferecido. 
+Isso permite ao sistema em nuvem ter elasticidade isto é, redimencionar seus recursos de acordo com a demanda os usuários da aplicação. 
 %
-Após esse pico, as máquinas que foram clonadas são normalmente desativadas, seus recursos liberados e o sistema retorna à capacidade anterior, evitando-se desperdício de recursos.
+Após esse pico, as máquinas que foram instânciadas são normalmente desativadas, seus recursos liberados e o sistema retorna à capacidade anterior, evitando-se desperdício de recursos.
 
 
 %==== CONTEXTO ESPECÍFICO + PROBLEMA GERAL: Forense na nuvem vs. volatilidade + multitenancy + multidomains ====
 %
 Embora interessante do ponto de vista de eficiência e custos, do ponto de vista forense a volatilidade da nuvem traz problemas em caso de ataques.
 %
-Por exemplo, pode-se supor um cenário em que uma das instâncias de processamento virtuais criadas temporariamente seja alvo de ameaças que atuam diretamente na sua memória, sem deixar rastros em discos (e.g., em arquivos de \textit{log}).
+Por exemplo, pode-se supor um cenário em que uma das instâncias de processamento virtuais criadas temporariamente seja alvo de ameaças que atuam diretamente na sua memória, sem deixar rastros no armazenamento. (e.g., em arquivos de \textit{log}).
 %
 Nesse caso, as evidências desse evento podem ser completamente perdidas após as instâncias em questão serem desativadas e terem seus recursos liberados.
 %
@@ -29,12 +29,11 @@ Essa dificuldade é ainda agravada por aspectos como multi-inquilinato e multi-j
 %
 Especificamente, o multi-inquilinato dificulta a obtenção do \textit{hardware} que executa as aplicações de interesse.
 %
-Afinal, como ele é compartilhado por vários usuários, removê-los para análise poderia levar a uma violação de privacidade dos usuários não relacionados à investigação. 
+Afinal, como este é compartilhado por vários usuários, removê-los para análise poderia levar a uma violação de privacidade dos usuários não relacionados à investigação. 
 %
 Já a natureza distribuída da nuvem pode levar à alocação de informações relevantes em vários países, dificultando a sua obtenção, em especial quando não existem acordos de cooperação entre as entidades envolvidas \cite{DykstraAcquiringForIAAS:2012}.
 %
-%Combinadas, tais características limitam a coleta de evidências com a credibilidade necessária para que elas possam ser usadas em processos legais,  que exigem o respeito à privacidade, à jurisdição e à cadeia de custódia, bem como a reprodutibilidade do processo de coleta \cite{RahmanLiveForensicsTechniques:2015}.
-Combinadas, tais características limitam a coleta de evidências com a credibilidade necessária para que elas possam ser aceitas em processos legais \cite{RahmanLiveForensicsTechniques:2015}.
+Combinadas, tais características limitam a coleta de evidências com a credibilidade necessária para que elas possam ser aceitas em processos legais \cite{RahmanLiveForensicsTechniques:2015}, que exigem o respeito à privacidade, à jurisdição e à cadeia de custódia, bem como a reprodutibilidade do processo de coleta.
 \section{Motivação}
 \label{sec:intro-motiv}
 
@@ -82,12 +81,12 @@ Ao mesmo tempo, virtualização tem sido amplamente adotada por empresas das mai
 %
 Segundo o ''State of the Cloud Report'', relatório produzido pela empresa Right Scale \cite{RightScale2018}, 96\% das organizações entrevistadas estão utilizando ou experimentando soluções em nuvem no modelo IaaS ( \textit{Infrastructure as a Service} -- Infraestrutura como um Serviço ).
 %
-Embora a virtualização de recursos na nuvem seja tradicionalmente feita por meio de máquinas virtuais, tem ganhado importância também a tecnologia de contêineres \cite{containers-tech:2014}, uma forma de virtualização bastante leve e flexível.
+Embora a virtualização de recursos na nuvem seja tradicionalmente feita por meio de máquinas virtuais, tem ganhado importância também a tecnologia de contêineres \cite{Diamanti2019}, uma forma de virtualização bastante leve e flexível.
 %
-De fato, conforme o ``Container Market Adoption Survey 2018'', realizado com 519 empresas que têm desenvolvimento de software como sua atividade fim ou como suporte à atividade fim, 83,5\% dos respondentes utilizam contêineres em ambiente produtivo em suas arquiteturas de microsserviços em nuvem.
+De fato, conforme o ``Container Market Adoption Survey 2018'' \cite{Portworx2018}, realizado com 519 empresas que têm desenvolvimento de software como sua atividade fim ou como suporte à atividade fim, 83,5\% dos respondentes utilizam contêineres em ambiente produtivo em suas arquiteturas de microsserviços em nuvem.
 %
 
-Por fim, gestão de incidentes, que cada vez mais compartilha processos em comum com forense digital, pode se beneficiar de uma solução de coleta e preservação de evidências que esteja pronta na fase de \textit{preparação ao incidente} e seja capaz de preservar as evidências para a fase de \textit{pós-incidente} permitindo assim que na fase de \textit{detecção e análise} não seja preciso se preocupar com perda parcial ou total de evidências.
+Por fim, gestão de incidentes, que cada vez mais compartilha processos em comum com forense digital principalmente na fase de detecção e análise, pode se beneficiar de uma solução de coleta e preservação de evidências. Ter uma solução que esteja pronta na fase de \textit{preparação ao incidente} e seja capaz de preservar as evidências para a fase de \textit{pós-incidente}, permite que na fase de \textit{detecção e análise} não seja preciso se preocupar com perda parcial ou total de evidências.
 
 
 Essa tendência motiva a construção de soluções que levem em consideração as particularidades inerentes aos recursos disponíveis em nuvens computacionais.
