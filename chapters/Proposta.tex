@@ -10,7 +10,7 @@ A presente proposta tem como objetivo principal coletar memória de recursos com
 (3) transportar e armazenar a memória coletada de uma forma que garanta sua integridade e confidencialidade; e
 (4) não violar a jurisdição e a privacidade de outros usuários que porventura tenham recursos alocados no mesmo servidor físico.
 %
-A solução aqui apresentada, denominada \fancyname, é descrita em detalhes a seguir.
+A solução aqui apresentada, denominada \fancyname, é descrita em detalhes nas próximas subseções.
 
 \section{Identificação da origem}
 \label{sec:proposal-desc-origin}
@@ -24,11 +24,11 @@ Este fato torna difícil a associação de uma informação gerada por esta infr
 
 Para conseguir correlacionar uma evidência a sua origem volátil, é necessário utilizar outro elemento em que persista a relação fonte-evidência.
 %
-O presente trabalho propõe que isto seja feito por meio de cálculo de hash do recurso em nuvem que produziu a evidência. %removendo contêiner para deixar mais genérico
+O presente trabalho propõe que isto seja feito por meio de cálculo de \textit{hash} do recurso em nuvem que produziu a evidência. %removendo contêiner para deixar mais genérico
 %
 %Embora um contêiner seja um \textit{software} e, portanto, também volátil, cada imagem compilada e sua execução na forma de contêiner são normalmente atrelados a um \textit{hash} que identifica univocamente essa relação. %removendo para deixar mais genérico
 %
-O hash de um recurso em nuvem permite identificar univocamente a fonte de uma evidência. Em arquiteturas que utilizam contêiner por exemplo, é possível identificar se a evidência veio do contêiner do motor de páginas dinâmicas (e.g., Apache%\cite{Tomcat}
+O \textit{hash} de um recurso em nuvem permite identificar univocamente a fonte de uma evidência. Em arquiteturas que utilizam contêiner por exemplo, é possível identificar se a evidência veio do contêiner do motor de páginas dinâmicas (e.g., Apache%\cite{Tomcat}
 ), do contêiner da lógica de negócios (e.g., \textit{golang}%\cite{Google}
 ) ou do contêiner do banco de dados (e.g., \textit{Cassandra}%\cite{Cassandra}
 ). %removendo contêiner e deixando mais genérico
@@ -49,12 +49,22 @@ Ao realizar a coleta em intervalos de tempo adequados, é possível construir um
 %
 %\marcosT{A ligação entre as frases anterior e a seguir está bem ruim... você parece estar mudando completamente de assunto... Acredito que faltou uma frase dizendo que ``''salvar toda a memória'' pode se tornar um problema, reforçar isso com as duas frases que já estão a seguir, e depois dizer que você vai resolver.}
 
+\begin{figure}[htb!]
+\footnotesize
+\caption{Janela deslizante de coleta de evidência}
+\includegraphics[scale=1.00]{janela.pdf}
+\centering
+\label{fig:janela}
+\begin{center}
+Fonte: Próprio autor 
+\end{center}
+\end{figure}
 
 A maioria das técnicas forenses mais usadas atualmente são voltadas à obtenção da informação em sua totalidade.
 %
 Isso comumente é feito via cópia bit a bit ou por meio da obtenção do \textit{hardware} físico \cite{SimouCloudChlng:2014} \cite{BemPastPresentFuture:2008}. 
 %
-Embora tais técnicas possam parecer interessantes à primeira vista, elas muitas vezes acabam sendo responsáveis por um problema: o crescente volume de informações que os investigadores precisam analisar \cite{QuickIncreaseVolumeImpact:2014}.
+Embora tais técnicas possam parecer interessantes à primeira vista, estas muitas vezes acabam sendo responsáveis por um problema: o crescente volume de informações que os investigadores precisam analisar \cite{QuickIncreaseVolumeImpact:2014}.
 %
 Para mitigar essa dificuldade, em \fancyname são adotadas duas estratégias: a primeira é a definição de um volume de dados que possa ser considerado \textit{suficiente} para a realização de uma investigação; a segunda é a definição de uma \textit{idade máxima} para a evidência enquanto o sistema trabalha em condições normais, isto é, quando não está sob ataque.
 %
@@ -71,27 +81,17 @@ Como resultado, é possível conhecer o sistema antes e depois do ataque e, assi
 %\marcosR{Não sei por que você está utilizando $\backslash\backslash$ no final das suas frases, mas pare de fazer isso... deixe o LaTeX se virar com a formatação. No final, quando você tiver tudo escrito, aí pode fazer algum sentido se preocupar com formatação, mas não antes disso... - Hamilton: é pra formatação mesmo :-) OK vou deixar o latex se virar}
 %
 
-\begin{figure}[htb!]
-\footnotesize
-\caption{Janela deslizante de coleta de evidência}
-\includegraphics[scale=1.00]{janela.pdf}
-\centering
-\label{fig:janela}
-\begin{center}
-Fonte: Próprio autor 
-\end{center}
-\end{figure}
-
 \section{Garantindo integridade, confidencialidade e protegendo privacidade e jurisdição}
 \label{sec:proposal-desc-chain-of-custody}
 
 %\marcosT{Essa frase não faz sentido: não se ``assina'' nada com um ``hash''. Você pode ``calcular o hash'' ou ``assinar um dado'' (e.g., um dado juntamente com o hash de alguma coisa). Revise essa frase... - Hamilton: Feito}
-Finalmente, para persistir a relação evidência-origem e garantir a sua integridade, \fancyname calcula o hash $H$ do par \{evidência, identificador da imagem do contêiner\} e armazena a tripla \{$H$, identificador do recurso, evidência\}.
+Finalmente, para persistir a relação evidência-origem e garantir a sua integridade, \fancyname calcula o \textit{hash} $H$ do par \{evidência, identificador da imagem do contêiner\} e armazena a tripla \{$H$, identificador do recurso, evidência\}.
 %
 Adicionalmente, a presente proposta evita eventuais problemas com o armazenamento desses dados em países com jurisdições diferentes daquelas que devem ser aplicadas na investigação em questão.
 %
 Especificamente, as evidências coletadas são armazenadas em um local físico fora da nuvem, após serem transportadas por meio de um canal seguro (e.g., via TLS (\textit{Transport Layer Security} -- Camada de Transporte Seguro) \cite{DierksT2008}).
 %
+Evitando assim problemas de relacionados a falta de acordos de cooperação no combate a crimes digitais entre regiões onde ocorreu o crime e onde a evidência está armazenada.
 
 \section{Implementação}
 \label{sec:proposta-impl}
@@ -112,16 +112,16 @@ Fonte: Próprio autor
 %
 Os mecanismos propostos foram implementados em uma plataforma de testes visando avaliar a eficácia de \fancyname em coletar as informações de memória dos contêineres de forma reprodutível, sem violar jurisdições ou a privacidade de usuários e a capacidade de detectar injeção de código usando as evidências coletadas.
 %
-A solução, ilustrada na Figura \ref{fig:Solucao}, consistiu na criação de uma instancia \textit{t2.micro} na zona Ohio da AWS com 3.3Mhz, 1Gb de RAM e sistema operacional de 64 bits. 
+A solução, ilustrada na Figura \ref{fig:Solucao}, consistiu na criação de uma instancia \textit{t2.micro} na zona Ohio da AWS com 3.3Mhz, 1Gb de RAM e sistema operacional Ubuntu versão 14.04 de 64 bits. 
 %na criação de 1 VM usando o Oracle Virtual Box 5.0%\cite{VirtualBox} em um notebook Intel i5 de 2.30Mhz e 4Gb de RAM com sistema operacional de 64 bits.
 %
-Nesta instância AWS foi instalado o Docker Engine 1.10 e a API Docker 1.21, com os quais foram criados 3 contêineres executando o nginx 1.0 em diferentes portas. 
+Nesta instância AWS foi instalado o Docker Engine 1.10 e a API Docker 1.21, com os quais foram criados 3 contêineres executando o Nginx 1.0 em diferentes portas. 
 %
 Foi desenvolvida uma aplicação Java que, executada no sistema operacional hospedeiro, descobre o identificador de processo associado a cada contêiner, copia o conteúdo do \textit{descritor de alocação de memória não uniforme} (\textbf{/proc/pid/numa\_maps}), o qual contém a alocação das páginas de memória, os nós que estão associados a essas páginas, o que está alocado e suas respectivas políticas de acesso \cite{UnixManPagesNumaMaps}.
 %
 A cópia e gravação do arquivo é tal que, a cada intervalo de tempo $t$, a aplicação (1) pausa o contêiner em questão, (2) copia a diretório \textbf{numa\_maps}, (3)  concatena os dados obtidos com o identificador da imagem e do contêiner, (4) calcula o $H$ do conjunto e (5) salva o resultado em um arquivo cujo nome é o identificador da imagem e do contêiner e a extensão é \textbf{.mem}. 
 %
-O transporte seguro da evidência para um armazenamento físico fora da AWS foi implementado usando uma instância \textit{t2.micro} na zona Ohio da AWS onde foi instalado um servidor \textit{OpenVPN}.
+O transporte seguro da evidência para um armazenamento físico fora da AWS foi implementado usando uma instância \textit{t2.micro} na zona Ohio da AWS no qual foi instalado um servidor \textit{OpenVPN}.
 %
 Como uma forma básica de controle de acesso, a instância EC2 que contém as evidências foi configurada para aceitar conexões apenas de máquinas nesta VPN.
 %
@@ -150,11 +150,11 @@ A evolução do espaço em disco ocupado pelos instantâneos de memória, acompa
 %
 Neste experimento os instantâneos de memória tem 244kb de tamanho. 
 %
-O gráfico mostra que o aumento do uso do espaço em disco é linear e o crescimento se interrompe quando é atingido o limite de tempo configurado para a janela, pois as coletas com tempo de vida maior que tal limite são apagadas do disco. 
+O gráfico mostra que o aumento do uso do espaço de armazenamento é linear e o crescimento se interrompe quando é atingido o limite de tempo configurado para a janela, pois as coletas com tempo de vida maior que tal limite são apagadas do armazenamento final. 
 %
-Assim, a solução mantém sob controle o espaço em disco ocupado pelas amostras coletadas.
+Assim, a solução mantém sob controle o espaço em armazenamento ocupado pelas amostras coletadas.
 %
-Ao mesmo tempo, instantâneos de memória salvos pela solução depois que os contêineres são removidos continuam no disco da máquina, podendo ser associados a sua origem (i.e., contêiner e imagem), conforme esperado para uma análise forense.
+Ao mesmo tempo, instantâneos de memória salvos pela solução depois que os contêineres são removidos continuam no armazenamento da máquina, podendo ser associados a sua origem (i.e., contêiner e imagem), conforme esperado para uma análise forense.
 %
 Essa capacidade se mantém após a detecção de uma ameaça, pois nesse caso coletas mais antigas deixam de ser apagadas.
 %
@@ -205,7 +205,7 @@ Logo, é possível descrever o estado do sistema antes e depois do incidente \ci
 
 \begin{figure}[htb!]
 \footnotesize
-\caption{Evolução do uso do espaço em disco com o Dizang}
+\caption{Evolução do uso do espaço em armazenamento com o Dizang}
 \includegraphics[scale=0.60]{evolucao-coleta.pdf}
 \centering
 \label{fig:evolucao-coleta}
@@ -276,18 +276,13 @@ Fonte: Próprio autor
 
 Outra preocupação é o tempo de transporte das evidências para o armazenamento fora da nuvem.
 %
-Caso o transporte da evidência leve mais tempo que a geração do próximo instantâneo, um backlog de transporte se formará levando a perdas nas evidências que estejam pendentes para transporte.
+Caso o transporte da evidência leve mais tempo que a geração do próximo instantâneo, um \textit{backlog} de transporte se formará levando a perdas nas evidências que estejam pendentes para transporte.
 %
 Para avaliar esse impacto, durante o experimento foram medidos os tempos de transporte das evidências para o armazenamento fora da nuvem.
 %
 Os resultados são mostrados no gráfico da Figura \ref{fig:evidencia_transporte}.
 %
 É possível notar que o tempo de transporte estabiliza após atingido o tamanho da janela. O tempo de transporte da evidência fica, em média próximo dos 30 segundos. 
-
-%
-Tanto a topologia quando a arquitetura do transporte da evidência e a arquitetura do que se deseja extrair a evidência são fatores que contribuem tanto positiva quando negativamente no tempo de transporte.
-%
-Neste experimento o gerador de evidências, um motor de páginas dinâmicas, está na América do Norte enquanto que a máquina física para onde as evidências foram transportadas e que é responsável pelo transporte da evidência está na América do Sul.
 
 \begin{figure}[htb!]
 \footnotesize
@@ -299,6 +294,12 @@ Neste experimento o gerador de evidências, um motor de páginas dinâmicas, est
 Fonte: Próprio autor 
 \end{center}
 \end{figure}
+
+
+%
+Tanto a topologia quando a arquitetura do transporte da evidência e a arquitetura do que se deseja extrair a evidência são fatores que contribuem tanto positiva quando negativamente no tempo de transporte.
+%
+Neste experimento o gerador de evidências, um motor de páginas dinâmicas, está na América do Norte enquanto que a máquina física para onde as evidências foram transportadas e que é responsável pelo transporte da evidência está na América do Sul.
 
 
 \subsection{Identificação de injeção de código malicioso}
@@ -399,21 +400,21 @@ Fonte: Próprio autor
 
 A proposta descrita pede que o recurso em nuvem seja identificável de forma única a fim de realizar a associação entre evidência e sua origem.
 %
-Durante o curso deste projeto essa identificação única só foi possível através do hash da imagem do contêiner. Este foi o único recurso que, submetido ao processo de construção a partir da mesma receita resultou no mesmo hash da imagem.
+Durante o curso deste projeto essa identificação única só foi possível através do hash da imagem do contêiner. Este foi o único recurso que, submetido ao processo de construção a partir da mesma receita resultou no mesmo \textit{hash} da imagem.
 %
-Assim, a implementação para verificação da solução proposta consegue apenas coletar informações de memória no espaço do usuário (\textit{user space}), ela não consegue acessar o espaço de kernel (\textit{kernel space}). 
+Assim, a implementação para verificação da solução proposta consegue apenas coletar informações de memória no espaço do usuário (\textit{user space}), ela não consegue acessar o espaço de núcleo do sistema operacional (\textit{kernel space}). 
 %
 A implementação de \fancyname neste documento em princípio não consegue investigar códigos malicioso que se baseiam em informações do \textit{kernel space}.
 %
-Isso inclui, por exemplo, a comparação de informações do PEB ( \textit{Process Environment Block} -- Bloco para o Ambiente dos Processos ), que ficam no \textit{user space}, com informações do VAD ( \textit{Virtual Address Descriptor} -- Descritor de Endereços de Memória Virtual ), que fica no \textit{kernel space}. 
+Isso inclui, por exemplo, a comparação de informações do PEB (\textit{Process Environment Block} -- Bloco para o Ambiente dos Processos), que ficam no \textit{user space}, com informações do VAD (\textit{Virtual Address Descriptor} -- Descritor de Endereços de Memória Virtual), que fica no \textit{kernel space}. 
 %
 %Análise de ameaças do tipo DKOM ( \textit{Direct Kernel Object Manipulation} -- Manipulação Direta dos Objetos do Kernel ) também não se beneficiam com a solução aqui proposta. 
 %\marcosT{Não entendi a ``associação com o contêiner'' aqui. Você quer dizer que ``não se beneficiam com a solução aqui proposta'' ou outra coisa? Você não definiu o que seria a tal ``associação com o contêiner'' fora do contexto da sua solução, então ficou confuso - Hamilton: Feito}.
 
+Como mencionado em \cite{CaseMemoryForensics:2014}, ``para uma análise eficiente de um incidente em memória, são necessárias cópias da mesma \textbf{antes e depois} do incidente.''
 %
 Outra limitação da solução proposta é a necessidade da mesma estar instalada no sistema sob investigação a priori para que os resultados descritos neste documento sejam alcançados. 
-%
-Como mencionado em \cite{CaseMemoryForensics:2014}, ``para uma análise eficiente de um incidente em memória, são necessárias cópias da mesma \textbf{antes e depois} do incidente.''
+
 
 \chapter{Conclusões e recomendações para trabalhos futuros}
 \label{sec:proposta-concl-recom}

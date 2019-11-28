@@ -280,35 +280,35 @@ ISSN 16113349. Available from Internet:
   \urls{https://www.openstack.org}.
 Acessado em: 20-05-2018.}
 
-\bibitem[{Unix Man Pages}]{UnixManPagesControlGroups}
-\abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{a}
-{{Unix Man Pages}. \emph{{cgroups - Control Groups}}.
+\bibitem[{Unix Man Pages}]{UnixManPagesNumaMaps}
+\abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{}
+{{Unix Man Pages}. \emph{{Numa Maps - Non Uniform Memory Architecture}}.
+  \urls{http://man7.org/linux/man-pages/man7/numa.7.html}.
+Acessado em: 24-06-2017.}
+
+\bibitem[{Unix Man Pages} 2017]{UnixManPagesControlGroups}
+\abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{2017a}
+{\underline{\ \ \ \ \ \ \ \ }. \emph{{cgroups - Control Groups}}. 2017.
   \urls{http://man7.org/linux/man-pages/man7/cgroups.7.html}.
 Acessado em: 15-09-2017.}
 
-\bibitem[{Unix Man Pages}]{UnixManPagesChRoot}
-\abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{b}
-{\underline{\ \ \ \ \ \ \ \ }. \emph{{chroot - Change Root coomand}}.
+\bibitem[{Unix Man Pages} 2017]{UnixManPagesChRoot}
+\abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{2017b}
+{\underline{\ \ \ \ \ \ \ \ }. \emph{{chroot - Change Root coomand}}. 2017.
   \urls{http://man7.org/linux/man-pages/man1/chroot.1.html}.
 Acessado em: 24-09-2017.}
 
-\bibitem[{Unix Man Pages}]{UnixManPagesDD}
-\abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{c}
-{\underline{\ \ \ \ \ \ \ \ }. \emph{{dd - convert and copy a file}}.
+\bibitem[{Unix Man Pages} 2017]{UnixManPagesDD}
+\abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{2017c}
+{\underline{\ \ \ \ \ \ \ \ }. \emph{{dd - convert and copy a file}}. 2017.
   \urls{http://man7.org/linux/man-pages/man1/dd.1.html}.
 Acessado em: 01-12-2017.}
 
-\bibitem[{Unix Man Pages}]{UnixManPagesNamespacing}
-\abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{d}
-{\underline{\ \ \ \ \ \ \ \ }. \emph{{Namespacing}}.
+\bibitem[{Unix Man Pages} 2017]{UnixManPagesNamespacing}
+\abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{2017d}
+{\underline{\ \ \ \ \ \ \ \ }. \emph{{Namespacing}}. 2017.
   \urls{http://man7.org/linux/man-pages/man7/namespaces.7.html}.
 Acessado em: 15-09-2017.}
-
-\bibitem[{Unix Man Pages}]{UnixManPagesNumaMaps}
-\abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{e}
-{\underline{\ \ \ \ \ \ \ \ }. \emph{{Numa Maps - Non Uniform Memory
-  Architecture}}. \urls{http://man7.org/linux/man-pages/man7/numa.7.html}.
-Acessado em: 24-06-2017.}
 
 \bibitem[{Vagrant} 2018]{Vagrant2018}
 \abntrefinfo{{Vagrant}}{{Vagrant}}{2018}
