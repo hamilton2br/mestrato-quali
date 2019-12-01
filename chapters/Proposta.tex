@@ -5,9 +5,9 @@
 \label{chp:proposta}
 
 A presente proposta tem como objetivo principal coletar memória de recursos computacionais virtuais em arquitetura volátil de modo a conseguir: 
-(1) identificar a fonte da evidência, mesmo se o recurso virtual não existir mais; 
-(2) descrever o sistema antes e depois do incidente;
-(3) transportar e armazenar a memória coletada de uma forma que garanta sua integridade e confidencialidade; e
+(1) identificar a fonte da evidência, mesmo se o recurso virtual não existir mais e assim conseguir reproduzir o processo de coleta; 
+(2) descrever o sistema antes e depois do incidente mantendo sob controle a quantidade de dados coletados;
+(3) transportar e armazenar a memória coletada de uma forma que garanta a cadeia de custódia; e
 (4) não violar a jurisdição e a privacidade de outros usuários que porventura tenham recursos alocados no mesmo servidor físico.
 %
 A solução aqui apresentada, denominada \fancyname, é descrita em detalhes nas próximas subseções.
@@ -91,7 +91,8 @@ Adicionalmente, a presente proposta evita eventuais problemas com o armazenament
 %
 Especificamente, as evidências coletadas são armazenadas em um local físico fora da nuvem, após serem transportadas por meio de um canal seguro (e.g., via TLS (\textit{Transport Layer Security} -- Camada de Transporte Seguro) \cite{DierksT2008}).
 %
-Evitando assim problemas de relacionados a falta de acordos de cooperação no combate a crimes digitais entre regiões onde ocorreu o crime e onde a evidência está armazenada.
+%Evitando assim problemas de relacionados a falta de acordos de cooperação no combate a crimes digitais entre regiões onde ocorreu o crime e onde a evidência está armazenada.
+Dando ao processo de investigação maior celeridade uma vez que a coleta das evidências já terá ocorrido de forma forensicamente aceitável.
 
 \section{Implementação}
 \label{sec:proposta-impl}

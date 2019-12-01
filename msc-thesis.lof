@@ -1,17 +1,17 @@
 \select@language {brazil}
-\contentsline {figure}{\numberline {1}{\ignorespaces Modelo Autom\IeC {\'a}tico de Aquisi\IeC {\c c}\IeC {\~a}o de Dados Forenses}}{27}{figure.3.1}
-\contentsline {figure}{\numberline {2}{\ignorespaces Virtuoso}}{29}{figure.3.2}
-\contentsline {figure}{\numberline {3}{\ignorespaces \textit {A Log Based Approach Model}}}{30}{figure.3.3}
-\contentsline {figure}{\numberline {4}{\ignorespaces \textit {Backup Approach Model}}}{31}{figure.3.4}
-\contentsline {figure}{\numberline {5}{\ignorespaces \textit {FoRensic OpenStack Tools}}}{33}{figure.3.5}
-\contentsline {figure}{\numberline {6}{\ignorespaces \textit {Digital Forensic Framework for Cloud Environment}}}{34}{figure.3.6}
-\contentsline {figure}{\numberline {7}{\ignorespaces \textit {Digital Forensic as a Service - Indexed Data}}}{36}{figure.3.7}
-\contentsline {figure}{\numberline {8}{\ignorespaces Janela deslizante de coleta de evid\IeC {\^e}ncia}}{42}{figure.4.8}
-\contentsline {figure}{\numberline {9}{\ignorespaces Arquitetura geral da solu\IeC {\c c}\IeC {\~a}o Dizang}}{44}{figure.4.9}
-\contentsline {figure}{\numberline {10}{\ignorespaces Evolu\IeC {\c c}\IeC {\~a}o do uso do espa\IeC {\c c}o em armazenamento com o Dizang}}{46}{figure.4.10}
-\contentsline {figure}{\numberline {11}{\ignorespaces Tempo de c\IeC {\'o}pia da mem\IeC {\'o}ria de um cont\IeC {\^e}iner}}{47}{figure.4.11}
-\contentsline {figure}{\numberline {12}{\ignorespaces Tempo de transporte da evid\IeC {\^e}ncia}}{48}{figure.4.12}
-\contentsline {figure}{\numberline {13}{\ignorespaces Comando para c\IeC {\'o}pia crua da mem\IeC {\'o}ria do processo do cont\IeC {\^e}iner}}{49}{figure.4.13}
-\contentsline {figure}{\numberline {14}{\ignorespaces Parte do arquivo \textbf {\mathversion {bold}/proc/pid/numa\_maps} ANTES da inje\IeC {\c c}\IeC {\~a}o }}{50}{figure.4.14}
-\contentsline {figure}{\numberline {15}{\ignorespaces Parte do arquivo \textbf {\mathversion {bold}/proc/pid/numa\_maps} AP\IeC {\'O}S a inje\IeC {\c c}\IeC {\~a}o }}{50}{figure.4.15}
-\contentsline {figure}{\numberline {16}{\ignorespaces Conte\IeC {\'u}do da mem\IeC {\'o}ria de \textbf {\mathversion {bold}libexample.so} no formato [endere\IeC {\c c}o]: [conte\IeC {\'u}do]}}{51}{figure.4.16}
+\contentsline {figure}{\numberline {1}{\ignorespaces Modelo Autom\IeC {\'a}tico de Aquisi\IeC {\c c}\IeC {\~a}o de Dados Forenses}}{28}{figure.3.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces Virtuoso}}{30}{figure.3.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces \textit {A Log Based Approach Model}}}{31}{figure.3.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces \textit {Backup Approach Model}}}{32}{figure.3.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces \textit {FoRensic OpenStack Tools}}}{34}{figure.3.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces \textit {Digital Forensic Framework for Cloud Environment}}}{35}{figure.3.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces \textit {Digital Forensic as a Service - Indexed Data}}}{37}{figure.3.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces Janela deslizante de coleta de evid\IeC {\^e}ncia}}{43}{figure.4.8}
+\contentsline {figure}{\numberline {9}{\ignorespaces Arquitetura geral da solu\IeC {\c c}\IeC {\~a}o Dizang}}{45}{figure.4.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces Evolu\IeC {\c c}\IeC {\~a}o do uso do espa\IeC {\c c}o em armazenamento com o Dizang}}{47}{figure.4.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces Tempo de c\IeC {\'o}pia da mem\IeC {\'o}ria de um cont\IeC {\^e}iner}}{48}{figure.4.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces Tempo de transporte da evid\IeC {\^e}ncia}}{49}{figure.4.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces Comando para c\IeC {\'o}pia crua da mem\IeC {\'o}ria do processo do cont\IeC {\^e}iner}}{50}{figure.4.13}
+\contentsline {figure}{\numberline {14}{\ignorespaces Parte do arquivo \textbf {\mathversion {bold}/proc/pid/numa\_maps} ANTES da inje\IeC {\c c}\IeC {\~a}o }}{51}{figure.4.14}
+\contentsline {figure}{\numberline {15}{\ignorespaces Parte do arquivo \textbf {\mathversion {bold}/proc/pid/numa\_maps} AP\IeC {\'O}S a inje\IeC {\c c}\IeC {\~a}o }}{51}{figure.4.15}
+\contentsline {figure}{\numberline {16}{\ignorespaces Conte\IeC {\'u}do da mem\IeC {\'o}ria de \textbf {\mathversion {bold}libexample.so} no formato [endere\IeC {\c c}o]: [conte\IeC {\'u}do]}}{52}{figure.4.16}

@@ -45,6 +45,12 @@ Available from Internet: \url{https://ieeexplore.ieee.org/document/7036275}.}
 {{Chef}. \emph{{Chef}}. 2018. \urls{https://www.chef.io}.
 Acessado em: 16-04-2018.}
 
+\bibitem[Cichonski et al. 2012]{CichonskiNIST:2012}
+\abntrefinfo{Cichonski et al.}{CICHONSKI et al.}{2012}
+{CICHONSKI, P. et al. {Computer Security Incident Handling Guide}.
+\emph{National Institute os Standarts and Technology}, 2012.
+Available from Internet: \url{http://dx.doi.org/10.6028/NIST.SP.800-61r2}.}
+
 \bibitem[Dezfouli et al. 2012]{DezfouliBackupApproach:2012}
 \abntrefinfo{Dezfouli et al.}{DEZFOULI et al.}{2012}
 {DEZFOULI, F. et al. Volatile memory acquisition using backup for forensic
@@ -264,6 +270,12 @@ Available from Internet:
   Engineering Applications, ISDEA 2013}, p. 91--94, 2013.
 Available from Internet: \url{https://ieeexplore.ieee.org/document/6454779}.}
 
+\bibitem[Sibiya, Venter and Thomas 2015]{Sibiya2015}
+\abntrefinfo{Sibiya, Venter and Thomas}{SIBIYA; VENTER; THOMAS}{2015}
+{SIBIYA, G.; VENTER, H.; THOMAS, F. {Digital Forensics in the Cloud: The State
+  of the Art}. In CUNNINGHAM, P.; CUNNINGHAM, M. (Ed.). \emph{IST-Africa 2015}.
+  Milongwe, Malawi: [s.n.], 2015.}
+
 \bibitem[Simou et al. 2014]{SimouCloudChlng:2014}
 \abntrefinfo{Simou et al.}{SIMOU et al.}{2014}
 {SIMOU, S. et al. {Cloud forensics: Identifying the major issues and
@@ -322,6 +334,13 @@ Acessado em: 16-04-2018.}
   Elsevier Science Publishers B. V., 2013. vol.~10, p. S30--S40.
 ISSN 1742-2876. Elsevier Science Publishers. Available from Internet:
   \url{http://dx.doi.org/10.1016/j.diin.2013.06.004}.}
+
+\bibitem[Wen et al. 2013]{WenFAAS:2013}
+\abntrefinfo{Wen et al.}{WEN et al.}{2013}
+{WEN, Y. et al. {Forensics-as-a-Service (FaaS): Computer Forensic Workflow
+  Management and Processing Using Cloud}.
+\emph{CLOUD COMPUTING 2013, The Fourth International Conference on Cloud
+  Computing, GRIDs, and Virtualization}, p. 208--214, 2013.}
 
 \bibitem[Wikipedia 2018]{WikipediaMapReduce}
 \abntrefinfo{Wikipedia}{WIKIPEDIA}{2018}
