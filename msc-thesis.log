@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  1 DEC 2019 18:10
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  2 DEC 2019 23:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1492,7 +1492,7 @@ Cap\'{\i }tulo 3.
 [26
 
 ]
-<images/ReichertAutoAcquisitionModel.pdf, id=398, 499.8675pt x 596.2275pt>
+<images/ReichertAutoAcquisitionModel.pdf, id=403, 499.8675pt x 596.2275pt>
 File: images/ReichertAutoAcquisitionModel.pdf Graphic file (type pdf)
 
 <use images/ReichertAutoAcquisitionModel.pdf>
@@ -1504,7 +1504,7 @@ line 53.
 pdfTeX warning: /usr/bin/pdflatex (file ./images/ReichertAutoAcquisitionModel.p
 df): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', ty
 pe <array>); ignored.
->] <images/Dolan-GavittSemanticGap.pdf, id=444, 583.21887pt x 214.8828pt>
+>] <images/Dolan-GavittSemanticGap.pdf, id=449, 583.21887pt x 214.8828pt>
 File: images/Dolan-GavittSemanticGap.pdf Graphic file (type pdf)
 
 <use images/Dolan-GavittSemanticGap.pdf>
@@ -1512,7 +1512,7 @@ Package pdftex.def Info: images/Dolan-GavittSemanticGap.pdf used on input line
 108.
 (pdftex.def)             Requested size: 408.25043pt x 150.41692pt.
  [29]
-<images/SangLogApproach.pdf, id=460, 280.1667pt x 548.0475pt>
+<images/SangLogApproach.pdf, id=465, 280.1667pt x 548.0475pt>
 File: images/SangLogApproach.pdf Graphic file (type pdf)
 
 <use images/SangLogApproach.pdf>
@@ -1528,7 +1528,7 @@ rray>); ignored.
 pdfTeX warning: /usr/bin/pdflatex (file ./images/SangLogApproach.pdf): PDF incl
 usion: invalid other resource which is no dict (key 'ProcSets', type <array>); 
 ignored.
->] <images/DezfouliBackupApproach.pdf, id=503, 280.1667pt x 388.33081pt>
+>] <images/DezfouliBackupApproach.pdf, id=508, 280.1667pt x 388.33081pt>
 File: images/DezfouliBackupApproach.pdf Graphic file (type pdf)
 
 <use images/DezfouliBackupApproach.pdf>
@@ -1540,7 +1540,7 @@ Package pdftex.def Info: images/DezfouliBackupApproach.pdf used on input line 1
 pdfTeX warning: /usr/bin/pdflatex (file ./images/DezfouliBackupApproach.pdf): P
 DF inclusion: invalid other resource which is no dict (key 'ProcSets', type <ar
 ray>); ignored.
->] <images/DykstraFROST.pdf, id=527, 536.0025pt x 499.8675pt>
+>] <images/DykstraFROST.pdf, id=532, 536.0025pt x 499.8675pt>
 File: images/DykstraFROST.pdf Graphic file (type pdf)
 
 <use images/DykstraFROST.pdf>
@@ -1551,7 +1551,7 @@ Overfull \hbox (16.23761pt too wide) in paragraph at lines 207--210
  [][] 
  []
 
-[33] <images/GeorgeDF2CE.pdf, id=537, 594.30032pt x 712.58218pt>
+[33] <images/GeorgeDF2CE.pdf, id=542, 594.30032pt x 712.58218pt>
 File: images/GeorgeDF2CE.pdf Graphic file (type pdf)
 
 <use images/GeorgeDF2CE.pdf>
@@ -1572,7 +1572,7 @@ ored.
 pdfTeX warning: /usr/bin/pdflatex (file ./images/GeorgeDF2CE.pdf): PDF inclusio
 n: invalid other resource which is no dict (key 'ProcSets', type <array>); igno
 red.
->] <images/FaaSIndexedSearch.pdf, id=598, 658.37968pt x 434.58359pt>
+>] <images/FaaSIndexedSearch.pdf, id=603, 658.37968pt x 434.58359pt>
 File: images/FaaSIndexedSearch.pdf Graphic file (type pdf)
 
 <use images/FaaSIndexedSearch.pdf>
@@ -1583,13 +1583,13 @@ Package pdftex.def Info: images/FaaSIndexedSearch.pdf used on input line 276.
 pdfTeX warning: /usr/bin/pdflatex (file ./images/FaaSIndexedSearch.pdf): PDF in
 clusion: invalid other resource which is no dict (key 'ProcSets', type <array>)
 ; ignored.
->] [38] [39] <images/check.png, id=693, 602.25pt x 602.25pt>
+>] [38] [39] <images/check.png, id=699, 602.25pt x 602.25pt>
 File: images/check.png Graphic file (type png)
 
 <use images/check.png>
 Package pdftex.def Info: images/check.png used on input line 374.
 (pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
- <images/x.png, id=695, 1027.84pt x 1027.84pt>
+ <images/x.png, id=701, 1027.84pt x 1027.84pt>
 File: images/x.png Graphic file (type png)
 
 <use images/x.png>
@@ -1746,7 +1746,7 @@ Package pdftex.def Info: images/check.png used on input line 377.
 Cap\'{\i }tulo 4.
 [41
 
-] <images/janela.pdf, id=711, 367.3725pt x 295.1025pt>
+] <images/janela.pdf, id=717, 367.3725pt x 295.1025pt>
 File: images/janela.pdf Graphic file (type pdf)
 
 <use images/janela.pdf>
@@ -1756,15 +1756,15 @@ Package pdftex.def Info: images/janela.pdf used on input line 55.
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/janela.pdf): PDF inclusion: in
 valid other resource which is no dict (key 'ProcSets', type <array>); ignored.
->] <images/Solucao.pdf, id=747, 568.04218pt x 471.68219pt>
+>] <images/Solucao.pdf, id=753, 568.04218pt x 471.68219pt>
 File: images/Solucao.pdf Graphic file (type pdf)
 
 <use images/Solucao.pdf>
-Package pdftex.def Info: images/Solucao.pdf used on input line 105.
+Package pdftex.def Info: images/Solucao.pdf used on input line 107.
 (pdftex.def)             Requested size: 397.62682pt x 330.17528pt.
 
 
-Package hyperref Warning: Suppressing empty link on input line 121.
+Package hyperref Warning: Suppressing empty link on input line 123.
 
 [44] [45 <./images/Solucao.pdf
 
@@ -1772,69 +1772,69 @@ pdfTeX warning: /usr/bin/pdflatex (file ./images/Solucao.pdf): PDF inclusion: i
 nvalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 
 >]
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 150.
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 152.
 
  (/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 ) [46]
-<images/evolucao-coleta.pdf, id=786, 602.25pt x 372.39125pt>
+<images/evolucao-coleta.pdf, id=792, 602.25pt x 372.39125pt>
 File: images/evolucao-coleta.pdf Graphic file (type pdf)
 
 <use images/evolucao-coleta.pdf>
-Package pdftex.def Info: images/evolucao-coleta.pdf used on input line 210.
+Package pdftex.def Info: images/evolucao-coleta.pdf used on input line 212.
 (pdftex.def)             Requested size: 361.35278pt x 223.43646pt.
  Excluding 'comment' comment. [47 <./images/evolucao-coleta.pdf>] <images/memor
-ia-copia.pdf, id=810, 602.25pt x 372.39125pt>
+ia-copia.pdf, id=816, 602.25pt x 372.39125pt>
 File: images/memoria-copia.pdf Graphic file (type pdf)
 
 <use images/memoria-copia.pdf>
-Package pdftex.def Info: images/memoria-copia.pdf used on input line 269.
+Package pdftex.def Info: images/memoria-copia.pdf used on input line 271.
 (pdftex.def)             Requested size: 421.57211pt x 260.67209pt.
 
-Overfull \hbox (9.00714pt too wide) in paragraph at lines 269--272
+Overfull \hbox (9.00714pt too wide) in paragraph at lines 271--274
  [][] 
  []
 
-<images/evidencia-download.pdf, id=812, 602.25pt x 372.39125pt>
+<images/evidencia-download.pdf, id=818, 602.25pt x 372.39125pt>
 File: images/evidencia-download.pdf Graphic file (type pdf)
 
 <use images/evidencia-download.pdf>
-Package pdftex.def Info: images/evidencia-download.pdf used on input line 291.
+Package pdftex.def Info: images/evidencia-download.pdf used on input line 293.
 (pdftex.def)             Requested size: 421.57211pt x 260.67209pt.
 
-Overfull \hbox (9.00714pt too wide) in paragraph at lines 291--294
+Overfull \hbox (9.00714pt too wide) in paragraph at lines 293--296
  [][] 
  []
 
 [48 <./images/memoria-copia.pdf>] [49 <./images/evidencia-download.pdf>]
-<images/comando-copia-memoria-gdb.pdf, id=856, 586.10968pt x 100.45529pt>
+<images/comando-copia-memoria-gdb.pdf, id=862, 586.10968pt x 100.45529pt>
 File: images/comando-copia-memoria-gdb.pdf Graphic file (type pdf)
 
 <use images/comando-copia-memoria-gdb.pdf>
 Package pdftex.def Info: images/comando-copia-memoria-gdb.pdf used on input lin
-e 320.
+e 322.
 (pdftex.def)             Requested size: 351.66852pt x 60.27362pt.
 
-<images/antes-injecao.pdf, id=860, 420.61137pt x 269.08528pt>
+<images/antes-injecao.pdf, id=866, 420.61137pt x 269.08528pt>
 File: images/antes-injecao.pdf Graphic file (type pdf)
 
 <use images/antes-injecao.pdf>
-Package pdftex.def Info: images/antes-injecao.pdf used on input line 340.
+Package pdftex.def Info: images/antes-injecao.pdf used on input line 342.
 (pdftex.def)             Requested size: 336.48956pt x 215.26851pt.
 
-<images/apos-injecao.pdf, id=861, 384.47638pt x 348.34138pt>
+<images/apos-injecao.pdf, id=867, 384.47638pt x 348.34138pt>
 File: images/apos-injecao.pdf Graphic file (type pdf)
 
 <use images/apos-injecao.pdf>
-Package pdftex.def Info: images/apos-injecao.pdf used on input line 352.
+Package pdftex.def Info: images/apos-injecao.pdf used on input line 354.
 (pdftex.def)             Requested size: 307.58151pt x 278.67348pt.
 
-<images/conteudo-memoria-copia-gdb.pdf, id=862, 470.7186pt x 319.1925pt>
+<images/conteudo-memoria-copia-gdb.pdf, id=868, 470.7186pt x 319.1925pt>
 File: images/conteudo-memoria-copia-gdb.pdf Graphic file (type pdf)
 
 <use images/conteudo-memoria-copia-gdb.pdf>
 Package pdftex.def Info: images/conteudo-memoria-copia-gdb.pdf used on input li
-ne 378.
+ne 380.
 (pdftex.def)             Requested size: 305.96346pt x 207.47266pt.
  [50 <./images/comando-copia-memoria-gdb.pdf
 
@@ -1898,10 +1898,10 @@ nts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmri8a.pfb>
-Output written on msc-thesis.pdf (60 pages, 668357 bytes).
+Output written on msc-thesis.pdf (60 pages, 669491 bytes).
 PDF statistics:
- 1070 PDF objects out of 1200 (max. 8388607)
- 916 compressed objects within 10 object streams
+ 1076 PDF objects out of 1200 (max. 8388607)
+ 922 compressed objects within 10 object streams
  163 named destinations out of 1000 (max. 500000)
  103 words of extra memory for PDF output out of 10000 (max. 10000000)
 

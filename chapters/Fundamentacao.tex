@@ -99,20 +99,29 @@ Nas próximas subseções são detalhados os principais desafios enfrentados pel
 \subsection{Admissibilidade da evidência em processo legal.}
 \label{sec:credibilidadeaceitabilidadeevidencia}
 
+O termo evidência é definido por \cite[p.~1]{LuisDigitalChainOfCustody:2016} como qualquer item relavante e confiável, baseado em fatos ou dados, resultante de métodos apropriados e bem avaliados sob a perspectiva das sciências forenses que seja admitido por um juiz em um processo legal.
+%
+Especificamente no contexto desta proposta, evidência é qualquer informação armazenada ou transmitida no formato digital, composta de campos magnéticos e pulsos eletrônicos que podem ser coletados e analisados por meio de ferramentas adequadas \cite[p.~38]{Ramos:2011}.
+%
+
 O processo de análise forense no evento de um crime digital é descrito no Modelo Melhorado para Processo de Investigação Digital (\textit{Enhanced Digital Investigation Process Model} -- EDIPM) na forma de 4 fases \cite{GrisposChallengesCloudComputing:2012}: identificar, preservar, examinar e apresentar.
 %
 A fase mais pertinente a este trabalho é a de preservação da evidência, que deve ser conduzida de forma forensicamente aceitável.
 %
-Ou seja, deve-se coletar as evidências de forma que estas sejam aceitas em um processo legal e não tenham sua credibilidade questionada no curso do mesmo.
+Ou seja, deve-se coletar as evidências de forma que estas sejam aceitas em um processo legal e não tenham sua credibilidade questionada no curso do mesmo como por exemplo alterações da evidência por processos investigativos.
+%
+Alguns destes processos podem ser, a consolidação em um único local dos arquivos que compõem uma base de dados distribuída, a remoção da cifragem do conteúdo de um armazenamento ou a remoção da memória \textit{flash} de um dispositivo para cópia de seu conteúdo \cite{LuisDigitalChainOfCustody:2016}.
+%
 
-
-Para atingir tal objetivo, o principal passo é a garantia da cadeia de custódia relacionada a evidência.
+Para atingir o objetivo de proteger a credibilidade da evidência, o principal passo é a garantia da cadeia de custódia da mesma.
 %
 Cadeia de custódia é a documentação da história cronológica da evidência de modo a saber onde a evidência esteve e quem teve acesso a esta \cite[p.~21]{Ramos:2011}. 
 %
 Uma cadeia de custódia idealmente deve tornar visível o estado da evidência antes, durante e após a interação com o processo de investigação \cite{LuisDigitalChainOfCustody:2016}.
 %
-A razão para essa preocupação é que alguns processos investigativos podem causar alteração da evidência na forma que foi coletada, como, por exemplo, a consolidação em um único local dos arquivos que compõem uma base de dados distribuída.
+%A razão para essa preocupação é que alguns processos investigativos podem causar alteração da evidência na forma que foi coletada. 
+%
+%Alguns exemplos de alteração são, a consolidação em um único local dos arquivos que compõem uma base de dados distribuída, a remoção da cifragem do conteúdo de um armazenamento ou a remoção da memória \textit{flash} de um dispositivo para cópia de seu conteúdo.
 %A SENASP (Secretaria Nacional de Segurança Pública) \marcos{Que sigla é essa? Cadê a referência? - Hamilton: removido, repetitivo} define cadeia de custódia como ``a sistemática de procedimentos que visa à preservação do valor probatório da prova pericial caracterizada.''
 
 
@@ -136,7 +145,7 @@ A reprodutibilidade do processo de coleta e a manutenção da integridade da evi
 
 Já em um cenário de computação em nuvem, especialmente as de infraestrutura auto-escalável, existe um conjunto de novos desafios. 
 %
-Primeiramente, em contraste com infraestruturas tradicionais, o recurso físico em princípio não pode ser removido: como os recursos são utilizados por outros usuários não relacionados à investigação, fazê-lo constituiria violação de privacidade.
+Primeiramente, em contraste com infraestruturas tradicionais, o recurso físico em princípio não pode ser removido: como os recursos são utilizados por outros usuários não relacionados à investigação, fazê-lo constituiria violação de privacidade tanto da pessoa física como da pessoa jurídica além de ser uma extrapolação dos limites de coleta concedidas pelo poder judiciário de uma região.
 %
 A volatilidade dos recursos também torna a verificação do seu autor um processo mais complexo, pois o recurso que gera certa evidência pode deixar de existir algum tempo depois de fazê-lo \cite{SimouCloudChlng:2014}.
 %
