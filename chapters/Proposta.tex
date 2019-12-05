@@ -94,7 +94,6 @@ Especificamente, as evidências coletadas são armazenadas em um local físico f
 %Evitando assim problemas de relacionados a falta de acordos de cooperação no combate a crimes digitais entre regiões onde ocorreu o crime e onde a evidência está armazenada.
 Dando ao processo de investigação maior celeridade uma vez que a coleta das evidências já terá ocorrido de forma forensicamente aceitável.
 %
-É importande salientar que a presente proposta não tem como objetivo a violação de limites impostos por leis e magistrados para a coleta e preservação de evidências no seu local de origem.
 
 \section{Implementação}
 \label{sec:proposta-impl}
@@ -115,20 +114,26 @@ Fonte: Próprio autor
 %
 Os mecanismos propostos foram implementados em uma plataforma de testes visando avaliar a eficácia de \fancyname em coletar as informações de memória dos contêineres de forma reprodutível, sem violar jurisdições ou a privacidade de usuários e a capacidade de detectar injeção de código usando as evidências coletadas.
 %
-A solução, ilustrada na Figura \ref{fig:Solucao}, consistiu na criação de uma instancia \textit{t2.micro} na zona Ohio da AWS com 3.3Mhz, 1Gb de RAM e sistema operacional Ubuntu versão 14.04 de 64 bits. 
+A solução, ilustrada na Figura \ref{fig:Solucao}, consistiu na utilização do serviço EC2 para criação de uma instancia t2.micro Ubuntu Server 14.04 LTS de 64 bits (x86) com armazenamento em SSD na zona Ohio da AWS. 
 %na criação de 1 VM usando o Oracle Virtual Box 5.0%\cite{VirtualBox} em um notebook Intel i5 de 2.30Mhz e 4Gb de RAM com sistema operacional de 64 bits.
 %
-Nesta instância AWS foi instalado o Docker Engine 1.10 e a API Docker 1.21, com os quais foram criados 3 contêineres executando o Nginx 1.0 em diferentes portas. 
+Nesta instância AWS foi manualmente instalado o Docker Engine 1.10 e a API Docker 1.21, com os quais foram criados 3 contêineres executando o Nginx 1.0 em diferentes portas. 
+%
+Não foram utilizados serviços de contêiner do provedor AWS como EKS ou ECS nos experimentos.
 %
 Foi desenvolvida uma aplicação Java que, executada no sistema operacional hospedeiro, descobre o identificador de processo associado a cada contêiner, copia o conteúdo do \textit{descritor de alocação de memória não uniforme} (\textbf{/proc/pid/numa\_maps}), o qual contém a alocação das páginas de memória, os nós que estão associados a essas páginas, o que está alocado e suas respectivas políticas de acesso \cite{UnixManPagesNumaMaps}.
 %
 A cópia e gravação do arquivo é tal que, a cada intervalo de tempo $t$, a aplicação (1) pausa o contêiner em questão, (2) copia a diretório \textbf{numa\_maps}, (3)  concatena os dados obtidos com o identificador da imagem e do contêiner, (4) calcula o $H$ do conjunto e (5) salva o resultado em um arquivo cujo nome é o identificador da imagem e do contêiner e a extensão é \textbf{.mem}. 
 %
-O transporte seguro da evidência para um armazenamento físico fora da AWS foi implementado usando uma instância \textit{t2.micro} na zona Ohio da AWS no qual foi instalado um servidor \textit{OpenVPN}.
+O transporte seguro da evidência para um armazenamento físico fora da AWS foi implementado usando no serviço EC2, uma instância t2.micro Ubuntu Server 14.04 LTS de 64 bits (x86) com armazenamento em SSD na zona Ohio da AWS no qual foi instalado um servidor \textit{OpenVPN}.
 %
 Como uma forma básica de controle de acesso, a instância EC2 que contém as evidências foi configurada para aceitar conexões apenas de máquinas nesta VPN.
 %
+A instância EC2 e a instância da qual foram coletadas as evidências estavam na mesma VPC padrão da AWS
+%
 Uma máquina física fora da AWS, usou o cliente do \textit{OpenVPN} para estabelecer uma conexão VPN com a instância que contém as evidências e as transportou para o disco da máquina física.
+%
+A conexão entre a máquina física fora da nuvem e a instância de EC2 na nuvem foi feita utilizando um provedor de banda larga de uso doméstico de 50Gb (Live Tim).
 %
 Após a conclusão do processo de transporte, a máquina física verifica se existem arquivos \textbf{.mem} em disco mais antigos que um certo intervalo de tempo $t$, descartando-os.
 %

@@ -20,6 +20,11 @@ Available from Internet: \url{http://dx.doi.org/10.1016/j.cose.2014.11.006}.}
   UK: IEEE, 2015. p.~1--9. Available from Internet:
   \url{https://ieeexplore.ieee.org/document/7149635}.}
 
+\bibitem[{Andrade, Tiago} 2008]{MapReduce:2008}
+\abntrefinfo{{Andrade, Tiago}}{{Andrade, Tiago}}{2008}
+{{Andrade, Tiago}. \emph{{MapReduce - Conceitos e Aplica{\c{c}}{\~{o}}es}}.
+Campinas, 2008.}
+
 \bibitem[Bem et al. 2008]{BemPastPresentFuture:2008}
 \abntrefinfo{Bem et al.}{BEM et al.}{2008}
 {BEM, D. et al. Computer forensics - past , present and future.
@@ -341,11 +346,5 @@ ISSN 1742-2876. Elsevier Science Publishers. Available from Internet:
   Management and Processing Using Cloud}.
 \emph{CLOUD COMPUTING 2013, The Fourth International Conference on Cloud
   Computing, GRIDs, and Virtualization}, p. 208--214, 2013.}
-
-\bibitem[Wikipedia 2018]{WikipediaMapReduce}
-\abntrefinfo{Wikipedia}{WIKIPEDIA}{2018}
-{WIKIPEDIA. \emph{{MapReduce}}. 2018.
-  \urls{https://en.wikipedia.org/wiki/MapReduce}.
-Acessado em: 29 janeiro 2018.}
 
 \end{thebibliography}

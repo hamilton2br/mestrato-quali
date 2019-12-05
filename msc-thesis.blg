@@ -25,37 +25,37 @@ Warning--campo year vazio ou faltando em UnixManPagesNumaMaps
 +---------------------------------------------------------+
 You've used 50 entries,
             6669 wiz_defined-function locations,
-            1541 strings with 20283 characters,
-and the built_in function-call counts, 77652 in all, are:
-= -- 9180
+            1541 strings with 20326 characters,
+and the built_in function-call counts, 77563 in all, are:
+= -- 9170
 > -- 1443
 < -- 2001
 + -- 2519
 - -- 437
-* -- 4860
-:= -- 9490
-add.period$ -- 241
+* -- 4857
+:= -- 9487
+add.period$ -- 239
 call.type$ -- 50
-change.case$ -- 526
+change.case$ -- 524
 chr.to.int$ -- 91
 cite$ -- 49
-duplicate$ -- 7794
-empty$ -- 3090
+duplicate$ -- 7787
+empty$ -- 3080
 format.name$ -- 2092
-if$ -- 15588
+if$ -- 15563
 int.to.chr$ -- 4
 int.to.str$ -- 0
-missing$ -- 888
+missing$ -- 884
 newline$ -- 274
 num.names$ -- 242
-pop$ -- 1194
+pop$ -- 1185
 preamble$ -- 1
 purify$ -- 194
 quote$ -- 0
-skip$ -- 7753
+skip$ -- 7749
 stack$ -- 1
-substring$ -- 3517
-swap$ -- 2862
+substring$ -- 3513
+swap$ -- 2857
 text.length$ -- 76
 text.prefix$ -- 0
 top$ -- 0
@@ -63,5 +63,5 @@ type$ -- 11
 warning$ -- 1
 while$ -- 382
 width$ -- 0
-write$ -- 801
+write$ -- 800
 (There was 1 warning)
