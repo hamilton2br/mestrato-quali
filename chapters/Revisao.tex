@@ -187,20 +187,6 @@ Essas APIs dão acesso a recursos da máquina virtual administrada, tais como di
 %
 A proposta descreve apenas o arcabouço, deixando a critério do usuário detalhes como periodicidade e tamanho da coleta, bem como a forma de transporte da evidência e onde ela é armazenada.
 
-
-A Figura \ref{fig:DykstraFROST} ilustra a integração entre FROST e o arcabouço OpenStack.
-%
-Nela é possível ver os dois pontos desta integração. O primeiro em sua camada de interface de administração web onde o usuário pode acionar a coleta de artefatos para análise.
-%
-A segunda ocorre em seu núcleo, adiciona novas chamadas a API do OpenStack para viabilizar a coleta de informações da máquina virtual e também integra com os processos de rede para extrair logs de tráfego da rede.
-
-
-O autor declara que FROST segue as práticas definidas no Grupo de Pesquisa Cientifica Em Evidência Digital (\textit{Scientific Working Group on Digital Evidence} -- SWGDE) e do Manual de Busca e Apreensão do Departamento de Justiça Norte-Americano \cite{DykstraFROST:2013}.
-%
-De todas as propostas avaliadas, a FROST é a única que mostra preocupação com adequação a questões legais como cadeia de custódia e integridade da evidência.
-%
-
-
 \begin{figure}[htb!]
 \footnotesize
 \caption{\textit{FoRensic OpenStack Tools}}
@@ -213,6 +199,17 @@ Adaptado de \cite{DykstraFROST:2013}
 \end{figure}
 %
 
+A Figura \ref{fig:DykstraFROST} ilustra a integração entre FROST e o arcabouço OpenStack.
+%
+Nela é possível ver os dois pontos desta integração. O primeiro em sua camada de interface de administração web, através da API de Computação (\textit{Compute API}) onde o usuário pode acionar a coleta de artefatos para análise.
+%
+A segunda ocorre em seu núcleo, adiciona novas chamadas a API Nova (\textit{Nova API}) do OpenStack para viabilizar a coleta de informações da máquina virtual e também integra com os processos de rede para extrair logs de tráfego da rede.
+
+
+O autor declara que FROST segue as práticas definidas no Grupo de Pesquisa Cientifica Em Evidência Digital (\textit{Scientific Working Group on Digital Evidence} -- SWGDE) e do Manual de Busca e Apreensão do Departamento de Justiça Norte-Americano \cite{DykstraFROST:2013}.
+%
+De todas as propostas avaliadas, a FROST é a única que mostra preocupação com adequação a questões legais como cadeia de custódia e integridade da evidência.
+%
 
 \subsection{Forense como serviço}
 \label{sec:frost}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  5 DEC 2019 12:40
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  6 DEC 2019 10:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1504,13 +1504,13 @@ line 53.
 pdfTeX warning: /usr/bin/pdflatex (file ./images/ReichertAutoAcquisitionModel.p
 df): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', ty
 pe <array>); ignored.
->] <images/Dolan-GavittSemanticGap.pdf, id=449, 583.21887pt x 214.8828pt>
+>] <images/Dolan-GavittSemanticGap.pdf, id=449, 584.1825pt x 214.8828pt>
 File: images/Dolan-GavittSemanticGap.pdf Graphic file (type pdf)
 
 <use images/Dolan-GavittSemanticGap.pdf>
 Package pdftex.def Info: images/Dolan-GavittSemanticGap.pdf used on input line 
 108.
-(pdftex.def)             Requested size: 408.25043pt x 150.41692pt.
+(pdftex.def)             Requested size: 408.92496pt x 150.41692pt.
  [29]
 <images/SangLogApproach.pdf, id=465, 280.1667pt x 548.0475pt>
 File: images/SangLogApproach.pdf Graphic file (type pdf)
@@ -1540,34 +1540,34 @@ Package pdftex.def Info: images/DezfouliBackupApproach.pdf used on input line 1
 pdfTeX warning: /usr/bin/pdflatex (file ./images/DezfouliBackupApproach.pdf): P
 DF inclusion: invalid other resource which is no dict (key 'ProcSets', type <ar
 ray>); ignored.
->] <images/DykstraFROST.pdf, id=532, 536.0025pt x 499.8675pt>
+>] <images/DykstraFROST.pdf, id=529, 536.0025pt x 499.8675pt>
 File: images/DykstraFROST.pdf Graphic file (type pdf)
 
 <use images/DykstraFROST.pdf>
-Package pdftex.def Info: images/DykstraFROST.pdf used on input line 207.
+Package pdftex.def Info: images/DykstraFROST.pdf used on input line 193.
 (pdftex.def)             Requested size: 428.80258pt x 399.89453pt.
 
-Overfull \hbox (16.23761pt too wide) in paragraph at lines 207--210
+Overfull \hbox (16.23761pt too wide) in paragraph at lines 193--196
  [][] 
  []
 
-[33] <images/GeorgeDF2CE.pdf, id=542, 594.30032pt x 712.58218pt>
-File: images/GeorgeDF2CE.pdf Graphic file (type pdf)
-
-<use images/GeorgeDF2CE.pdf>
-Package pdftex.def Info: images/GeorgeDF2CE.pdf used on input line 239.
-(pdftex.def)             Requested size: 416.00739pt x 498.80412pt.
-
-Overfull \hbox (3.44241pt too wide) in paragraph at lines 239--242
- [][] 
- []
-
-[34 <./images/DykstraFROST.pdf
+[33 <./images/DykstraFROST.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/DykstraFROST.pdf): PDF inclusi
 on: invalid other resource which is no dict (key 'ProcSets', type <array>); ign
 ored.
->] [35 <./images/GeorgeDF2CE.pdf
+>] <images/GeorgeDF2CE.pdf, id=562, 594.30032pt x 712.58218pt>
+File: images/GeorgeDF2CE.pdf Graphic file (type pdf)
+
+<use images/GeorgeDF2CE.pdf>
+Package pdftex.def Info: images/GeorgeDF2CE.pdf used on input line 236.
+(pdftex.def)             Requested size: 416.00739pt x 498.80412pt.
+
+Overfull \hbox (3.44241pt too wide) in paragraph at lines 236--239
+ [][] 
+ []
+
+[34] [35 <./images/GeorgeDF2CE.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/GeorgeDF2CE.pdf): PDF inclusio
 n: invalid other resource which is no dict (key 'ProcSets', type <array>); igno
@@ -1576,7 +1576,7 @@ red.
 File: images/FaaSIndexedSearch.pdf Graphic file (type pdf)
 
 <use images/FaaSIndexedSearch.pdf>
-Package pdftex.def Info: images/FaaSIndexedSearch.pdf used on input line 276.
+Package pdftex.def Info: images/FaaSIndexedSearch.pdf used on input line 273.
 (pdftex.def)             Requested size: 395.03085pt x 260.75215pt.
  [36] [37 <./images/FaaSIndexedSearch.pdf
 
@@ -1587,159 +1587,159 @@ clusion: invalid other resource which is no dict (key 'ProcSets', type <array>)
 File: images/check.png Graphic file (type png)
 
 <use images/check.png>
-Package pdftex.def Info: images/check.png used on input line 374.
+Package pdftex.def Info: images/check.png used on input line 371.
 (pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
  <images/x.png, id=701, 1027.84pt x 1027.84pt>
 File: images/x.png Graphic file (type png)
 
 <use images/x.png>
-Package pdftex.def Info: images/x.png used on input line 374.
+Package pdftex.def Info: images/x.png used on input line 371.
 (pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
 File: images/x.png Graphic file (type png)
  <use images/x.png>
-Package pdftex.def Info: images/x.png used on input line 374.
+Package pdftex.def Info: images/x.png used on input line 371.
 (pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
 File: images/x.png Graphic file (type png)
  <use images/x.png>
-Package pdftex.def Info: images/x.png used on input line 374.
+Package pdftex.def Info: images/x.png used on input line 371.
+(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
+File: images/check.png Graphic file (type png)
+
+<use images/check.png>
+Package pdftex.def Info: images/check.png used on input line 371.
+(pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
+File: images/x.png Graphic file (type png)
+ <use images/x.png>
+Package pdftex.def Info: images/x.png used on input line 371.
+(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
+File: images/check.png Graphic file (type png)
+ <use images/check.png>
+Package pdftex.def Info: images/check.png used on input line 371.
+(pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
+File: images/x.png Graphic file (type png)
+
+<use images/x.png>
+Package pdftex.def Info: images/x.png used on input line 371.
+(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
+File: images/check.png Graphic file (type png)
+ <use images/check.png>
+Package pdftex.def Info: images/check.png used on input line 371.
+(pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
+File: images/check.png Graphic file (type png)
+ <use images/check.png>
+Package pdftex.def Info: images/check.png used on input line 372.
+(pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
+File: images/x.png Graphic file (type png)
+
+<use images/x.png>
+Package pdftex.def Info: images/x.png used on input line 372.
+(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
+File: images/x.png Graphic file (type png)
+ <use images/x.png>
+Package pdftex.def Info: images/x.png used on input line 372.
+(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
+File: images/x.png Graphic file (type png)
+ <use images/x.png>
+Package pdftex.def Info: images/x.png used on input line 372.
+(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
+File: images/x.png Graphic file (type png)
+ <use images/x.png>
+Package pdftex.def Info: images/x.png used on input line 372.
+(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
+File: images/x.png Graphic file (type png)
+
+<use images/x.png>
+Package pdftex.def Info: images/x.png used on input line 372.
+(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
+File: images/x.png Graphic file (type png)
+ <use images/x.png>
+Package pdftex.def Info: images/x.png used on input line 372.
+(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
+File: images/x.png Graphic file (type png)
+ <use images/x.png>
+Package pdftex.def Info: images/x.png used on input line 372.
+(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
+File: images/x.png Graphic file (type png)
+ <use images/x.png>
+Package pdftex.def Info: images/x.png used on input line 372.
+(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
+File: images/check.png Graphic file (type png)
+
+<use images/check.png>
+Package pdftex.def Info: images/check.png used on input line 373.
+(pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
+File: images/x.png Graphic file (type png)
+ <use images/x.png>
+Package pdftex.def Info: images/x.png used on input line 373.
+(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
+File: images/x.png Graphic file (type png)
+ <use images/x.png>
+Package pdftex.def Info: images/x.png used on input line 373.
+(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
+File: images/x.png Graphic file (type png)
+
+<use images/x.png>
+Package pdftex.def Info: images/x.png used on input line 373.
+(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
+File: images/x.png Graphic file (type png)
+ <use images/x.png>
+Package pdftex.def Info: images/x.png used on input line 373.
+(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
+File: images/check.png Graphic file (type png)
+ <use images/check.png>
+Package pdftex.def Info: images/check.png used on input line 373.
+(pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
+File: images/check.png Graphic file (type png)
+
+<use images/check.png>
+Package pdftex.def Info: images/check.png used on input line 373.
+(pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
+File: images/x.png Graphic file (type png)
+ <use images/x.png>
+Package pdftex.def Info: images/x.png used on input line 373.
+(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
+File: images/x.png Graphic file (type png)
+ <use images/x.png>
+Package pdftex.def Info: images/x.png used on input line 373.
 (pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
 File: images/check.png Graphic file (type png)
 
 <use images/check.png>
 Package pdftex.def Info: images/check.png used on input line 374.
 (pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
-File: images/x.png Graphic file (type png)
- <use images/x.png>
-Package pdftex.def Info: images/x.png used on input line 374.
-(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
-File: images/check.png Graphic file (type png)
- <use images/check.png>
-Package pdftex.def Info: images/check.png used on input line 374.
-(pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
-File: images/x.png Graphic file (type png)
-
-<use images/x.png>
-Package pdftex.def Info: images/x.png used on input line 374.
-(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
 File: images/check.png Graphic file (type png)
  <use images/check.png>
 Package pdftex.def Info: images/check.png used on input line 374.
 (pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
 File: images/check.png Graphic file (type png)
  <use images/check.png>
-Package pdftex.def Info: images/check.png used on input line 375.
-(pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
-File: images/x.png Graphic file (type png)
-
-<use images/x.png>
-Package pdftex.def Info: images/x.png used on input line 375.
-(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
-File: images/x.png Graphic file (type png)
- <use images/x.png>
-Package pdftex.def Info: images/x.png used on input line 375.
-(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
-File: images/x.png Graphic file (type png)
- <use images/x.png>
-Package pdftex.def Info: images/x.png used on input line 375.
-(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
-File: images/x.png Graphic file (type png)
- <use images/x.png>
-Package pdftex.def Info: images/x.png used on input line 375.
-(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
-File: images/x.png Graphic file (type png)
-
-<use images/x.png>
-Package pdftex.def Info: images/x.png used on input line 375.
-(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
-File: images/x.png Graphic file (type png)
- <use images/x.png>
-Package pdftex.def Info: images/x.png used on input line 375.
-(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
-File: images/x.png Graphic file (type png)
- <use images/x.png>
-Package pdftex.def Info: images/x.png used on input line 375.
-(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
-File: images/x.png Graphic file (type png)
- <use images/x.png>
-Package pdftex.def Info: images/x.png used on input line 375.
-(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
-File: images/check.png Graphic file (type png)
-
-<use images/check.png>
-Package pdftex.def Info: images/check.png used on input line 376.
-(pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
-File: images/x.png Graphic file (type png)
- <use images/x.png>
-Package pdftex.def Info: images/x.png used on input line 376.
-(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
-File: images/x.png Graphic file (type png)
- <use images/x.png>
-Package pdftex.def Info: images/x.png used on input line 376.
-(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
-File: images/x.png Graphic file (type png)
-
-<use images/x.png>
-Package pdftex.def Info: images/x.png used on input line 376.
-(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
-File: images/x.png Graphic file (type png)
- <use images/x.png>
-Package pdftex.def Info: images/x.png used on input line 376.
-(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
-File: images/check.png Graphic file (type png)
- <use images/check.png>
-Package pdftex.def Info: images/check.png used on input line 376.
+Package pdftex.def Info: images/check.png used on input line 374.
 (pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
 File: images/check.png Graphic file (type png)
 
 <use images/check.png>
-Package pdftex.def Info: images/check.png used on input line 376.
-(pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
-File: images/x.png Graphic file (type png)
- <use images/x.png>
-Package pdftex.def Info: images/x.png used on input line 376.
-(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
-File: images/x.png Graphic file (type png)
- <use images/x.png>
-Package pdftex.def Info: images/x.png used on input line 376.
-(pdftex.def)             Requested size: 7.19875pt x 7.19875pt.
-File: images/check.png Graphic file (type png)
-
-<use images/check.png>
-Package pdftex.def Info: images/check.png used on input line 377.
+Package pdftex.def Info: images/check.png used on input line 374.
 (pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
 File: images/check.png Graphic file (type png)
  <use images/check.png>
-Package pdftex.def Info: images/check.png used on input line 377.
+Package pdftex.def Info: images/check.png used on input line 374.
 (pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
 File: images/check.png Graphic file (type png)
  <use images/check.png>
-Package pdftex.def Info: images/check.png used on input line 377.
+Package pdftex.def Info: images/check.png used on input line 374.
 (pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
 File: images/check.png Graphic file (type png)
 
 <use images/check.png>
-Package pdftex.def Info: images/check.png used on input line 377.
+Package pdftex.def Info: images/check.png used on input line 374.
 (pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
 File: images/check.png Graphic file (type png)
  <use images/check.png>
-Package pdftex.def Info: images/check.png used on input line 377.
+Package pdftex.def Info: images/check.png used on input line 374.
 (pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
 File: images/check.png Graphic file (type png)
  <use images/check.png>
-Package pdftex.def Info: images/check.png used on input line 377.
-(pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
-File: images/check.png Graphic file (type png)
-
-<use images/check.png>
-Package pdftex.def Info: images/check.png used on input line 377.
-(pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
-File: images/check.png Graphic file (type png)
- <use images/check.png>
-Package pdftex.def Info: images/check.png used on input line 377.
-(pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
-File: images/check.png Graphic file (type png)
- <use images/check.png>
-Package pdftex.def Info: images/check.png used on input line 377.
+Package pdftex.def Info: images/check.png used on input line 374.
 (pdftex.def)             Requested size: 9.03336pt x 9.03336pt.
 )
 (./chapters/Proposta.tex [40 <./images/check.png> <./images/x.png>]
@@ -1886,7 +1886,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 333.
 Here is how much of TeX's memory you used:
  22302 strings out of 493304
  400262 string characters out of 6139871
- 543627 words of memory out of 5000000
+ 543654 words of memory out of 5000000
  25003 multiletter control sequences out of 15000+600000
  53615 words of font info for 110 fonts, out of 8000000 for 9000
  963 hyphenation exceptions out of 8191
@@ -1899,7 +1899,7 @@ nts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmri8a.pfb>
-Output written on msc-thesis.pdf (61 pages, 669932 bytes).
+Output written on msc-thesis.pdf (61 pages, 668879 bytes).
 PDF statistics:
  1080 PDF objects out of 1200 (max. 8388607)
  925 compressed objects within 10 object streams

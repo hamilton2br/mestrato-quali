@@ -21,7 +21,7 @@
 \contentsline {subsection}{\numberline {3.1.4}Abordagem baseada em logs}{29}{subsection.3.1.4}
 \contentsline {subsection}{\numberline {3.1.5}Abordagem baseada em backups}{30}{subsection.3.1.5}
 \contentsline {subsection}{\numberline {3.1.6}Arcabou\IeC {\c c}o forense para OpenStack}{32}{subsection.3.1.6}
-\contentsline {subsection}{\numberline {3.1.7}Forense como servi\IeC {\c c}o}{33}{subsection.3.1.7}
+\contentsline {subsection}{\numberline {3.1.7}Forense como servi\IeC {\c c}o}{34}{subsection.3.1.7}
 \contentsline {subsection}{\numberline {3.1.8}Abordagem de indexa\IeC {\c c}\IeC {\~a}o de dados coletados para fins forenses}{35}{subsection.3.1.8}
 \contentsline {section}{\numberline {3.2}Aspectos relacionados a coleta de evid\IeC {\^e}ncia}{36}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Acessar e coletar as informa\IeC {\c c}\IeC {\~o}es de mem\IeC {\'o}ria das m\IeC {\'a}quinas virtuais em nuvem}{37}{subsection.3.2.1}
