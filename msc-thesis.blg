@@ -23,45 +23,45 @@ Warning--campo year vazio ou faltando em UnixManPagesNumaMaps
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 50 entries,
+You've used 51 entries,
             6669 wiz_defined-function locations,
-            1541 strings with 20326 characters,
-and the built_in function-call counts, 77563 in all, are:
-= -- 9170
-> -- 1443
-< -- 2001
-+ -- 2519
-- -- 437
-* -- 4857
-:= -- 9487
-add.period$ -- 239
-call.type$ -- 50
-change.case$ -- 524
-chr.to.int$ -- 91
-cite$ -- 49
-duplicate$ -- 7787
-empty$ -- 3080
-format.name$ -- 2092
-if$ -- 15563
+            1547 strings with 20572 characters,
+and the built_in function-call counts, 78481 in all, are:
+= -- 9245
+> -- 1475
+< -- 2002
++ -- 2531
+- -- 447
+* -- 4923
+:= -- 9604
+add.period$ -- 242
+call.type$ -- 51
+change.case$ -- 535
+chr.to.int$ -- 92
+cite$ -- 50
+duplicate$ -- 7836
+empty$ -- 3144
+format.name$ -- 2139
+if$ -- 15778
 int.to.chr$ -- 4
 int.to.str$ -- 0
-missing$ -- 884
-newline$ -- 274
-num.names$ -- 242
-pop$ -- 1185
+missing$ -- 902
+newline$ -- 279
+num.names$ -- 247
+pop$ -- 1210
 preamble$ -- 1
-purify$ -- 194
+purify$ -- 198
 quote$ -- 0
-skip$ -- 7749
+skip$ -- 7799
 stack$ -- 1
-substring$ -- 3513
-swap$ -- 2857
-text.length$ -- 76
+substring$ -- 3570
+swap$ -- 2881
+text.length$ -- 77
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 11
 warning$ -- 1
-while$ -- 382
+while$ -- 391
 width$ -- 0
-write$ -- 800
+write$ -- 815
 (There was 1 warning)

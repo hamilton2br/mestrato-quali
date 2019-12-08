@@ -35,7 +35,7 @@ Existem três modelos principais de comercialização de uso da nuvem \cite{NIST
 	
 	\item Plataforma como serviço ( \textit{Platform as a Service} -- PaaS ): No qual se provê o ambiente para o desenvolvimento, teste e execução do \textit{software}; nesse caso, os clientes do serviço são desenvolvedores de aplicações.
 	
-	\item Infraestrutura como serviço ( \textit{Infrastructure as a Service} -- IaaS ): No qual são fornecidos recursos computacionais básicos, como processamento, memória e redes, em geral de forma virtualizada; os clientes desse tipo de serviço costumam ser arquitetos de sistemas.
+	\item Infraestrutura como serviço ( \textit{Infrastructure as a Service} -- IaaS ): No qual são fornecidos recursos computacionais básicos, como processamento, memória e redes, em geral de forma virtualizada.
 \end{itemize}
 
 O tipo de serviço de nuvem mais pertinente para este trabalho é o IaaS, uma solução muito usada atualmente pela sua capacidade de prover recursos sob demanda de forma auto-escalável.
@@ -46,6 +46,10 @@ Nesse cenário, o uso intenso de tecnologias de virtualização costuma levar a 
 %
 Esses \textit{scripts}, escritos em linguagem específica como Puppet \cite{Puppet2018}, Chef \cite{Chef2018} ou Vagrant \cite{Vagrant2018}, podem conter instruções de como distribuir o tráfego de rede entre as diferentes instâncias de computação ou armazenamento.
 %
+O modelo IaaS também permite controle direto nos elementos de infraestrutura, que veremos ao longo deste documento ser uma característica que ajuda no entendimento da solução proposta.
+%
+
+Nos modelos SaaS e PaaS, o usuário não controla nem gerencia os elementos mais basicos de infraestrutura como armazenamento, sistema operacional e rede dos componentes de software oferecidos \cite{NIST2011}. Tal característica pode enviesar os resultados deste trabalho para a realidade de um provedor de nuvem específico.
 %Dentre as vantagens de sua utilização, podem ser citadas a capacidade de usar os recursos de nuvem de uma forma mais eficiente, levar a uma menor necessidade de intervenção humana, e prover maior resiliência a variações de demanda do sistema.
 
 

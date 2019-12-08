@@ -140,6 +140,12 @@ Available from Internet:
 {{HBase}. \emph{{HBaset}}. 2018. \urls{https://hbase.apache.org/}.
 Acessado em: 16-06-2018.}
 
+\bibitem[Jiang and Sheng 2016]{ContainerForensicsPaaS2016}
+\abntrefinfo{Jiang and Sheng}{JIANG; SHENG}{2016}
+{JIANG, D.; SHENG, N. {DCFF: a container forensics framework based on Docker}.
+\emph{3rd International Conference on Materials Engineering, Manufacturing
+  Technology and Control (ICMEMTC 2016)}, p. 1644--1650, 2016.}
+
 \bibitem[Keyun et al. 2011]{BashAdvInForensics:2015}
 \abntrefinfo{Keyun et al.}{KEYUN et al.}{2011}
 {KEYUN, R. et al. {Advances in Digital Forensics VII}. In GILBERT, P.; SUJEET,

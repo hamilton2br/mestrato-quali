@@ -121,7 +121,7 @@ Nesta instância AWS foi manualmente instalado o Docker Engine 1.10 e a API Dock
 %
 Não foram utilizados serviços de contêiner do provedor AWS como EKS ou ECS nos experimentos.
 %
-Foi desenvolvida uma aplicação Java que, executada no sistema operacional hospedeiro, descobre o identificador de processo associado a cada contêiner, copia o conteúdo do \textit{descritor de alocação de memória não uniforme} (\textbf{/proc/pid/numa\_maps}), o qual contém a alocação das páginas de memória, os nós que estão associados a essas páginas, o que está alocado e suas respectivas políticas de acesso \cite{UnixManPagesNumaMaps}.
+Foi desenvolvida uma aplicação Java cujo fluxo é ilustrado na Figura \ref{fig:fluxo-dizang} que, executada no sistema operacional hospedeiro, descobre o identificador de processo associado a cada contêiner, copia o conteúdo do \textit{descritor de alocação de memória não uniforme} (\textbf{/proc/pid/numa\_maps}), o qual contém a alocação das páginas de memória, os nós que estão associados a essas páginas, o que está alocado e suas respectivas políticas de acesso \cite{UnixManPagesNumaMaps}.
 %
 A cópia e gravação do arquivo é tal que, a cada intervalo de tempo $t$, a aplicação (1) pausa o contêiner em questão, (2) copia a diretório \textbf{numa\_maps}, (3)  concatena os dados obtidos com o identificador da imagem e do contêiner, (4) calcula o $H$ do conjunto e (5) salva o resultado em um arquivo cujo nome é o identificador da imagem e do contêiner e a extensão é \textbf{.mem}. 
 %
@@ -137,6 +137,17 @@ A conexão entre a máquina física fora da nuvem e a instância de EC2 na nuvem
 %
 Após a conclusão do processo de transporte, a máquina física verifica se existem arquivos \textbf{.mem} em disco mais antigos que um certo intervalo de tempo $t$, descartando-os.
 %
+
+\begin{figure}[htb!]
+\footnotesize
+\caption{Fluxo de execução de Dizang para 1 hospedeiro de contêiner}
+\includegraphics[scale=0.64]{Fluxo-Dizang.pdf}
+\centering
+\label{fig:fluxo-dizang}
+\begin{center}
+Fonte: Próprio autor 
+\end{center}
+\end{figure}
 
 
 \section{Resultados experimentais}

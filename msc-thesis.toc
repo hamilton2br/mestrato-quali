@@ -10,35 +10,35 @@
 \contentsline {section}{\numberline {2.2}Forense digital e seus desafios}{19}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Admissibilidade da evid\IeC {\^e}ncia em processo legal.}{20}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Volume de dados para coleta}{22}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Privacidade e jurisdi\IeC {\c c}\IeC {\~a}o}{22}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.3}Privacidade e jurisdi\IeC {\c c}\IeC {\~a}o}{23}{subsection.2.2.3}
 \contentsline {subsection}{\numberline {2.2.4}Coleta de evid\IeC {\^e}ncias de mem\IeC {\'o}ria vol\IeC {\'a}til de m\IeC {\'a}quinas em nuvem}{23}{subsection.2.2.4}
-\contentsline {section}{\numberline {2.3}Forense digital e gest\IeC {\~a}o de incidentes}{24}{section.2.3}
-\contentsline {chapter}{\numberline {3}Revis\IeC {\~a}o da literatura}{26}{chapter.3}
-\contentsline {section}{\numberline {3.1}Solu\IeC {\c c}\IeC {\~o}es para an\IeC {\'a}lise forense em nuvem}{26}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Modelo autom\IeC {\'a}tico de aquisi\IeC {\c c}\IeC {\~a}o de dados para fins forenses}{26}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Introspec\IeC {\c c}\IeC {\~a}o em m\IeC {\'a}quina virtual}{27}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Virtuoso}{29}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Abordagem baseada em logs}{29}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}Abordagem baseada em backups}{30}{subsection.3.1.5}
-\contentsline {subsection}{\numberline {3.1.6}Arcabou\IeC {\c c}o forense para OpenStack}{32}{subsection.3.1.6}
-\contentsline {subsection}{\numberline {3.1.7}Forense como servi\IeC {\c c}o}{34}{subsection.3.1.7}
-\contentsline {subsection}{\numberline {3.1.8}Abordagem de indexa\IeC {\c c}\IeC {\~a}o de dados coletados para fins forenses}{35}{subsection.3.1.8}
-\contentsline {section}{\numberline {3.2}Aspectos relacionados a coleta de evid\IeC {\^e}ncia}{36}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Acessar e coletar as informa\IeC {\c c}\IeC {\~o}es de mem\IeC {\'o}ria das m\IeC {\'a}quinas virtuais em nuvem}{37}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Capacidade de reproduzir o processo e obter os mesmos resultados}{38}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}N\IeC {\~a}o violar privacidade ou jurisdi\IeC {\c c}\IeC {\~a}o das partes n\IeC {\~a}o envolvidas na investiga\IeC {\c c}\IeC {\~a}o}{39}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Garantir a cadeia de cust\IeC {\'o}dia da evid\IeC {\^e}ncia}{39}{subsection.3.2.4}
-\contentsline {section}{\numberline {3.3}Resumo}{40}{section.3.3}
-\contentsline {chapter}{\numberline {4}Proposta de projeto: Dizang }{41}{chapter.4}
-\contentsline {section}{\numberline {4.1}Identifica\IeC {\c c}\IeC {\~a}o da origem}{41}{section.4.1}
-\contentsline {section}{\numberline {4.2}Descrever o sistema antes e depois do incidente}{42}{section.4.2}
-\contentsline {section}{\numberline {4.3}Garantindo integridade, confidencialidade e protegendo privacidade e jurisdi\IeC {\c c}\IeC {\~a}o}{44}{section.4.3}
-\contentsline {section}{\numberline {4.4}Implementa\IeC {\c c}\IeC {\~a}o}{44}{section.4.4}
-\contentsline {section}{\numberline {4.5}Resultados experimentais}{46}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}An\IeC {\'a}lise do desempenho}{46}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Identifica\IeC {\c c}\IeC {\~a}o de inje\IeC {\c c}\IeC {\~a}o de c\IeC {\'o}digo malicioso}{50}{subsection.4.5.2}
-\contentsline {section}{\numberline {4.6}Limita\IeC {\c c}\IeC {\~o}es}{52}{section.4.6}
-\contentsline {chapter}{\numberline {5}Conclus\IeC {\~o}es e recomenda\IeC {\c c}\IeC {\~o}es para trabalhos futuros}{54}{chapter.5}
-\contentsline {section}{\numberline {5.1}Conclus\IeC {\~o}es}{54}{section.5.1}
-\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{55}{section.5.2}
-\contentsline {chapter}{Refer\^encias}{56}{chapter.5}
+\contentsline {section}{\numberline {2.3}Forense digital e gest\IeC {\~a}o de incidentes}{25}{section.2.3}
+\contentsline {chapter}{\numberline {3}Revis\IeC {\~a}o da literatura}{27}{chapter.3}
+\contentsline {section}{\numberline {3.1}Solu\IeC {\c c}\IeC {\~o}es para an\IeC {\'a}lise forense em nuvem}{27}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Modelo autom\IeC {\'a}tico de aquisi\IeC {\c c}\IeC {\~a}o de dados para fins forenses}{27}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Introspec\IeC {\c c}\IeC {\~a}o em m\IeC {\'a}quina virtual}{28}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Virtuoso}{30}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Abordagem baseada em logs}{30}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}Abordagem baseada em backups}{32}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}Arcabou\IeC {\c c}o forense para OpenStack}{34}{subsection.3.1.6}
+\contentsline {subsection}{\numberline {3.1.7}Forense como servi\IeC {\c c}o}{35}{subsection.3.1.7}
+\contentsline {subsection}{\numberline {3.1.8}Abordagem de indexa\IeC {\c c}\IeC {\~a}o de dados coletados para fins forenses}{36}{subsection.3.1.8}
+\contentsline {section}{\numberline {3.2}Aspectos relacionados a coleta de evid\IeC {\^e}ncia}{38}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Acessar e coletar as informa\IeC {\c c}\IeC {\~o}es de mem\IeC {\'o}ria das m\IeC {\'a}quinas virtuais em nuvem}{38}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Capacidade de reproduzir o processo e obter os mesmos resultados}{39}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}N\IeC {\~a}o violar privacidade ou jurisdi\IeC {\c c}\IeC {\~a}o das partes n\IeC {\~a}o envolvidas na investiga\IeC {\c c}\IeC {\~a}o}{40}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Garantir a cadeia de cust\IeC {\'o}dia da evid\IeC {\^e}ncia}{41}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}Resumo}{41}{section.3.3}
+\contentsline {chapter}{\numberline {4}Proposta de projeto: Dizang }{43}{chapter.4}
+\contentsline {section}{\numberline {4.1}Identifica\IeC {\c c}\IeC {\~a}o da origem}{43}{section.4.1}
+\contentsline {section}{\numberline {4.2}Descrever o sistema antes e depois do incidente}{44}{section.4.2}
+\contentsline {section}{\numberline {4.3}Garantindo integridade, confidencialidade e protegendo privacidade e jurisdi\IeC {\c c}\IeC {\~a}o}{46}{section.4.3}
+\contentsline {section}{\numberline {4.4}Implementa\IeC {\c c}\IeC {\~a}o}{46}{section.4.4}
+\contentsline {section}{\numberline {4.5}Resultados experimentais}{48}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}An\IeC {\'a}lise do desempenho}{49}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Identifica\IeC {\c c}\IeC {\~a}o de inje\IeC {\c c}\IeC {\~a}o de c\IeC {\'o}digo malicioso}{51}{subsection.4.5.2}
+\contentsline {section}{\numberline {4.6}Limita\IeC {\c c}\IeC {\~o}es}{53}{section.4.6}
+\contentsline {chapter}{\numberline {5}Conclus\IeC {\~o}es e recomenda\IeC {\c c}\IeC {\~o}es para trabalhos futuros}{56}{chapter.5}
+\contentsline {section}{\numberline {5.1}Conclus\IeC {\~o}es}{56}{section.5.1}
+\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{57}{section.5.2}
+\contentsline {chapter}{Refer\^encias}{58}{chapter.5}
