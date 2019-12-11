@@ -76,6 +76,12 @@ Available from Internet:
   Fremont, CA: IETF, 2008. IETF: \urls{https://tools.ietf.org/html/rfc5246}.
 Acessado em: 15-04-2018.}
 
+\bibitem[{Docker} 2017]{capabilities}
+\abntrefinfo{{Docker}}{{Docker}}{2017}
+{{Docker}. \emph{{Runtime privilege and Linux capabilities}}. 2017.
+  Https://docs.docker.com/engine/reference/run/.
+Acessado em: 30-11-2018.}
+
 \bibitem[Dolan-Gavitt et al. 2011]{Dolan-GavittSemanticGap:2011}
 \abntrefinfo{Dolan-Gavitt et al.}{DOLAN-GAVITT et al.}{2011}
 {DOLAN-GAVITT, B. et al. Virtuoso: Narrowing the semantic gap in virtual
@@ -102,6 +108,13 @@ Available from Internet: \url{http://dx.doi.org/10.1016/j.diin.2012.05.001}.}
 ISSN 17422876.
 (Proc. of 13th Annual DFRWS Conference).
 Available from Internet: \url{http://dx.doi.org/10.1016/j.diin.2013.06.010}.}
+
+\bibitem[{Fabio Kung} 2017]{cgroupsxptrace}
+\abntrefinfo{{Fabio Kung}}{{Fabio Kung}}{2017}
+{{Fabio Kung}. \emph{{Memory inside Linux containers}}. 2017.
+Acessado em: 30-11-2018.
+Available from Internet:
+  \url{https://fabiokung.com/2014/03/13/memory-inside-linux-containers/}.}
 
 \bibitem[Fewer 2008]{FewerReflectiveLibraryInject:2008}
 \abntrefinfo{Fewer}{FEWER}{2008}
@@ -302,6 +315,14 @@ ISSN 16113349. Available from Internet:
 {STACK, O. \emph{{Open Stack Framework}}. 2018.
   \urls{https://www.openstack.org}.
 Acessado em: 20-05-2018.}
+
+\bibitem[Stubbs, Moreira and Dooley
+  2015]{StubbsConteinersNumberMicroServices:2015}
+\abntrefinfo{Stubbs, Moreira and Dooley}{STUBBS; MOREIRA; DOOLEY}{2015}
+{STUBBS, J.; MOREIRA, W.; DOOLEY, R. {Distributed Systems of Microservices
+  Using Docker and Serfnode}. In \emph{7th International Workshop on Science
+  Gateways}. Texas: [s.n.], 2015. p. 34--39.
+ISBN 9781467374590.}
 
 \bibitem[{Unix Man Pages}]{UnixManPagesNumaMaps}
 \abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{}

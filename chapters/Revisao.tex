@@ -218,7 +218,7 @@ De todas as propostas avaliadas, a FROST é a única que mostra preocupação co
 \subsection{Forense como serviço}
 \label{sec:frost}
 
-O trabalho descrito em \cite{GeorgeDF2CE:2012} se concentra em monitoramento de rede, operando em uma arquitetura de Forense Como Serviço (\textit{Forensics as a Service} -- FaaS). 
+O trabalho descrito em \cite{GeorgeDF2CE:2012} se concentra em monitoramento de rede, operando em uma arquitetura de Forense Como Serviço.% (\textit{Forensics as a Service} -- FaaS). 
 %
 Conforme ilustrado na Figura \ref{fig:GeorgeDF2CE}, a arquitetura da solução consiste em um conjunto de ferramentas com capacidade de descobrir automaticamente as interfaces sob monitoramento, além de coletar evidências de tais máquinas e armazená-las.
 
@@ -372,9 +372,12 @@ A Tabela \ref{tab:related-work} mostra um comparativo das soluções estudadas, 
 							& \rot{\cite{SangLogApproach:2013}} 			& \rot{\cite{Dolan-GavittSemanticGap:2011}} 
 							& \rot{\cite{DezfouliBackupApproach:2012}} 				
 \\ \hline
-\textbf{Coleta evidência continuamente.}		& \cfig	& \xfig & \xfig & \xfig & \cfig & \xfig & \cfig & \xfig & \cfig  \\
-\textbf{O processo é reprodutível.}		& \cfig	& \xfig & \xfig & \xfig & \xfig & \xfig & \xfig & \xfig & \xfig  \\
-\textbf{Garante cadeia de custódia.}			& \cfig	& \xfig & \xfig & \xfig & \xfig & \cfig & \cfig & \xfig & \xfig  \\
-\textbf{Preserva privacidade e jurisdição.} 		& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	 \\
+\textbf{Coleta evidência continuamente.}		& \cfig	& \xfig & \pfig & \pfig & \cfig & \xfig & \cfig & \pfig & \cfig  \\
+\textbf{O processo é reprodutível.}			& \cfig	& \xfig & \xfig & \xfig & \xfig & \xfig & \xfig & \xfig & \xfig  \\
+\textbf{Garante cadeia de custódia.}			& \cfig	& \xfig & \xfig & \xfig & \xfig & \xfig & \cfig & \xfig & \xfig  \\
+\textbf{Preserva privacidade e jurisdição.} 		& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \cfig	& \pfig	& \cfig	& \cfig	 \\
 \end{tabular}
+\begin{center}
+\cfig - atende; \xfig  - não atende; \pfig  - atende parcialmente 
+\end{center}
 \end{table}

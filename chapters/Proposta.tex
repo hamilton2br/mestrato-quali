@@ -125,6 +125,8 @@ Foi desenvolvida uma aplicação Java cujo fluxo é ilustrado na Figura \ref{fig
 %
 A cópia e gravação do arquivo é tal que, a cada intervalo de tempo $t$, a aplicação (1) pausa o contêiner em questão, (2) copia a diretório \textbf{numa\_maps}, (3)  concatena os dados obtidos com o identificador da imagem e do contêiner, (4) calcula o $H$ do conjunto e (5) salva o resultado em um arquivo cujo nome é o identificador da imagem e do contêiner e a extensão é \textbf{.mem}. 
 %
+A pausa do funcionamento do contêiner foi materializado através da chamada a API do Docker, \texttt{http://<docker-url>:<docker-port>/containers/<id-conteiner>/pause} que suspende o funcionamento do contêiner.
+%
 O transporte seguro da evidência para um armazenamento físico fora da AWS foi implementado usando no serviço EC2, uma instância t2.micro Ubuntu Server 14.04 LTS de 64 bits (x86) com armazenamento em SSD na zona Ohio da AWS no qual foi instalado um servidor \textit{OpenVPN}.
 %
 Como uma forma básica de controle de acesso, a instância EC2 que contém as evidências foi configurada para aceitar conexões apenas de máquinas nesta VPN.
@@ -141,7 +143,7 @@ Após a conclusão do processo de transporte, a máquina física verifica se exi
 \begin{figure}[htb!]
 \footnotesize
 \caption{Fluxo de execução de Dizang para 1 hospedeiro de contêiner}
-\includegraphics[scale=0.64]{Fluxo-Dizang.pdf}
+\includegraphics[scale=0.80, angle=270]{Fluxo-Dizang.pdf}
 \centering
 \label{fig:fluxo-dizang}
 \begin{center}
@@ -178,7 +180,14 @@ Ao mesmo tempo, instantâneos de memória salvos pela solução depois que os co
 Essa capacidade se mantém após a detecção de uma ameaça, pois nesse caso coletas mais antigas deixam de ser apagadas.
 %
 Logo, é possível descrever o estado do sistema antes e depois do incidente \cite{CaseMemoryForensics:2014}, permitindo-se, por exemplo, que ataques de injeção de código em memória sejam analisados.
+%
 
+Este experimento usou 3 contêiners para demonstrar que a solução mantém sob controle o espaço em armazenamento ocupado pelas coletas. 
+%
+Segundo \cite{StubbsConteinersNumberMicroServices:2015} aplicações web modernas são compostas por diversos microserviços implementados em contêiners.
+%
+Neste cenário, entende-se que o espaço do armazenamento consumido ainda estaria sob controle porém em um patamar mais elevado uma vez que a quantidade de contêiners seria maior.
+%
 
 
 %\marcos{EVITE REDUNDÂNCIA ENTRE GRÁFICO E TABELA. Faz sentido apenas se um deles for trazer informações adicionais (e, nesses casos, em geral o gráfico/tabela acaba tendo algum highlight, para deixar a utilidade dessa redundância)
@@ -316,10 +325,11 @@ Fonte: Próprio autor
 
 
 %
-Tanto a topologia quando a arquitetura do transporte da evidência e a arquitetura do que se deseja extrair a evidência são fatores que contribuem tanto positiva quando negativamente no tempo de transporte.
+Tanto a topologia quando a arquitetura do transporte da evidência e a arquitetura do que se deseja extrair a evidência como a quantidade de contêiners, distribuição geográfica dos hospedeiros, tamanho da evidência de memória, entre outros, são fatores que contribuem tanto positiva quando negativamente no tempo de transporte.
 %
-Neste experimento o gerador de evidências, um motor de páginas dinâmicas, está na América do Norte enquanto que a máquina física para onde as evidências foram transportadas e que é responsável pelo transporte da evidência está na América do Sul.
-
+Neste experimento o gerador de evidências, um motor de páginas dinâmicas composto por 3 contêiners, está na América do Norte enquanto que a máquina física para onde as evidências foram transportadas e que é responsável pelo transporte da evidência está na América do Sul.
+%
+Aplicações web modernas compostas por vários microserviços implementados em conteiners \cite{StubbsConteinersNumberMicroServices:2015}, podem elevar o tempo necessário para \fancyname coletar evidências suficientes de modo a ter uma visão do estado da aplicação em um momento $t$.
 
 \subsection{Identificação de injeção de código malicioso}
 \label{sec:proposta-exp-malware}
@@ -331,6 +341,15 @@ Para este fim uma biblioteca \textbf{libexample.so} simulando um código malicio
 Após cinco minutos de \fancyname realizando coletas, uma biblioteca foi injetada na memória de um dos contêineres. Após a injeção permitiu-se que a solução continuasse coletando por mais 5 minutos.
 %
 Além da coleta do conteúdo do diretório \textbf{/proc/pid/numa\_maps}, realizou-se também uma cópia crua da memória do processo do contêiner utilizando o utilitário \textit{nsenter} via comando descrito na Figura \ref{fig:comando-copia}.
+%
+
+%A primeira tentativa de cópia do conteúdo da memória de um contêiner usando o utilitário \textit{GDB} diretamente não foi bem sucedida. 
+%
+%Segundo \cite{cgroupsxptrace}, chamadas de systema usadas por ferramentas como \textit{GDB} foram criadas antes da implementação de \textit{cgroups} e \textit{namespaces} no núcleo do Linux e portanto não estão cientes do isolamento entre os processos de um contêiner e de seu hospedeiro.
+%
+%Quando \textit{GDB} usa a chamada de sistema \textit{ptrace} para acessar uma área de memória isolada por \textit{cgroups}, o núcleo gera um sinal de violação impledindo o acesso a memória.
+%
+%Por isso o utilitário \textit{nsenter} foi usado.
 
 \begin{figure}[htb!]
 \footnotesize
@@ -376,18 +395,18 @@ Fonte: Próprio autor
 \end{figure}
 
 %
-%As primeiras tentativas de cópia do conteúdo da memória do processo do contêiner foram feitas via \textit{ptrace} e não obteve sucesso. 
+As primeiras tentativas de cópia do conteúdo da memória do processo do contêiner foram feitas via \textit{ptrace} e não obteve sucesso. 
 %
-%Segundo \cite{cgroupsxptrace} isto ocorre pois as chamadas de sistema que ferramentas como \textit{ptrace} e \textit{htop} usam foram criadas antes da implementação de \textit{cgroups} no \textit{kernel} do linux e sendo assim não tem consciência da existência de isolamento entre processos.
+Segundo \cite{cgroupsxptrace} isto ocorre pois as chamadas de sistema que ferramentas como \textit{ptrace} e \textit{htop} usam foram criadas antes da implementação de \textit{cgroups} no \textit{kernel} do linux e sendo assim não tem consciência da existência de isolamento entre processos.
 %
-%Quando o \textit{ptrace} tenta acessar uma área de memória isolada por \textit{cgroups}, o \textit{kernel} envia um sinal de violação de acesso de memória, o resultado é mostrado na Figura \ref{fig:erro-copia-gdb}.
+Quando o \textit{ptrace} tenta acessar uma área de memória isolada por \textit{cgroups}, o \textit{kernel} envia um sinal de violação de acesso de memória.%, o resultado é mostrado na Figura \ref{fig:erro-copia-gdb}.
 %
 
-%A documentação do Docker \cite{capabilities} menciona o comando \texttt{--cap-add=SYS_PTRACE --security-opt-seccomp=unconfined} que permite que o \textit{ptrace} consiga acessar a memória de um processo dentro do contêiner mas não permite que a máquina hospedeira ou outro contêiner tenha acesso (referência).
+A documentação do Docker \cite{capabilities} menciona o comando \texttt{--cap-add=SYS_PTRACE --security-opt-seccomp=unconfined} que permite que o \textit{ptrace} consiga acessar a memória de um processo dentro do contêiner mas não permite que a máquina hospedeira ou outro contêiner tenha acesso (referência).
 %
-%Ainda segundo \cite{cgroupsxptrace} uma alternativa para viabilizar a monitoração e acesso a informações de memória seria o de expor tais informações na estrutura de \textbf{/sys/fs/cgroup/} da mesma forma que é feita para \textbf{/proc/pid/}.
+Ainda segundo \cite{cgroupsxptrace} uma alternativa para viabilizar a monitoração e acesso a informações de memória seria o de expor tais informações na estrutura de \textbf{/sys/fs/cgroup/} da mesma forma que é feita para \textbf{/proc/pid/}.
 %
-%O sucesso na cópia do conteúdo da memória do processo do contêiner só foi alcançado quando utilizou-se a ferramenta \textit{nsenter}.
+O sucesso na cópia do conteúdo da memória do processo do contêiner só foi alcançado quando utilizou-se a ferramenta \textit{nsenter}.
 %
 
 \begin{figure}[htb!]
@@ -414,6 +433,7 @@ Fonte: Próprio autor
 %\end{figure}
 
 
+
 \section{Limitações}
 \label{sec:proposta-limit}
 
@@ -432,7 +452,9 @@ Isso inclui, por exemplo, a comparação de informações do PEB (\textit{Proces
 
 Como mencionado em \cite{CaseMemoryForensics:2014}, ``para uma análise eficiente de um incidente em memória, são necessárias cópias da mesma \textbf{antes e depois} do incidente.''
 %
-Outra limitação da solução proposta é a necessidade da mesma estar instalada no sistema sob investigação a priori para que os resultados descritos neste documento sejam alcançados. 
+Outra limitação da solução proposta é a necessidade da mesma estar instalada no sistema sob investigação a priori para que os resultados descritos neste documento sejam alcançados.
+%
+Como há uma ampla variedade de ameaças digitais ao largo e novas são criadas constantemente, caso o sistema de detecção de ameaça ao qual \fancyname está integrado não conseguir detectar um ataque em andamento, evidências importantes para descrever o sistema antes do ataque podem ser perdidas no descarte do limite da janela.
 
 
 \chapter{Conclusões e recomendações para trabalhos futuros}
