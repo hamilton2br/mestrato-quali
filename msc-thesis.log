@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  11 DEC 2019 00:56
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.10)  11 DEC 2019 22:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1906,12 +1906,12 @@ pdfTeX warning: /usr/bin/pdflatex (file ./images/conteudo-memoria-copia-gdb.pdf
 Cap\'{\i }tulo 5.
 [58
 
-]) (./msc-thesis.bbl [59] [60
+] [59]) (./msc-thesis.bbl [60] [61
 
-] [61] [62] [63])
+] [62] [63] [64])
 
 AED: lastpage setting LastPage
-[64]
+[65]
 +-------------------------------------------------------------------+
 | Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
 |                  http://abntex.codigolivre.org.br                 |
@@ -1930,13 +1930,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 334.
  ) 
 Here is how much of TeX's memory you used:
- 22343 strings out of 493304
- 401256 string characters out of 6139871
- 545667 words of memory out of 5000000
- 25033 multiletter control sequences out of 15000+600000
+ 22368 strings out of 493304
+ 401593 string characters out of 6139871
+ 546279 words of memory out of 5000000
+ 25053 multiletter control sequences out of 15000+600000
  53615 words of font info for 110 fonts, out of 8000000 for 9000
  963 hyphenation exceptions out of 8191
- 56i,17n,56p,1013b,604s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,17n,56p,1013b,606s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/txfonts/rtxi.pfb></usr/share/texlive/texmf-dist/fonts/type1
@@ -1945,10 +1945,10 @@ nts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmri8a.pfb>
-Output written on msc-thesis.pdf (66 pages, 750939 bytes).
+Output written on msc-thesis.pdf (67 pages, 754213 bytes).
 PDF statistics:
- 1155 PDF objects out of 1200 (max. 8388607)
- 984 compressed objects within 10 object streams
- 174 named destinations out of 1000 (max. 500000)
+ 1178 PDF objects out of 1200 (max. 8388607)
+ 1005 compressed objects within 11 object streams
+ 179 named destinations out of 1000 (max. 500000)
  113 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -492,4 +492,34 @@ Combinada com uma ferramenta para identificação de ameaças, essas caracterís
 %
 Como mencionado em \ref{sec:proposta-limit} a solução proposta é capaz de gerar evidências de memória apenas do espaço do usuário (\textit{user space}). 
 %
-Alguns códigos malicioso injetados em memória são capazes de manipular o retorno de funções do kernel. Recomenda-se para trabalhos futuros a incorporação à \fancyname uma forma de realizar a extração do conteúdo de memória do espaço do kernel (\textit{kernel space}).
+Alguns códigos malicioso injetados em memória são capazes de manipular o retorno de funções do kernel. 
+%
+Recomenda-se para trabalhos futuros a incorporação à \fancyname uma forma de realizar a extração do conteúdo de memória do espaço do kernel (\textit{kernel space}).
+%
+
+Também discutido em \ref{sec:proposta-limit}, as ameaças digitais evoluem constantemente.
+%
+Algumas dessas ameaças novas ameaças podem evadir sistemas de detecção atuais.
+%
+Caso o sistema de detecção de ameaça ao qual \fancyname está integrado não conseguir detectar um ataque em andamento, evidências importantes para descrever o sistema antes do ataque podem ser perdidas no descarte do limite da janela.
+%
+Recomenda-se para trabalhos futuros um estudo sobre o tamanho de janela ótimo para a operação normal de \fancyname, uma que minimize a perda de informação por não detectar que o sistema está sob ataque e realizar todas as coletas para estudo.
+%
+
+Em \ref{sec:computacaonuvem} foram mencionados os diferentes modelos de comercialização em nuvem.
+%
+Alguns provedores que possuem modelos de operação PaaS, também ofertam soluções de orquestração de contêiners tais como Docker Swarm \cite{Swarm}, Kubernetes \cite{Kubernetes} e Openshift \cite{Openshift}.
+%
+Tais orquestradores trazem à técnica de conteinerização funcionalidades que podem ser úteis ao funcionamento de \fancynameX.
+%
+Sendo assim, recomenda-se para trabalhos futuros um estudo sobre as vantagens que outras tecnologias relacionadas a contêiner possam trazer às métricas de \fancyname estudadas neste trabalho.
+%
+
+Por fim, em \ref{sec:proposal-desc-origin} a presente proposta usa o \textit{hash} de identificação da imagem e do contêiner para associar a evidência a sua origem virtual.
+%
+Todavia, dependendo da arquitetura utilizada na aplicação sob monitoração de \fancyname outras formas de identificação de origem estão disponíveis.
+%
+Contêiners executando diretamente sobre uma máquina física podem por exemplo se beneficiar da arquitetura de TPM \cite{TPM} para identificação da origem da evidência.
+%
+Por isso, como última recomendação para trabalhos futuros, sugere-se um estudo voltado a outras formas de associação da evidência com sua origem virtual.
+%

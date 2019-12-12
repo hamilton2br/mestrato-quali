@@ -82,6 +82,12 @@ Acessado em: 15-04-2018.}
   Https://docs.docker.com/engine/reference/run/.
 Acessado em: 30-11-2018.}
 
+\bibitem[{Docker} 2019]{Swarm}
+\abntrefinfo{{Docker}}{{Docker}}{2019}
+{\underline{\ \ \ \ \ \ \ \ }. \emph{{Swarm mode overview}}. 2019.
+  Https://docs.docker.com/engine/swarm/.
+Acessado em: 11-12-2019.}
+
 \bibitem[Dolan-Gavitt et al. 2011]{Dolan-GavittSemanticGap:2011}
 \abntrefinfo{Dolan-Gavitt et al.}{DOLAN-GAVITT et al.}{2011}
 {DOLAN-GAVITT, B. et al. Virtuoso: Narrowing the semantic gap in virtual
@@ -136,6 +142,11 @@ ISBN 978-1-905824-34-2. Available from Internet:
 {GOOGLE. \emph{{GRR Rapid Response}}. 2013.
   \urls{https://grr-doc.readthedocs.io/en/v3.2.1/what-is-grr.html}.
 Acessado em: 27-07-2019.}
+
+\bibitem[{Google} 2019]{Kubernetes}
+\abntrefinfo{{Google}}{{Google}}{2019}
+{{Google}. \emph{{Kubernetes}}. 2019. Https://cloud.google.com/kubernetes/.
+Acessado em: 11-12-2019.}
 
 \bibitem[Grispos, Storer and Glisson
   2012]{GrisposChallengesCloudComputing:2012}
@@ -272,6 +283,11 @@ PhD Thesis (PhD) --- Universidade de Brasilia, 2011.
 Available from Internet:
   \url{http://bdm.unb.br/bitstream/10483/1843/1/2011\_MonicaGomesRamos.pdf}.}
 
+\bibitem[{RedHat} 2019]{Openshift}
+\abntrefinfo{{RedHat}}{{RedHat}}{2019}
+{{RedHat}. \emph{{Openshift}}. 2019. Https://www.openshift.com/.
+Acessado em: 11-12-2019.}
+
 \bibitem[Reichert, Richards and Yoshigoe 2015]{ReichertAutoAcquisition:2015}
 \abntrefinfo{Reichert, Richards and Yoshigoe}{REICHERT; RICHARDS;
   YOSHIGOE}{2015}
@@ -323,6 +339,12 @@ Acessado em: 20-05-2018.}
   Using Docker and Serfnode}. In \emph{7th International Workshop on Science
   Gateways}. Texas: [s.n.], 2015. p. 34--39.
 ISBN 9781467374590.}
+
+\bibitem[{Trusted Computing Group} 2016]{TPM}
+\abntrefinfo{{Trusted Computing Group}}{{Trusted Computing Group}}{2016}
+{{Trusted Computing Group}. \emph{{TPM}}. 2016.
+  Https://trustedcomputinggroup.org/.
+Acessado em: 11-12-2019.}
 
 \bibitem[{Unix Man Pages}]{UnixManPagesNumaMaps}
 \abntrefinfo{{Unix Man Pages}}{{Unix Man Pages}}{}
