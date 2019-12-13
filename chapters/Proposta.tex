@@ -473,14 +473,32 @@ Ameaças digitais que atuam diretamente na memória de sistema não costumam dei
 Esse problema é especialmente notável em sistemas de computação em nuvem, nos quais a alocação e desalocação de recursos virtualizados (e.g., VMs e contêineres) é frequente.
 %
 Essa característica, aliada a aspectos como multi-inquilinato e multi-jurisdição de nuvens computacionais, dificulta a coleta de evidências para a investigação de incidentes.
+%
 
+A revisão do estado da arte mostrou que a coleta de evidências forenses em nuvem é uma área de conhecimento com muito espaço para estudo.
 %
-Nesse cenário, a proposta apresentada visa relacionar o instantâneo de memória a sua origem, utilizando o \textit{hash} calculado do recurso computacional em nuvem como identificador da origem da evidência armazenada.
+Os modelos de comercialização e serviços gerenciados e não gerenciados ofertados pelos provedores de nuvem trazem novos desafios para a forense digital a cada dia.
 %
+Desafios estes tanto técnicos quanto jurídicos.
+%
+
+Nesse cenário, a proposta apresentada visa relacionar o instantâneo de memória a sua origem, identificando univocamente o recurso computacional em nuvem como identificador da origem da evidência armazenada, permitindo conhecer a fonte da evidência mesmo que esta não exista mais e assim contribuir para a credibilidade da evidência.
+%
+Sem esta capacidade, seria necessário preservar e isolar o recurso virtual para posterior coleta dificultando a utilização de arquiteturas auto-escaláveis.
+%
+
 Para evitar uso excessivo de memória, a quantidade de dados armazenados usa uma janela de armazenamento, o que permite descrever a memória antes e depois de um ataque (e.g., de injeção de memória). 
 %
+Tal característica permite manter sob controle a quantidade de dados que os peritos tem que analisar contribuindo para a diminuição da fila de investigação e o aumento da velocidade das investigações.
+%
+Sem tal característica e com o crescimento da complexidade das soluções em nuvem, a quantidade de dados para análise eventualmente alcançaria um volume proibitivo para uma investigação.
+%
+
 Transportando de forma segura e armazenando a evidência em local conhecido fora da nuvem, evitam-se os problemas relacionados a multi-jurisdição e multi-inquilinato das nuvens computacionais.
 %
+O que também contribui para uma maior celeridade no processo investigativo, evitando negociações que cruzam jurisdições, fronteiras, leis e determinações de magistrados.
+%
+
 A comparação de instantâneos de memória coletados em diferentes instantes de tempo permite a identificação de injeção de código assim como extrair o conteúdo da parte legível do endereço de memória correspondente.
 
 %
