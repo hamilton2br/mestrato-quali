@@ -182,11 +182,11 @@ Essa capacidade se mantém após a detecção de uma ameaça, pois nesse caso co
 Logo, é possível descrever o estado do sistema antes e depois do incidente \cite{CaseMemoryForensics:2014}, permitindo-se, por exemplo, que ataques de injeção de código em memória sejam analisados.
 %
 
-Este experimento usou 3 contêiners para demonstrar que a solução mantém sob controle o espaço em armazenamento ocupado pelas coletas. 
+Este experimento usou 3 contêineres para demonstrar que a solução mantém sob controle o espaço em armazenamento ocupado pelas coletas. 
 %
-Segundo \cite{StubbsConteinersNumberMicroServices:2015} aplicações web modernas são compostas por diversos microserviços implementados em contêiners.
+Segundo \cite{StubbsConteinersNumberMicroServices:2015} aplicações web modernas são compostas por diversos micro serviços implementados em contêineres.
 %
-Neste cenário, entende-se que o espaço do armazenamento consumido ainda estaria sob controle porém em um patamar mais elevado uma vez que a quantidade de contêiners seria maior.
+Neste cenário, entende-se que o espaço do armazenamento consumido ainda estaria sob controle porém em um patamar mais elevado uma vez que a quantidade de contêineres seria maior.
 %
 
 
@@ -274,7 +274,7 @@ Assim, é possível descrever o estado do sistema antes e depois do incidente \c
 %A viabilidade se dá pois consegue descrever o estado do sistema antes e depois do incidente \cite{Case_Memory_Forensics:2014}.
 %
 
-Uma potencial limitação da solução proposta é que a pausa de um contêiner para coleta de dados poder, em princípio, causar perdas no desempenho da aplicação sendo executada. 
+Uma potencial limitação da solução proposta é que a pausa de um contêiner para coleta de dados pode, em princípio, causar perdas no desempenho da aplicação sendo executada. 
 %
 Para avaliar esse impacto, durante o experimento foram medidos os tempos de cópia da memória do contêiner.
 %
@@ -325,11 +325,11 @@ Fonte: Próprio autor
 
 
 %
-Tanto a topologia quando a arquitetura do transporte da evidência e a arquitetura do que se deseja extrair a evidência como a quantidade de contêiners, distribuição geográfica dos hospedeiros, tamanho da evidência de memória, entre outros, são fatores que contribuem tanto positiva quando negativamente no tempo de transporte.
+Tanto a topologia quando a arquitetura do transporte da evidência e a arquitetura do que se deseja extrair a evidência como a quantidade de contêineres, distribuição geográfica dos hospedeiros, tamanho da evidência de memória, entre outros, são fatores que contribuem tanto positiva quando negativamente no tempo de transporte.
 %
-Neste experimento o gerador de evidências, um motor de páginas dinâmicas composto por 3 contêiners, está na América do Norte enquanto que a máquina física para onde as evidências foram transportadas e que é responsável pelo transporte da evidência está na América do Sul.
+Neste experimento o gerador de evidências, um motor de páginas dinâmicas composto por 3 contêineres, está na América do Norte enquanto que a máquina física para onde as evidências foram transportadas e que é responsável pelo transporte da evidência está na América do Sul.
 %
-Aplicações web modernas compostas por vários microserviços implementados em conteiners \cite{StubbsConteinersNumberMicroServices:2015}, podem elevar o tempo necessário para \fancyname coletar evidências suficientes de modo a ter uma visão do estado da aplicação em um momento $t$.
+Aplicações web modernas compostas por vários micro serviços implementados em contêineres \cite{StubbsConteinersNumberMicroServices:2015}, podem elevar o tempo necessário para \fancyname coletar evidências suficientes de modo a ter uma visão do estado da aplicação em um momento $t$.
 
 \subsection{Identificação de injeção de código malicioso}
 \label{sec:proposta-exp-malware}
@@ -399,7 +399,7 @@ As primeiras tentativas de cópia do conteúdo da memória do processo do contê
 %
 Segundo \cite{cgroupsxptrace} isto ocorre pois as chamadas de sistema que ferramentas como \textit{ptrace} e \textit{htop} usam foram criadas antes da implementação de \textit{cgroups} no \textit{kernel} do linux e sendo assim não tem consciência da existência de isolamento entre processos.
 %
-Quando o \textit{ptrace} tenta acessar uma área de memória isolada por \textit{cgroups}, o \textit{kernel} envia um sinal de violação de acesso de memória.%, o resultado é mostrado na Figura \ref{fig:erro-copia-gdb}.
+Quando o \textit{ptrace} tenta acessar uma área de memória isolada por \textit{cgroups}, o núcleo envia um sinal de violação de acesso de memória.%, o resultado é mostrado na Figura \ref{fig:erro-copia-gdb}.
 %
 
 A documentação do Docker \cite{capabilities} menciona o comando \texttt{--cap-add=SYS_PTRACE --security-opt-seccomp=unconfined} que permite que o \textit{ptrace} consiga acessar a memória de um processo dentro do contêiner mas não permite que a máquina hospedeira ou outro contêiner tenha acesso (referência).
@@ -458,7 +458,7 @@ Como há uma ampla variedade de ameaças digitais ao largo e novas são criadas 
 
 
 \chapter{Conclusões e recomendações para trabalhos futuros}
-\label{sec:proposta-concl-recom}
+\label{chp:proposta-concl-recom}
 
 %
 Neste capítulo são apresentadas as conclusões do presente trabalho e as recomendações para a continuidade dos trabalhos neste campo de estudo.
@@ -484,7 +484,7 @@ Desafios estes tanto técnicos quanto jurídicos.
 
 Nesse cenário, a proposta apresentada visa relacionar o instantâneo de memória a sua origem, identificando univocamente o recurso computacional em nuvem como identificador da origem da evidência armazenada, permitindo conhecer a fonte da evidência mesmo que esta não exista mais e assim contribuir para a credibilidade da evidência.
 %
-Sem esta capacidade, seria necessário preservar e isolar o recurso virtual para posterior coleta dificultando a utilização de arquiteturas auto-escaláveis.
+Sem esta capacidade, seria necessário preservar e isolar o recurso virtual para posterior coleta dificultando a utilização de uma arquiteturas auto-escalável.
 %
 
 Para evitar uso excessivo de memória, a quantidade de dados armazenados usa uma janela de armazenamento, o que permite descrever a memória antes e depois de um ataque (e.g., de injeção de memória). 
@@ -494,9 +494,7 @@ Tal característica permite manter sob controle a quantidade de dados que os per
 Sem tal característica e com o crescimento da complexidade das soluções em nuvem, a quantidade de dados para análise eventualmente alcançaria um volume proibitivo para uma investigação.
 %
 
-Transportando de forma segura e armazenando a evidência em local conhecido fora da nuvem, evitam-se os problemas relacionados a multi-jurisdição e multi-inquilinato das nuvens computacionais.
-%
-O que também contribui para uma maior celeridade no processo investigativo, evitando negociações que cruzam jurisdições, fronteiras, leis e determinações de magistrados.
+Transportando de forma segura e armazenando a evidência em local conhecido fora da nuvem, evitam-se os problemas relacionados a multi-jurisdição e multi-inquilinato das nuvens computacionais contribuindo para maior celeridade no processo investigativo.
 %
 
 A comparação de instantâneos de memória coletados em diferentes instantes de tempo permite a identificação de injeção de código assim como extrair o conteúdo da parte legível do endereço de memória correspondente.
@@ -517,16 +515,16 @@ Recomenda-se para trabalhos futuros a incorporação à \fancyname uma forma de 
 
 Também discutido em \ref{sec:proposta-limit}, as ameaças digitais evoluem constantemente.
 %
-Algumas dessas ameaças novas ameaças podem evadir sistemas de detecção atuais.
+Algumas dessas novas ameaças podem evadir sistemas de detecção atuais.
 %
 Caso o sistema de detecção de ameaça ao qual \fancyname está integrado não conseguir detectar um ataque em andamento, evidências importantes para descrever o sistema antes do ataque podem ser perdidas no descarte do limite da janela.
 %
-Recomenda-se para trabalhos futuros um estudo sobre o tamanho de janela ótimo para a operação normal de \fancyname, uma que minimize a perda de informação por não detectar que o sistema está sob ataque e realizar todas as coletas para estudo.
+Recomenda-se para trabalhos futuros um estudo sobre o tamanho de janela ótimo para a operação normal de \fancyname, uma que minimize a perda de informação por não detectar que o sistema está sob ataque.
 %
 
 Em \ref{sec:computacaonuvem} foram mencionados os diferentes modelos de comercialização em nuvem.
 %
-Alguns provedores que possuem modelos de operação PaaS, também ofertam soluções de orquestração de contêiners tais como Docker Swarm \cite{Swarm}, Kubernetes \cite{Kubernetes} e Openshift \cite{Openshift}.
+Alguns provedores que possuem modelos de operação PaaS, também ofertam soluções de orquestração de contêineres tais como Docker Swarm \cite{Swarm}, Kubernetes \cite{Kubernetes} e Openshift \cite{Openshift}.
 %
 Tais orquestradores trazem à técnica de conteinerização funcionalidades que podem ser úteis ao funcionamento de \fancynameX.
 %
@@ -537,7 +535,7 @@ Por fim, em \ref{sec:proposal-desc-origin} a presente proposta usa o \textit{has
 %
 Todavia, dependendo da arquitetura utilizada na aplicação sob monitoração de \fancyname outras formas de identificação de origem estão disponíveis.
 %
-Contêiners executando diretamente sobre uma máquina física podem por exemplo se beneficiar da arquitetura de TPM \cite{TPM} para identificação da origem da evidência.
+Contêineres executando diretamente sobre uma máquina física podem por exemplo se beneficiar da arquitetura de TPM \cite{TPM} para identificação da origem da evidência.
 %
 Por isso, como última recomendação para trabalhos futuros, sugere-se um estudo voltado a outras formas de associação da evidência com sua origem virtual.
 %
