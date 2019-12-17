@@ -457,14 +457,9 @@ Outra limitação da solução proposta é a necessidade da mesma estar instalad
 Como há uma ampla variedade de ameaças digitais ao largo e novas são criadas constantemente, caso o sistema de detecção de ameaça ao qual \fancyname está integrado não conseguir detectar um ataque em andamento, evidências importantes para descrever o sistema antes do ataque podem ser perdidas no descarte do limite da janela.
 
 
-\chapter{Conclusões e recomendações para trabalhos futuros}
+\chapter{Conclusões}
 \label{chp:proposta-concl-recom}
 
-%
-Neste capítulo são apresentadas as conclusões do presente trabalho e as recomendações para a continuidade dos trabalhos neste campo de estudo.
-
-\section{Conclusões}
-\label{sec:proposta-concl}
 
 %\marcosT{Uma boa conclusão retoma, logo na primeira frase, o problema que ela se propunha a resolver. Comece com uma ou mais frases nesse sentido, (nota: \textbf{sem} copiar+colar de outro ponto do texto). - Hamilton: Feito} \marcosT{Só que não: eu disse para você retomar o \textbf{problema} na sua primeira frase. Sua frase começa retomando a \textbf{solução}. Essa que você colocou como primeira seria boa como uma segunda frase, em que você reforça como resolve o problema - Hamilton: Acho que agora foi :)}
 %
@@ -486,19 +481,15 @@ Nesse cenário, a proposta apresentada visa relacionar o instantâneo de memóri
 %
 Sem esta capacidade, seria necessário preservar e isolar o recurso virtual para posterior coleta dificultando a utilização de uma arquiteturas auto-escalável.
 %
-
-Para evitar uso excessivo de memória, a quantidade de dados armazenados usa uma janela de armazenamento, o que permite descrever a memória antes e depois de um ataque (e.g., de injeção de memória). 
+Adicionalmente, para evitar uso excessivo de memória, a quantidade de dados armazenados usa uma janela de armazenamento, o que permite descrever a memória antes e depois de um ataque (e.g., de injeção de memória). 
 %
 Tal característica permite manter sob controle a quantidade de dados que os peritos tem que analisar contribuindo para a diminuição da fila de investigação e o aumento da velocidade das investigações.
 %
-Sem tal característica e com o crescimento da complexidade das soluções em nuvem, a quantidade de dados para análise eventualmente alcançaria um volume proibitivo para uma investigação.
+%Sem tal característica e com o crescimento da complexidade das soluções em nuvem, a quantidade de dados para análise eventualmente alcançaria um volume proibitivo para uma investigação.
 %
-
-Transportando de forma segura e armazenando a evidência em local conhecido fora da nuvem, evitam-se os problemas relacionados a multi-jurisdição e multi-inquilinato das nuvens computacionais contribuindo para maior celeridade no processo investigativo.
+Ainda, ao transportar de forma segura e armazenar a evidência em local conhecido fora da nuvem, evitam-se os problemas relacionados a multi-jurisdição e multi-inquilinato das nuvens computacionais contribuindo para maior celeridade no processo investigativo.
 %
-
-A comparação de instantâneos de memória coletados em diferentes instantes de tempo permite a identificação de injeção de código assim como extrair o conteúdo da parte legível do endereço de memória correspondente.
-
+Ao mesmo tempo, a comparação de instantâneos de memória coletados em diferentes instantes de tempo permite a identificação de injeção de código assim como extrair o conteúdo da parte legível do endereço de memória correspondente.
 %
 Combinada com uma ferramenta para identificação de ameaças, essas características de \fancyname o transformam em uma solução poderosa para prover evidências e, assim, viabilizar análises forenses na nuvem.
 
